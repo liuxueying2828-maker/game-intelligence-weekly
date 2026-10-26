@@ -1,27 +1,46 @@
-# Manual Source Examples
+# Manual Game Intelligence Examples
 
-Copy content into `daily_input.md` when you want the brief to include high-priority manual signals.
+Copy a verified article into `daily_input.md` when it should receive editorial priority.
 
-Example 1: WeChat / Official Account
+## Example 1: China Games
 
-Title: JD expands home services beyond retail products
-Source: JD official account / industry media
-Notes:
-- JD is extending from goods retail to home services such as cleaning, repair, elderly care, and appliance maintenance.
-- Potential signal: retail platforms may be competing on service ecosystem and fulfillment capability, not only product assortment.
-- Decathlon reference: sports service bundles, maintenance, coaching, community activities, or store-based service pilots may be useful comparison points.
+Title: Chinese game publisher announces a verified global launch plan
+Category: China Games
+Company: Publisher name
+Source: Official announcement or reliable industry media
+Date: YYYY-MM-DD
+Link: https://example.com/original-article
+Content:
+- What product or strategic change was announced.
+- Any verified launch timing, market, platform, studio, user or revenue data.
+- Why it matters to China's game industry or game globalization.
 
-Example 2: Leader / Mentor Feedback
+---
 
-Title: Leader feedback on 618 platform reports
-Notes:
-- 618 reports increasingly emphasize service, fulfillment, supply chain, and user experience instead of only GMV.
-- Potential signal: platform strategy is moving from traffic growth to operating capability and ecosystem depth.
-- Decathlon reference: opportunity analysis can compare fulfillment, membership, content-to-commerce, and service conversion.
+## Example 2: AI in Games
 
-Example 3: Industry Report Summary
+Title: Game studio deploys an AI tool in a production workflow
+Category: AI in Games
+Company: Studio or technology provider
+Source: Official case study or reliable industry media
+Date: YYYY-MM-DD
+Link: https://example.com/original-article
+Content:
+- The specific AI capability and the production or operation step it changes.
+- Evidence that the capability is deployed or being tested in a real workflow.
+- Measurable impact, limitations, governance questions or creator concerns.
 
-Title: Retail media and CRM are becoming connected growth engines
-Notes:
-- Brands are investing more in first-party data, membership operations, and closed-loop media measurement.
-- Potential signal: digital commerce teams need stronger links between CRM segmentation, ad activation, and commerce conversion.
+---
+
+## Example 3: Global Games & Business
+
+Title: Global publisher reports a material strategy or market change
+Category: Global Games
+Company: Publisher, platform or studio
+Source: Earnings release, official announcement or reliable industry media
+Date: YYYY-MM-DD
+Link: https://example.com/original-article
+Content:
+- The verified company action and key figures.
+- Which product, platform, studio, audience or market is affected.
+- What the event signals about the global games business.

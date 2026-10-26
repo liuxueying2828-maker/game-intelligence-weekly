@@ -75,7 +75,7 @@ def _extract_title(content):
         cleaned = clean_text(line).lstrip("#").strip()
         if cleaned:
             return cleaned[:120]
-    return "Manual Digital Commerce Signal"
+    return "Manual Game Industry Signal"
 
 
 def _clean_manual_content(value):
@@ -182,10 +182,10 @@ def _parse_manual_date(value):
 
 def _infer_domain(category, company, content):
     text = f"{category} {company} {content}".lower()
-    if any(word in text for word in ["platform", "平台", "internet giants", "阿里", "alibaba", "淘宝", "天猫", "京东", "jd", "字节", "bytedance", "腾讯", "tencent", "美团", "meituan", "拼多多", "pdd", "小红书"]):
+    if any(word in text for word in ["china games", "中国游戏", "国产游戏", "版号", "腾讯游戏", "网易游戏", "mihoyo", "米哈游", "taptap", "bilibili games"]):
         return "platform"
-    if any(word in text for word in ["openai", "deepmind", "anthropic", "deepseek", "豆包", "通义", "kimi", "manus", "nvidia", "agent", "模型", "多模态"]):
+    if any(word in text for word in ["ai in games", "game ai", "ai npc", "generative ai", "游戏 ai", "ai 游戏", "生成式 ai", "智能体", "nvidia ace", "unity ai", "unreal ai"]):
         return "ai"
-    if any(word in text for word in ["sports", "outdoor", "体育", "户外", "运动", "decathlon", "nike", "adidas", "lululemon", "anta", "li ning", "salomon"]):
+    if any(word in text for word in ["global games", "studio", "publisher", "nintendo", "playstation", "xbox", "steam", "epic games", "electronic arts", "ubisoft", "riot games", "krafton", "capcom", "全球游戏", "游戏工作室", "游戏发行商"]):
         return "sports"
     return "retail"
