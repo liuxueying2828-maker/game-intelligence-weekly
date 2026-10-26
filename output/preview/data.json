@@ -1,23 +1,24 @@
 {
   "date": "2026-10-26",
-  "headline": "游戏巨头AI与跨界布局，全球平台战略调整",
-  "platform_intelligence": [],
-  "ai_technology": [],
-  "sports_outdoor": [
+  "headline": "多款新游定档，海外市场策略多元",
+  "platform_intelligence": [
     {
-      "name": "卡普空 (Capcom)",
+      "name": "ONE PIECE: Grand Gourmet / ONE PIECE: Grand Gourmet",
       "news": "",
       "summary_points": [
-        "卡普空（Capcom）遭遇数据泄露事件，超过1170万个Capcom ID账户受到影响。",
-        "数据泄露可能包含用户个人信息，对玩家的隐私安全构成威胁。",
-        "事件对卡普空的用户信任和品牌声誉造成打击，可能面临监管审查和用户索赔。",
-        "提醒所有游戏公司，数据安全是游戏运营的关键环节，需持续加强防护措施。"
+        "厂商：Unknown｜平台：Mobile｜事件：新游上线",
+        "国内节点：未公布",
+        "海外节点：2026年10月23日上线",
+        "海外信号：暂无｜需求判断：暂无（依据：未公布具体海外信号）",
+        "情报意义：知名动漫IP改编手游上线，关注其内容质量和市场反响，对IP影响力手游的发行有参考价值。"
       ],
       "why_this_matters": "",
       "trend": "Trend",
-      "link": "https://www.gamesindustry.biz/capcom-affected-by-data-breach-over-117m-capcom-id-accounts-compromised"
+      "link": "https://www.pocketgamer.biz/new-release-roundup-house-of-tesla-crushed-in-time-one-piece-grand-gourmet-and-more/"
     }
   ],
+  "ai_technology": [],
+  "sports_outdoor": [],
   "retail_innovation": [],
-  "one_thing_worth_watching": "头部游戏公司AI应用与跨界布局，及全球平台策略调整趋势"
+  "one_thing_worth_watching": "Villion:Code 于2027年1月26日在北美和欧洲的上线日期，这将是其明确的区域发行策略的重要验证节点。"
 }
