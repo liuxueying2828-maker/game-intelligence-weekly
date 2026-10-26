@@ -106,7 +106,7 @@ GitHub Pages must use `Settings → Pages → Source → GitHub Actions`.
 pip install -r requirements.txt
 export GEMINI_API_KEY="your-gemini-api-key"
 export GEMINI_MODEL="gemini-2.5-flash"
-export GEMINI_SEARCH_MODEL="gemini-2.5-flash"
+export GEMINI_SEARCH_MODEL="gemini-3.8-flash"
 export ENABLE_GEMINI_DEEP_RESEARCH="false"
 export EMAIL_TO="xueying.liu@bluefocus.cn"
 export EMAIL_API_KEY="your-email-api-key"
