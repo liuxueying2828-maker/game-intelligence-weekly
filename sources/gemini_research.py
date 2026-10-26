@@ -32,9 +32,8 @@ def fetch_gemini_research_items(keyword_library_path):
         raise RuntimeError("Missing google-genai package. Run: python3 -m pip install -r requirements.txt") from exc
 
     library = load_keyword_library(keyword_library_path)
-    client = genai.Client(api_key=api_key)
     model = os.getenv("GEMINI_SEARCH_MODEL") or GEMINI_SEARCH_MODEL
-    items = _run_google_search_tasks(client, model, library)
+    items = _run_google_search_tasks(api_key, model, library)
 
     if _env_true("ENABLE_GEMINI_DEEP_RESEARCH"):
         items.extend(_run_deep_research_tasks(api_key, library))
@@ -44,21 +43,42 @@ def fetch_gemini_research_items(keyword_library_path):
     return _deduplicate(items)
 
 
-def _run_google_search_tasks(client, model, library):
+def _run_google_search_tasks(api_key, model, library):
     items = []
-    for task in build_search_tasks(library):
-        try:
-            response = client.interactions.create(
-                model=model,
-                input=_build_search_prompt(library, task, deep=False),
-                tools=[{"type": "google_search"}, {"type": "url_context"}],
-            )
-            task_items = _parse_items(response.output_text)[:GEMINI_SEARCH_MAX_ITEMS_PER_TASK]
-            items.extend(_to_source_item(item, task, "gemini_google_search") for item in task_items)
-            print(f"  Gemini Google Search {task['id']}: {len(task_items)} items")
-        except Exception as exc:
-            print(f"  Gemini Google Search {task['id']} failed: {exc}")
+    tasks = build_search_tasks(library)
+    with ThreadPoolExecutor(max_workers=4) as executor:
+        futures = {
+            executor.submit(_run_one_google_search, api_key, model, library, task): task
+            for task in tasks
+        }
+        for future in as_completed(futures):
+            task = futures[future]
+            try:
+                task_items = future.result()
+                items.extend(task_items)
+                print(f"  Gemini Google Search {task['id']}: {len(task_items)} items")
+            except Exception as exc:
+                print(f"  Gemini Google Search {task['id']} failed: {exc}")
     return items
+
+
+def _run_one_google_search(api_key, model, library, task):
+    from google import genai
+
+    client = genai.Client(api_key=api_key)
+    try:
+        response = client.interactions.create(
+            model=model,
+            input=_build_search_prompt(library, task, deep=False),
+            tools=[{"type": "google_search"}, {"type": "url_context"}],
+        )
+        task_items = _parse_items(response.output_text)[:GEMINI_SEARCH_MAX_ITEMS_PER_TASK]
+        return [_to_source_item(item, task, "gemini_google_search") for item in task_items]
+    finally:
+        try:
+            client.close()
+        except AttributeError:
+            pass
 
 
 def _run_deep_research_tasks(api_key, library):
