@@ -18,19 +18,21 @@ REPORT_MODES = {"preview", "publish"}
 
 
 def collect_information_pool():
-    from config import FEEDS, MANUAL_INPUT_PATH, SEARCH_QUERIES
+    from config import FEEDS, GAME_CATALOG_PATH, MANUAL_INPUT_PATH, SEARCH_QUERIES
+    from sources.catalog import fetch_catalog_items
     from sources.google_news import fetch_google_news_items
     from sources.manual import fetch_manual_items
     from sources.rss import fetch_rss_items
 
     manual_items = fetch_manual_items(MANUAL_INPUT_PATH)
+    catalog_items = fetch_catalog_items(GAME_CATALOG_PATH)
     rss_items = fetch_rss_items(FEEDS)
     google_items = fetch_google_news_items(SEARCH_QUERIES)
-    items = manual_items + rss_items + google_items
+    items = manual_items + catalog_items + rss_items + google_items
     selected_items = prepare_information_pool(items)
 
     print("Candidate diagnostics:")
-    print(f"  collected: manual={len(manual_items)}, rss={len(rss_items)}, google_news={len(google_items)}")
+    print(f"  collected: manual={len(manual_items)}, catalog={len(catalog_items)}, rss={len(rss_items)}, google_news={len(google_items)}")
     print(f"  raw by section: {dict(Counter(item.get('domain', 'unknown') for item in items))}")
     print(f"  selected for Gemini: {len(selected_items)}/{MAX_ITEMS_FOR_GEMINI}")
     print(f"  selected by section: {dict(Counter(item.get('domain', 'unknown') for item in selected_items))}")

@@ -9,11 +9,13 @@ PREVIEW_OUTPUT_PATH = BASE_DIR / "output" / "preview" / "index.html"
 PREVIEW_DATA_PATH = BASE_DIR / "output" / "preview" / "data.json"
 
 MAX_ITEMS_FOR_GEMINI = 80
+EVENT_HORIZON_DAYS = 180
 RSS_ITEMS_PER_FEED = 12
 GOOGLE_NEWS_ITEMS_PER_QUERY = 6
 SECTION_ORDER = ["platform", "ai", "sports", "retail"]
-# Publication windows widen to 30 days; articles may announce future 30/90-day events.
-SEARCH_WINDOWS_DAYS = [7, 14, 30]
+# Search recent updates first, then recover older announcements whose event is
+# still relevant to the rolling six-month opportunity pipeline.
+SEARCH_WINDOWS_DAYS = [14, 30, 90, 180]
 MIN_SECTION_CANDIDATES = {"platform": 5, "ai": 5, "sports": 4, "retail": 4}
 MAX_SECTION_CANDIDATES = {"platform": 16, "ai": 16, "sports": 14, "retail": 12}
 

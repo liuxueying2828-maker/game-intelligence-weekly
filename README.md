@@ -8,7 +8,7 @@ The MVP source layer uses separate Chinese and English Google News editions, a p
 
 ## Intelligence Scope
 
-The dashboard is a China-game overseas opportunity radar. Purely overseas titles and general global-industry news are excluded. It contains four sections:
+The dashboard is a rolling six-month China-game overseas opportunity radar. Purely overseas titles and general global-industry news are excluded. Confirmed future milestones remain visible until they happen, even when the original announcement is older than the current week. It contains four sections:
 
 1. **国内游戏产品动态 / China Game Pipeline**
    - Chinese-developed titles at reveal, license, reservation, testing, launch, or domestic release stages.
@@ -28,7 +28,8 @@ Platforms are tags rather than top-level sections: `PC`, `Mobile`, `Console`, `M
 - China and overseas milestones must be recorded separately.
 - First reveal, license approval, exhibition appearance, test, open beta, and official launch are different event types.
 - A quarter, year, or approximate window must remain approximate; the system must not invent a precise date.
-- The radar covers announcements published in the last 30 days and may include confirmed events in the coming 30/90 days.
+- Search expands from recent updates to announcements published in the last 180 days and tracks relevant events in the coming 180 days.
+- Curated pipeline records remain visible as `持续关注`; new dates, regions, or status changes are marked `本周新增/更新`.
 - Overseas opportunity is classified as High, Medium, Low, No current signal, or Insufficient evidence, with the supporting evidence shown.
 - Verified manual inputs in `manual_sources/daily_input.md` take priority over automatic sources.
 
