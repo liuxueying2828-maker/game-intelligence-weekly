@@ -59,6 +59,7 @@ def normalize_dashboard_data(data):
 
 
 def _ensure_identity_format(data):
+    missing_prefix = "[未找到厂商-未找到中文名-English name not found]"
     for section_key in SECTION_ALIASES:
         for card in data.get(section_key, []):
             if not isinstance(card, dict):
@@ -66,7 +67,13 @@ def _ensure_identity_format(data):
             key = "title" if section_key == "ai_technology" else "name"
             value = str(card.get(key) or "").strip()
             if not value.startswith("["):
-                card[key] = f"[未找到厂商-未找到中文名-English name not found] {value}".strip()
+                # Models occasionally follow the requested identity fields but
+                # omit only the square brackets. Preserve that useful identity
+                # instead of incorrectly labeling every field as missing.
+                if value.count("-") >= 2:
+                    card[key] = f"[{value}]"
+                else:
+                    card[key] = f"{missing_prefix} {value}".strip()
             if section_key == "ai_technology":
                 card["name"] = card[key]
     return data
