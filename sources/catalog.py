@@ -33,15 +33,17 @@ def fetch_catalog_items(path):
             f"Last verified: {last_verified}. Treat as ongoing monitoring, not a new announcement."
         )
 
-        items.append(make_item(
+        domestic_item = make_item(
             source="Curated Game Pipeline",
-            title=f"{title} [Domestic Pipeline]",
+            title=f"[{company}-{entry.get('title_cn') or '未找到中文名'}-{entry.get('title_en') or 'English name not found'}] Domestic Pipeline",
             summary=base_summary,
             domain="platform",
             origin_type="catalog",
             priority=3,
             search_window_days=180,
-        ))
+        )
+        domestic_item.update(_identity_fields(entry, company))
+        items.append(domestic_item)
 
         overseas_lower = overseas_status.lower()
         if any(term in overseas_lower for term in ("未公布", "暂无", "no date", "not announced")) and any(
@@ -58,15 +60,17 @@ def fetch_catalog_items(path):
         else:
             continue
 
-        items.append(make_item(
+        overseas_item = make_item(
             source="Curated Game Pipeline",
-            title=f"{title} [{suffix}]",
+            title=f"[{company}-{entry.get('title_cn') or '未找到中文名'}-{entry.get('title_en') or 'English name not found'}] {suffix}",
             summary=base_summary,
             domain=domain,
             origin_type="catalog",
             priority=3,
             search_window_days=180,
-        ))
+        )
+        overseas_item.update(_identity_fields(entry, company))
+        items.append(overseas_item)
     return items
 
 
@@ -74,3 +78,14 @@ def _display_title(entry):
     title_cn = entry.get("title_cn") or "未命名产品"
     title_en = entry.get("title_en") or "English name not announced"
     return f"{title_cn} / {title_en}"
+
+
+def _identity_fields(entry, company):
+    return {
+        "identity": f"[{company}-{entry.get('title_cn') or '未找到中文名'}-{entry.get('title_en') or 'English name not found'}]",
+        "company_cn": company,
+        "company_en": "",
+        "game_cn": entry.get("title_cn") or "",
+        "game_en": entry.get("title_en") or "",
+        "name_match_status": "matched" if entry.get("title_en") else "english_name_missing",
+    }

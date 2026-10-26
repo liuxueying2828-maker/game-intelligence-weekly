@@ -1,1 +1,1 @@
-"""Gemini intelligence analysis modules."""
+"""Game intelligence analysis modules."""

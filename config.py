@@ -8,7 +8,7 @@ HTML_OUTPUT_PATH = BASE_DIR / "output" / "index.html"
 PREVIEW_OUTPUT_PATH = BASE_DIR / "output" / "preview" / "index.html"
 PREVIEW_DATA_PATH = BASE_DIR / "output" / "preview" / "data.json"
 
-MAX_ITEMS_FOR_GEMINI = 80
+MAX_ITEMS_FOR_ANALYSIS = 120
 EVENT_HORIZON_DAYS = 180
 RSS_ITEMS_PER_FEED = 12
 GOOGLE_NEWS_ITEMS_PER_QUERY = 6
@@ -45,6 +45,9 @@ PRIORITY_COMPANIES = [
 ]
 
 GAME_CATALOG_PATH = BASE_DIR / "data" / "game_catalog.json"
+KEYWORD_LIBRARY_PATH = BASE_DIR / "data" / "keyword_library.json"
+OPENAI_MODEL = "gpt-6.1-sol"
+OPENAI_WEB_SEARCH_MAX_ITEMS_PER_TASK = 18
 
 CHINA_RELEVANCE_KEYWORDS = [
     "china", "chinese game", "china-developed", "中国", "国产游戏", "中国游戏", "国服",

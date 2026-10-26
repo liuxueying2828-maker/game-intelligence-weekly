@@ -1,0 +1,69 @@
+{
+  "version": 1,
+  "description": "Game Intelligence Weekly bilingual discovery library. Maintain this file before changing search prompts.",
+  "event_keywords": {
+    "release_and_testing": {
+      "zh": ["首曝", "首次曝光", "官宣", "预约", "预注册", "首测", "技术测试", "封测", "删档测试", "不删档测试", "公开测试", "公测", "OB", "定档", "正式上线", "全平台上线", "发售", "抢先体验", "试玩", "Demo"],
+      "en": ["first reveal", "world premiere", "announcement", "pre-registration", "pre-register", "first test", "technical test", "closed beta", "CBT", "open beta", "OBT", "public beta", "release date", "official launch", "global launch", "early access", "playtest", "demo"]
+    },
+    "major_updates": {
+      "zh": ["大版本更新", "重大更新", "周年版本", "周年庆", "资料片", "新赛季", "版本前瞻", "内容更新", "全球同步版本", "联动版本"],
+      "en": ["major update", "version update", "anniversary update", "expansion", "new season", "version preview", "content update", "global simultaneous update", "collaboration update"]
+    },
+    "overseas_launch": {
+      "zh": ["海外上线", "全球上线", "国际服", "全球预约", "海外预约", "海外测试", "海外封测", "海外公测", "欧美服", "北美服", "欧洲服", "日服", "韩服", "东南亚服", "港澳台服", "海外发行"],
+      "en": ["overseas launch", "global release", "worldwide launch", "global pre-registration", "global beta", "overseas beta", "North America release", "Europe release", "Japan release", "Korea release", "Southeast Asia release", "international publishing"]
+    },
+    "early_overseas_signals": {
+      "zh": ["英文名", "英文官网", "海外官网", "海外商店页", "海外社媒", "海外账号", "Discord", "YouTube", "本地化招聘", "海外发行招聘", "海外代理", "发行合作", "海外商标", "地区评级", "海外展会", "参展", "首爆", "首曝", "实机演示"],
+      "en": ["English title", "global website", "official website", "Steam page", "Epic Games Store", "PlayStation Store", "Xbox Store", "App Store pre-order", "Google Play pre-register", "official Discord", "official YouTube", "localization hiring", "publishing partner", "regional rating", "trademark", "gamescom", "GDC", "Tokyo Game Show", "G-STAR", "first gameplay"]
+    },
+    "marketing_and_partnerships": {
+      "zh": ["海外营销", "海外投放", "买量", "预注册营销", "品牌联名", "IP联动", "游戏联动", "跨界合作", "达人营销", "创作者计划", "海外社区", "发行营销", "广告素材", "品牌合作"],
+      "en": ["overseas marketing", "global campaign", "user acquisition", "media buying", "pre-registration campaign", "brand partnership", "brand collaboration", "crossover", "IP collaboration", "influencer campaign", "creator program", "community campaign", "launch campaign"]
+    }
+  },
+  "priority_companies": [
+    {"name_cn": "腾讯游戏", "name_en": "Tencent Games", "aliases": ["腾讯", "Tencent", "Level Infinite", "光子工作室群", "魔方工作室群", "北极光工作室群"]},
+    {"name_cn": "网易游戏", "name_en": "NetEase Games", "aliases": ["网易", "NetEase", "Exptional Global"]},
+    {"name_cn": "米哈游", "name_en": "HoYoverse", "aliases": ["miHoYo", "米哈游网络", "HoYoverse"]},
+    {"name_cn": "莉莉丝游戏", "name_en": "Lilith Games", "aliases": ["莉莉丝", "Farlight Games"]},
+    {"name_cn": "叠纸游戏", "name_en": "Papergames", "aliases": ["叠纸", "Infold Games"]},
+    {"name_cn": "库洛游戏", "name_en": "Kuro Games", "aliases": ["库洛", "KURO GAMES"]},
+    {"name_cn": "鹰角网络", "name_en": "Hypergryph", "aliases": ["鹰角", "GRYPHLINE"]},
+    {"name_cn": "蛮啾网络", "name_en": "Manjuu Network", "aliases": ["蛮啾", "Manjuu"]},
+    {"name_cn": "灵犀互娱", "name_en": "Lingxi Games", "aliases": ["灵犀", "Lingxi Interactive"]},
+    {"name_cn": "雷霆游戏", "name_en": "Leiting Games", "aliases": ["雷霆", "吉比特", "G-Bits"]},
+    {"name_cn": "西山居", "name_en": "Seasun Games", "aliases": ["金山世游", "Seasun"]},
+    {"name_cn": "朝夕光年", "name_en": "Nuverse", "aliases": ["Nuverse", "字节跳动游戏"]},
+    {"name_cn": "完美世界游戏", "name_en": "Perfect World Games", "aliases": ["完美世界", "Perfect World"]},
+    {"name_cn": "沐瞳科技", "name_en": "MOONTON Games", "aliases": ["沐瞳", "MOONTON"]},
+    {"name_cn": "三七互娱", "name_en": "37GAMES", "aliases": ["三七游戏", "37Games"]},
+    {"name_cn": "世纪华通", "name_en": "Century Huatong", "aliases": ["盛趣游戏", "Shengqu Games"]}
+  ],
+  "tracked_games": [
+    {"company": "蛮啾网络 / Manjuu Network", "title_cn": "蓝色星原：旅谣", "title_en": "Azur Promilia", "aliases": ["蓝色星原", "Azur Promilia"]},
+    {"company": "雷霆游戏 / Leiting Games", "title_cn": "问剑长生", "title_en": "Sword of Immortality", "aliases": ["问剑长生", "Sword of Immortality"]},
+    {"company": "腾讯游戏 / Tencent Games", "title_cn": "洛克王国：世界", "title_en": "Roco Kingdom", "aliases": ["洛克王国世界", "Roco Kingdom"]},
+    {"company": "腾讯游戏 / Tencent Games", "title_cn": "饥困荒野", "title_en": "Don't Starve: Newhome", "aliases": ["饥困荒野", "Don't Starve Newhome"]},
+    {"company": "雷霆游戏 / Leiting Games", "title_cn": "杖剑传说", "title_en": "Sword x Staff", "aliases": ["杖剑传说", "Sword x Staff"]},
+    {"company": "腾讯游戏 / Tencent Games", "title_cn": "湮灭之潮", "title_en": "Tides of Annihilation", "aliases": ["湮灭之潮", "Tides of Annihilation"]},
+    {"company": "腾讯游戏 / Tencent Games", "title_cn": "人间异想计划", "title_en": "Ordinary Oddness", "aliases": ["人间异想计划", "Ordinary Oddness"]},
+    {"company": "米哈游 / HoYoverse", "title_cn": "源初之结", "title_en": "Nodusfall", "aliases": ["源初之结", "Nodusfall"]},
+    {"company": "朝夕光年 / Nuverse", "title_cn": "零境·入侵", "title_en": "SlashZero", "aliases": ["零境入侵", "SlashZero"]}
+  ],
+  "source_priorities": {
+    "official": ["游戏官方网站与新闻页", "厂商官方网站与新闻页", "Steam", "Epic Games Store", "PlayStation Blog/Store", "Xbox Wire/Store", "Nintendo", "App Store", "Google Play", "官方微博、微信公众号、Bilibili、TapTap、好游快爆", "官方 YouTube、X、Facebook、Discord"],
+    "china_industry": ["国家新闻出版署", "游戏工委", "GameLook", "游戏葡萄", "竞核", "触乐", "手游那点事", "17173", "游民星空", "机核", "新浪游戏", "腾讯游戏频道", "网易游戏频道"],
+    "global_industry": ["GamesIndustry.biz", "Game Developer", "PocketGamer.biz", "MobileGamer.biz", "Gematsu", "IGN", "GamesBeat", "VentureBeat", "Eurogamer", "VGC"],
+    "trade_events": ["ChinaJoy", "核聚变", "WePlay", "TapTap 游戏发布会", "腾讯游戏发布会", "网易游戏 520", "Bilibili 高能电玩节", "gamescom", "GDC", "Tokyo Game Show", "G-STAR", "The Game Awards"]
+  },
+  "search_rules": {
+    "lookback_days": 180,
+    "forward_days": 180,
+    "china_relevance_required": true,
+    "ob_context_note": "OB only means open beta/open testing when a game title or game company is present.",
+    "english_name_policy": "Use only an official or reliably sourced English title. Never translate one. Mark English name not found when absent or unmatched.",
+    "required_identity_format": "[游戏厂商-游戏中文名-English Name]"
+  }
+}

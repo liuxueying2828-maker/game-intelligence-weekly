@@ -2,9 +2,9 @@
 
 An automated release, globalization, and marketing intelligence radar for BluefocusAI_Madhouse_Game Brand.
 
-GitHub Actions → RSS and Google News → Manual Editorial Inputs → Gemini Analysis → HTML Dashboard → GitHub Pages and Email
+GitHub Actions → Bilingual Keyword Library → OpenAI Web Search + RSS + Google News + Manual Inputs → OpenAI Structured Analysis → HTML Dashboard → GitHub Pages and Email
 
-The MVP source layer uses separate Chinese and English Google News editions, a priority-company watch list, direct industry/official RSS feeds, and a maintained bilingual game-name catalog in `data/game_catalog.json`.
+The discovery layer searches the open web through the OpenAI Responses API, while direct RSS feeds and separate Chinese/English Google News editions remain supplementary sources. Search vocabulary, priority companies, tracked games, trade events, and source families are maintained in `data/keyword_library.json`.
 
 ## Intelligence Scope
 
@@ -23,8 +23,8 @@ Platforms are tags rather than top-level sections: `PC`, `Mobile`, `Console`, `M
 
 ## Editorial Rules
 
-- Chinese and official English game names are shown together as `中文名 / English Name`.
-- If no official English name exists, use `English name not announced`; never invent a translation.
+- Every item is identified as `[游戏厂商-游戏中文名-English Name]`.
+- Missing identities are shown explicitly as `未找到厂商`, `未找到中文名`, or `English name not found`; English names are never invented or translated.
 - China and overseas milestones must be recorded separately.
 - First reveal, license approval, exhibition appearance, test, open beta, and official launch are different event types.
 - A quarter, year, or approximate window must remain approximate; the system must not invent a precise date.
@@ -46,11 +46,12 @@ See [`manual_sources/examples.md`](manual_sources/examples.md) for the editorial
 ├── sources/
 ├── intelligence/
 │   ├── prompt.py
-│   └── gemini.py
+│   └── openai_intelligence.py
 ├── manual_sources/
 │   ├── daily_input.md
 │   └── examples.md
 ├── data/
+│   ├── keyword_library.json
 │   └── game_catalog.json
 └── output/
     ├── preview/
@@ -62,7 +63,7 @@ See [`manual_sources/examples.md`](manual_sources/examples.md) for the editorial
 
 ## GitHub Secrets
 
-- `GEMINI_API_KEY`
+- `OPENAI_API_KEY`
 - `EMAIL_TO`
 - `EMAIL_API_KEY`
 - `EMAIL_FROM` (optional; use a verified sender when available)
@@ -71,10 +72,12 @@ Real keys must only be stored as GitHub Secrets or in a local ignored `.env` fil
 
 ## Maintaining Coverage
 
-- Add or tune event searches, priority companies, feeds, and filtering rules in `config.py`.
+- Maintain bilingual event terms (`OB`, first reveal, tests, launches, major updates, collaborations), priority companies, tracked games, event names, and source families in `data/keyword_library.json`.
+- `sources/keyword_library.py` converts that library into four Chinese/English web-search tasks; `sources/openai_web.py` performs general web discovery and source extraction.
+- RSS and Google News queries in `config.py` are supplementary coverage and fallback inputs, not the only information pool.
 - Maintain official Chinese/English names and known regional milestones in `data/game_catalog.json`.
 - Add verified one-off intelligence to `manual_sources/daily_input.md`.
-- Each workflow run prints candidate diagnostics by source, section, and search language before Gemini is called.
+- Each workflow run prints OpenAI web-search and candidate diagnostics by source, section, and search language before final analysis.
 
 ## Running the Workflow
 
@@ -82,7 +85,7 @@ The `Game Intelligence Weekly` GitHub Actions workflow supports:
 
 - `preview`: collect news, generate a draft, email it, commit `output/preview`, and deploy Pages.
 - `publish`: promote a reviewed report to the official archive and deploy Pages.
-- `deploy_only`: deploy the current checked-in preview without calling Gemini or sending email.
+- `deploy_only`: deploy the current checked-in preview without calling OpenAI or sending email.
 
 Preview URL:
 
@@ -96,7 +99,8 @@ GitHub Pages must use `Settings → Pages → Source → GitHub Actions`.
 
 ```bash
 pip install -r requirements.txt
-export GEMINI_API_KEY="your-gemini-api-key"
+export OPENAI_API_KEY="your-openai-api-key"
+export OPENAI_MODEL="gpt-6.1-sol"
 export EMAIL_TO="xueying.liu@bluefocus.cn"
 export EMAIL_API_KEY="your-email-api-key"
 export EMAIL_FROM="Game Intelligence Weekly <your-verified-sender@example.com>"

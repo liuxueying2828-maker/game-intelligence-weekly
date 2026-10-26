@@ -1,13 +1,8 @@
-import os
 import json
 import re
 from urllib.parse import urlparse
 
 from config import MIN_SECTION_CANDIDATES, SECTION_ORDER
-from intelligence.prompt import build_dashboard_prompt
-
-
-GEMINI_MODEL = "gemini-2.5-flash"
 
 
 SECTION_ALIASES = {
@@ -32,42 +27,6 @@ FORBIDDEN_OUTPUT_REPLACEMENTS = (
     (_DIRECT_TO_CONSUMER_ABBR + "策略", "数字商业能力"),
     (_DIRECT_TO_CONSUMER_ABBR, "数字商业"),
 )
-
-
-def generate_dashboard_data(items):
-    try:
-        from google import genai
-    except ImportError as exc:
-        raise RuntimeError(
-            "Missing google-genai package. Run: python3 -m pip install -r requirements.txt"
-        ) from exc
-
-    api_key = os.getenv("GEMINI_API_KEY")
-    if not api_key:
-        raise RuntimeError("Missing GEMINI_API_KEY environment variable.")
-
-    prompt = build_dashboard_prompt(items)
-    client = genai.Client(api_key=api_key)
-    try:
-        response = client.models.generate_content(
-            model=GEMINI_MODEL,
-            contents=prompt,
-            config={
-                "response_mime_type": "application/json",
-                "max_output_tokens": 16384,
-            },
-        )
-    except Exception as exc:
-        return build_source_fallback(
-            items,
-            f"Gemini request failed; rendered source-based fallback content. Error: {exc}",
-        )
-
-    raw_text = response.text.strip()
-    parsed = parse_dashboard_json(raw_text)
-    if parsed.get("parse_warning"):
-        parsed = ensure_minimum_dashboard_signals(parsed, items)
-    return parsed
 
 
 def parse_dashboard_json(raw_text):
@@ -96,7 +55,21 @@ def normalize_dashboard_data(data):
     }
     if data.get("parse_warning"):
         normalized["parse_warning"] = data["parse_warning"]
-    return _sanitize_dashboard_terms(normalized)
+    return _ensure_identity_format(_sanitize_dashboard_terms(normalized))
+
+
+def _ensure_identity_format(data):
+    for section_key in SECTION_ALIASES:
+        for card in data.get(section_key, []):
+            if not isinstance(card, dict):
+                continue
+            key = "title" if section_key == "ai_technology" else "name"
+            value = str(card.get(key) or "").strip()
+            if not value.startswith("["):
+                card[key] = f"[未找到厂商-未找到中文名-English name not found] {value}".strip()
+            if section_key == "ai_technology":
+                card["name"] = card[key]
+    return data
 
 
 def _first_section(data, canonical_key):
@@ -184,19 +157,19 @@ def _normalize_ai_cards(items):
 def build_dashboard_fallback(raw_text):
     return {
         "date": "",
-        "headline": "Gemini 返回内容未能解析为标准 JSON",
+        "headline": "AI 返回内容未能解析为标准 JSON",
         "platform_intelligence": [],
         "ai_technology": [],
         "sports_outdoor": [],
         "retail_innovation": [],
-        "one_thing_worth_watching": "Gemini 返回内容未能解析为标准 JSON，已按 empty 结果处理。",
-        "parse_warning": "Gemini JSON parse failed; rendered source-based fallback content.",
+        "one_thing_worth_watching": "AI 返回内容未能解析为标准 JSON，已按 empty 结果处理。",
+        "parse_warning": "AI JSON parse failed; rendered source-based fallback content.",
     }
 
 
 def build_source_fallback(source_items, warning):
     data = build_dashboard_fallback("")
-    data["headline"] = "Gemini 暂时不可用，已基于真实候选来源生成临时预览"
+    data["headline"] = "AI 暂时不可用，已基于真实候选来源生成临时预览"
     data["one_thing_worth_watching"] = data["headline"]
     data["parse_warning"] = warning
     return ensure_minimum_dashboard_signals(data, source_items)
@@ -244,7 +217,7 @@ def _sanitize_dashboard_terms(value):
 def _filter_reliable_cards(cards):
     # Google News discovery URLs redirect to the publisher article and are kept
     # for the MVP. Dropping them previously removed nearly every search result
-    # after Gemini had already selected it.
+    # after the analysis model had already selected it.
     return cards
 
 
@@ -286,6 +259,8 @@ def _canonical_section_key(domain):
 
 def _fallback_card_from_item(domain, item):
     title = item.get("title") or "Signal"
+    if not title.startswith("["):
+        title = f"{item.get('identity') or '[未找到厂商-未找到中文名-English name not found]'} {title}"
     raw_summary = item.get("summary") or title
     summary = _clean_text(raw_summary)
     link = item.get("link") or ""

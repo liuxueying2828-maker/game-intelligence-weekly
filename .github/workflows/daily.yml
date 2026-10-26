@@ -50,7 +50,8 @@ jobs:
       - name: Run script
         if: ${{ inputs.report_mode != 'deploy_only' }}
         env:
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_MODEL: gpt-6.1-sol
           EMAIL_TO: ${{ secrets.EMAIL_TO }}
           EMAIL_API_KEY: ${{ secrets.EMAIL_API_KEY }}
           EMAIL_FROM: ${{ secrets.EMAIL_FROM }}
