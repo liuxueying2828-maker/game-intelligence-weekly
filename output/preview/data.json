@@ -1,49 +1,23 @@
 {
   "date": "2026-10-26",
-  "headline": "全球游戏巨头动态：文化勋章、数据泄露与新作挑战",
+  "headline": "游戏巨头AI与跨界布局，全球平台战略调整",
   "platform_intelligence": [],
   "ai_technology": [],
   "sports_outdoor": [
     {
-      "name": "Nintendo",
+      "name": "卡普空 (Capcom)",
       "news": "",
       "summary_points": [
-        "任天堂传奇游戏设计师宫本茂将获得日本文化勋章，成为首位获此殊荣的游戏开发者。",
-        "此举表彰了宫本茂在游戏设计领域的杰出成就，以及他对全球游戏文化的深远影响。",
-        "标志着游戏作为一种文化形式在日本社会获得了更高层面的认可与尊重。",
-        "对全球游戏行业的社会地位和文化价值提升具有重要的象征意义。"
-      ],
-      "why_this_matters": "",
-      "trend": "Trend",
-      "link": "https://www.gamesindustry.biz/nintendo-veteran-shigeru-miyamoto-to-receive-japans-order-of-culture-award"
-    },
-    {
-      "name": "Capcom",
-      "news": "",
-      "summary_points": [
-        "卡普空（Capcom）遭遇数据泄露事件，超过1170万Capcom ID账户信息受损。",
-        "此次泄露可能涉及用户个人数据，对玩家的信任和公司声誉构成严重打击。",
-        "事件凸显了大型游戏公司在用户数据安全方面面临的巨大挑战和风险。",
-        "要求游戏开发商和发行商必须持续加强网络安全防护，保障玩家信息安全。"
+        "卡普空（Capcom）遭遇数据泄露事件，超过1170万个Capcom ID账户受到影响。",
+        "数据泄露可能包含用户个人信息，对玩家的隐私安全构成威胁。",
+        "事件对卡普空的用户信任和品牌声誉造成打击，可能面临监管审查和用户索赔。",
+        "提醒所有游戏公司，数据安全是游戏运营的关键环节，需持续加强防护措施。"
       ],
       "why_this_matters": "",
       "trend": "Trend",
       "link": "https://www.gamesindustry.biz/capcom-affected-by-data-breach-over-117m-capcom-id-accounts-compromised"
-    },
-    {
-      "name": "Activision Blizzard",
-      "news": "",
-      "summary_points": [
-        "动视暴雪的《使命召唤：现代战争4》背负巨大压力，前作《黑色行动7》口碑和销量均不理想。",
-        "第三方数据显示，《黑色行动7》的市场表现显著低于系列过往作品，未能达到预期。",
-        "《现代战争4》的成败将直接影响动视暴雪的年度营收及《使命召唤》品牌的未来走势。",
-        "揭示了头部游戏系列在保持创新、吸引玩家和应对市场变化方面的挑战。"
-      ],
-      "why_this_matters": "",
-      "trend": "Trend",
-      "link": "https://www.gamesindustry.biz/call-of-duty-modern-warfare-4-critical-consensus"
     }
   ],
   "retail_innovation": [],
-  "one_thing_worth_watching": "游戏产业文化地位提升，但头部厂商面临产品与数据安全双重挑战"
+  "one_thing_worth_watching": "头部游戏公司AI应用与跨界布局，及全球平台策略调整趋势"
 }
