@@ -117,7 +117,7 @@ def build_empty_dashboard_data():
 def build_dashboard_notification(data, page_url):
     headline = data.get("headline") or data.get("one_thing_worth_watching") or "今日信号已更新"
     return (
-        "Digital Commerce Intelligence 已更新\n"
+        "Game Intelligence Weekly 已更新\n"
         f"今日重点：{headline}\n"
         f"查看完整页面：{page_url}"
     )

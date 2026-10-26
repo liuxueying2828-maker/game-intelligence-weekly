@@ -53,26 +53,26 @@ def safe_cards(value):
 SECTIONS = [
     {
         "key": "platform_intelligence",
-        "title": "国内电商平台",
-        "subtitle": "Platform Intelligence",
+        "title": "中国游戏市场",
+        "subtitle": "China Games",
         "tone": "blue",
     },
     {
         "key": "ai_technology",
-        "title": "AI 能力与行业影响",
-        "subtitle": "AI Capabilities & Industry Impact",
+        "title": "AI × 游戏",
+        "subtitle": "AI in Games",
         "tone": "violet",
     },
     {
         "key": "sports_outdoor",
-        "title": "体育与户外行业",
-        "subtitle": "Sports & Outdoor",
+        "title": "全球游戏公司与产品",
+        "subtitle": "Global Games & Studios",
         "tone": "orange",
     },
     {
         "key": "retail_innovation",
-        "title": "传统零售创新",
-        "subtitle": "Retail Innovation",
+        "title": "游戏商业与用户生态",
+        "subtitle": "Game Business & Ecosystem",
         "tone": "green",
     },
 ]
@@ -388,8 +388,8 @@ def build_dashboard_html(data, archive_href="./archive/"):
   <main class="page">
     <section class="topbar">
       <div>
-        <p class="eyebrow">Digital Commerce Intelligence Hub</p>
-        <h1>Weekly Industry Intelligence</h1>
+        <p class="eyebrow">Game Intelligence Weekly</p>
+        <h1>AI Game Industry Intelligence</h1>
       </div>
       <div class="header-actions">
         <div class="date">{safe_escape(report_date_label)}</div>

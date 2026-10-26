@@ -8,14 +8,14 @@ from utils.date_utils import report_date_parts
 
 
 RESEND_API_URL = "https://api.resend.com/emails"
-DEFAULT_EMAIL_FROM = "Digital Commerce Intelligence <onboarding@resend.dev>"
+DEFAULT_EMAIL_FROM = "Game Intelligence Weekly <onboarding@resend.dev>"
 
 
 SECTIONS = [
-    ("Platform Intelligence", "platform_intelligence", "standard"),
-    ("AI Capability", "ai_technology", "ai"),
-    ("Sports & Outdoor", "sports_outdoor", "standard"),
-    ("Retail Innovation", "retail_innovation", "standard"),
+    ("China Games", "platform_intelligence", "standard"),
+    ("AI in Games", "ai_technology", "ai"),
+    ("Global Games & Studios", "sports_outdoor", "standard"),
+    ("Game Business & Ecosystem", "retail_innovation", "standard"),
 ]
 
 
