@@ -1,8 +1,12 @@
 from datetime import datetime
+import json
+
+from config import GAME_CATALOG_PATH
 
 
 def build_dashboard_prompt(items):
     information_pool = _format_information_pool(items)
+    game_catalog = _format_game_catalog()
     return f"""
 你是 BluefocusAI_Madhouse_Game Brand 的游戏发行与营销情报分析师。
 
@@ -41,6 +45,7 @@ retail / 厂商、平台与 AI 动向 / Companies, Platforms & AI
 - 普通攻略、剧情讨论、抽卡、折扣、礼包码、未证实爆料和纯玩家传闻排除。
 - 同一游戏的多个日期节点在同一张卡片中并列；同一事件的多家媒体报道去重。
 - 某栏目没有可靠信息时返回 []，不凑数。
+- Game Name Reference Catalog 仅用于名称消歧和中英文名匹配。目录中的旧日期不能覆盖候选新闻中的新事实；如发生冲突，保留候选来源说法并提示需要复核。
 
 每条 summary_points 使用固定顺序，缺少的字段写“未公布”：
 1. “厂商：...｜平台：...｜事件：...”
@@ -64,7 +69,30 @@ JSON schema：
 
 Sectioned Candidate Pool:
 {information_pool}
+
+Game Name Reference Catalog:
+{game_catalog}
 """.strip()
+
+
+def _format_game_catalog():
+    try:
+        entries = json.loads(GAME_CATALOG_PATH.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return "No reference catalog available."
+
+    return "\n".join(
+        " | ".join([
+            f"CN: {entry.get('title_cn', '')}",
+            f"EN: {entry.get('title_en', '')}",
+            f"Aliases: {', '.join(entry.get('aliases', []))}",
+            f"Company: {entry.get('company', '')}",
+            f"Platforms: {', '.join(entry.get('platforms', []))}",
+            f"China reference: {entry.get('china_status', '')}",
+            f"Overseas reference: {entry.get('overseas_status', '')}",
+        ])
+        for entry in entries
+    )
 
 
 def _format_information_pool(items):

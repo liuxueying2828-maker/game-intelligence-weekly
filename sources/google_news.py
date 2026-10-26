@@ -1,3 +1,4 @@
+import re
 from urllib.parse import quote_plus
 
 import feedparser
@@ -5,6 +6,7 @@ import feedparser
 from config import (
     EXPANDED_SEARCH_QUERIES,
     FILTER_PROFILES,
+    GOOGLE_NEWS_EDITIONS,
     GOOGLE_NEWS_ITEMS_PER_QUERY,
     MAX_SECTION_CANDIDATES,
     MIN_SECTION_CANDIDATES,
@@ -13,9 +15,8 @@ from config import (
 from sources.common import make_item, parse_date, score_section_item, should_keep_section_item
 
 
-GOOGLE_NEWS_RSS_URL = (
-    "https://news.google.com/rss/search?q={query}&hl=en-US&gl=US&ceid=US:en"
-)
+GOOGLE_NEWS_RSS_URL = "https://news.google.com/rss/search?q={query}&hl={hl}&gl={gl}&ceid={ceid}"
+CHINESE_TEXT_RE = re.compile(r"[\u3400-\u9fff]")
 
 
 def fetch_google_news_items(search_queries):
@@ -92,7 +93,8 @@ def _collect_window_items(
             return
 
         windowed_query = f"{query} when:{window_days}d"
-        url = GOOGLE_NEWS_RSS_URL.format(query=quote_plus(windowed_query))
+        edition = GOOGLE_NEWS_EDITIONS["zh" if CHINESE_TEXT_RE.search(query) else "en"]
+        url = GOOGLE_NEWS_RSS_URL.format(query=quote_plus(windowed_query), **edition)
         parsed_feed = feedparser.parse(url)
 
         for entry in parsed_feed.entries[:GOOGLE_NEWS_ITEMS_PER_QUERY]:
@@ -171,6 +173,7 @@ def _make_google_news_item(entry, query, section, window_days, score, priority, 
         search_window_days=window_days,
     )
     item["relevance_score"] = score
+    item["search_language"] = "zh" if CHINESE_TEXT_RE.search(query) else "en"
     if fallback:
         item["fallback_reason"] = "highest_scored_recent_candidate"
     return item

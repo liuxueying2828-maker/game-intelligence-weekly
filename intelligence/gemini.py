@@ -212,8 +212,6 @@ def ensure_minimum_dashboard_signals(data, source_items):
                 break
             if item.get("link") in used_links:
                 continue
-            if _is_google_news_redirect(item.get("link")):
-                continue
             cards.append(_fallback_card_from_item(domain, item))
             if item.get("link"):
                 used_links.add(item.get("link"))
@@ -237,11 +235,10 @@ def _sanitize_dashboard_terms(value):
 
 
 def _filter_reliable_cards(cards):
-    return [
-        card
-        for card in cards
-        if not (isinstance(card, dict) and _is_google_news_redirect(card.get("link")))
-    ]
+    # Google News discovery URLs redirect to the publisher article and are kept
+    # for the MVP. Dropping them previously removed nearly every search result
+    # after Gemini had already selected it.
+    return cards
 
 
 def _is_google_news_redirect(link):

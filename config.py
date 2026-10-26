@@ -8,7 +8,7 @@ HTML_OUTPUT_PATH = BASE_DIR / "output" / "index.html"
 PREVIEW_OUTPUT_PATH = BASE_DIR / "output" / "preview" / "index.html"
 PREVIEW_DATA_PATH = BASE_DIR / "output" / "preview" / "data.json"
 
-MAX_ITEMS_FOR_GEMINI = 40
+MAX_ITEMS_FOR_GEMINI = 80
 RSS_ITEMS_PER_FEED = 12
 GOOGLE_NEWS_ITEMS_PER_QUERY = 6
 SECTION_ORDER = ["platform", "ai", "sports", "retail"]
@@ -21,7 +21,28 @@ FEEDS = [
     {"source": "GamesIndustry.biz", "url": "https://www.gamesindustry.biz/feed", "domain": "retail"},
     {"source": "Game Developer", "url": "https://www.gamedeveloper.com/rss.xml", "domain": "retail"},
     {"source": "PocketGamer.biz", "url": "https://www.pocketgamer.biz/rss/", "domain": "platform"},
+    {"source": "Gematsu", "url": "https://www.gematsu.com/feed", "domain": "platform"},
+    {"source": "Video Games Chronicle", "url": "https://www.videogameschronicle.com/feed/", "domain": "platform"},
+    {"source": "PlayStation Blog", "url": "https://blog.playstation.com/feed/", "domain": "platform"},
+    {"source": "Xbox Wire", "url": "https://news.xbox.com/en-us/feed/", "domain": "platform"},
+    {"source": "MobileGamer.biz", "url": "https://mobilegamer.biz/feed/", "domain": "retail"},
 ]
+
+# Google News uses separate editions so Chinese queries are not ranked through
+# the US English index. Query language is selected automatically by script.
+GOOGLE_NEWS_EDITIONS = {
+    "en": {"hl": "en-US", "gl": "US", "ceid": "US:en"},
+    "zh": {"hl": "zh-CN", "gl": "CN", "ceid": "CN:zh-Hans"},
+}
+
+PRIORITY_COMPANIES = [
+    "腾讯游戏", "网易游戏", "米哈游", "莉莉丝", "叠纸游戏", "库洛游戏", "鹰角网络",
+    "蛮啾网络", "灵犀互娱", "雷霆游戏", "西山居", "朝夕光年",
+    "Tencent Games", "NetEase Games", "HoYoverse", "Lilith Games", "Papergames",
+    "Kuro Games", "Hypergryph", "Manjuu Network", "Seasun Games",
+]
+
+GAME_CATALOG_PATH = BASE_DIR / "data" / "game_catalog.json"
 
 SEARCH_QUERIES = {
     # Release & Test Calendar
@@ -63,6 +84,31 @@ SEARCH_QUERIES = {
         "AI NPC 游戏测试 本地化", "游戏公司 AI 工作流",
     ],
 }
+
+# Add focused watch-list searches without maintaining dozens of near-identical
+# strings by hand. Groups keep Google News query length and workflow time sane.
+_priority_platform_queries = []
+_priority_global_queries = []
+for _company_group in [PRIORITY_COMPANIES[index:index + 4] for index in range(0, len(PRIORITY_COMPANIES), 4)]:
+    _companies = " OR ".join(f'"{company}"' for company in _company_group)
+    _priority_platform_queries.append(
+        f"({_companies}) release launch beta playtest 公测 封测 上线 定档"
+    )
+    _priority_global_queries.append(
+        f"({_companies}) global overseas localization 海外 出海 全球预约"
+    )
+
+_event_platform_queries = [
+    'game "release date" OR "launches on" OR "open beta" OR "closed beta"',
+    '游戏 定档 OR 公测 OR 封测 OR 三测 OR 预约开启 OR 全平台上线',
+    'Steam "coming soon" demo playtest early access release',
+]
+SEARCH_QUERIES["platform"] = _priority_platform_queries + _event_platform_queries + SEARCH_QUERIES["platform"]
+SEARCH_QUERIES["ai"] = _priority_global_queries + SEARCH_QUERIES["ai"]
+SEARCH_QUERIES["sports"] = [
+    '游戏 联名 OR 联动 OR 品牌合作 OR 快闪店 OR 主题店',
+    'game collaboration OR crossover OR branded experience OR pop-up',
+] + SEARCH_QUERIES["sports"]
 
 EXPANDED_SEARCH_QUERIES = {
     "platform": ["upcoming games release beta calendar", "新游 测试 上线 日期"],

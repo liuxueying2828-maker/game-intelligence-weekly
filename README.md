@@ -4,6 +4,8 @@ An automated release, globalization, and marketing intelligence radar for Bluefo
 
 GitHub Actions → RSS and Google News → Manual Editorial Inputs → Gemini Analysis → HTML Dashboard → GitHub Pages and Email
 
+The MVP source layer uses separate Chinese and English Google News editions, a priority-company watch list, direct industry/official RSS feeds, and a maintained bilingual game-name catalog in `data/game_catalog.json`.
+
 ## Intelligence Scope
 
 The weekly dashboard contains four sections:
@@ -47,6 +49,8 @@ See [`manual_sources/examples.md`](manual_sources/examples.md) for the editorial
 ├── manual_sources/
 │   ├── daily_input.md
 │   └── examples.md
+├── data/
+│   └── game_catalog.json
 └── output/
     ├── preview/
     ├── archive/
@@ -63,6 +67,13 @@ See [`manual_sources/examples.md`](manual_sources/examples.md) for the editorial
 - `EMAIL_FROM` (optional; use a verified sender when available)
 
 Real keys must only be stored as GitHub Secrets or in a local ignored `.env` file. Never commit them.
+
+## Maintaining Coverage
+
+- Add or tune event searches, priority companies, feeds, and filtering rules in `config.py`.
+- Maintain official Chinese/English names and known regional milestones in `data/game_catalog.json`.
+- Add verified one-off intelligence to `manual_sources/daily_input.md`.
+- Each workflow run prints candidate diagnostics by source, section, and search language before Gemini is called.
 
 ## Running the Workflow
 

@@ -1,3 +1,4 @@
+from collections import Counter
 from datetime import datetime
 import json
 import os
@@ -22,11 +23,19 @@ def collect_information_pool():
     from sources.manual import fetch_manual_items
     from sources.rss import fetch_rss_items
 
-    items = []
-    items.extend(fetch_manual_items(MANUAL_INPUT_PATH))
-    items.extend(fetch_rss_items(FEEDS))
-    items.extend(fetch_google_news_items(SEARCH_QUERIES))
-    return prepare_information_pool(items)
+    manual_items = fetch_manual_items(MANUAL_INPUT_PATH)
+    rss_items = fetch_rss_items(FEEDS)
+    google_items = fetch_google_news_items(SEARCH_QUERIES)
+    items = manual_items + rss_items + google_items
+    selected_items = prepare_information_pool(items)
+
+    print("Candidate diagnostics:")
+    print(f"  collected: manual={len(manual_items)}, rss={len(rss_items)}, google_news={len(google_items)}")
+    print(f"  raw by section: {dict(Counter(item.get('domain', 'unknown') for item in items))}")
+    print(f"  selected for Gemini: {len(selected_items)}/{MAX_ITEMS_FOR_GEMINI}")
+    print(f"  selected by section: {dict(Counter(item.get('domain', 'unknown') for item in selected_items))}")
+    print(f"  selected by language: {dict(Counter(item.get('search_language', 'direct') for item in selected_items))}")
+    return selected_items
 
 
 def prepare_information_pool(items, limit=MAX_ITEMS_FOR_GEMINI):
@@ -97,7 +106,7 @@ def build_empty_message():
     return (
         f"{PROJECT_NAME}\n"
         f"Date: {today}\n\n"
-        "本期信息源未返回可用于分析的数字商业 / 电商情报。"
+        "本期信息源未返回可用于分析的游戏行业情报。"
     )
 
 

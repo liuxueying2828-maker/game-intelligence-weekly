@@ -1,0 +1,83 @@
+[
+  {
+    "title_cn": "蓝色星原：旅谣",
+    "title_en": "Azur Promilia",
+    "aliases": ["蓝色星原", "Azur Promilia"],
+    "company": "蛮啾网络 / Manjuu Network",
+    "platforms": ["PC", "Mobile"],
+    "china_status": "国服预计 2026-11-26 上线",
+    "overseas_status": "英文区预计 2027 年夏季公测"
+  },
+  {
+    "title_cn": "问剑长生",
+    "title_en": "Sword of Immortality",
+    "aliases": ["问剑长生", "Sword of Immortality"],
+    "company": "雷霆游戏",
+    "platforms": ["Mobile"],
+    "china_status": "未录入",
+    "overseas_status": "预计 Q4 欧美服上线"
+  },
+  {
+    "title_cn": "洛克王国：世界",
+    "title_en": "Roco Kingdom",
+    "aliases": ["洛克王国世界", "Roco Kingdom"],
+    "company": "腾讯游戏 / Tencent Games",
+    "platforms": ["Multi-platform"],
+    "china_status": "未录入",
+    "overseas_status": "预计 10-27 海外封测"
+  },
+  {
+    "title_cn": "饥困荒野",
+    "title_en": "Don't Starve: Newhome",
+    "aliases": ["饥困荒野", "Don't Starve Newhome"],
+    "company": "腾讯游戏 / Tencent Games",
+    "platforms": ["Mobile"],
+    "china_status": "预计 11-24 国服上线",
+    "overseas_status": "已有海外社媒账号，未公布海外上线时间"
+  },
+  {
+    "title_cn": "杖剑传说",
+    "title_en": "Sword x Staff",
+    "aliases": ["杖剑传说", "Sword x Staff"],
+    "company": "雷霆游戏",
+    "platforms": ["Mobile"],
+    "china_status": "未录入",
+    "overseas_status": "预计 Q4 韩国、东南亚上线"
+  },
+  {
+    "title_cn": "湮灭之潮",
+    "title_en": "Tides of Annihilation",
+    "aliases": ["湮灭之潮", "Tides of Annihilation"],
+    "company": "腾讯游戏 / Tencent Games",
+    "platforms": ["PC", "Console"],
+    "china_status": "已公开参展信息",
+    "overseas_status": "已有完整海外社媒矩阵"
+  },
+  {
+    "title_cn": "人间异想计划",
+    "title_en": "Ordinary Oddness",
+    "aliases": ["人间异想计划", "Ordinary Oddness"],
+    "company": "腾讯游戏 / Tencent Games",
+    "platforms": ["PC"],
+    "china_status": "已首曝",
+    "overseas_status": "全球预约开启，已有完整海外社媒矩阵"
+  },
+  {
+    "title_cn": "源初之结",
+    "title_en": "Nodusfall",
+    "aliases": ["源初之结", "Nodusfall"],
+    "company": "米哈游 / HoYoverse",
+    "platforms": ["PC"],
+    "china_status": "已获批版号",
+    "overseas_status": "已有海外社媒矩阵，未公布海外上线时间"
+  },
+  {
+    "title_cn": "零境·入侵",
+    "title_en": "SlashZero",
+    "aliases": ["零境入侵", "SlashZero"],
+    "company": "朝夕光年",
+    "platforms": ["PC"],
+    "china_status": "已公开参展信息",
+    "overseas_status": "已有海外社媒矩阵"
+  }
+]
