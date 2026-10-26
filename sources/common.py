@@ -110,12 +110,16 @@ def score_section_item(title, summary, profile):
     require_score = keyword_match_count(text, profile.get("require_any", []))
     override_score = keyword_match_count(text, profile.get("override_any", []))
     exclude_score = keyword_match_count(text, profile.get("exclude_any", []))
+    required_groups = profile.get("required_groups", [])
+    group_score = sum(1 for group in required_groups if text_contains_any(text, group))
 
-    score = include_score * 3 + require_score * 4 + override_score * 5 - exclude_score * 6
+    score = include_score * 3 + require_score * 4 + override_score * 5 + group_score * 6 - exclude_score * 6
     if include_score == 0 and profile.get("include_any"):
         score -= 5
     if require_score == 0 and profile.get("require_any"):
         score -= 4
+    if required_groups and group_score < len(required_groups):
+        score -= 12 * (len(required_groups) - group_score)
     return score
 
 
@@ -126,6 +130,7 @@ def should_keep_section_item(title, summary, profile):
     exclude_any = profile.get("exclude_any", [])
     hard_exclude_any = profile.get("hard_exclude_any", [])
     override_any = profile.get("override_any", [])
+    required_groups = profile.get("required_groups", [])
 
     if hard_exclude_any and text_contains_any(text, hard_exclude_any):
         return False
@@ -133,6 +138,8 @@ def should_keep_section_item(title, summary, profile):
     if include_any and not text_contains_any(text, include_any):
         return False
     if require_any and not text_contains_any(text, require_any):
+        return False
+    if any(not text_contains_any(text, group) for group in required_groups):
         return False
 
     has_override = text_contains_any(text, override_any)

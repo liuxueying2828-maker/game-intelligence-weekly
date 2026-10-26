@@ -53,26 +53,26 @@ def safe_cards(value):
 SECTIONS = [
     {
         "key": "platform_intelligence",
-        "title": "新游上线与测试日历",
-        "subtitle": "Release & Test Calendar",
+        "title": "国内游戏产品动态",
+        "subtitle": "China Game Pipeline",
         "tone": "blue",
     },
     {
         "key": "ai_technology",
-        "title": "出海与区域发行机会",
-        "subtitle": "Global Launch Opportunities",
+        "title": "海外发行确定节点",
+        "subtitle": "Confirmed Overseas Launches",
         "tone": "violet",
     },
     {
         "key": "sports_outdoor",
-        "title": "游戏营销、联名与 IP 合作",
-        "subtitle": "Marketing & Collaborations",
+        "title": "海外发行前置信号",
+        "subtitle": "Early Overseas Signals",
         "tone": "orange",
     },
     {
         "key": "retail_innovation",
-        "title": "厂商、平台与 AI 动向",
-        "subtitle": "Companies, Platforms & AI",
+        "title": "海外营销与广告机会",
+        "subtitle": "Overseas Marketing Opportunities",
         "tone": "green",
     },
 ]

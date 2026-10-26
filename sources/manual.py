@@ -182,10 +182,12 @@ def _parse_manual_date(value):
 
 def _infer_domain(category, company, content):
     text = f"{category} {company} {content}".lower()
-    if any(word in text for word in ["global launch", "overseas", "international", "localization", "north america", "europe", "japan", "korea", "southeast asia", "出海", "海外", "全球预约", "欧美服", "日服", "韩服", "东南亚", "本地化"]):
-        return "ai"
-    if any(word in text for word in ["marketing", "collaboration", "crossover", "brand partnership", "pop-up", "activation", "营销", "联名", "联动", "品牌合作", "快闪", "ip 合作"]):
+    if any(word in text for word in ["marketing", "campaign", "user acquisition", "media buying", "creator", "influencer", "营销", "投放", "买量", "达人", "创作者", "联名", "联动"]):
+        return "retail"
+    if any(word in text for word in ["english website", "global website", "social media", "discord", "localization", "publishing partner", "rating", "trademark", "英文官网", "海外官网", "海外社媒", "海外账号", "本地化", "海外代理", "海外招聘", "地区评级", "商标"]):
         return "sports"
+    if any(word in text for word in ["global launch", "overseas launch", "global release", "global pre-registration", "overseas beta", "north america", "europe", "japan", "korea", "southeast asia", "海外上线", "海外发行", "全球上线", "全球预约", "海外封测", "海外公测", "欧美服", "日服", "韩服", "东南亚"]):
+        return "ai"
     if any(word in text for word in ["release calendar", "release", "launch", "beta", "playtest", "demo", "pre-registration", "上线", "公测", "封测", "测试", "预约", "版号", "发售", "首曝"]):
         return "platform"
-    return "retail"
+    return "platform"

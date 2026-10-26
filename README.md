@@ -8,16 +8,16 @@ The MVP source layer uses separate Chinese and English Google News editions, a p
 
 ## Intelligence Scope
 
-The weekly dashboard contains four sections:
+The dashboard is a China-game overseas opportunity radar. Purely overseas titles and general global-industry news are excluded. It contains four sections:
 
-1. **新游上线与测试日历 / Release & Test Calendar**
-   - First reveal, pre-registration, license approval, playtest, closed beta, open beta, demo, public launch, official release, exhibition demo, and new platform releases.
-2. **出海与区域发行机会 / Global Launch Opportunities**
-   - Separate China and overseas schedules, global pre-registration, overseas tests, localization, regional publishing, official English presence, and overseas social signals.
-3. **游戏营销、联名与 IP 合作 / Marketing & Collaborations**
-   - Brand partnerships, IP crossovers, co-created content, pop-ups, retail activations, entertainment collaborations, and platform campaigns.
-4. **厂商、平台与 AI 动向 / Companies, Platforms & AI**
-   - Publisher and studio strategy, platform policy, investment and acquisition, and AI in game production, localization, testing, NPCs, and player operations.
+1. **国内游戏产品动态 / China Game Pipeline**
+   - Chinese-developed titles at reveal, license, reservation, testing, launch, or domestic release stages.
+2. **海外发行确定节点 / Confirmed Overseas Launches**
+   - Confirmed overseas registration, tests, launch windows, dates, and region-by-region releases.
+3. **海外发行前置信号 / Early Overseas Signals**
+   - English sites, overseas stores/social accounts, localization hiring, publishing partners, ratings, trademarks, and overseas exhibitions.
+4. **海外营销与广告机会 / Overseas Marketing Opportunities**
+   - Overseas user acquisition, launch campaigns, creators, communities, media buying, brand/IP collaborations, and regional growth opportunities.
 
 Platforms are tags rather than top-level sections: `PC`, `Mobile`, `Console`, `Multi-platform`, `Mini Game`, `Cloud Gaming`, and `Unknown`.
 
