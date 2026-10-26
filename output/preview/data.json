@@ -1,48 +1,76 @@
 {
   "date": "2026-10-26",
-  "headline": "本周国产游戏海外发行与营销机会聚焦",
+  "headline": "国产游戏海外发行与营销周报",
   "platform_intelligence": [
-    {
-      "name": "Immortal Legacy / Immortal Legacy",
-      "news": "",
-      "summary_points": [
-        "国内厂商：未公布｜平台：PC｜事件：正式上线",
-        "国内节点：2026-10-14 Steam China 正式上线",
-        "海外计划：海外计划未公布",
-        "潜在目标区域：暂无",
-        "客户机会：暂无"
-      ],
-      "why_this_matters": "",
-      "trend": "Trend",
-      "link": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE4xa1U0Z1RqNkxqRmNvSS1WeWFGS09XdDFuNEJmZk16M1NuNFM2SkEwNWViR3d6YXRPa1M3di1vVjg4ZC01V0NwcWtIbw?oc=5"
-    },
     {
       "name": "蓝色星原：旅谣 / Azur Promilia",
       "news": "",
       "summary_points": [
-        "国内厂商：蛮啾网络｜平台：PC, Mobile｜事件：国服定档及预约突破2500万",
-        "国内节点：2026-10-23 官宣定档 (国服将于 2026-11-26 上线)",
-        "海外计划：英文区预计 2027 年夏季公测 (根据参考目录); 日本、韩国、港澳台地区将于 2026-11-26 上线 (根据海外新闻)",
-        "潜在目标区域：全球",
-        "客户机会：海外发行前期准备"
+        "状态：本周新增/更新｜国内厂商：蛮啾网络 / Manjuu Network｜平台：PC, Mobile",
+        "国内节点：国服预计 2026-11-26 上线",
+        "海外计划：2026-11-26 在日本、韩国、港澳台上线；英文区预计 2027 年夏季公测",
+        "潜在目标区域：日本、韩国、港澳台、英文区",
+        "客户机会：上线前的宣发、上线后的买量投放、社区运营等"
       ],
       "why_this_matters": "",
       "trend": "Trend",
-      "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE5WdmVZVjJrRnMxT05HVy1TRFhSUFJVdjZHZE5BblhEM0ZUT1I2LUFuMFhpc215TmxWa0FIZk4zZVFKQTBHZlJqSnJRV0Vvdk02c1h2Si1nekFzYThWVHpybzc3Mng?oc=5"
+      "link": "https://www.gematsu.com/2026/10/azur-promilia-launches-november-26-in-japan-south-korea-taiwan-and-china"
     },
     {
-      "name": "天天爱冲锋 / English name not announced",
+      "name": "洛克王国：世界 / Roco Kingdom",
       "news": "",
       "summary_points": [
-        "国内厂商：广州快狼网络｜平台：Unknown｜事件：获批版号",
-        "国内节点：2026-09-30 获批版号",
-        "海外计划：海外计划未公布",
-        "潜在目标区域：暂无",
-        "客户机会：暂无"
+        "状态：持续关注｜国内厂商：腾讯游戏 / Tencent Games｜平台：Multi-platform",
+        "国内节点：未录入",
+        "海外计划：预计 2026-10-27 海外封测",
+        "潜在目标区域：未公布",
+        "客户机会：封测阶段的用户获取与测试反馈收集、社区构建"
       ],
       "why_this_matters": "",
       "trend": "Trend",
-      "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPam1IT1VtSkp0M2FEUmQtZGJ2TERYQ1E3YldxZndjcW9CbV9OWnF5MUJsWlZoaHJzdnlpcko4VXFJaHNmVUd5bU9aeUFmT3k3SWdIbzFnMmxpdUZwVDRLS2FvcUVxR3lCaDZ4cGlpakpqV01MNXFld2lKazJKRS1EZElfaDBjNUJGdTZiUk9R?oc=5"
+      "link": ""
+    },
+    {
+      "name": "饥困荒野 / Don't Starve: Newhome",
+      "news": "",
+      "summary_points": [
+        "状态：持续关注｜国内厂商：腾讯游戏 / Tencent Games｜平台：Mobile",
+        "国内节点：预计 2026-11-24 国服上线",
+        "海外计划：已有海外社媒账号，海外计划未公布",
+        "潜在目标区域：未公布",
+        "客户机会：国服上线后积累经验，为未来海外发行做市场预热"
+      ],
+      "why_this_matters": "",
+      "trend": "Trend",
+      "link": ""
+    },
+    {
+      "name": "问剑长生 / Sword of Immortality",
+      "news": "",
+      "summary_points": [
+        "状态：持续关注｜国内厂商：雷霆游戏｜平台：Mobile",
+        "国内节点：未录入",
+        "海外计划：预计 Q4 欧美服上线",
+        "潜在目标区域：欧美",
+        "客户机会：欧美市场上线前的预热营销、发行合作机会"
+      ],
+      "why_this_matters": "",
+      "trend": "Trend",
+      "link": ""
+    },
+    {
+      "name": "杖剑传说 / Sword x Staff",
+      "news": "",
+      "summary_points": [
+        "状态：持续关注｜国内厂商：雷霆游戏｜平台：Mobile",
+        "国内节点：未录入",
+        "海外计划：预计 Q4 韩国、东南亚上线",
+        "潜在目标区域：韩国、东南亚",
+        "客户机会：韩国、东南亚市场上线前的用户获取与品牌建设"
+      ],
+      "why_this_matters": "",
+      "trend": "Trend",
+      "link": ""
     }
   ],
   "ai_technology": [
@@ -51,33 +79,206 @@
       "title": "蓝色星原：旅谣 / Azur Promilia",
       "capability": "",
       "summary_points": [
-        "国内厂商：蛮啾网络｜平台：PC, Mobile",
-        "海外节点：2026-11-26 日本、韩国、港澳台地区上线｜重点区域：日本、韩国、港澳台",
-        "国内节点：2026-11-26 国服上线",
-        "需求判断：高（依据：多区域明确上线日期，且即将到来）",
-        "建议介入时间：上线前四周内"
+        "状态：本周新增/更新｜国内厂商：蛮啾网络 / Manjuu Network｜平台：PC, Mobile",
+        "海外节点：2026-11-26 在日本、韩国、港澳台上线；英文区预计 2027 年夏季公测｜重点区域：日本、韩国、港澳台、英文区",
+        "国内节点：国服预计 2026-11-26 上线",
+        "需求判断：高（依据：海外明确上线日期，多区域同步，高营销投入预期）",
+        "建议介入时间：即刻至上线前｜距离节点：约 31 天"
       ],
       "industry_impact": "",
       "trend": "AI 能力",
-      "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxONjR4UDlsVjJCQ2ZZa0Q5cDVWNmQzd3JMTEM3NHp5cU5KLXNfdw00MTNfdlwtS2dpX2lNeW5PSVRXbUswUV9iTjFMcWJoX2o0OF9xVVoyMVhIUDJzdTZPNDRNYW40VjAyMTRaZ1hMeUlMdjJsOThHYzU5TmZDNVF6d2ZUaDBXbHNNb1ZoOXB4SG9hMXdONkVRd1FYVEdZeDdTNk9WLTZoT0FySQ?oc=5"
+      "link": "https://www.gematsu.com/2026/10/azur-promilia-launches-november-26-in-japan-south-korea-taiwan-and-china"
     },
     {
-      "name": "WonderPaws / WonderPaws",
-      "title": "WonderPaws / WonderPaws",
+      "name": "洛克王国：世界 / Roco Kingdom",
+      "title": "洛克王国：世界 / Roco Kingdom",
       "capability": "",
       "summary_points": [
-        "国内厂商：莉莉丝游戏 (Lilith Games)｜平台：Multi-platform",
-        "海外节点：全球预注册开启｜重点区域：全球",
-        "国内节点：未公布",
-        "需求判断：高（依据：知名厂商全球预注册，有明确广告需求）",
-        "建议介入时间：预注册期内"
+        "状态：持续关注｜国内厂商：腾讯游戏 / Tencent Games｜平台：Multi-platform",
+        "海外节点：预计 2026-10-27 海外封测｜重点区域：未公布",
+        "国内节点：未录入",
+        "需求判断：中（依据：临近海外封测，用户获取和测试阶段营销需求）",
+        "建议介入时间：即刻｜距离节点：约 1 天"
       ],
       "industry_impact": "",
       "trend": "AI 能力",
-      "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQd3BlNXQ0R0NfU3laR1hiM3V6OHo1bnFzV1NIVWZPVHZQMEw1Z0ZQTWg1WVM4MUNzN21XZ1I4dThWS1hkRENEZm9kLVUyU3BNclFuOFlWZGRYVjlhemtkZFl4X2FHU0NGbElTMmVEeVNOYUJhd0kzMGM5RUN6eTlBbHl5NWg1MC0tX054MFZTazlndEl0N3FsTUhLTDhqUGpaUzg0Y1RDNl9pa1hhZ3pwMW91bFlYdHZTNEh4eWUwWGF5WEdjNmc?oc=5"
+      "link": ""
+    },
+    {
+      "name": "问剑长生 / Sword of Immortality",
+      "title": "问剑长生 / Sword of Immortality",
+      "capability": "",
+      "summary_points": [
+        "状态：持续关注｜国内厂商：雷霆游戏｜平台：Mobile",
+        "海外节点：预计 Q4 欧美服上线｜重点区域：欧美",
+        "国内节点：未录入",
+        "需求判断：高（依据：明确的海外上线季度和目标区域）",
+        "建议介入时间：Q4 之前｜距离节点：约 65 天"
+      ],
+      "industry_impact": "",
+      "trend": "AI 能力",
+      "link": ""
+    },
+    {
+      "name": "杖剑传说 / Sword x Staff",
+      "title": "杖剑传说 / Sword x Staff",
+      "capability": "",
+      "summary_points": [
+        "状态：持续关注｜国内厂商：雷霆游戏｜平台：Mobile",
+        "海外节点：预计 Q4 韩国、东南亚上线｜重点区域：韩国、东南亚",
+        "国内节点：未录入",
+        "需求判断：高（依据：明确的海外上线季度和目标区域）",
+        "建议介入时间：Q4 之前｜距离节点：约 65 天"
+      ],
+      "industry_impact": "",
+      "trend": "AI 能力",
+      "link": ""
+    },
+    {
+      "name": "WonderPaws",
+      "title": "WonderPaws",
+      "capability": "",
+      "summary_points": [
+        "状态：本周新增/更新｜国内厂商：莉莉丝游戏 / Lilith Games｜平台：Multi-platform",
+        "海外节点：全球预约开启｜重点区域：全球",
+        "国内节点：未公布",
+        "需求判断：高（依据：全球范围预注册开启，需要大量用户获取和品牌宣传）",
+        "建议介入时间：即刻｜距离节点：预注册已开始"
+      ],
+      "industry_impact": "",
+      "trend": "AI 能力",
+      "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQd3BlNXQ0R0NfU3laR1hiM3V6OHo1bnFzV1NIVWZPVHZQMEw1Z0ZQTWg1WVM4MUNzN21XZ1I4dThWS1hkRENEZm9kLVUyU3BNclFuOFlWZGRYVjlhemtkZFl4X2FHU0NGbElTMmVEeVNOYUJhd0kzMGM5RUN6eTlBbHl5NWg1MC0tX054MFZTazlndEl0N3FsTUhKTDhqUGpaUzg0Y1RDNl9pa1hhZ1pwMW91bFlYdHZTNEh4eWUwWGF5WEdjNmc?oc=5"
     }
   ],
-  "sports_outdoor": [],
-  "retail_innovation": [],
-  "one_thing_worth_watching": "蓝色星原：旅谣 (Azur Promilia) 日本、韩国、港澳台地区 2026-11-26 上线"
+  "sports_outdoor": [
+    {
+      "name": "饥困荒野 / Don't Starve: Newhome",
+      "news": "",
+      "summary_points": [
+        "状态：持续关注｜国内厂商：腾讯游戏 / Tencent Games",
+        "海外证据：已有海外社媒账号 (Facebook, YouTube, Discord等)",
+        "可能区域：全球（尤其英文区）",
+        "当前确定性：中",
+        "建议跟进动作：持续关注海外社媒动态及招聘信息，评估潜在市场进入时间"
+      ],
+      "why_this_matters": "",
+      "trend": "Trend",
+      "link": ""
+    },
+    {
+      "name": "湮灭之潮 / Tides of Annihilation",
+      "news": "",
+      "summary_points": [
+        "状态：持续关注｜国内厂商：腾讯游戏 / Tencent Games",
+        "海外证据：已有完整海外社媒矩阵 (YouTube, X, Discord, Facebook等)",
+        "可能区域：全球（尤其英文区）",
+        "当前确定性：高",
+        "建议跟进动作：关注海外市场预热活动和内容发布，准备初期用户获取策略"
+      ],
+      "why_this_matters": "",
+      "trend": "Trend",
+      "link": ""
+    },
+    {
+      "name": "源初之结 / Nodusfall",
+      "news": "",
+      "summary_points": [
+        "状态：持续关注｜国内厂商：米哈游 / HoYoverse",
+        "海外证据：已有海外社媒矩阵 (YouTube, X, Discord, Facebook等)",
+        "可能区域：全球",
+        "当前确定性：高",
+        "建议跟进动作：密切关注米哈游的海外发布节奏，评估其主要目标市场和营销策略"
+      ],
+      "why_this_matters": "",
+      "trend": "Trend",
+      "link": ""
+    },
+    {
+      "name": "零境·入侵 / SlashZero",
+      "news": "",
+      "summary_points": [
+        "状态：持续关注｜国内厂商：朝夕光年",
+        "海外证据：已有海外社媒矩阵 (YouTube, X, Discord, Facebook等)",
+        "可能区域：全球",
+        "当前确定性：高",
+        "建议跟进动作：关注朝夕光年在海外市场的合作动态，评估潜在的发行商或渠道合作机会"
+      ],
+      "why_this_matters": "",
+      "trend": "Trend",
+      "link": ""
+    }
+  ],
+  "retail_innovation": [
+    {
+      "name": "蓝色星原：旅谣 / Azur Promilia",
+      "news": "",
+      "summary_points": [
+        "状态：本周新增/更新｜国内厂商：蛮啾网络 / Manjuu Network",
+        "目标区域：日本、韩国、港澳台、英文区｜关键日期：2026-11-26 (日本、韩国、港澳台上线)",
+        "渠道/触点：预注册广告、效果买量、品牌广告、KOL/KOC营销、社区运营",
+        "可承接机会：全球范围内的数字营销服务，特别是日韩及港澳台市场的本地化推广与用户获取",
+        "建议介入时间：即刻，围绕上线节点进行密集投放和运营"
+      ],
+      "why_this_matters": "",
+      "trend": "Trend",
+      "link": "https://www.gematsu.com/2026/10/azur-promilia-launches-november-26-in-japan-south-korea-taiwan-and-china"
+    },
+    {
+      "name": "洛克王国：世界 / Roco Kingdom",
+      "news": "",
+      "summary_points": [
+        "状态：持续关注｜国内厂商：腾讯游戏 / Tencent Games",
+        "目标区域：未公布｜关键日期：2026-10-27 (海外封测)",
+        "渠道/触点：社媒运营、测试用户招募广告、社区活跃度激励",
+        "可承接机会：海外封测的用户招募与社区管理，为后续大规模发行积累用户数据和市场反馈",
+        "建议介入时间：即刻，支持封测活动"
+      ],
+      "why_this_matters": "",
+      "trend": "Trend",
+      "link": ""
+    },
+    {
+      "name": "问剑长生 / Sword of Immortality",
+      "news": "",
+      "summary_points": [
+        "状态：持续关注｜国内厂商：雷霆游戏",
+        "目标区域：欧美｜关键日期：预计 Q4 上线",
+        "渠道/触点：品牌预热、用户获取广告、KOL营销、PR合作",
+        "可承接机会：欧美市场预注册活动策划与执行、效果买量、品牌宣传及媒体合作",
+        "建议介入时间：Q4 之前，启动预热营销"
+      ],
+      "why_this_matters": "",
+      "trend": "Trend",
+      "link": ""
+    },
+    {
+      "name": "杖剑传说 / Sword x Staff",
+      "news": "",
+      "summary_points": [
+        "状态：持续关注｜国内厂商：雷霆游戏",
+        "目标区域：韩国、东南亚｜关键日期：预计 Q4 上线",
+        "渠道/触点：本地化营销、买量投放、KOL合作、社区运营",
+        "可承接机会：韩国和东南亚市场的本地化内容制作、用户获取和社媒营销",
+        "建议介入时间：Q4 之前，准备本地化营销方案"
+      ],
+      "why_this_matters": "",
+      "trend": "Trend",
+      "link": ""
+    },
+    {
+      "name": "WonderPaws",
+      "news": "",
+      "summary_points": [
+        "状态：本周新增/更新｜国内厂商：莉莉丝游戏 / Lilith Games",
+        "目标区域：全球｜关键日期：全球预约已开启",
+        "渠道/触点：全球数字营销、效果买量、KOL/KOC营销、社媒运营、品牌合作",
+        "可承接机会：全球范围的用户获取，特别是预注册阶段的广告投放和达人合作",
+        "建议介入时间：即刻，支持全球预注册营销活动"
+      ],
+      "why_this_matters": "",
+      "trend": "Trend",
+      "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQd3BlNXQ0R0NfU3laR1hiM3V6OHo1bnFzV1NIVWZPVHZQMEw1Z0ZQTWg1WVM4MUNzN21XZ1I4dThWS1hkRENEZm9kLVUyU3BNclFuOFlWZGRYVjlhemtkZFl4X2FHU0NGbElTMmVEeVNOYUJhd0kzMGM5RUN6eTlBbHl5NWg1MC0tX054MFZTazlndEl0N3FsTUhKTDhqUGpaUzg0Y1RDNl9pa1hhZ1pwMW91bFlYdHZTNEh4eWUwWGF5WEdjNmc?oc=5"
+    }
+  ],
+  "one_thing_worth_watching": "蓝色星原：旅谣 / Azur Promilia (2026-11-26 日本、韩国、港澳台上线)"
 }
