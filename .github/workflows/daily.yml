@@ -1,0 +1,88 @@
+name: Digital Commerce Intelligence Brief
+
+'on':
+  workflow_dispatch:
+    inputs:
+      report_mode:
+        description: "preview = run AI draft; deploy_only = deploy edited preview only; publish = promote preview to official archive"
+        required: true
+        default: preview
+        type: choice
+        options:
+          - preview
+          - publish
+          - deploy_only
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  push-intelligence-brief:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Validate edited preview
+        if: ${{ inputs.report_mode == 'deploy_only' }}
+        run: |
+          test -f output/preview/index.html
+          test -f output/preview/data.json
+          echo "Deploying the current checked-in preview without running AI, email, or archive publish."
+
+      - name: Run script
+        if: ${{ inputs.report_mode != 'deploy_only' }}
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          EMAIL_TO: ${{ secrets.EMAIL_TO }}
+          EMAIL_API_KEY: ${{ secrets.EMAIL_API_KEY }}
+          EMAIL_FROM: ${{ secrets.EMAIL_FROM }}
+          REPORT_MODE: ${{ inputs.report_mode }}
+          DASHBOARD_BASE_URL: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/
+        run: python main.py
+
+      - name: Commit preview or archive history
+        if: ${{ inputs.report_mode != 'deploy_only' }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if [ "${{ inputs.report_mode }}" = "preview" ]; then
+            git add output/preview
+            COMMIT_MESSAGE="preview: save weekly intelligence preview [skip ci]"
+          else
+            git add output/archive output/data output/preview
+            BRIEF_DATE=$(ls output/data/*.json | sed 's#.*/##; s#\.json$##' | sort | tail -n 1)
+            COMMIT_MESSAGE="archive: publish weekly intelligence for ${BRIEF_DATE} [skip ci]"
+          fi
+          if git diff --cached --quiet; then
+            echo "No generated changes to commit."
+          else
+            git commit -m "$COMMIT_MESSAGE"
+            git push
+          fi
+
+      - name: Upload dashboard artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: output
+
+      - name: Deploy dashboard to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
