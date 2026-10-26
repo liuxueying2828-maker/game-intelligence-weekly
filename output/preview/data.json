@@ -1,6 +1,6 @@
 {
   "date": "",
-  "headline": "Gemini 返回内容未能解析为标准 JSON",
+  "headline": "Gemini 暂时不可用，已基于真实候选来源生成临时预览",
   "platform_intelligence": [
     {
       "name": "Betawatch",
@@ -201,6 +201,6 @@
       "link": "https://news.google.com/rss/articles/CBMieEFVX3lxTE14aThEZ0xtaDJNbzRyRVE2OG5nbUVhLUQ2aGRkVUprTmg2alRyQl83ZHRPN0ljWkY2QWJwTTRkc1BvT1E1RC03elNoNjlJSGRpTDV3YloxeGFDRWxNLVh3akp2bWcwaU5lTURMZ2tCaVBQUzY5aHRTWA?oc=5"
     }
   ],
-  "one_thing_worth_watching": "Gemini 返回内容未能解析为标准 JSON，已按 empty 结果处理。",
-  "parse_warning": "Gemini JSON parse failed; rendered empty fallback content."
+  "one_thing_worth_watching": "Gemini 暂时不可用，已基于真实候选来源生成临时预览",
+  "parse_warning": "Gemini request failed; rendered source-based fallback content. Error: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}"
 }
