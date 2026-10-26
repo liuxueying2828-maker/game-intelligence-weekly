@@ -1,10 +1,206 @@
 {
   "date": "",
   "headline": "Gemini 返回内容未能解析为标准 JSON",
-  "platform_intelligence": [],
-  "ai_technology": [],
-  "sports_outdoor": [],
-  "retail_innovation": [],
+  "platform_intelligence": [
+    {
+      "name": "Betawatch",
+      "news": "Betawatch: ArcheAge Chronicles sets its early access plans and Vampir gets a release date Massively Overpowered",
+      "summary_points": [
+        "Betawatch: ArcheAge Chronicles sets its early access plans and Vampir gets a release date Massively Overpowered"
+      ],
+      "why_this_matters": "",
+      "trend": "近7天;行业情报",
+      "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOR0s5V01XQVpkemxzd2gzVWwxd2VJVW9ONzFYaDVtbXpsdEFoV1FCaUkta1FVdEVRVUNfSXp3ZjZLdF9nYURIN190Z0xScmpuU1dKb2xXVUppRERNSmdjYTBKekNla3ZhTG1fazloSXA2dEFpMlZxbkNpbk1sMExjaFJBLXFjNDBaaENpWDNLZGkwMDVOaTFoWVRyc2h2b2t5Z1pzSEhKY1J3bXZZSDBuRmh0Z3BzeWtuN2VRNGdkQ0NYZw?oc=5"
+    },
+    {
+      "name": "Steam Frame Release Date",
+      "news": "Steam Frame Release Date: Launched September 14, 2026, Reservation Dates vr.org",
+      "summary_points": [
+        "Steam Frame Release Date: Launched September 14, 2026, Reservation Dates vr.",
+        "org"
+      ],
+      "why_this_matters": "",
+      "trend": "近7天;行业情报",
+      "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTFA0Tm5zZ3hsS2szZzlGZHR3MFFnOGR1Q1VDNHlwdWhRanJGX29TajFnRVlNMkw1WHp5dEZmZVZ4TkZQQ0dmUGdKemdMN3I3emk1?oc=5"
+    },
+    {
+      "name": "The Apothecary Diaries",
+      "news": "The Apothecary Diaries: The False Imperial Brother Game Release Date Revealed in New Trailer Crunchyroll",
+      "summary_points": [
+        "The Apothecary Diaries: The False Imperial Brother Game Release Date Revealed in New Trailer Crunchyroll"
+      ],
+      "why_this_matters": "",
+      "trend": "近7天;行业情报",
+      "link": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxQdzFpZ1I5NXFLa0JkNEtCeS0wSU5scU5odnRoUWdaQUNDN2VfakZteW9BZmFiczlsUjM2OG5BVGFYcHVZOEg2RTFwY0Vxc3V0aVV2M3Z1bTVsZHBHZVl5LVRtZW5EUzlUR3BsVHlNQ3cweUpUZ09tV2d6S3ZKTmhOQUl3UHh4UVZGSlNSY0VwdmI2QUVmazhPeURabnhwNk5xYjdKX1FreVM3Smh4XzExT3RkcTY0VnFaNk9ZeV9hNV9oVDNha2x4b0FMb2VKN0Zt?oc=5"
+    },
+    {
+      "name": "Beloved PS2 Action",
+      "news": "Beloved PS2 Action-Adventure Game Gets Release Date Trailer for Next Month PlayStation LifeStyle",
+      "summary_points": [
+        "Beloved PS2 Action-Adventure Game Gets Release Date Trailer for Next Month PlayStation LifeStyle"
+      ],
+      "why_this_matters": "",
+      "trend": "近7天;行业情报",
+      "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPV0FKWGdISWVqRjhNb3F0QkVPTDRucm1FaTFURDdrLXBPY2ZQMWZNZlJ3Yl9uQUs0cDN1ck14Y3VRMU9UQ19IRHRPbFFuYU9XeVpKb3YyZGZMNXNNZll2OVdnM190aElBSXRMdlpiWDJQUnpfRWhuN3VmOGVuSXZLNnFzcU5TRWpLNmtWLUhCbm5iSFpBZXVFblZjWTBBOThQWWV3ZUc3NWd6VFU4Qk82ZUdjU1hLYWlL0gG-AUFVX3lxTE11MklZekg4MWRNb3dfQnZFSGQ5RXZLeDBObTcyVy12RHc2OXNTWkJFckZpcHdqZHdlYzJqMnNuUU9oQTJEbnR6U0x0UGdvQXNycnZfVDZrRDkxRVhmRmgxU1VFVlg1MEpXcnhlQ3RLVE84empiZm1MbjlzWFRzNlktRjluUlJxUnlnOFVGT1pBM0xsVXpTQkg0TkJ0UzlHcXgza2VRVmhsN2YwYjdDbEF3V2ZxMXdVcFJSYWxsalE?oc=5"
+    },
+    {
+      "name": "VR, AR & XR Release Dates 2026",
+      "news": "VR, AR & XR Release Dates 2026: Every Headset, Game, and Accessory Coming Out https://vr.org/",
+      "summary_points": [
+        "VR, AR & XR Release Dates 2026: Every Headset, Game, and Accessory Coming Out https://vr.",
+        "org/"
+      ],
+      "why_this_matters": "",
+      "trend": "近7天;行业情报",
+      "link": "https://news.google.com/rss/articles/CBMiRkFVX3lxTFBQZ0xCelplVmJaNHp4Vk5tTjdPS3VLTHlwLVZYaHh0SHJCNG1GWEF4V0FhNURCMHFkZlg0QmkxeDNPei1pMXc?oc=5"
+    }
+  ],
+  "ai_technology": [
+    {
+      "name": "Villion:Code Launches January 26, 2027 in…",
+      "title": "Villion:Code Launches January 26, 2027 in…",
+      "capability": "Villion:Code Launches January 26, 2027 in North America and Europe KeenGamer",
+      "summary_points": [
+        "Villion:Code Launches January 26, 2027 in North America and Europe KeenGamer"
+      ],
+      "industry_impact": "",
+      "trend": "近7天;行业情报",
+      "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOUzFMWFJqRUJtaWlsMjVPRHFXZE1JLW5fYTd6U3N3d1FySDViSXJORUNwTkJPZUJrVGdPemFsaVRBb20yaFVqNzZ3TWY4SElSWmJ2aEpaV0Y4LUhzRzRHeERHM3RBZU85SVl6VGxobjNhWWpxemlzbjFtQXliT3FHbFJMNTJ2ellvek9KX0FLbktjQ1VqalF4WmZTSU5vb3Y3aEdEYi04Q2g?oc=5"
+    },
+    {
+      "name": "NHN opens global pre-registration for Osh…",
+      "title": "NHN opens global pre-registration for Osh…",
+      "capability": "NHN opens global pre-registration for Oshi no Ko Puzzle Star - CHOSUNBIZ Chosunbiz",
+      "summary_points": [
+        "NHN opens global pre-registration for Oshi no Ko Puzzle Star - CHOSUNBIZ Chosunbiz"
+      ],
+      "industry_impact": "",
+      "trend": "近7天;行业情报",
+      "link": "https://news.google.com/rss/articles/CBMiekFVX3lxTFAtR1I5RHZubTVZVG1FaERGVUpXME50UWNwQXV1RzJIdGdiaEFMX0c2NHBieUNCNGJUUXBYSHdTVDg2QVlyekwwZ3prN19IVGZSTUxQeHp3Z0FRNjB2aHJ4d0lIMGp3cFJVbXRtVkhmTWczVnVrd2JibGln0gGOAUFVX3lxTE1adjhnSkZJRUg5OFphZ1JJT001bjJVX2hqVTJNYnVZVzhyM2NlMDZ0N0JsZl9yanM4UElGTEhqdlNiZ2VESjJnRkU2UEZzZGNwOWtFblpsUEo2aGpHWG1xd1hBWTYwUkhmUThVdnIzdXdWa0swOVJ5TGtOWWNkS2Y4b19zY28zVnZFQnVyZEE?oc=5"
+    },
+    {
+      "name": "NEXUS Presents Korean Expansion Strategy…",
+      "title": "NEXUS Presents Korean Expansion Strategy…",
+      "capability": "NEXUS Presents Korean Expansion Strategy to Chinese Game Developers Inven Global",
+      "summary_points": [
+        "NEXUS Presents Korean Expansion Strategy to Chinese Game Developers Inven Global"
+      ],
+      "industry_impact": "",
+      "trend": "近7天;行业情报",
+      "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxON1A0cVBSbkM0cXk4SVBGRFBIRVBmYWFmQjY3MFJJRTQtN3E0VC0zc3REbWdXQ1RKcHdCVC1hbk1jTGlmcVpDVlUzRHZWdnRtYzBKN2tZTUZITGZxeWJ3TW5FcEh4ZkNTS2VTLTR4Yk5CeG5hVEt1R0RyWlpXVlZyRkE5dW9pRy1EQWdsSWZfM1JCdTRCNExuR3puY0IyUHZ3ZXM4UjF0b05WU3cyb2k0?oc=5"
+    },
+    {
+      "name": "CAPCOM, Japan's leading developer, will p…",
+      "title": "CAPCOM, Japan's leading developer, will p…",
+      "capability": "CAPCOM, Japan's leading developer, will participate in the international game exhibition G-Star 2026. 매일경제",
+      "summary_points": [
+        "CAPCOM, Japan's leading developer, will participate in the international game exhibition G-Star 2026.",
+        "매일경제"
+      ],
+      "industry_impact": "",
+      "trend": "近7天;行业情报",
+      "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE9yM256SGxTS1NNRUJObDVuenp6Y3ZtWk5xOUxrRk81RW9hSldWSFBLUnJRemJVSHFXbU5IeUZtRERIZ3ZxRmhwQ1NlakNVaGs?oc=5"
+    },
+    {
+      "name": "G-Star expands and AGF focuses as Korea g…",
+      "title": "G-Star expands and AGF focuses as Korea g…",
+      "capability": "G-Star expands and AGF focuses as Korea game events diverge 디지털투데이",
+      "summary_points": [
+        "G-Star expands and AGF focuses as Korea game events diverge 디지털투데이"
+      ],
+      "industry_impact": "",
+      "trend": "近7天;行业情报",
+      "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQMFozZEZxMG9HVzhtRDhpbHdOZWg4ZnJQYzlsVzB4MVppc0dhWndEVEpCWFpZdElpa3h6ZlBZdm5iMEJCYVBLbURuOVRtRjZNRXJuakJOaW5JQm5JZV9YR1RBREExSnd4dUkweW13U082VV9tMy1yYVJ2M1k2ZDg3ZksyR1ZXd1dpZ1NrSTBIaHJ6QVM1VUhuaE1KNm9CT1hEb2JLY1FhUGRPSnlmMUd1VzNlekhSVndxZFE?oc=5"
+    }
+  ],
+  "sports_outdoor": [
+    {
+      "name": "宝可梦集换式卡牌游戏联名盲盒滑板售罄！最高炒至1000美元",
+      "news": "宝可梦集换式卡牌游戏联名盲盒滑板售罄！最高炒至1000美元 QQ News",
+      "summary_points": [
+        "宝可梦集换式卡牌游戏联名盲盒滑板售罄！",
+        "最高炒至1000美元 QQ News"
+      ],
+      "why_this_matters": "",
+      "trend": "近7天;行业情报",
+      "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFA1aE55amtEQTJKRXkzT1VJbVdHLWVKdDM2MjVYTTczVUlJSEN0aG1LOXBhZ0RWMkh6TWJIQWtuN2xxMndiaWJwUjJFSEliX2I4OFh0Z3lR?oc=5"
+    },
+    {
+      "name": "Apple, Meta Collaboration Enabl…",
+      "news": "Apple, Meta Collaboration Enables Game-Changing Ad Experience 10/19/2026 MediaPost",
+      "summary_points": [
+        "Apple, Meta Collaboration Enables Game-Changing Ad Experience 10/19/2026 MediaPost"
+      ],
+      "why_this_matters": "",
+      "trend": "近7天;行业情报",
+      "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQMEtsR1B1eFpxR3Eydm5BVkY4Z1NhZXVzV2lnbEVzdUliUVVkTHloeTFPbVdLSWtLdjZrVUFtcWZlU1J0NFM5WE1Pem9oenJyN0NvOElHQzdfeTFUQWRRN3lBeDhFdXRJcHJjN2FOOXdYeXRYZDlIbm5ZaUlWbTBpTlI1bkkxWDhFWFV1dTNIN1J2TzRuVHNpMDlSZXJHTlhYUmdkbXlWblpGMklKRUNaSGFiVXNsUTlSbmdIckVBMVo?oc=5"
+    },
+    {
+      "name": "库迪咖啡联动无畏契约，游戏玩家坐不住了",
+      "news": "库迪咖啡联动无畏契约，游戏玩家坐不住了 4A广告网",
+      "summary_points": [
+        "库迪咖啡联动无畏契约，游戏玩家坐不住了 4A广告网"
+      ],
+      "why_this_matters": "",
+      "trend": "近7天;行业情报",
+      "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE5nLVpOOGcyX0lGN0xIN3ladWhYcU1jcVU4eWpJdHZuUzNVN2J0ZTlpbWJZWG9vTzVoYWk0aUIxeURDakFiWHEwdENBbjFSZXhucDhzOFZTR1dJWWJ5YTc0?oc=5"
+    },
+    {
+      "name": "游戏机硬件之外，还想共建国产游戏内容生态",
+      "news": "游戏机硬件之外，还想共建国产游戏内容生态：飞鸟科技要走的 ' 硬件 + 内容 + 合作方 ' 之路 36Kr",
+      "summary_points": [
+        "游戏机硬件之外，还想共建国产游戏内容生态：飞鸟科技要走的 ' 硬件 + 内容 + 合作方 ' 之路 36Kr"
+      ],
+      "why_this_matters": "",
+      "trend": "近7天;行业情报",
+      "link": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE5HaThpdEw4WFhXUHY5REdNTS1LR01wLTR3NUVzWXl3Tm1RUGFTeVJSYV9OOWtXY3NNekhrV3RfdWtab0d5VHFhSnRWUkthQQ?oc=5"
+    }
+  ],
+  "retail_innovation": [
+    {
+      "name": "The famous game studios EA acqu…",
+      "news": "The famous game studios EA acquired and then shut down qz.com",
+      "summary_points": [
+        "The famous game studios EA acquired and then shut down qz.",
+        "com"
+      ],
+      "why_this_matters": "",
+      "trend": "近7天;行业情报",
+      "link": "https://news.google.com/rss/articles/CBMiXkFVX3lxTFBMQWdFMjR4V1ZKV1k1YTF2dXJVME5VMTVpd0lNM1RfQmtJUHJxX19hQjB6VGstRUZNR005NEdHR1h4d1hQcC1Da19ZRFVtN3RKLU1tbkhRRlpFUk1SSGc?oc=5"
+    },
+    {
+      "name": "Steam vs Epic Games Store",
+      "news": "Steam vs Epic Games Store: 30% vs 12% Cut [2026] shattered.io",
+      "summary_points": [
+        "Steam vs Epic Games Store: 30% vs 12% Cut [2026] shattered.",
+        "io"
+      ],
+      "why_this_matters": "",
+      "trend": "近7天;行业情报",
+      "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFBHb054MEhKZm5wVkZkOEIyS3NzQktibjRXNGdjcjVaMXlMcXBLTWhuWlpyUko0U2RZb016UVg5UkZuWk1fMVVXQkxZb29yYzBDUWNtNnFiZ2ttSlU?oc=5"
+    },
+    {
+      "name": "游戏公司掀起AI投资潮",
+      "news": "游戏公司掀起AI投资潮：上半年投资数量超过去年全年 搜狐网",
+      "summary_points": [
+        "游戏公司掀起AI投资潮：上半年投资数量超过去年全年 搜狐网"
+      ],
+      "why_this_matters": "",
+      "trend": "近7天;行业情报",
+      "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPWnRPclFhWGNYem1qZU16c1Z1VEZubHlVclh2OHNvTkVZZmhsbjdGQWdSSnhfMVE2eUJrd1Q4TWJ5QmJWRXlBVkp6ZXJzeGNsdXdYQ2FveF9Bd0FDVzl1REN3bHJhY05xQ2I4SExtX1hDVEVubDhRRW9Wc3lMNEJmRk9pc3E5ekdUbU9nNA?oc=5"
+    },
+    {
+      "name": "Xbox Studio Reset 2026",
+      "news": "Xbox Studio Reset 2026: 75% Complete, What's Next shattered.io",
+      "summary_points": [
+        "Xbox Studio Reset 2026: 75% Complete, What's Next shattered.",
+        "io"
+      ],
+      "why_this_matters": "",
+      "trend": "近7天;行业情报",
+      "link": "https://news.google.com/rss/articles/CBMieEFVX3lxTE14aThEZ0xtaDJNbzRyRVE2OG5nbUVhLUQ2aGRkVUprTmg2alRyQl83ZHRPN0ljWkY2QWJwTTRkc1BvT1E1RC03elNoNjlJSGRpTDV3YloxeGFDRWxNLVh3akp2bWcwaU5lTURMZ2tCaVBQUzY5aHRTWA?oc=5"
+    }
+  ],
   "one_thing_worth_watching": "Gemini 返回内容未能解析为标准 JSON，已按 empty 结果处理。",
   "parse_warning": "Gemini JSON parse failed; rendered empty fallback content."
 }
