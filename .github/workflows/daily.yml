@@ -38,6 +38,7 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Configure GitHub Pages
+        if: ${{ inputs.report_mode != 'preview' }}
         uses: actions/configure-pages@v5
 
       - name: Validate edited preview
@@ -79,10 +80,12 @@ jobs:
           fi
 
       - name: Upload dashboard artifact
+        if: ${{ inputs.report_mode != 'preview' }}
         uses: actions/upload-pages-artifact@v3
         with:
           path: output
 
       - name: Deploy dashboard to GitHub Pages
+        if: ${{ inputs.report_mode != 'preview' }}
         id: deployment
         uses: actions/deploy-pages@v4
