@@ -46,8 +46,11 @@ PRIORITY_COMPANIES = [
 
 GAME_CATALOG_PATH = BASE_DIR / "data" / "game_catalog.json"
 KEYWORD_LIBRARY_PATH = BASE_DIR / "data" / "keyword_library.json"
-OPENAI_MODEL = "gpt-6.1-sol"
-OPENAI_WEB_SEARCH_MAX_ITEMS_PER_TASK = 18
+GEMINI_MODEL = "gemini-2.5-flash"
+GEMINI_SEARCH_MODEL = "gemini-2.5-flash"
+GEMINI_DEEP_RESEARCH_AGENT = "deep-research-preview-04-2026"
+GEMINI_SEARCH_MAX_ITEMS_PER_TASK = 18
+GEMINI_DEEP_RESEARCH_TIMEOUT_SECONDS = 1200
 
 CHINA_RELEVANCE_KEYWORDS = [
     "china", "chinese game", "china-developed", "中国", "国产游戏", "中国游戏", "国服",

@@ -12,6 +12,14 @@ name: Game Intelligence Weekly
           - preview
           - publish
           - deploy_only
+      research_mode:
+        description: "Google Search only, or add two paid/long-running Deep Research tasks (Chinese + English)"
+        required: true
+        default: google_search
+        type: choice
+        options:
+          - google_search
+          - google_search_and_deep_research
 
 permissions:
   contents: write
@@ -50,8 +58,11 @@ jobs:
       - name: Run script
         if: ${{ inputs.report_mode != 'deploy_only' }}
         env:
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          OPENAI_MODEL: gpt-6.1-sol
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_MODEL: gemini-2.5-flash
+          GEMINI_SEARCH_MODEL: gemini-2.5-flash
+          GEMINI_DEEP_RESEARCH_AGENT: deep-research-preview-04-2026
+          ENABLE_GEMINI_DEEP_RESEARCH: ${{ inputs.research_mode == 'google_search_and_deep_research' }}
           EMAIL_TO: ${{ secrets.EMAIL_TO }}
           EMAIL_API_KEY: ${{ secrets.EMAIL_API_KEY }}
           EMAIL_FROM: ${{ secrets.EMAIL_FROM }}
