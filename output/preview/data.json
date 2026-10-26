@@ -1,24 +1,10 @@
 {
-  "date": "2026-10-26",
-  "headline": "多款新游定档，海外市场策略多元",
-  "platform_intelligence": [
-    {
-      "name": "ONE PIECE: Grand Gourmet / ONE PIECE: Grand Gourmet",
-      "news": "",
-      "summary_points": [
-        "厂商：Unknown｜平台：Mobile｜事件：新游上线",
-        "国内节点：未公布",
-        "海外节点：2026年10月23日上线",
-        "海外信号：暂无｜需求判断：暂无（依据：未公布具体海外信号）",
-        "情报意义：知名动漫IP改编手游上线，关注其内容质量和市场反响，对IP影响力手游的发行有参考价值。"
-      ],
-      "why_this_matters": "",
-      "trend": "Trend",
-      "link": "https://www.pocketgamer.biz/new-release-roundup-house-of-tesla-crushed-in-time-one-piece-grand-gourmet-and-more/"
-    }
-  ],
+  "date": "",
+  "headline": "Gemini 返回内容未能解析为标准 JSON",
+  "platform_intelligence": [],
   "ai_technology": [],
   "sports_outdoor": [],
   "retail_innovation": [],
-  "one_thing_worth_watching": "Villion:Code 于2027年1月26日在北美和欧洲的上线日期，这将是其明确的区域发行策略的重要验证节点。"
+  "one_thing_worth_watching": "Gemini 返回内容未能解析为标准 JSON，已按 empty 结果处理。",
+  "parse_warning": "Gemini JSON parse failed; rendered empty fallback content."
 }
