@@ -1,46 +1,71 @@
-# Manual Game Intelligence Examples
+# Manual Game Intelligence Input Guide
 
-Copy a verified article into `daily_input.md` when it should receive editorial priority.
+将已核实的游戏节点复制到 `daily_input.md`。一款游戏建议作为一条独立记录；同一游戏的国内外节点写在同一条记录中。
 
-## Example 1: China Games
+## 推荐格式
 
-Title: Chinese game publisher announces a verified global launch plan
-Category: China Games
-Company: Publisher name
-Source: Official announcement or reliable industry media
+```text
+Title: 蓝色星原：旅谣 / Azur Promilia
+Category: Release & Global Launch
+Company: 蛮啾网络
+Keywords: Multi-platform | 国服上线 | 英文区公测 | 海外需求
+Source: 官方公告或已核实的行业信息
 Date: YYYY-MM-DD
-Link: https://example.com/original-article
+Link: https://example.com/original-source
 Content:
-- What product or strategic change was announced.
-- Any verified launch timing, market, platform, studio, user or revenue data.
-- Why it matters to China's game industry or game globalization.
+- Platform: Multi-platform
+- China milestone: 11/26 国服上线
+- Overseas milestone: 预计 2027 年夏季英文区公测
+- Priority regions: English-speaking markets
+- Overseas social presence: 已公布的账号或矩阵情况
+- Opportunity assessment: High
+- Evidence: 已公布英文区公测时间
+```
 
 ---
 
-## Example 2: AI in Games
+## 没有海外信息的写法
 
-Title: Game studio deploys an AI tool in a production workflow
-Category: AI in Games
-Company: Studio or technology provider
-Source: Official case study or reliable industry media
+```text
+Title: 重返地心之下 / English name not announced
+Category: Release Calendar
+Company: 光屿
+Keywords: Multi-platform | 国服三测
+Source: 官方公告
 Date: YYYY-MM-DD
-Link: https://example.com/original-article
+Link: https://example.com/original-source
 Content:
-- The specific AI capability and the production or operation step it changes.
-- Evidence that the capability is deployed or being tested in a real workflow.
-- Measurable impact, limitations, governance questions or creator concerns.
+- Platform: Multi-platform
+- China milestone: 10/20 国服三测开启
+- Overseas milestone: 未公布
+- Overseas social presence: 未发现
+- Opportunity assessment: No current signal
+```
 
 ---
 
-## Example 3: Global Games & Business
+## 游戏联名或品牌合作
 
-Title: Global publisher reports a material strategy or market change
-Category: Global Games
-Company: Publisher, platform or studio
-Source: Earnings release, official announcement or reliable industry media
+```text
+Title: 游戏名 / English Name × 合作品牌
+Category: Marketing & Collaborations
+Company: 游戏厂商 / 合作品牌
+Keywords: IP Collaboration | Brand Partnership | Pop-up
+Source: 双方官方公告
 Date: YYYY-MM-DD
-Link: https://example.com/original-article
+Link: https://example.com/original-source
 Content:
-- The verified company action and key figures.
-- Which product, platform, studio, audience or market is affected.
-- What the event signals about the global games business.
+- Collaboration form: 游戏内联动、联名产品、线下快闪或内容共创
+- Campaign dates: YYYY-MM-DD to YYYY-MM-DD
+- Regions: China / Global / named markets
+- Channels: In-game / social / retail / event / creator
+- Verified data or distinctive mechanic: 已公布的覆盖范围、销售数据或玩法
+```
+
+## 录入规则
+
+- 英文名必须来自官网、官方商店页或官方社媒；不要自行翻译。
+- 区分“获批版号”、“首曝”、“封测”、“公测”和“正式上线”。
+- 只有季度或年份时，原样记录 `Q4` 或 `2027 Summer`，不补写具体日期。
+- 国内与海外节点分开记录，并注明地区。
+- “已有海外社媒矩阵”只是中等信号，不等于已确认海外上线。

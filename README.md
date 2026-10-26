@@ -1,45 +1,36 @@
-# Digital Commerce Intelligence Hub
+# Game Intelligence Weekly
 
-A weekly industry intelligence dashboard for BluefocusAI_Madhouse_Game Brand intelligence and opportunity discovery.
+An automated release, globalization, and marketing intelligence radar for BluefocusAI_Madhouse_Game Brand.
 
-This project has been upgraded from a simple news push bot into a weekly web-based intelligence dashboard:
+GitHub Actions → RSS and Google News → Manual Editorial Inputs → Gemini Analysis → HTML Dashboard → GitHub Pages and Email
 
-GitHub Actions -> Python source collectors -> Unified Information Pool -> Gemini JSON analysis -> HTML Dashboard -> GitHub Pages + Email notification
+## Intelligence Scope
 
-## What It Does
+The weekly dashboard contains four sections:
 
-The system collects automatic and manual signals, then asks Gemini to produce short structured dashboard content focused on:
+1. **新游上线与测试日历 / Release & Test Calendar**
+   - First reveal, pre-registration, license approval, playtest, closed beta, open beta, demo, public launch, official release, exhibition demo, and new platform releases.
+2. **出海与区域发行机会 / Global Launch Opportunities**
+   - Separate China and overseas schedules, global pre-registration, overseas tests, localization, regional publishing, official English presence, and overseas social signals.
+3. **游戏营销、联名与 IP 合作 / Marketing & Collaborations**
+   - Brand partnerships, IP crossovers, co-created content, pop-ups, retail activations, entertainment collaborations, and platform campaigns.
+4. **厂商、平台与 AI 动向 / Companies, Platforms & AI**
+   - Publisher and studio strategy, platform policy, investment and acquisition, and AI in game production, localization, testing, NPCs, and player operations.
 
-- 国内电商平台 / Platform Intelligence
-- AI 技术前沿 / AI Technology
-- 体育与户外行业 / Sports & Outdoor
-- 传统零售创新 / Retail Innovation
-- One Thing Worth Watching
+Platforms are tags rather than top-level sections: `PC`, `Mobile`, `Console`, `Multi-platform`, `Mini Game`, `Cloud Gaming`, and `Unknown`.
 
-The dashboard is designed for BluefocusAI_Madhouse_Game Brand leaders to scan in 2-3 minutes. Gemini may return empty sections when no reliable source-backed signals are available.
+## Editorial Rules
 
-## Information Sources
+- Chinese and official English game names are shown together as `中文名 / English Name`.
+- If no official English name exists, use `English name not announced`; never invent a translation.
+- China and overseas milestones must be recorded separately.
+- First reveal, license approval, exhibition appearance, test, open beta, and official launch are different event types.
+- A quarter, year, or approximate window must remain approximate; the system must not invent a precise date.
+- The radar covers announcements published in the last 30 days and may include confirmed events in the coming 30/90 days.
+- Overseas opportunity is classified as High, Medium, Low, No current signal, or Insufficient evidence, with the supporting evidence shown.
+- Verified manual inputs in `manual_sources/daily_input.md` take priority over automatic sources.
 
-Automatic sources:
-
-- RSS feeds filtered by section profile
-- Google News RSS keyword searches grouped by section
-- Official blogs
-
-Automatic retrieval is sectioned before Gemini analysis. Each section uses its own keywords and searches recent information in widening windows: 3 days first, then 7 days, then 14 days. The four automatic sections are:
-
-- 国内电商平台 / Platform Intelligence
-- AI 能力与行业影响 / AI Capabilities & Industry Impact
-- 体育与户外行业 / Sports & Outdoor
-- 传统零售创新 / Retail Innovation
-
-Manual source:
-
-- `manual_sources/daily_input.md`
-
-Automatic filtering ranks usefulness over recency. It excludes low-relevance retail media, ad-network, campaign, celebrity, sponsorship, and weak product-only items. AI filtering is business-first: pure model releases, parameter counts, benchmarks, papers, and low-level infrastructure details are ignored unless the item clearly introduces a business-understandable capability for retail, ecommerce, customer experience, operations, workflow, or enterprise adoption.
-
-Future sources can be added as new modules under `sources/`, such as PDF, Feishu Docs, or internal business data.
+See [`manual_sources/examples.md`](manual_sources/examples.md) for the editorial input format.
 
 ## Project Structure
 
@@ -48,98 +39,55 @@ Future sources can be added as new modules under `sources/`, such as PDF, Feishu
 ├── main.py
 ├── config.py
 ├── requirements.txt
-├── .github/
-│   └── workflows/
-│       └── daily.yml
+├── .github/workflows/daily.yml
 ├── sources/
-│   ├── common.py
-│   ├── rss.py
-│   ├── google_news.py
-│   └── manual.py
-├── manual_sources/
-│   ├── daily_input.md
-│   └── examples.md
 ├── intelligence/
 │   ├── prompt.py
 │   └── gemini.py
+├── manual_sources/
+│   ├── daily_input.md
+│   └── examples.md
 └── output/
+    ├── preview/
+    ├── archive/
+    ├── data/
     ├── email.py
-    ├── feishu.py
-    ├── html.py
-    └── index.html
-```
-
-## Dashboard Output
-
-Running the script generates:
-
-```text
-output/index.html
-```
-
-GitHub Actions publishes this file to GitHub Pages.
-
-Email notification sends a plain-text brief after each GitHub Actions run. It does not send the full HTML dashboard code.
-
-```text
-Subject: Digital Commerce Intelligence Brief - YYYY-MM-DD
-
-Today's Focus
-...
-
-Platform Intelligence
-News: ...
-Why this matters: ...
-Trend: ...
+    └── html.py
 ```
 
 ## GitHub Secrets
 
-Add these repository secrets:
-
 - `GEMINI_API_KEY`
 - `EMAIL_TO`
 - `EMAIL_API_KEY`
-- `EMAIL_FROM` optional, depending on your email API sender setup
+- `EMAIL_FROM` (optional; use a verified sender when available)
 
-The API keys are loaded from environment variables. Do not hard-code them in the project. The existing Feishu module is retained for optional testing with `ENABLE_FEISHU_TEST=true` and `FEISHU_WEBHOOK_URL`.
+Real keys must only be stored as GitHub Secrets or in a local ignored `.env` file. Never commit them.
 
-## Run Locally
+## Running the Workflow
+
+The `Game Intelligence Weekly` GitHub Actions workflow supports:
+
+- `preview`: collect news, generate a draft, email it, commit `output/preview`, and deploy Pages.
+- `publish`: promote a reviewed report to the official archive and deploy Pages.
+- `deploy_only`: deploy the current checked-in preview without calling Gemini or sending email.
+
+Preview URL:
+
+```text
+https://liuxueying2828-maker.github.io/game-intelligence-weekly/preview/index.html
+```
+
+GitHub Pages must use `Settings → Pages → Source → GitHub Actions`.
+
+## Local Run
 
 ```bash
 pip install -r requirements.txt
 export GEMINI_API_KEY="your-gemini-api-key"
 export EMAIL_TO="xueying.liu@bluefocus.cn"
 export EMAIL_API_KEY="your-email-api-key"
-export EMAIL_FROM="Digital Commerce Intelligence <your-verified-sender@example.com>"
-export DASHBOARD_URL="https://your-name.github.io/your-repo/"
+export EMAIL_FROM="Game Intelligence Weekly <your-verified-sender@example.com>"
+export REPORT_MODE="preview"
 python main.py
 ```
-
-Local output will be written to `output/index.html`.
-
-## GitHub Actions
-
-The workflow supports:
-
-- Manual run through `workflow_dispatch`
-- Weekly scheduled run every Tuesday through cron in UTC
-- GitHub Pages deployment from `output/index.html`
-
-Before the first deployment, set repository Pages source to GitHub Actions in GitHub:
-
-Settings -> Pages -> Build and deployment -> Source -> GitHub Actions
-
-See `.github/workflows/daily.yml`.
-
-
-## History Archive
-
-Each run generates the latest dashboard at `output/index.html` and saves the same day into:
-
-```text
-output/archive/YYYY-MM-DD/index.html
-output/data/YYYY-MM-DD.json
-```
-
-`output/archive/index.html` lists all saved intelligence briefs in reverse date order. GitHub Actions commits `output/archive` and `output/data` back to the repository so GitHub Pages keeps historical pages across runs.

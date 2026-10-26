@@ -2,101 +2,104 @@ from pathlib import Path
 
 
 PROJECT_NAME = "Game Intelligence Weekly"
-
 BASE_DIR = Path(__file__).resolve().parent
 MANUAL_INPUT_PATH = BASE_DIR / "manual_sources" / "daily_input.md"
 HTML_OUTPUT_PATH = BASE_DIR / "output" / "index.html"
 PREVIEW_OUTPUT_PATH = BASE_DIR / "output" / "preview" / "index.html"
 PREVIEW_DATA_PATH = BASE_DIR / "output" / "preview" / "data.json"
 
-MAX_ITEMS_FOR_GEMINI = 28
-RSS_ITEMS_PER_FEED = 8
-GOOGLE_NEWS_ITEMS_PER_QUERY = 5
-
-# The keys stay unchanged for compatibility with the existing renderer.
+MAX_ITEMS_FOR_GEMINI = 40
+RSS_ITEMS_PER_FEED = 12
+GOOGLE_NEWS_ITEMS_PER_QUERY = 6
 SECTION_ORDER = ["platform", "ai", "sports", "retail"]
-SEARCH_WINDOWS_DAYS = [3, 7, 14]
-MIN_SECTION_CANDIDATES = {"platform": 4, "ai": 4, "sports": 3, "retail": 3}
-MAX_SECTION_CANDIDATES = {"platform": 12, "ai": 12, "sports": 10, "retail": 10}
+# Publication windows widen to 30 days; articles may announce future 30/90-day events.
+SEARCH_WINDOWS_DAYS = [7, 14, 30]
+MIN_SECTION_CANDIDATES = {"platform": 5, "ai": 5, "sports": 4, "retail": 4}
+MAX_SECTION_CANDIDATES = {"platform": 16, "ai": 16, "sports": 14, "retail": 12}
 
 FEEDS = [
-    {"source": "GamesIndustry.biz", "url": "https://www.gamesindustry.biz/feed", "domain": "sports"},
-    {"source": "Game Developer", "url": "https://www.gamedeveloper.com/rss.xml", "domain": "sports"},
-    {"source": "PocketGamer.biz", "url": "https://www.pocketgamer.biz/rss/", "domain": "retail"},
-    {"source": "Google AI Blog", "url": "https://blog.google/technology/ai/rss/", "domain": "ai"},
+    {"source": "GamesIndustry.biz", "url": "https://www.gamesindustry.biz/feed", "domain": "retail"},
+    {"source": "Game Developer", "url": "https://www.gamedeveloper.com/rss.xml", "domain": "retail"},
+    {"source": "PocketGamer.biz", "url": "https://www.pocketgamer.biz/rss/", "domain": "platform"},
 ]
 
 SEARCH_QUERIES = {
+    # Release & Test Calendar
     "platform": [
-        "Tencent Games new game strategy revenue", "NetEase Games new title global launch", "miHoYo game business overseas",
-        "China game industry regulation license", "China game market revenue report", "Chinese game studios global expansion",
-        "Tencent NetEase game investment studio", "TapTap game platform developer", "Bilibili game publishing",
-        "腾讯游戏 新游戏 战略", "网易游戏 新作 出海", "米哈游 新游戏 业务",
-        "中国游戏市场 收入 报告", "游戏版号 政策", "国产游戏 出海",
-        "莉莉丝 叠纸 鹰角 库洛", "TapTap 开发者 发行", "B站游戏 发行",
+        "upcoming video game release date closed beta open beta global launch", "new game announcement pre-registration release calendar",
+        "PC mobile console game launches this month", "Steam upcoming game demo playtest release date",
+        "China game release date public beta closed beta", "Chinese game license new title release",
+        "Tencent Games upcoming release beta", "NetEase Games upcoming global launch", "HoYoverse new game test release",
+        "Kuro Games new title beta release", "Papergames new game launch", "Lilith Games new title launch",
+        "新游上线 公测 测试 预约", "游戏发售日历 PC 手游 主机", "Steam 新游 Demo 测试",
+        "腾讯游戏 上线 公测 封测", "网易游戏 新作 预约 公测", "米哈游 新作 测试 上线",
+        "国产游戏 版号 上线日期", "游戏 展会试玩 核聚变",
     ],
+    # Global Launch Opportunities
     "ai": [
-        "generative AI game development", "AI NPC video games", "AI game testing automation", "AI game art production",
-        "AI game animation voice localization", "AI game coding tools", "AI player support moderation gaming",
-        "Unity AI game development", "Unreal Engine generative AI", "Roblox AI creation tools", "NVIDIA ACE game characters",
-        "game studio AI workflow", "AI procedural game content", "AI personalization live service games",
-        "AI 游戏开发 生成式", "AI NPC 游戏", "AI 游戏美术 动画", "AI 游戏测试",
-        "游戏公司 AI 工具 工作流", "AI 游戏本地化 配音", "AI 游戏客服 内容安全",
+        "Chinese game overseas launch global pre-registration", "China game global closed beta English release",
+        "Chinese mobile game launch North America Europe", "Chinese game launch Japan Korea Southeast Asia",
+        "game English official website global social media launch", "game localization global publishing partnership",
+        "Tencent game overseas beta global launch", "NetEase game overseas release", "HoYoverse global beta release",
+        "国产游戏 出海 海外上线 海外封测", "游戏 全球预约 英文官网 海外社媒",
+        "游戏 欧美服 上线", "游戏 日服 韩服 上线", "游戏 东南亚 发行",
+        "游戏 海外代理 本地化", "中国游戏 国服 海外 不同步上线",
     ],
+    # Marketing & Collaborations
     "sports": [
-        "Nintendo game business financial results", "Sony PlayStation game strategy", "Microsoft Xbox game studio strategy",
-        "Valve Steam platform policy", "Epic Games business strategy", "EA game financial results", "Take-Two Rockstar game release",
-        "Ubisoft studio restructuring", "Activision Blizzard game strategy", "Riot Games new title esports",
-        "Krafton Nexon Netmarble game business", "Capcom Sega Square Enix financial results", "global video game industry mergers acquisitions",
-        "任天堂 游戏 财报", "PlayStation 游戏 战略", "Xbox 工作室 战略", "Steam 平台 政策",
+        "video game brand collaboration announcement", "game IP crossover collaboration event", "gaming brand partnership campaign",
+        "game fashion food automotive collaboration", "game anime movie music artist crossover", "game pop-up store offline event collaboration",
+        "Fortnite brand collaboration", "Roblox branded experience partnership", "mobile game IP collaboration event",
+        "游戏 品牌联名 合作", "游戏 IP 联动 活动", "游戏 快闪店 线下活动",
+        "游戏 动漫 影视 艺人 联动", "游戏 汽车 服饰 餐饮 联名", "游戏 品牌营销 案例",
     ],
+    # Companies, Platforms & AI
     "retail": [
-        "global video game market report", "mobile game market revenue users", "PC console game market trends",
-        "game subscription business model", "cloud gaming market", "game creator economy UGC", "game live streaming esports business",
-        "in-game advertising brand partnership", "game user acquisition marketing trends", "game monetization regulation",
-        "Steam Epic mobile app store game distribution", "Roblox Fortnite creator economy", "WeChat mini games market",
-        "游戏行业 市场规模 用户", "手游 收入 趋势", "小游戏 市场 广告", "游戏 营销 品牌合作",
-        "游戏直播 电竞 商业", "UGC 游戏 创作者经济", "游戏发行 渠道 政策",
+        "game publisher studio strategy investment acquisition", "Steam Epic PlayStation Xbox platform policy developers",
+        "game industry AI production workflow", "generative AI game art video voice localization", "AI NPC game testing player support",
+        "Unity AI game development Unreal Engine AI", "NVIDIA ACE game characters", "Roblox AI creation tools",
+        "Tencent NetEase game studio strategy", "global game company restructuring publishing strategy",
+        "游戏公司 产品线 投资 并购", "游戏发行平台 政策", "AI 游戏开发 美术 视频 配音",
+        "AI NPC 游戏测试 本地化", "游戏公司 AI 工作流",
     ],
 }
 
 EXPANDED_SEARCH_QUERIES = {
-    "platform": ["China gaming industry news", "Chinese game companies overseas", "国内游戏公司 行业动态"],
-    "ai": ["AI in video games industry", "game development AI tools", "游戏行业 AI 应用"],
-    "sports": ["global game studio business news", "video game publishers financial results", "全球游戏公司 新闻"],
-    "retail": ["video game business market trends", "gaming platform creator economy", "游戏商业化 市场趋势"],
+    "platform": ["upcoming games release beta calendar", "新游 测试 上线 日期"],
+    "ai": ["Chinese games global launch overseas", "国产游戏 海外发行"],
+    "sports": ["game collaboration brand partnership", "游戏 联名 IP 合作"],
+    "retail": ["game company platform AI industry news", "游戏厂商 平台 AI 动向"],
 }
-
 GOOGLE_NEWS_QUERIES = SEARCH_QUERIES
 
 LOW_VALUE_KEYWORDS = [
-    "walkthrough", "guide", "cheat", "rumor", "leak", "giveaway", "discount", "sale", "tier list", "patch notes",
-    "攻略", "剧透", "爆料", "传闻", "礼包码", "抽卡", "折扣", "下载奖励", "版本更新公告",
+    "walkthrough", "cheat", "tier list", "giveaway code", "gacha result", "unconfirmed leak", "plot spoiler",
+    "攻略", "剧透", "礼包码", "抽卡结果", "未证实爆料", "玩家传闻",
 ]
 
 FILTER_PROFILES = {
     "platform": {
-        "include_any": ["tencent", "netease", "mihoyo", "hoyoverse", "lilith", "papergames", "hypergryph", "kuro games", "taptap", "bilibili", "china game", "腾讯游戏", "网易游戏", "米哈游", "莉莉丝", "叠纸", "鹰角", "库洛", "游戏版号", "国产游戏"],
-        "require_any": ["game", "gaming", "studio", "publisher", "launch", "revenue", "strategy", "license", "overseas", "游戏", "工作室", "发行", "收入", "战略", "版号", "出海"],
+        "include_any": ["game", "gaming", "release", "launch", "beta", "playtest", "demo", "pre-registration", "coming soon", "游戏", "新游", "上线", "公测", "封测", "测试", "预约", "版号", "发售"],
+        "require_any": ["release", "launch", "beta", "test", "demo", "pre-registration", "license", "date", "quarter", "上线", "公测", "封测", "测试", "预约", "版号", "日期", "季度"],
         "exclude_any": LOW_VALUE_KEYWORDS,
-        "override_any": ["game", "gaming", "studio", "publisher", "游戏", "工作室", "发行", "版号"],
+        "override_any": ["release date", "global launch", "open beta", "closed beta", "上线日期", "公测", "封测", "全球预约"],
     },
     "ai": {
-        "include_any": ["artificial intelligence", "generative ai", "ai npc", "ai agent", "machine learning", "nvidia ace", "unity ai", "unreal ai", "roblox ai", "人工智能", "生成式 ai", "ai npc", "智能体"],
-        "require_any": ["game", "gaming", "player", "studio", "developer", "npc", "animation", "art", "testing", "localization", "游戏", "玩家", "工作室", "开发", "美术", "测试", "本地化"],
-        "exclude_any": LOW_VALUE_KEYWORDS + ["benchmark", "parameters", "model leaderboard", "模型排行榜", "参数规模"],
-        "override_any": ["game development", "ai npc", "game testing", "game art", "游戏开发", "游戏美术", "游戏测试"],
+        "include_any": ["overseas", "global", "international", "north america", "europe", "japan", "korea", "southeast asia", "localization", "english website", "出海", "海外", "全球", "欧美", "日服", "韩服", "东南亚", "本地化"],
+        "require_any": ["game", "launch", "release", "beta", "pre-registration", "publisher", "social media", "游戏", "上线", "发行", "测试", "预约", "代理", "社媒"],
+        "exclude_any": LOW_VALUE_KEYWORDS,
+        "override_any": ["global launch", "overseas beta", "global pre-registration", "海外上线", "海外封测", "全球预约"],
     },
     "sports": {
-        "include_any": ["nintendo", "playstation", "xbox", "valve", "steam", "epic games", "electronic arts", "take-two", "rockstar", "ubisoft", "activision", "blizzard", "riot games", "krafton", "nexon", "capcom", "sega", "square enix", "bandai namco", "supercell"],
-        "require_any": ["game", "gaming", "studio", "publisher", "platform", "release", "revenue", "earnings", "strategy", "acquisition", "游戏", "工作室", "平台", "发行", "财报", "战略", "并购"],
+        "include_any": ["collaboration", "crossover", "partnership", "brand", "campaign", "pop-up", "licensed", "activation", "联名", "联动", "合作", "品牌", "快闪", "共创", "ip"],
+        "require_any": ["game", "gaming", "player", "event", "experience", "content", "store", "游戏", "玩家", "活动", "内容", "门店", "体验"],
         "exclude_any": LOW_VALUE_KEYWORDS,
-        "override_any": ["game", "gaming", "studio", "publisher", "platform", "游戏", "工作室", "平台"],
+        "override_any": ["game collaboration", "game crossover", "branded experience", "游戏联名", "游戏联动", "品牌合作"],
     },
     "retail": {
-        "include_any": ["video game market", "mobile game", "pc game", "console game", "cloud gaming", "esports", "live streaming", "creator economy", "ugc", "subscription", "in-game", "game advertising", "mini game", "游戏市场", "手游", "主机游戏", "云游戏", "电竞", "游戏直播", "创作者经济", "小游戏"],
-        "require_any": ["revenue", "users", "business", "market", "monetization", "platform", "distribution", "growth", "regulation", "收入", "用户", "商业", "市场", "变现", "平台", "发行", "增长", "监管"],
-        "exclude_any": LOW_VALUE_KEYWORDS,
-        "override_any": ["market report", "revenue", "creator economy", "monetization", "市场报告", "收入", "创作者经济", "商业化"],
+        "include_any": ["game studio", "game publisher", "steam", "epic games", "playstation", "xbox", "nintendo", "unity", "unreal", "generative ai", "ai npc", "nvidia ace", "investment", "acquisition", "游戏厂商", "游戏工作室", "游戏平台", "生成式 ai", "ai npc", "投资", "并购"],
+        "require_any": ["game", "gaming", "developer", "studio", "publisher", "platform", "workflow", "testing", "localization", "游戏", "开发", "工作室", "发行", "平台", "工作流", "测试", "本地化"],
+        "exclude_any": LOW_VALUE_KEYWORDS + ["benchmark", "model leaderboard", "模型排行榜", "参数规模"],
+        "override_any": ["game development ai", "ai npc", "game testing", "game platform policy", "游戏开发 ai", "游戏平台政策"],
     },
 }

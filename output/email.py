@@ -12,10 +12,10 @@ DEFAULT_EMAIL_FROM = "Game Intelligence Weekly <onboarding@resend.dev>"
 
 
 SECTIONS = [
-    ("China Games", "platform_intelligence", "standard"),
-    ("AI in Games", "ai_technology", "ai"),
-    ("Global Games & Studios", "sports_outdoor", "standard"),
-    ("Game Business & Ecosystem", "retail_innovation", "standard"),
+    ("Release & Test Calendar", "platform_intelligence", "standard"),
+    ("Global Launch Opportunities", "ai_technology", "ai"),
+    ("Marketing & Collaborations", "sports_outdoor", "standard"),
+    ("Companies, Platforms & AI", "retail_innovation", "standard"),
 ]
 
 

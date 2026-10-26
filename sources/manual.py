@@ -182,10 +182,10 @@ def _parse_manual_date(value):
 
 def _infer_domain(category, company, content):
     text = f"{category} {company} {content}".lower()
-    if any(word in text for word in ["china games", "中国游戏", "国产游戏", "版号", "腾讯游戏", "网易游戏", "mihoyo", "米哈游", "taptap", "bilibili games"]):
-        return "platform"
-    if any(word in text for word in ["ai in games", "game ai", "ai npc", "generative ai", "游戏 ai", "ai 游戏", "生成式 ai", "智能体", "nvidia ace", "unity ai", "unreal ai"]):
+    if any(word in text for word in ["global launch", "overseas", "international", "localization", "north america", "europe", "japan", "korea", "southeast asia", "出海", "海外", "全球预约", "欧美服", "日服", "韩服", "东南亚", "本地化"]):
         return "ai"
-    if any(word in text for word in ["global games", "studio", "publisher", "nintendo", "playstation", "xbox", "steam", "epic games", "electronic arts", "ubisoft", "riot games", "krafton", "capcom", "全球游戏", "游戏工作室", "游戏发行商"]):
+    if any(word in text for word in ["marketing", "collaboration", "crossover", "brand partnership", "pop-up", "activation", "营销", "联名", "联动", "品牌合作", "快闪", "ip 合作"]):
         return "sports"
+    if any(word in text for word in ["release calendar", "release", "launch", "beta", "playtest", "demo", "pre-registration", "上线", "公测", "封测", "测试", "预约", "版号", "发售", "首曝"]):
+        return "platform"
     return "retail"
