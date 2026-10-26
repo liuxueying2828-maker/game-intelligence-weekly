@@ -65,7 +65,7 @@ JSON schema：
   "one_thing_worth_watching": "未来 30/90 天最值得观察的一个发行、出海或营销节点"
 }}
 
-每个栏目最多 8 条。
+每个栏目最多 5 条。优先质量、日期明确度和业务价值，不要为了填满数量保留弱相关内容。
 
 Sectioned Candidate Pool:
 {information_pool}

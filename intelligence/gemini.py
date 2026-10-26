@@ -54,7 +54,7 @@ def generate_dashboard_data(items):
             contents=prompt,
             config={
                 "response_mime_type": "application/json",
-                "max_output_tokens": 8192,
+                "max_output_tokens": 16384,
             },
         )
     except Exception as exc:
@@ -190,7 +190,7 @@ def build_dashboard_fallback(raw_text):
         "sports_outdoor": [],
         "retail_innovation": [],
         "one_thing_worth_watching": "Gemini 返回内容未能解析为标准 JSON，已按 empty 结果处理。",
-        "parse_warning": "Gemini JSON parse failed; rendered empty fallback content.",
+        "parse_warning": "Gemini JSON parse failed; rendered source-based fallback content.",
     }
 
 
