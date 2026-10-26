@@ -52,6 +52,10 @@ def generate_dashboard_data(items):
         response = client.models.generate_content(
             model=GEMINI_MODEL,
             contents=prompt,
+            config={
+                "response_mime_type": "application/json",
+                "max_output_tokens": 8192,
+            },
         )
     except Exception as exc:
         return build_source_fallback(
@@ -60,7 +64,10 @@ def generate_dashboard_data(items):
         )
 
     raw_text = response.text.strip()
-    return parse_dashboard_json(raw_text)
+    parsed = parse_dashboard_json(raw_text)
+    if parsed.get("parse_warning"):
+        parsed = ensure_minimum_dashboard_signals(parsed, items)
+    return parsed
 
 
 def parse_dashboard_json(raw_text):
