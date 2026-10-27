@@ -63,6 +63,7 @@ def normalize_dashboard_data(data):
 def _ensure_identity_format(data):
     missing_prefix = "[未找到厂商-未找到中文名-English name not found]"
     for section_key in SECTION_ALIASES:
+        valid_cards = []
         for card in data.get(section_key, []):
             if not isinstance(card, dict):
                 continue
@@ -78,6 +79,13 @@ def _ensure_identity_format(data):
                     card[key] = f"{missing_prefix} {value}".strip()
             if section_key == "ai_technology":
                 card["name"] = card[key]
+            # Reject source snippets or truncated model output masquerading as
+            # an identity. Every published card must have all three fields and
+            # a closing bracket: [company-Chinese title-English title].
+            if not re.match(r"^\[[^\]]+-.+-.+\]", str(card.get(key) or "")):
+                continue
+            valid_cards.append(card)
+        data[section_key] = valid_cards
     return data
 
 
