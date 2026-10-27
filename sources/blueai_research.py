@@ -89,14 +89,27 @@ def _run_verification_batches(api_key, candidates):
         for index in range(0, len(candidates), BLUEAI_VERIFICATION_BATCH_SIZE)
     ]
     for index, batch in enumerate(batches, start=1):
-        with _client(api_key) as client:
-            response = client.responses.create(
-                model=os.getenv("BLUEAI_MODEL") or BLUEAI_MODEL,
-                tools=[{"type": "web_search"}],
-                input=_build_verification_prompt(batch),
-            )
-        _require_web_search(response, f"verification_{index}")
-        verified = _parse_records(response.output_text, "items")
+        verified = []
+        last_error = None
+        for attempt in range(1, 3):
+            try:
+                with _client(api_key) as client:
+                    response = client.responses.create(
+                        model=os.getenv("BLUEAI_MODEL") or BLUEAI_MODEL,
+                        tools=[{"type": "web_search"}],
+                        input=_build_verification_prompt(batch, retry=attempt > 1),
+                    )
+                _require_web_search(response, f"verification_{index}")
+                verified = _parse_records(response.output_text, "items")
+                if verified:
+                    break
+                last_error = "verification response contained no parseable items"
+            except Exception as exc:
+                last_error = str(exc)
+                print(f"  BlueAI verification batch {index} attempt {attempt} failed: {exc}")
+        if not verified:
+            verified = [_pending_from_candidate(item, last_error) for item in batch]
+            print(f"  BlueAI verification batch {index}: moved {len(batch)} candidates to pending confirmation")
         results.extend(verified)
         print(f"  BlueAI verification batch {index}/{len(batches)}: {len(verified)} checked")
     return results
@@ -138,11 +151,12 @@ Priority source families:
 """.strip()
 
 
-def _build_verification_prompt(batch):
+def _build_verification_prompt(batch, retry=False):
     payload = json.dumps(batch, ensure_ascii=False, indent=2)
     return f"""
 You are the independent fact-checking stage for Game Intelligence Weekly. Today is {datetime.now():%Y-%m-%d}.
 For every candidate below, use web search again. Open or locate direct sources, verify the event date, publication date, regions, numbers, Chinese/English title match, and any later correction.
+You MUST issue web_search calls in this response; do not answer from model memory.{" This is a retry because the previous response did not call web search." if retry else ""}
 
 Evidence policy:
 - Prefer publisher/studio/game official announcements, official stores and official event pages.
@@ -159,6 +173,20 @@ Return only JSON, one output for every input candidate:
 Candidates:
 {payload}
 """.strip()
+
+
+def _pending_from_candidate(candidate, error):
+    sources = []
+    for source in candidate.get("source_urls") or []:
+        if not isinstance(source, dict):
+            continue
+        sources.append({**source, "independent": False})
+    return {
+        **candidate,
+        "verification_status": "pending_confirmation",
+        "verification_notes": f"二次网页核验未完成：{error or 'unknown verification error'}",
+        "sources": sources,
+    }
 
 
 def _require_web_search(response, label):
