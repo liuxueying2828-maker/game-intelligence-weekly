@@ -50,8 +50,10 @@ GAME_CATALOG_PATH = BASE_DIR / "data" / "game_catalog.json"
 KEYWORD_LIBRARY_PATH = BASE_DIR / "data" / "keyword_library.json"
 BLUEAI_BASE_URL = "https://bmc-llm-relay.bluemediagroup.cn/v1"
 BLUEAI_MODEL = "gpt-4.1"
-BLUEAI_SEARCH_MAX_ITEMS_PER_TASK = 20
+BLUEAI_SEARCH_MAX_ITEMS_PER_TASK = 12
 BLUEAI_VERIFICATION_BATCH_SIZE = 8
+BLUEAI_SEARCH_WORKERS = 6
+BLUEAI_VERIFICATION_WORKERS = 4
 
 CHINA_RELEVANCE_KEYWORDS = [
     "china", "chinese game", "china-developed", "中国", "国产游戏", "中国游戏", "国服",

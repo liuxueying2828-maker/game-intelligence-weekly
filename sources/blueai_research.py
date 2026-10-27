@@ -9,7 +9,9 @@ from config import (
     BLUEAI_BASE_URL,
     BLUEAI_MODEL,
     BLUEAI_SEARCH_MAX_ITEMS_PER_TASK,
+    BLUEAI_SEARCH_WORKERS,
     BLUEAI_VERIFICATION_BATCH_SIZE,
+    BLUEAI_VERIFICATION_WORKERS,
 )
 from sources.keyword_library import (
     build_search_tasks,
@@ -51,7 +53,7 @@ def _client(api_key):
 def _run_discovery_tasks(api_key, library):
     items = []
     tasks = build_search_tasks(library)
-    with ThreadPoolExecutor(max_workers=4) as executor:
+    with ThreadPoolExecutor(max_workers=BLUEAI_SEARCH_WORKERS) as executor:
         futures = {
             executor.submit(_run_discovery, api_key, library, task): task
             for task in tasks
@@ -71,48 +73,69 @@ def _run_discovery(api_key, library, task):
     with _client(api_key) as client:
         response = client.responses.create(
             model=os.getenv("BLUEAI_MODEL") or BLUEAI_MODEL,
-            tools=[{"type": "web_search"}],
+            tools=[{"type": "web_search", "search_context_size": "high"}],
+            include=["web_search_call.action.sources"],
             input=_build_discovery_prompt(library, task),
         )
     _require_web_search(response, task["id"])
     records = _parse_records(response.output_text, "items")
+    consulted_urls = _extract_web_search_sources(response)
+    print(f"  BlueAI Web Search {task['id']}: consulted {len(consulted_urls)} source URLs")
     for record in records:
         record["search_language"] = task["language"]
         record["search_task"] = task["id"]
+        # Kept as audit evidence for the verification stage. These URLs are
+        # never published as if they all supported every candidate.
+        record["search_audit_urls"] = consulted_urls[:40]
     return records[:BLUEAI_SEARCH_MAX_ITEMS_PER_TASK]
 
 
 def _run_verification_batches(api_key, candidates):
-    results = []
     batches = [
         candidates[index:index + BLUEAI_VERIFICATION_BATCH_SIZE]
         for index in range(0, len(candidates), BLUEAI_VERIFICATION_BATCH_SIZE)
     ]
-    for index, batch in enumerate(batches, start=1):
-        verified = []
-        last_error = None
-        for attempt in range(1, 3):
-            try:
-                with _client(api_key) as client:
-                    response = client.responses.create(
-                        model=os.getenv("BLUEAI_MODEL") or BLUEAI_MODEL,
-                        tools=[{"type": "web_search"}],
-                        input=_build_verification_prompt(batch, retry=attempt > 1),
-                    )
-                _require_web_search(response, f"verification_{index}")
-                verified = _parse_records(response.output_text, "items")
-                if verified:
-                    break
-                last_error = "verification response contained no parseable items"
-            except Exception as exc:
-                last_error = str(exc)
-                print(f"  BlueAI verification batch {index} attempt {attempt} failed: {exc}")
-        if not verified:
-            verified = [_pending_from_candidate(item, last_error) for item in batch]
-            print(f"  BlueAI verification batch {index}: moved {len(batch)} candidates to pending confirmation")
-        results.extend(verified)
-        print(f"  BlueAI verification batch {index}/{len(batches)}: {len(verified)} checked")
+    results_by_index = {}
+    with ThreadPoolExecutor(max_workers=BLUEAI_VERIFICATION_WORKERS) as executor:
+        futures = {
+            executor.submit(_verify_batch, api_key, batch, index): index
+            for index, batch in enumerate(batches, start=1)
+        }
+        for future in as_completed(futures):
+            index = futures[future]
+            results_by_index[index] = future.result()
+            print(f"  BlueAI verification batch {index}/{len(batches)}: {len(results_by_index[index])} checked")
+
+    results = []
+    for index in sorted(results_by_index):
+        results.extend(results_by_index[index])
     return results
+
+
+def _verify_batch(api_key, batch, index):
+    verified = []
+    last_error = None
+    for attempt in range(1, 3):
+        try:
+            with _client(api_key) as client:
+                response = client.responses.create(
+                    model=os.getenv("BLUEAI_MODEL") or BLUEAI_MODEL,
+                    tools=[{"type": "web_search", "search_context_size": "high"}],
+                    include=["web_search_call.action.sources"],
+                    input=_build_verification_prompt(batch, retry=attempt > 1),
+                )
+            _require_web_search(response, f"verification_{index}")
+            verified = _parse_records(response.output_text, "items")
+            consulted_urls = _extract_web_search_sources(response)
+            print(f"  BlueAI verification batch {index}: consulted {len(consulted_urls)} source URLs")
+            if verified:
+                return verified
+            last_error = "verification response contained no parseable items"
+        except Exception as exc:
+            last_error = str(exc)
+            print(f"  BlueAI verification batch {index} attempt {attempt} failed: {exc}")
+    print(f"  BlueAI verification batch {index}: moved {len(batch)} candidates to pending confirmation")
+    return [_pending_from_candidate(item, last_error) for item in batch]
 
 
 def _build_discovery_prompt(library, task):
@@ -131,11 +154,18 @@ Discovery rules:
 - Never invent or translate an English title. Mark it missing if no official match is found.
 - This is candidate discovery, not publication approval. Preserve source URLs for later verification.
 - Return every qualifying event found, up to {BLUEAI_SEARCH_MAX_ITEMS_PER_TASK}.
+- For matrix tasks, cover EVERY entity in Focus entities. Run separate searches as needed and do not stop after finding results for the first entity.
+- For public_social_web tasks, use site-specific searches. Public official posts, video descriptions, channel announcements, store pages and Discord invite pages are valid early signals; never claim access to private groups or login-only content.
 
 Return only JSON:
 {{"items":[{{"candidate_id":"stable short id","company_cn":"","company_en":"","game_cn":"","game_en":"","event_type":"","section":"platform|ai|sports|retail","title":"","summary":"","published_date":"YYYY-MM-DD or original wording","event_date":"YYYY-MM-DD/quarter/window/original wording","regions":[],"name_match_status":"matched|english_name_missing|chinese_name_missing|company_missing|unmatched","source_urls":[{{"url":"https://direct-page","source_name":"","source_type":"official|wire|reliable_media|trade_media|store|event|aggregator|social"}}]}}]}}
 
 Goal: {task['goal']}
+
+Search mode: {task.get('search_mode', 'broad_discovery')}
+
+Focus entities or domains:
+{chr(10).join('- ' + value for value in task.get('focus_entities', [])) or '- Broad industry discovery'}
 
 Keywords:
 {format_keywords(library, task)}
@@ -163,6 +193,8 @@ Evidence policy:
 - Next prefer Reuters, AP, Bloomberg and established game-industry media.
 - A record is verified only when two genuinely independent sources support the material claim. An official primary announcement plus an independent reliable report qualifies; copied/aggregated reports do not count as independent.
 - A credible claim with only one non-official source is reported_unconfirmed and must say 据报道/尚未获官方确认.
+- A single official social post, official channel/video description, official store page or official game site may be retained as reported_unconfirmed early evidence. Do not discard it merely because a second report does not exist.
+- Social evidence must be public and directly accessible. Never claim to have read private Discord channels, closed groups or login-only posts.
 - A leak, conflicting dates/numbers/names, an inaccessible claim, or otherwise insufficient evidence is pending_confirmation and must not enter a main section.
 - Correct candidate errors rather than repeating them. Never invent an English title.
 - Return direct article/announcement URLs, not search-result URLs, whenever available.
@@ -193,6 +225,25 @@ def _require_web_search(response, label):
     output = getattr(response, "output", []) or []
     if not any(getattr(item, "type", "") == "web_search_call" for item in output):
         raise RuntimeError(f"BlueAI response for {label} did not contain a web_search_call")
+
+
+def _extract_web_search_sources(response):
+    """Return the complete URL list exposed by Responses web_search calls."""
+    urls = []
+    seen = set()
+    for item in getattr(response, "output", []) or []:
+        if getattr(item, "type", "") != "web_search_call":
+            continue
+        action = getattr(item, "action", None)
+        for source in getattr(action, "sources", []) or []:
+            url = getattr(source, "url", None)
+            if url is None and isinstance(source, dict):
+                url = source.get("url")
+            url = str(url or "").strip()
+            if url and url not in seen:
+                seen.add(url)
+                urls.append(url)
+    return urls
 
 
 def _parse_records(raw_text, key):

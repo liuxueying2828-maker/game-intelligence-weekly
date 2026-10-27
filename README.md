@@ -4,7 +4,7 @@ An automated release, globalization, and marketing intelligence radar for Bluefo
 
 GitHub Actions → Bilingual Keyword Library → BlueAI Web Search → Independent Verification → GPT-4.1 Analysis → HTML Dashboard → GitHub Pages and Email
 
-The discovery layer runs separate Chinese and English searches through the company BlueAI Relay and the Responses API `web_search` tool. A second web-search pass verifies direct sources, dates, numbers, title matching, regions, and later corrections before the report is written. Search vocabulary, priority companies, tracked games, trade events, and source families are maintained in `data/keyword_library.json`.
+The discovery layer runs a bilingual query matrix through the company BlueAI Relay and the Responses API `web_search` tool. It combines broad industry searches with batched priority-company searches, tracked-game searches, and dedicated public-social searches. A second web-search pass verifies direct sources, dates, numbers, title matching, regions, and later corrections before the report is written. Search vocabulary, priority companies, tracked games, trade events, and source families are maintained in `data/keyword_library.json`.
 
 ## Intelligence Scope
 
@@ -79,6 +79,8 @@ Real keys must only be stored as GitHub Secrets or in a local ignored `.env` fil
 - Maintain bilingual event terms (`OB`, first reveal, tests, launches, major updates, collaborations), priority companies, tracked games, event names, and source families in `data/keyword_library.json`.
 - `sources/keyword_library.py` converts that library into four Chinese/English search tasks; `sources/blueai_research.py` runs candidate discovery and independent verification through the Relay.
 - Official sites, stores, social accounts, event sites, Chinese game media, global trade media, and reliable wire services are searched directly; Google News is not the sole pool.
+- Public social discovery targets Weibo, WeChat articles, Bilibili, TapTap, YouTube, X, Facebook, public Discord invite pages, and Reddit. Private groups and login-only content are outside the web-search boundary.
+- Search and verification requests ask the Responses API for `web_search_call.action.sources`, allowing each run to audit how many source URLs the search tool actually consulted.
 - Maintain official Chinese/English names and aliases in `data/game_catalog.json`; it is used only for name matching, never as a news source.
 - `manual_sources/daily_input.md` may retain working notes, but its contents are not included in generated reports.
 - Each workflow run prints BlueAI search and verification diagnostics without printing the API key.
