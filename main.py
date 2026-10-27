@@ -18,25 +18,24 @@ REPORT_MODES = {"preview", "publish"}
 
 
 def collect_information_pool():
-    from config import FEEDS, GAME_CATALOG_PATH, KEYWORD_LIBRARY_PATH, MANUAL_INPUT_PATH, SEARCH_QUERIES
+    from config import GAME_CATALOG_PATH, KEYWORD_LIBRARY_PATH, MANUAL_INPUT_PATH
     from sources.catalog import fetch_catalog_items
-    from sources.google_news import fetch_google_news_items
     from sources.manual import fetch_manual_items
-    from sources.gemini_research import fetch_gemini_research_items
-    from sources.rss import fetch_rss_items
+    from sources.blueai_research import fetch_blueai_research_items
 
     manual_items = fetch_manual_items(MANUAL_INPUT_PATH)
     catalog_items = fetch_catalog_items(GAME_CATALOG_PATH)
-    rss_items = fetch_rss_items(FEEDS)
-    google_items = fetch_google_news_items(SEARCH_QUERIES)
-    gemini_research_items = fetch_gemini_research_items(KEYWORD_LIBRARY_PATH)
-    items = manual_items + catalog_items + gemini_research_items + rss_items + google_items
+    blueai_research_items = fetch_blueai_research_items(KEYWORD_LIBRARY_PATH)
+    # BlueAI Web Search replaces the old unverified RSS/Google News ingestion.
+    # Manual and catalog records are explicitly curated; web records have
+    # already passed the independent second-stage verification above.
+    items = manual_items + catalog_items + blueai_research_items
     selected_items = prepare_information_pool(items)
 
     print("Candidate diagnostics:")
-    print(f"  collected: manual={len(manual_items)}, catalog={len(catalog_items)}, gemini_research={len(gemini_research_items)}, rss={len(rss_items)}, google_news={len(google_items)}")
+    print(f"  collected: manual={len(manual_items)}, catalog={len(catalog_items)}, blueai_two_pass_search={len(blueai_research_items)}")
     print(f"  raw by section: {dict(Counter(item.get('domain', 'unknown') for item in items))}")
-    print(f"  selected for Gemini analysis: {len(selected_items)}/{MAX_ITEMS_FOR_ANALYSIS}")
+    print(f"  selected for BlueAI analysis: {len(selected_items)}/{MAX_ITEMS_FOR_ANALYSIS}")
     print(f"  selected by section: {dict(Counter(item.get('domain', 'unknown') for item in selected_items))}")
     print(f"  selected by language: {dict(Counter(item.get('search_language', 'direct') for item in selected_items))}")
     return selected_items
@@ -123,6 +122,7 @@ def build_empty_dashboard_data():
         "ai_technology": [],
         "sports_outdoor": [],
         "retail_innovation": [],
+        "pending_confirmation": [],
         "one_thing_worth_watching": "本期信息源未返回高置信度外部情报，页面已正常更新。",
     }
 
@@ -169,12 +169,12 @@ def get_dashboard_url(mode):
 
 
 def generate_dashboard_data():
-    from intelligence.gemini_intelligence import generate_dashboard_data as generate_with_gemini
+    from intelligence.blueai_intelligence import generate_dashboard_data as generate_with_blueai
 
     information_pool = collect_information_pool()
     if not information_pool:
         return build_empty_dashboard_data()
-    return generate_with_gemini(information_pool)
+    return generate_with_blueai(information_pool)
 
 
 def save_preview_data(data):

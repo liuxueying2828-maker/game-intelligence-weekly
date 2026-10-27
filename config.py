@@ -12,12 +12,12 @@ MAX_ITEMS_FOR_ANALYSIS = 120
 EVENT_HORIZON_DAYS = 180
 RSS_ITEMS_PER_FEED = 12
 GOOGLE_NEWS_ITEMS_PER_QUERY = 6
-SECTION_ORDER = ["platform", "ai", "sports", "retail"]
+SECTION_ORDER = ["platform", "ai", "sports", "retail", "pending"]
 # Search recent updates first, then recover older announcements whose event is
 # still relevant to the rolling six-month opportunity pipeline.
 SEARCH_WINDOWS_DAYS = [14, 30, 90, 180]
-MIN_SECTION_CANDIDATES = {"platform": 5, "ai": 5, "sports": 4, "retail": 4}
-MAX_SECTION_CANDIDATES = {"platform": 16, "ai": 16, "sports": 14, "retail": 12}
+MIN_SECTION_CANDIDATES = {"platform": 5, "ai": 5, "sports": 4, "retail": 4, "pending": 0}
+MAX_SECTION_CANDIDATES = {"platform": 16, "ai": 16, "sports": 14, "retail": 12, "pending": 12}
 
 FEEDS = [
     {"source": "GamesIndustry.biz", "url": "https://www.gamesindustry.biz/feed", "domain": "retail"},
@@ -46,11 +46,10 @@ PRIORITY_COMPANIES = [
 
 GAME_CATALOG_PATH = BASE_DIR / "data" / "game_catalog.json"
 KEYWORD_LIBRARY_PATH = BASE_DIR / "data" / "keyword_library.json"
-GEMINI_MODEL = "gemini-2.5-flash"
-GEMINI_SEARCH_MODEL = "gemini-3.8-flash"
-GEMINI_DEEP_RESEARCH_AGENT = "deep-research-preview-04-2026"
-GEMINI_SEARCH_MAX_ITEMS_PER_TASK = 18
-GEMINI_DEEP_RESEARCH_TIMEOUT_SECONDS = 1200
+BLUEAI_BASE_URL = "https://bmc-llm-relay.bluemediagroup.cn/v1"
+BLUEAI_MODEL = "gpt-4.1"
+BLUEAI_SEARCH_MAX_ITEMS_PER_TASK = 20
+BLUEAI_VERIFICATION_BATCH_SIZE = 8
 
 CHINA_RELEVANCE_KEYWORDS = [
     "china", "chinese game", "china-developed", "中国", "国产游戏", "中国游戏", "国服",

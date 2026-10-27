@@ -75,6 +75,12 @@ SECTIONS = [
         "subtitle": "Overseas Marketing Opportunities",
         "tone": "green",
     },
+    {
+        "key": "pending_confirmation",
+        "title": "待确认情报",
+        "subtitle": "Needs Confirmation",
+        "tone": "orange",
+    },
 ]
 
 

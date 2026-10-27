@@ -10,6 +10,7 @@ SECTION_ALIASES = {
     "ai_technology": ["ai", "ai_technology", "ai_watch"],
     "sports_outdoor": ["sports", "sports_outdoor", "sports_and_outdoor"],
     "retail_innovation": ["retail", "retail_innovation", "retail_trends", "retail_watch"],
+    "pending_confirmation": ["pending", "pending_confirmation", "needs_confirmation"],
 }
 
 
@@ -51,6 +52,7 @@ def normalize_dashboard_data(data):
         "ai_technology": _filter_reliable_cards(_normalize_ai_cards(_first_section(data, "ai_technology"))),
         "sports_outdoor": _filter_reliable_cards(_normalize_cards(_first_section(data, "sports_outdoor"))),
         "retail_innovation": _filter_reliable_cards(_normalize_cards(_first_section(data, "retail_innovation"))),
+        "pending_confirmation": _normalize_cards(_first_section(data, "pending_confirmation")),
         "one_thing_worth_watching": data.get("one_thing_worth_watching") or data.get("headline") or "今日信号已更新",
     }
     if data.get("parse_warning"):
@@ -169,6 +171,7 @@ def build_dashboard_fallback(raw_text):
         "ai_technology": [],
         "sports_outdoor": [],
         "retail_innovation": [],
+        "pending_confirmation": [],
         "one_thing_worth_watching": "AI 返回内容未能解析为标准 JSON，已按 empty 结果处理。",
         "parse_warning": "AI JSON parse failed; rendered source-based fallback content.",
     }
@@ -261,6 +264,7 @@ def _canonical_section_key(domain):
         "ai": "ai_technology",
         "sports": "sports_outdoor",
         "retail": "retail_innovation",
+        "pending": "pending_confirmation",
     }[domain]
 
 

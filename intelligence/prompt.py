@@ -16,7 +16,7 @@ def build_dashboard_prompt(items):
 
 本周报是滚动六个月 Pipeline，不是只汇总本周新闻：覆盖未来 180 天内的确定节点，也持续展示尚未发生的季度计划和无精确日期但仍有效的海外准备信号。
 
-为兼容现有代码，JSON 仍使用 platform、ai、sports、retail 四个键，但它们的业务含义如下：
+JSON 使用 platform、ai、sports、retail、pending 五个键，它们的业务含义如下：
 
 platform / 国内游戏产品动态 / China Game Pipeline
 - 中国厂商产品的首曝、版号、预约、测试、公测、定档、国服上线和新平台版本。
@@ -35,9 +35,17 @@ retail / 海外营销与广告机会 / Overseas Marketing Opportunities
 - 关注国产游戏的海外买量、预注册营销、品牌/IP 联动、达人与创作者、社区运营、媒体投放、发行合作和区域市场扩张。
 - 输出可承接的业务机会、目标市场和建议介入时间；没有明确海外关联的国内联名不收录。
 
+pending / 待确认情报 / Needs Confirmation
+- 只收录 Verification Status 为 pending_confirmation 的记录，包括日期/数字/名称冲突、爆料或证据不足的候选。
+- 明确写出冲突点和需要补充的证据，不得将这些信息写入前四个主栏目。
+
 严格规则：
 - 只输出合法 JSON，不要 Markdown 或解释文字。
 - 只能使用 Sectioned Candidate Pool 中的事实、日期和链接；不得猜测。
+- Verification Status 为 verified 的内容可以进入主栏目，并标注“已验证（双来源）”。
+- Verification Status 为 reported_unconfirmed 的内容可以进入主栏目，但必须明确标注“据报道/尚未获官方确认”，不得写成确定事实。
+- Verification Status 为 pending_confirmation 的内容只能进入 pending，禁止进入前四个栏目。
+- 聚合转载不算独立来源；优先展示公司/工作室官方原文链接。若有多个核验来源，在摘要中写明来源数量和类型。
 - manual_sources/daily_input.md 与 Curated Game Pipeline 中的人工维护信息可以无链接；其他自动来源必须有原文链接。
 - 国内外上线日期必须分开写，不得合并成一个“上线日期”。
 - 区分首曝、预约、获批版号、展会参展、技术测试、封测、公测和正式上线，不得互相替代。
@@ -72,10 +80,11 @@ JSON schema：
   "ai": [{{"title": "[游戏厂商-游戏中文名-English Name]", "summary_points": ["状态：本周新增/更新或持续关注｜国内厂商：...｜平台：...", "海外节点：...｜重点区域：...", "国内节点：...", "需求判断：高/中/低（依据：...）", "建议介入时间：...｜距离节点：约...天"], "link": "原文链接或空字符串"}}],
   "sports": [{{"name": "[游戏厂商-游戏中文名-English Name]", "summary_points": ["状态：本周新增/更新或持续关注｜国内厂商：...", "海外证据：...", "可能区域：...", "当前确定性：高/中/低", "建议跟进动作：..."], "link": "原文链接或空字符串"}}],
   "retail": [{{"name": "[游戏厂商-游戏中文名-English Name]", "summary_points": ["状态：本周新增/更新或持续关注｜国内厂商：...", "目标区域：...｜关键日期：...", "渠道/触点：...", "可承接机会：...", "建议介入时间：..."], "link": "原文链接或空字符串"}}],
+  "pending": [{{"name": "[游戏厂商-游戏中文名-English Name]", "summary_points": ["核验状态：待确认", "候选事件：...", "冲突/缺失证据：...", "当前来源：...", "后续核验动作：..."], "link": "现有来源链接或空字符串"}}],
   "one_thing_worth_watching": "未来 180 天最值得销售团队跟进的一个国产游戏出海节点"
 }}
 
-每个栏目最多 5 条。优先质量、日期明确度和业务价值，不要为了填满数量保留弱相关内容。
+每个主栏目最多 5 条，待确认栏目最多 8 条。优先质量、日期明确度和业务价值，不要为了填满数量保留弱相关内容。
 
 Sectioned Candidate Pool:
 {information_pool}
@@ -113,6 +122,9 @@ def _format_information_pool(items):
             f"Origin Type: {item.get('origin_type', '')}", f"Manual Category: {item.get('manual_category', '')}",
             f"Manual Company: {item.get('manual_company', '')}", f"Published Date: {item.get('published_date', '')}",
             f"Search Window Days: {item.get('search_window_days', '')}", f"Title: {item.get('title', '')}",
+            f"Verification Status: {item.get('verification_status', 'curated')}",
+            f"Verification Notes: {item.get('verification_notes', '')}",
             f"Summary: {item.get('summary', '')}", f"Link: {item.get('link', '')}",
+            f"All Source URLs: {', '.join(item.get('source_urls', []))}",
         ]))
     return "\n\n".join(blocks)
