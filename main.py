@@ -18,22 +18,17 @@ REPORT_MODES = {"preview", "publish"}
 
 
 def collect_information_pool():
-    from config import GAME_CATALOG_PATH, KEYWORD_LIBRARY_PATH, MANUAL_INPUT_PATH
-    from sources.catalog import fetch_catalog_items
-    from sources.manual import fetch_manual_items
+    from config import KEYWORD_LIBRARY_PATH
     from sources.blueai_research import fetch_blueai_research_items
 
-    manual_items = fetch_manual_items(MANUAL_INPUT_PATH)
-    catalog_items = fetch_catalog_items(GAME_CATALOG_PATH)
     blueai_research_items = fetch_blueai_research_items(KEYWORD_LIBRARY_PATH)
-    # BlueAI Web Search replaces the old unverified RSS/Google News ingestion.
-    # Manual and catalog records are explicitly curated; web records have
-    # already passed the independent second-stage verification above.
-    items = manual_items + catalog_items + blueai_research_items
+    # Only externally discovered BlueAI Web Search results may become report
+    # candidates. Manual notes and the name catalog are never news sources.
+    items = blueai_research_items
     selected_items = prepare_information_pool(items)
 
     print("Candidate diagnostics:")
-    print(f"  collected: manual={len(manual_items)}, catalog={len(catalog_items)}, blueai_two_pass_search={len(blueai_research_items)}")
+    print(f"  collected: blueai_two_pass_search={len(blueai_research_items)}")
     print(f"  raw by section: {dict(Counter(item.get('domain', 'unknown') for item in items))}")
     print(f"  selected for BlueAI analysis: {len(selected_items)}/{MAX_ITEMS_FOR_ANALYSIS}")
     print(f"  selected by section: {dict(Counter(item.get('domain', 'unknown') for item in selected_items))}")
@@ -71,16 +66,6 @@ def prepare_information_pool(items, limit=MAX_ITEMS_FOR_ANALYSIS):
 
     selected_items = []
     selected_keys = set()
-
-    manual_items = [item for item in cleaned_items if item.get("origin_type") == "manual"]
-    for item in manual_items:
-        if len(selected_items) >= limit:
-            break
-        key = (item.get("title", "").lower(), item.get("link", "").strip())
-        if key in selected_keys:
-            continue
-        selected_keys.add(key)
-        selected_items.append(item)
 
     for section in SECTION_ORDER:
         minimum = MIN_SECTION_CANDIDATES.get(section, 0)

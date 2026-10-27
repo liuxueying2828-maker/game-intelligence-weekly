@@ -31,9 +31,9 @@ Platforms are tags rather than top-level sections: `PC`, `Mobile`, `Console`, `M
 - First reveal, license approval, exhibition appearance, test, open beta, and official launch are different event types.
 - A quarter, year, or approximate window must remain approximate; the system must not invent a precise date.
 - Search expands from recent updates to announcements published in the last 180 days and tracks relevant events in the coming 180 days.
-- Curated pipeline records remain visible as `持续关注`; new dates, regions, or status changes are marked `本周新增/更新`.
+- Only candidates actually found by BlueAI Web Search may appear as news; every published card must include a source URL.
 - Overseas opportunity is classified as High, Medium, Low, No current signal, or Insufficient evidence, with the supporting evidence shown.
-- Verified manual inputs in `manual_sources/daily_input.md` take priority over automatic sources.
+- Manual reference text and catalog tracking notes are excluded from the news candidate pool.
 - `已验证` requires two genuinely independent sources; an official announcement plus an independent reliable report qualifies.
 - A credible single non-official source is labeled `据报道/尚未获官方确认`; conflicting or weak evidence goes to `待确认情报`.
 
@@ -79,8 +79,8 @@ Real keys must only be stored as GitHub Secrets or in a local ignored `.env` fil
 - Maintain bilingual event terms (`OB`, first reveal, tests, launches, major updates, collaborations), priority companies, tracked games, event names, and source families in `data/keyword_library.json`.
 - `sources/keyword_library.py` converts that library into four Chinese/English search tasks; `sources/blueai_research.py` runs candidate discovery and independent verification through the Relay.
 - Official sites, stores, social accounts, event sites, Chinese game media, global trade media, and reliable wire services are searched directly; Google News is not the sole pool.
-- Maintain official Chinese/English names and known regional milestones in `data/game_catalog.json`.
-- Add verified one-off intelligence to `manual_sources/daily_input.md`.
+- Maintain official Chinese/English names and aliases in `data/game_catalog.json`; it is used only for name matching, never as a news source.
+- `manual_sources/daily_input.md` may retain working notes, but its contents are not included in generated reports.
 - Each workflow run prints BlueAI search and verification diagnostics without printing the API key.
 
 ## Running the Workflow

@@ -42,11 +42,12 @@ pending / 待确认情报 / Needs Confirmation
 严格规则：
 - 只输出合法 JSON，不要 Markdown 或解释文字。
 - 只能使用 Sectioned Candidate Pool 中的事实、日期和链接；不得猜测。
+- Sectioned Candidate Pool 中只有 BlueAI Web Search 实际抓取并核验的候选。不得把用户参考文本、人工输入或名称目录中的记录当作新闻。
+- 所有栏目中的每张卡片都必须提供候选池中的真实网页原文链接；没有链接的内容一律不输出。
 - Verification Status 为 verified 的内容可以进入主栏目，并标注“已验证（双来源）”。
 - Verification Status 为 reported_unconfirmed 的内容可以进入主栏目，但必须明确标注“据报道/尚未获官方确认”，不得写成确定事实。
 - Verification Status 为 pending_confirmation 的内容只能进入 pending，禁止进入前四个栏目。
 - 聚合转载不算独立来源；优先展示公司/工作室官方原文链接。若有多个核验来源，在摘要中写明来源数量和类型。
-- manual_sources/daily_input.md 与 Curated Game Pipeline 中的人工维护信息可以无链接；其他自动来源必须有原文链接。
 - 国内外上线日期必须分开写，不得合并成一个“上线日期”。
 - 区分首曝、预约、获批版号、展会参展、技术测试、封测、公测和正式上线，不得互相替代。
 - 季度、年份、“即将上线”等模糊时间必须保持原表述，不得自行生成日期。
@@ -60,10 +61,8 @@ pending / 待确认情报 / Needs Confirmation
 - 第一准入条件：必须能确认中国厂商、中国发行商或国产游戏产品参与。只出现 Steam、PlayStation、Xbox、海外厂商或海外游戏，不满足准入条件。
 - 同一产品优先级：海外上线日期明确 > 海外预约/测试开启 > 已有海外官网或社媒但未定档 > 国内进入上线周期 > 只有早期产品信号。
 - 广告机会判断必须面向海外发行市场，不讨论泛游戏行业价值。
-- Origin Type 为 catalog 的条目属于持续跟踪项，可以进入正式结果；不得因为它不是本周新闻而删除。
-- 对 catalog 条目标记“持续关注”；只有候选新闻显示新日期、新地区或新状态时，才标记“本周新增/更新”。
 - 未来 180 天内的明确日期优先；只公布季度、季节或年份且仍未发生的计划也可保留。已经发生且没有后续海外机会的旧节点排除。
-- Game Name Reference Catalog 仅用于名称消歧和中英文名匹配。目录中的旧日期不能覆盖候选新闻中的新事实；如发生冲突，保留候选来源说法并提示需要复核。
+- Game Name Reference Catalog 仅用于名称消歧和中英文名匹配。它不是新闻来源，不能为卡片提供事件、日期、发行状态或海外计划；所有这些事实必须来自候选网页。
 
 每条 summary_points 使用固定顺序，缺少的字段写“未公布”：
 1. “厂商：...｜平台：...｜事件：...”
@@ -106,9 +105,6 @@ def _format_game_catalog():
             f"EN: {entry.get('title_en', '')}",
             f"Aliases: {', '.join(entry.get('aliases', []))}",
             f"Company: {entry.get('company', '')}",
-            f"Platforms: {', '.join(entry.get('platforms', []))}",
-            f"China reference: {entry.get('china_status', '')}",
-            f"Overseas reference: {entry.get('overseas_status', '')}",
         ])
         for entry in entries
     )
@@ -119,10 +115,9 @@ def _format_information_pool(items):
     for index, item in enumerate(items, start=1):
         blocks.append("\n".join([
             f"[{index}]", f"Source: {item.get('source', '')}", f"Domain: {item.get('domain', '')}",
-            f"Origin Type: {item.get('origin_type', '')}", f"Manual Category: {item.get('manual_category', '')}",
-            f"Manual Company: {item.get('manual_company', '')}", f"Published Date: {item.get('published_date', '')}",
+            f"Origin Type: {item.get('origin_type', '')}", f"Published Date: {item.get('published_date', '')}",
             f"Search Window Days: {item.get('search_window_days', '')}", f"Title: {item.get('title', '')}",
-            f"Verification Status: {item.get('verification_status', 'curated')}",
+            f"Verification Status: {item.get('verification_status', 'pending_confirmation')}",
             f"Verification Notes: {item.get('verification_notes', '')}",
             f"Summary: {item.get('summary', '')}", f"Link: {item.get('link', '')}",
             f"All Source URLs: {', '.join(item.get('source_urls', []))}",

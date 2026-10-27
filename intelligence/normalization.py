@@ -52,7 +52,7 @@ def normalize_dashboard_data(data):
         "ai_technology": _filter_reliable_cards(_normalize_ai_cards(_first_section(data, "ai_technology"))),
         "sports_outdoor": _filter_reliable_cards(_normalize_cards(_first_section(data, "sports_outdoor"))),
         "retail_innovation": _filter_reliable_cards(_normalize_cards(_first_section(data, "retail_innovation"))),
-        "pending_confirmation": _normalize_cards(_first_section(data, "pending_confirmation")),
+        "pending_confirmation": _filter_reliable_cards(_normalize_cards(_first_section(data, "pending_confirmation"))),
         "one_thing_worth_watching": data.get("one_thing_worth_watching") or data.get("headline") or "今日信号已更新",
     }
     if data.get("parse_warning"):
@@ -233,10 +233,10 @@ def _sanitize_dashboard_terms(value):
 
 
 def _filter_reliable_cards(cards):
-    # Google News discovery URLs redirect to the publisher article and are kept
-    # for the MVP. Dropping them previously removed nearly every search result
-    # after the analysis model had already selected it.
-    return cards
+    # A publishable card must be traceable to a page found by Web Search.
+    # This also prevents manual notes or name-catalog facts from leaking into
+    # the report if the analysis model emits them without source evidence.
+    return [card for card in cards if str(card.get("link") or "").strip()]
 
 
 def _is_google_news_redirect(link):
