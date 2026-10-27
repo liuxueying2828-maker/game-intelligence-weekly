@@ -230,6 +230,65 @@
       font-weight: 760;
     }
 
+    .card-actions {
+      margin-top: auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .card-actions .read-button {
+      margin-top: 0;
+    }
+
+    .confirm-button {
+      min-height: 38px;
+      padding: 8px 13px;
+      border: 1px solid var(--blue);
+      border-radius: 8px;
+      background: var(--blue);
+      color: #fff;
+      font: inherit;
+      font-size: 14px;
+      font-weight: 760;
+      cursor: pointer;
+    }
+
+    .confirm-button:disabled {
+      border-color: var(--line);
+      background: #eef1f5;
+      color: #8792a2;
+      cursor: not-allowed;
+    }
+
+    .undo-button {
+      border-color: var(--line);
+      background: #fff;
+      color: var(--muted);
+    }
+
+    .confirmation-status {
+      display: none;
+      width: fit-content;
+      padding: 5px 9px;
+      border-radius: 999px;
+      background: var(--green-soft);
+      color: var(--green);
+      font-size: 12px;
+      font-weight: 760;
+    }
+
+    .card.is-confirmed .confirmation-status {
+      display: inline-flex;
+    }
+
+    .workflow-note {
+      margin: 0 0 16px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
     .read-button.disabled {
       background: #eef1f5;
       color: #8792a2;
@@ -306,87 +365,19 @@
       </div>
     </section>
 
-    
-    <section class="section">
-      <div class="section-head">
-        <div>
-          <h2>国内游戏产品动态</h2>
-          <div class="subtitle">China Game Pipeline</div>
-        </div>
-        <span class="section-badge blue">4 Signals</span>
-      </div>
-      <div class="cards">
-        
-    <article class="card">
-      <h3 class="card-title">[蛮啾网络-蓝色星原：旅谣-Azur Promilia]</h3>
-      <div class="field">
-        <div class="field-label">摘要要点</div>
-        <ul class="summary-list"><li>状态：本周新增/持续关注｜国内厂商：蛮啾网络｜平台：Multi-platform（PC, Mobile, Console）</li>
-<li>国内节点：2026-10-07 “旅迹测试”结束</li>
-<li>海外计划：2026-11-26日本、韩国、台湾地区同步上线，全球英语预约开放，东南亚PlayPark预约进行中（据报）</li>
-<li>潜在目标区域：日本、韩国、台湾、东南亚、全球英文区</li>
-<li>客户机会：日/韩/台市场上线在即，高潜东南亚预约，全球OBT于2027年夏季，持续关注多区域长线广告窗口</li></ul>
-      </div>
-      <a class="read-button" href="https://www.gematsu.com/2026/10/azur-promilia-launches-november-26-in-japan-south-korea-taiwan-and-china" target="_blank" rel="noopener noreferrer">阅读全文</a>
-    </article>
-    
-
-    <article class="card">
-      <h3 class="card-title">[雷霆游戏-问剑长生-Sword of Immortality]</h3>
-      <div class="field">
-        <div class="field-label">摘要要点</div>
-        <ul class="summary-list"><li>状态：持续关注｜国内厂商：雷霆游戏｜平台：Mobile</li>
-<li>国内节点：2026-06-18 “亚洲服”公测及半周年活动</li>
-<li>海外计划：亚洲服今日活跃，欧美版仅爆料/缺乏独立确认</li>
-<li>潜在目标区域：东亚、东南亚、（欧美待核验）</li>
-<li>客户机会：短期重点仍为亚洲服日常运营，欧美市场暂无明确广告需求</li></ul>
-      </div>
-      <a class="read-button" href="https://game.ltgamesglobal.com/wjcsasia" target="_blank" rel="noopener noreferrer">阅读全文</a>
-    </article>
-    
-
-    <article class="card">
-      <h3 class="card-title">[米哈游-源初之结-Nodusfall]</h3>
-      <div class="field">
-        <div class="field-label">摘要要点</div>
-        <ul class="summary-list"><li>状态：持续关注｜国内厂商：米哈游｜平台：PC</li>
-<li>国内节点：2026-08-26 Gamescom全球首曝/试玩，9月FAQ披露运营模式</li>
-<li>海外计划：暂无明确上线窗口，仅Gamescom国际首曝</li>
-<li>潜在目标区域：全球</li>
-<li>客户机会：国际曝光初步完成，建议中长期跟进正式预约/上线节点</li></ul>
-      </div>
-      <a class="read-button" href="https://nodusfall.hoyoverse.com/en-us/home" target="_blank" rel="noopener noreferrer">阅读全文</a>
-    </article>
-    
-
-    <article class="card">
-      <h3 class="card-title">[腾讯游戏 (日蚀边缘工作室)-湮灭之潮-Tides of Annihilation]</h3>
-      <div class="field">
-        <div class="field-label">摘要要点</div>
-        <ul class="summary-list"><li>状态：持续关注｜国内厂商：腾讯游戏（日蚀边缘工作室）｜平台：PC, Console</li>
-<li>国内节点：2026-08-26 科隆展公开试玩，开发者技术演示</li>
-<li>海外计划：同为全球市场科隆展首发，后续尚无具体公测/预约节点</li>
-<li>潜在目标区域：全球</li>
-<li>客户机会：对标海外PC/主机重度市场，密切跟进公测及海外Distributorship信号</li></ul>
-      </div>
-      <a class="read-button" href="https://www.gamespress.com/en-US/TIDES-OF-ANNIHILATION-ANNOUNCES-FIRST-HANDS-ON-EXPERIENCE-COMING-THIS-" target="_blank" rel="noopener noreferrer">阅读全文</a>
-    </article>
-    
-      </div>
-    </section>
-    
 
     <section class="section">
       <div class="section-head">
         <div>
-          <h2>海外发行确定节点</h2>
-          <div class="subtitle">Confirmed Overseas Launches</div>
+          <h2>游戏出海机会</h2>
+          <div class="subtitle">China Game Overseas Opportunities</div>
         </div>
-        <span class="section-badge violet">1 Signals</span>
+        <span class="section-badge blue" id="opportunity-count">4 条</span>
       </div>
-      <div class="cards">
-        
-    <article class="card">
+      <div class="cards" id="opportunity-list">
+
+    <article class="card" data-source-id="https://www.gematsu.com/2026/10/azur-promilia-launches-november-26-in-japan-south-korea-taiwan-and-china" data-review-card="false">
+      <span class="confirmation-status">已人工确认</span>
       <h3 class="card-title">[蛮啾网络-蓝色星原：旅谣-Azur Promilia]</h3>
       <div class="field">
         <div class="field-label">摘要要点</div>
@@ -396,78 +387,83 @@
 <li>需求判断：高（依据：日/韩/台定档，SEA多语言本地化预约，多源确认）</li>
 <li>建议介入时间：10月-11月即刻跟进日/韩/台上线及PlayPark东南亚推广｜距离节点：约30天</li></ul>
       </div>
-      <a class="read-button" href="https://www.gematsu.com/2026/10/azur-promilia-launches-november-26-in-japan-south-korea-taiwan-and-china" target="_blank" rel="noopener noreferrer">阅读全文</a>
-    </article>
-    
-      </div>
-    </section>
-    
+      <div class="card-actions">
+        <a class="read-button" data-read-source href="https://www.gematsu.com/2026/10/azur-promilia-launches-november-26-in-japan-south-korea-taiwan-and-china" target="_blank" rel="noopener noreferrer">查看原文</a>
 
-    <section class="section">
-      <div class="section-head">
-        <div>
-          <h2>海外发行前置信号</h2>
-          <div class="subtitle">Early Overseas Signals</div>
-        </div>
-        <span class="section-badge orange">1 Signals</span>
       </div>
-      <div class="cards">
-        
-    <article class="card">
-      <h3 class="card-title">[蛮啾网络-蓝色星原：旅谣-Azur Promilia]</h3>
+    </article>
+
+
+    <article class="card" data-source-id="https://game.ltgamesglobal.com/wjcsasia" data-review-card="false">
+      <span class="confirmation-status">已人工确认</span>
+      <h3 class="card-title">[雷霆游戏-问剑长生-Sword of Immortality]</h3>
       <div class="field">
         <div class="field-label">摘要要点</div>
-        <ul class="summary-list"><li>状态：持续关注｜国内厂商：蛮啾网络</li>
-<li>海外证据：全球英文官网开放预注册、多语言社媒、PlayPark东南亚特别站点预约（据报道/尚未获官方确认）</li>
-<li>可能区域：全球英文区、东南亚、日/韩/台、港澳台</li>
-<li>当前确定性：高（全球预约/日版官宣）&amp;中（SEA代理在即，但主站与PlayPark分属两条渠道）</li>
-<li>建议跟进动作：建议重点跟进日/韩/台上线广告需求及东南亚先期预约推广窗口，分渠道评估素材本地化及KOL/社群预热资源</li></ul>
+        <ul class="summary-list"><li>状态：持续关注｜国内厂商：雷霆游戏｜平台：Mobile</li>
+<li>国内节点：2026-06-18 “亚洲服”公测及半周年活动</li>
+<li>海外计划：亚洲服今日活跃，欧美版仅爆料/缺乏独立确认</li>
+<li>潜在目标区域：东亚、东南亚、（欧美待核验）</li>
+<li>客户机会：短期重点仍为亚洲服日常运营，欧美市场暂无明确广告需求</li></ul>
       </div>
-      <a class="read-button" href="https://azurpromilia.org/en/pre-registration" target="_blank" rel="noopener noreferrer">阅读全文</a>
-    </article>
-    
-      </div>
-    </section>
-    
+      <div class="card-actions">
+        <a class="read-button" data-read-source href="https://game.ltgamesglobal.com/wjcsasia" target="_blank" rel="noopener noreferrer">查看原文</a>
 
-    <section class="section">
-      <div class="section-head">
-        <div>
-          <h2>海外营销与广告机会</h2>
-          <div class="subtitle">Overseas Marketing Opportunities</div>
-        </div>
-        <span class="section-badge green">1 Signals</span>
       </div>
-      <div class="cards">
-        
-    <article class="card">
-      <h3 class="card-title">[蛮啾网络-蓝色星原：旅谣-Azur Promilia]</h3>
+    </article>
+
+
+    <article class="card" data-source-id="https://nodusfall.hoyoverse.com/en-us/home" data-review-card="false">
+      <span class="confirmation-status">已人工确认</span>
+      <h3 class="card-title">[米哈游-源初之结-Nodusfall]</h3>
       <div class="field">
         <div class="field-label">摘要要点</div>
-        <ul class="summary-list"><li>状态：本周新增/持续关注｜国内厂商：蛮啾网络</li>
-<li>目标区域：日本、韩国、台湾、东南亚、全球｜关键日期：2026-11-26（日/韩/台公测），东南亚/全球已开放预约</li>
-<li>渠道/触点：PlayPark东南亚多语预约、全球英文官网预约、日服/韩服/台服官网及社区</li>
-<li>可承接机会：海外买量、KOL种草（多平台）、本地化媒体投放（日语、韩语、泰/印尼/越南语）、社区/内容创作者预热及现地活动</li>
-<li>建议介入时间：2026年10月-12月（开服即为高动销窗口，SEA/KR/JP/TW多线并行）</li></ul>
+        <ul class="summary-list"><li>状态：持续关注｜国内厂商：米哈游｜平台：PC</li>
+<li>国内节点：2026-08-26 Gamescom全球首曝/试玩，9月FAQ披露运营模式</li>
+<li>海外计划：暂无明确上线窗口，仅Gamescom国际首曝</li>
+<li>潜在目标区域：全球</li>
+<li>客户机会：国际曝光初步完成，建议中长期跟进正式预约/上线节点</li></ul>
       </div>
-      <a class="read-button" href="https://azurpromilia.playpark.com/en/pre-register/" target="_blank" rel="noopener noreferrer">阅读全文</a>
+      <div class="card-actions">
+        <a class="read-button" data-read-source href="https://nodusfall.hoyoverse.com/en-us/home" target="_blank" rel="noopener noreferrer">查看原文</a>
+
+      </div>
     </article>
-    
+
+
+    <article class="card" data-source-id="https://www.gamespress.com/en-US/TIDES-OF-ANNIHILATION-ANNOUNCES-FIRST-HANDS-ON-EXPERIENCE-COMING-THIS-" data-review-card="false">
+      <span class="confirmation-status">已人工确认</span>
+      <h3 class="card-title">[腾讯游戏 (日蚀边缘工作室)-湮灭之潮-Tides of Annihilation]</h3>
+      <div class="field">
+        <div class="field-label">摘要要点</div>
+        <ul class="summary-list"><li>状态：持续关注｜国内厂商：腾讯游戏（日蚀边缘工作室）｜平台：PC, Console</li>
+<li>国内节点：2026-08-26 科隆展公开试玩，开发者技术演示</li>
+<li>海外计划：同为全球市场科隆展首发，后续尚无具体公测/预约节点</li>
+<li>潜在目标区域：全球</li>
+<li>客户机会：对标海外PC/主机重度市场，密切跟进公测及海外Distributorship信号</li></ul>
+      </div>
+      <div class="card-actions">
+        <a class="read-button" data-read-source href="https://www.gamespress.com/en-US/TIDES-OF-ANNIHILATION-ANNOUNCES-FIRST-HANDS-ON-EXPERIENCE-COMING-THIS-" target="_blank" rel="noopener noreferrer">查看原文</a>
+
+      </div>
+    </article>
+
       </div>
     </section>
-    
+
 
     <section class="section">
       <div class="section-head">
         <div>
-          <h2>待确认情报</h2>
-          <div class="subtitle">Needs Confirmation</div>
+          <h2>待人工确认</h2>
+          <div class="subtitle">Needs Human Review</div>
         </div>
-        <span class="section-badge orange">5 Signals</span>
+        <span class="section-badge orange" id="pending-count">5 条</span>
       </div>
-      <div class="cards">
-        
-    <article class="card">
+      <p class="workflow-note">请先打开原文核对事件、日期和游戏名称，返回本页后再点击确认。</p>
+      <div class="cards" id="pending-list">
+
+    <article class="card" data-source-id="https://baike.baidu.com/en/item/Sword%20Quest%20for%20Immortality%20%28Western%20Edition%29/4759370" data-review-card="true">
+      <span class="confirmation-status">已人工确认</span>
       <h3 class="card-title">[雷霆游戏-问剑长生-Sword Quest for Immortality]</h3>
       <div class="field">
         <div class="field-label">摘要要点</div>
@@ -477,11 +473,15 @@
 <li>当前来源：https://baike.baidu.com/en/item/Sword%20Quest%20for%20Immortality%20%28Western%20Edition%29/4759370</li>
 <li>后续核验动作：等待雷霆游戏或欧美代理方官方渠道公布预约/测试信息</li></ul>
       </div>
-      <a class="read-button" href="https://baike.baidu.com/en/item/Sword%20Quest%20for%20Immortality%20%28Western%20Edition%29/4759370" target="_blank" rel="noopener noreferrer">阅读全文</a>
+      <div class="card-actions">
+        <a class="read-button" data-read-source href="https://baike.baidu.com/en/item/Sword%20Quest%20for%20Immortality%20%28Western%20Edition%29/4759370" target="_blank" rel="noopener noreferrer">查看原文</a>
+        <button class="confirm-button" data-confirm-source type="button" disabled>确认这条情报</button>
+      </div>
     </article>
-    
 
-    <article class="card">
+
+    <article class="card" data-source-id="https://baike.baidu.com/item/%E9%97%AE%E5%89%91%E9%95%BF%E7%94%9F%EF%BC%88%E6%AC%A7%E7%BE%8E%E7%89%88%EF%BC%89/68621323" data-review-card="true">
+      <span class="confirmation-status">已人工确认</span>
       <h3 class="card-title">[雷霆游戏-问剑长生-Sword of Immortality]</h3>
       <div class="field">
         <div class="field-label">摘要要点</div>
@@ -491,11 +491,15 @@
 <li>当前来源：https://baike.baidu.com/item/%E9%97%AE%E5%89%91%E9%95%BF%E7%94%9F%EF%BC%88%E6%AC%A7%E7%BE%8E%E7%89%88%EF%BC%89/68621323</li>
 <li>后续核验动作：重点监控海外社媒、独立权威新闻站点及雷霆游戏官网公告</li></ul>
       </div>
-      <a class="read-button" href="https://baike.baidu.com/item/%E9%97%AE%E5%89%91%E9%95%BF%E7%94%9F%EF%BC%88%E6%AC%A7%E7%BE%8E%E7%89%88%EF%BC%89/68621323" target="_blank" rel="noopener noreferrer">阅读全文</a>
+      <div class="card-actions">
+        <a class="read-button" data-read-source href="https://baike.baidu.com/item/%E9%97%AE%E5%89%91%E9%95%BF%E7%94%9F%EF%BC%88%E6%AC%A7%E7%BE%8E%E7%89%88%EF%BC%89/68621323" target="_blank" rel="noopener noreferrer">查看原文</a>
+        <button class="confirm-button" data-confirm-source type="button" disabled>确认这条情报</button>
+      </div>
     </article>
-    
 
-    <article class="card">
+
+    <article class="card" data-source-id="https://baike.baidu.com/item/%E6%B9%AE%E7%81%AD%E4%B9%8B%E6%BD%AE/65305596" data-review-card="true">
+      <span class="confirmation-status">已人工确认</span>
       <h3 class="card-title">[腾讯游戏-湮灭之潮-Tides of Annihilation]</h3>
       <div class="field">
         <div class="field-label">摘要要点</div>
@@ -505,11 +509,15 @@
 <li>当前来源：https://baike.baidu.com/item/%E6%B9%AE%E7%81%AD%E4%B9%8B%E6%BD%AE/65305596</li>
 <li>后续核验动作：重点核查Gamescom官方媒体库及国际主流游戏资讯站点相关报道</li></ul>
       </div>
-      <a class="read-button" href="https://baike.baidu.com/item/%E6%B9%AE%E7%81%AD%E4%B9%8B%E6%BD%AE/65305596" target="_blank" rel="noopener noreferrer">阅读全文</a>
+      <div class="card-actions">
+        <a class="read-button" data-read-source href="https://baike.baidu.com/item/%E6%B9%AE%E7%81%AD%E4%B9%8B%E6%BD%AE/65305596" target="_blank" rel="noopener noreferrer">查看原文</a>
+        <button class="confirm-button" data-confirm-source type="button" disabled>确认这条情报</button>
+      </div>
     </article>
-    
 
-    <article class="card">
+
+    <article class="card" data-source-id="https://nodusfall.hoyoverse.com/en‑us/home" data-review-card="true">
+      <span class="confirmation-status">已人工确认</span>
       <h3 class="card-title">[米哈游-源初之结-Nodusfall]</h3>
       <div class="field">
         <div class="field-label">摘要要点</div>
@@ -519,11 +527,15 @@
 <li>当前来源：https://nodusfall.hoyoverse.com/en‑us/home</li>
 <li>后续核验动作：跟进国际主流游戏新闻网站，监控App Store/Google Play及Steam页面动向</li></ul>
       </div>
-      <a class="read-button" href="https://nodusfall.hoyoverse.com/en‑us/home" target="_blank" rel="noopener noreferrer">阅读全文</a>
+      <div class="card-actions">
+        <a class="read-button" data-read-source href="https://nodusfall.hoyoverse.com/en‑us/home" target="_blank" rel="noopener noreferrer">查看原文</a>
+        <button class="confirm-button" data-confirm-source type="button" disabled>确认这条情报</button>
+      </div>
     </article>
-    
 
-    <article class="card">
+
+    <article class="card" data-source-id="https://azurpromilia.manjuu.com/home/" data-review-card="true">
+      <span class="confirmation-status">已人工确认</span>
       <h3 class="card-title">[蛮啾网络-蓝色星原：旅谣-Azur Promilia]</h3>
       <div class="field">
         <div class="field-label">摘要要点</div>
@@ -533,14 +545,87 @@
 <li>当前来源：https://azurpromilia.manjuu.com/home/</li>
 <li>后续核验动作：关注国际及行业媒体对本轮测试的跟进与报道</li></ul>
       </div>
-      <a class="read-button" href="https://azurpromilia.manjuu.com/home/" target="_blank" rel="noopener noreferrer">阅读全文</a>
+      <div class="card-actions">
+        <a class="read-button" data-read-source href="https://azurpromilia.manjuu.com/home/" target="_blank" rel="noopener noreferrer">查看原文</a>
+        <button class="confirm-button" data-confirm-source type="button" disabled>确认这条情报</button>
+      </div>
     </article>
-    
+
       </div>
     </section>
-    
 
-    
+
+
   </main>
+
+  <script>
+    (() => {
+      const storageKey = "game-intelligence-confirmed-sources-v1";
+      const viewedKey = "game-intelligence-viewed-sources-v1";
+      const readSet = (key) => {
+        try { return new Set(JSON.parse(localStorage.getItem(key) || "[]")); }
+        catch (_) { return new Set(); }
+      };
+      const writeSet = (key, values) => localStorage.setItem(key, JSON.stringify([...values]));
+      const confirmed = readSet(storageKey);
+      const viewed = readSet(viewedKey);
+      const opportunityList = document.getElementById("opportunity-list");
+      const pendingList = document.getElementById("pending-list");
+
+      function updateCounts() {
+        const opportunities = opportunityList.querySelectorAll(".card").length;
+        const pending = pendingList.querySelectorAll(".card").length;
+        document.getElementById("opportunity-count").textContent = `${opportunities} 条`;
+        document.getElementById("pending-count").textContent = `${pending} 条`;
+        pendingList.querySelector("[data-empty-state]")?.remove();
+        if (!pending) {
+          pendingList.insertAdjacentHTML("beforeend", '<div class="empty" data-empty-state>当前没有待人工确认的情报。</div>');
+        }
+      }
+
+      function setConfirmed(card, isConfirmed) {
+        const sourceId = card.dataset.sourceId;
+        const button = card.querySelector("[data-confirm-source]");
+        card.classList.toggle("is-confirmed", isConfirmed);
+        if (isConfirmed) {
+          confirmed.add(sourceId);
+          opportunityList.appendChild(card);
+          if (button) {
+            button.disabled = false;
+            button.textContent = "取消确认";
+            button.classList.add("undo-button");
+          }
+        } else {
+          confirmed.delete(sourceId);
+          pendingList.appendChild(card);
+          if (button) {
+            button.textContent = "确认这条情报";
+            button.classList.remove("undo-button");
+            button.disabled = !viewed.has(sourceId);
+          }
+        }
+        writeSet(storageKey, confirmed);
+        updateCounts();
+      }
+
+      document.querySelectorAll("[data-review-card='true']").forEach((card) => {
+        const sourceId = card.dataset.sourceId;
+        const readLink = card.querySelector("[data-read-source]");
+        const confirmButton = card.querySelector("[data-confirm-source]");
+        if (viewed.has(sourceId) && confirmButton) confirmButton.disabled = false;
+        readLink?.addEventListener("click", () => {
+          viewed.add(sourceId);
+          writeSet(viewedKey, viewed);
+          if (confirmButton) confirmButton.disabled = false;
+        });
+        confirmButton?.addEventListener("click", () => {
+          setConfirmed(card, !card.classList.contains("is-confirmed"));
+        });
+        if (confirmed.has(sourceId)) setConfirmed(card, true);
+      });
+      updateCounts();
+    })();
+  </script>
+
 </body>
 </html>

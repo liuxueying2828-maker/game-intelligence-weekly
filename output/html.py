@@ -50,43 +50,19 @@ def safe_cards(value):
     return value if isinstance(value, list) else []
 
 
-SECTIONS = [
-    {
-        "key": "platform_intelligence",
-        "title": "国内游戏产品动态",
-        "subtitle": "China Game Pipeline",
-        "tone": "blue",
-    },
-    {
-        "key": "ai_technology",
-        "title": "海外发行确定节点",
-        "subtitle": "Confirmed Overseas Launches",
-        "tone": "violet",
-    },
-    {
-        "key": "sports_outdoor",
-        "title": "海外发行前置信号",
-        "subtitle": "Early Overseas Signals",
-        "tone": "orange",
-    },
-    {
-        "key": "retail_innovation",
-        "title": "海外营销与广告机会",
-        "subtitle": "Overseas Marketing Opportunities",
-        "tone": "green",
-    },
-    {
-        "key": "pending_confirmation",
-        "title": "待确认情报",
-        "subtitle": "Needs Confirmation",
-        "tone": "orange",
-    },
-]
+OPPORTUNITY_SECTION_ORDER = (
+    "ai_technology",
+    "retail_innovation",
+    "sports_outdoor",
+    "platform_intelligence",
+)
 
 
 def render_dashboard(data, output_path, archive_href="./archive/"):
     output_path.parent.mkdir(parents=True, exist_ok=True)
-    output_path.write_text(build_dashboard_html(data, archive_href=archive_href), encoding="utf-8")
+    html = build_dashboard_html(data, archive_href=archive_href)
+    html = "\n".join(line.rstrip() for line in html.splitlines()) + "\n"
+    output_path.write_text(html, encoding="utf-8")
     return output_path
 
 
@@ -327,6 +303,65 @@ def build_dashboard_html(data, archive_href="./archive/"):
       font-weight: 760;
     }}
 
+    .card-actions {{
+      margin-top: auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+    }}
+
+    .card-actions .read-button {{
+      margin-top: 0;
+    }}
+
+    .confirm-button {{
+      min-height: 38px;
+      padding: 8px 13px;
+      border: 1px solid var(--blue);
+      border-radius: 8px;
+      background: var(--blue);
+      color: #fff;
+      font: inherit;
+      font-size: 14px;
+      font-weight: 760;
+      cursor: pointer;
+    }}
+
+    .confirm-button:disabled {{
+      border-color: var(--line);
+      background: #eef1f5;
+      color: #8792a2;
+      cursor: not-allowed;
+    }}
+
+    .undo-button {{
+      border-color: var(--line);
+      background: #fff;
+      color: var(--muted);
+    }}
+
+    .confirmation-status {{
+      display: none;
+      width: fit-content;
+      padding: 5px 9px;
+      border-radius: 999px;
+      background: var(--green-soft);
+      color: var(--green);
+      font-size: 12px;
+      font-weight: 760;
+    }}
+
+    .card.is-confirmed .confirmation-status {{
+      display: inline-flex;
+    }}
+
+    .workflow-note {{
+      margin: 0 0 16px;
+      color: var(--muted);
+      font-size: 14px;
+    }}
+
     .read-button.disabled {{
       background: #eef1f5;
       color: #8792a2;
@@ -407,56 +442,178 @@ def build_dashboard_html(data, archive_href="./archive/"):
 
     {_render_warning(data)}
   </main>
+  {_render_confirmation_script()}
 </body>
 </html>
 """
 
 
 def _render_sections(data):
-    return "\n".join(_render_section(section, safe_cards(data.get(section["key"], []))) for section in SECTIONS)
+    opportunity_cards = _collect_opportunity_cards(data)
+    pending_cards = safe_cards(data.get("pending_confirmation", []))
+    return "\n".join([
+        _render_opportunity_section(opportunity_cards),
+        _render_pending_section(pending_cards),
+    ])
 
 
-def _render_section(section, cards):
-    rendered_cards = "\n".join(_render_card(card, section["key"]) for card in cards[:8])
+def _collect_opportunity_cards(data):
+    cards = []
+    seen_titles = set()
+    for section_key in OPPORTUNITY_SECTION_ORDER:
+        for card in safe_cards(data.get(section_key, [])):
+            title = safe_text(_card_title(card, section_key)).strip().lower()
+            if title in seen_titles:
+                continue
+            seen_titles.add(title)
+            cards.append((card, section_key))
+    return cards
+
+
+def _render_opportunity_section(cards):
+    rendered_cards = "\n".join(_render_card(card, section_key) for card, section_key in cards)
     if not rendered_cards:
-        rendered_cards = '<div class="empty">本期未筛出高价值行业情报。</div>'
+        rendered_cards = '<div class="empty" data-empty-state>本期尚未抓取到有原文链接的游戏出海机会。</div>'
 
     return f"""
     <section class="section">
       <div class="section-head">
         <div>
-          <h2>{safe_escape(section["title"])}</h2>
-          <div class="subtitle">{safe_escape(section["subtitle"])}</div>
+          <h2>游戏出海机会</h2>
+          <div class="subtitle">China Game Overseas Opportunities</div>
         </div>
-        <span class="section-badge {safe_escape(section["tone"])}">{len(cards[:8])} Signals</span>
+        <span class="section-badge blue" id="opportunity-count">{len(cards)} 条</span>
       </div>
-      <div class="cards">
+      <div class="cards" id="opportunity-list">
         {rendered_cards}
       </div>
     </section>
     """
 
 
-def _render_card(card, section_key):
+def _render_pending_section(cards):
+    rendered_cards = "\n".join(_render_card(card, "pending_confirmation", pending=True) for card in cards)
+    if not rendered_cards:
+        rendered_cards = '<div class="empty" data-empty-state>当前没有待人工确认的情报。</div>'
+
+    return f"""
+    <section class="section">
+      <div class="section-head">
+        <div>
+          <h2>待人工确认</h2>
+          <div class="subtitle">Needs Human Review</div>
+        </div>
+        <span class="section-badge orange" id="pending-count">{len(cards)} 条</span>
+      </div>
+      <p class="workflow-note">请先打开原文核对事件、日期和游戏名称，返回本页后再点击确认。</p>
+      <div class="cards" id="pending-list">
+        {rendered_cards}
+      </div>
+    </section>
+    """
+
+
+def _render_card(card, section_key, pending=False):
     if isinstance(card, str):
         card = {"name": "Signal", "news": card, "summary_points": [card], "link": ""}
 
     link = safe_text(card.get("link", ""))
-    button = (
-        f'<a class="read-button" href="{safe_escape(link, quote=True)}" target="_blank" rel="noopener noreferrer">阅读全文</a>'
+    read_button = (
+        f'<a class="read-button" data-read-source href="{safe_escape(link, quote=True)}" target="_blank" rel="noopener noreferrer">查看原文</a>'
         if link
         else '<span class="read-button disabled">暂无原文链接</span>'
     )
+    confirmation_button = (
+        '<button class="confirm-button" data-confirm-source type="button" disabled>确认这条情报</button>'
+        if pending and link else ""
+    )
 
     return f"""
-    <article class="card">
+    <article class="card" data-source-id="{safe_escape(link, quote=True)}" data-review-card="{'true' if pending else 'false'}">
+      <span class="confirmation-status">已人工确认</span>
       <h3 class="card-title">{safe_escape(_card_title(card, section_key))}</h3>
       <div class="field">
         <div class="field-label">摘要要点</div>
         {_render_summary_points(card, section_key)}
       </div>
-      {button}
+      <div class="card-actions">
+        {read_button}
+        {confirmation_button}
+      </div>
     </article>
+    """
+
+
+def _render_confirmation_script():
+    return """
+  <script>
+    (() => {
+      const storageKey = "game-intelligence-confirmed-sources-v1";
+      const viewedKey = "game-intelligence-viewed-sources-v1";
+      const readSet = (key) => {
+        try { return new Set(JSON.parse(localStorage.getItem(key) || "[]")); }
+        catch (_) { return new Set(); }
+      };
+      const writeSet = (key, values) => localStorage.setItem(key, JSON.stringify([...values]));
+      const confirmed = readSet(storageKey);
+      const viewed = readSet(viewedKey);
+      const opportunityList = document.getElementById("opportunity-list");
+      const pendingList = document.getElementById("pending-list");
+
+      function updateCounts() {
+        const opportunities = opportunityList.querySelectorAll(".card").length;
+        const pending = pendingList.querySelectorAll(".card").length;
+        document.getElementById("opportunity-count").textContent = `${opportunities} 条`;
+        document.getElementById("pending-count").textContent = `${pending} 条`;
+        pendingList.querySelector("[data-empty-state]")?.remove();
+        if (!pending) {
+          pendingList.insertAdjacentHTML("beforeend", '<div class="empty" data-empty-state>当前没有待人工确认的情报。</div>');
+        }
+      }
+
+      function setConfirmed(card, isConfirmed) {
+        const sourceId = card.dataset.sourceId;
+        const button = card.querySelector("[data-confirm-source]");
+        card.classList.toggle("is-confirmed", isConfirmed);
+        if (isConfirmed) {
+          confirmed.add(sourceId);
+          opportunityList.appendChild(card);
+          if (button) {
+            button.disabled = false;
+            button.textContent = "取消确认";
+            button.classList.add("undo-button");
+          }
+        } else {
+          confirmed.delete(sourceId);
+          pendingList.appendChild(card);
+          if (button) {
+            button.textContent = "确认这条情报";
+            button.classList.remove("undo-button");
+            button.disabled = !viewed.has(sourceId);
+          }
+        }
+        writeSet(storageKey, confirmed);
+        updateCounts();
+      }
+
+      document.querySelectorAll("[data-review-card='true']").forEach((card) => {
+        const sourceId = card.dataset.sourceId;
+        const readLink = card.querySelector("[data-read-source]");
+        const confirmButton = card.querySelector("[data-confirm-source]");
+        if (viewed.has(sourceId) && confirmButton) confirmButton.disabled = false;
+        readLink?.addEventListener("click", () => {
+          viewed.add(sourceId);
+          writeSet(viewedKey, viewed);
+          if (confirmButton) confirmButton.disabled = false;
+        });
+        confirmButton?.addEventListener("click", () => {
+          setConfirmed(card, !card.classList.contains("is-confirmed"));
+        });
+        if (confirmed.has(sourceId)) setConfirmed(card, true);
+      });
+      updateCounts();
+    })();
+  </script>
     """
 
 
