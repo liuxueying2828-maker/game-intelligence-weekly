@@ -16,7 +16,9 @@ SECTION_ORDER = ["platform", "ai", "sports", "retail", "pending"]
 # Search recent updates first, then recover older announcements whose event is
 # still relevant to the rolling six-month opportunity pipeline.
 SEARCH_WINDOWS_DAYS = [14, 30, 90, 180]
-MIN_SECTION_CANDIDATES = {"platform": 5, "ai": 5, "sports": 4, "retail": 4, "pending": 0}
+# Never pad a published section with duplicate source records. The final model
+# may return fewer cards when the evidence does not meet the editorial bar.
+MIN_SECTION_CANDIDATES = {"platform": 0, "ai": 0, "sports": 0, "retail": 0, "pending": 0}
 MAX_SECTION_CANDIDATES = {"platform": 16, "ai": 16, "sports": 14, "retail": 12, "pending": 12}
 
 FEEDS = [
