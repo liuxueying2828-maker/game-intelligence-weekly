@@ -153,6 +153,8 @@ Discovery rules:
 - Include first reveal, first gameplay, license approval, pre-registration, technical test, CBT, OB/open beta, launch, major version, overseas store/social/localization/rating/publishing deal, exhibition, brand/IP collaboration and overseas campaign.
 - Never invent or translate an English title. Mark it missing if no official match is found.
 - This is candidate discovery, not publication approval. Preserve source URLs for later verification.
+- A static store page, wishlist, long-existing website/social account, localization support page or undated pre-registration page is not a new event. Keep it only when a source establishes that it was newly opened/updated in the last {rules['lookback_days']} days or it supports a specific event in the next {rules['forward_days']} days.
+- Exclude past launches and old campaigns that have no newly announced change or future confirmed milestone. “Ongoing marketing potential” alone is not an event.
 - Return every qualifying event found, up to {BLUEAI_SEARCH_MAX_ITEMS_PER_TASK}.
 - For matrix tasks, cover EVERY entity in Focus entities. Run separate searches as needed and do not stop after finding results for the first entity.
 - For public_social_web tasks, use site-specific searches. Public official posts, video descriptions, channel announcements, store pages and Discord invite pages are valid early signals; never claim access to private groups or login-only content.
@@ -195,6 +197,7 @@ Evidence policy:
 - A credible claim with only one non-official source is reported_unconfirmed and must say 据报道/尚未获官方确认.
 - A single official social post, official channel/video description, official store page or official game site may be retained as reported_unconfirmed early evidence. Do not discard it merely because a second report does not exist.
 - Social evidence must be public and directly accessible. Never claim to have read private Discord channels, closed groups or login-only posts.
+- Verification must establish the actual change and its date. Existing store/social presence without a dated opening, update or future milestone must be pending_confirmation or excluded from the publishable result.
 - A leak, conflicting dates/numbers/names, an inaccessible claim, or otherwise insufficient evidence is pending_confirmation and must not enter a main section.
 - Correct candidate errors rather than repeating them. Never invent an English title.
 - Return direct article/announcement URLs, not search-result URLs, whenever available.

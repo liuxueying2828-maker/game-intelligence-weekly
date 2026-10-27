@@ -641,7 +641,11 @@ def _summary_points(card, section_key):
 
     raw_points = card.get("summary_points")
     if isinstance(raw_points, list):
-        return [safe_text(point).strip() for point in raw_points if safe_text(point).strip()]
+        return [
+            safe_text(point).strip()
+            for point in raw_points
+            if safe_text(point).strip() and not _is_unsupported_status_line(safe_text(point))
+        ]
     if raw_points:
         return _split_points(raw_points)
 
@@ -656,6 +660,14 @@ def _summary_points(card, section_key):
             card.get("why_this_matters") or "",
         ]
     return [safe_text(value).strip() for value in values if safe_text(value).strip()]
+
+
+def _is_unsupported_status_line(value):
+    text = safe_text(value).strip()
+    return text.startswith("状态：") or any(
+        phrase in text
+        for phrase in ("本周新增", "本周更新", "持续关注", "新增/更新或持续关注")
+    )
 
 
 def _split_points(value):
