@@ -1,169 +1,522 @@
 {
-  "date": "2026-10-27",
-  "headline": "11月26日蓝色星原旅谣多区域同步上市机会",
+  "date": "2026-10-29",
+  "headline": "《蓝色星原：旅谣》多区定档、全球预约与广告窗口密集",
   "platform_intelligence": [
     {
-      "name": "[蛮啾网络-蓝色星原：旅谣-Azur Promilia]",
+      "name": "[成都日蚀边缘工作室-湮灭之潮-Tides of Annihilation]",
       "news": "",
       "summary_points": [
-        "状态：本周新增/更新或持续关注｜国内厂商：蛮啾网络｜平台：PC、Mobile",
-        "国内节点：2026-11-26中国区及港澳台首发；此前2026-09-17技术测试、10-07测试结束",
-        "海外计划：2026-11-26日本、韩国、台湾同步上线，港澳台节点已确认，2027年夏季英文OBT计划",
-        "潜在目标区域：中国、日本、韩国、台湾，2027全球（英文服）；港澳台先行",
-        "客户机会：亚洲多区域联动广告/买量节点明显，11月-12月为首波窗口"
+        "节点：试玩展会活动（官方名称：核聚变试玩会）｜时间：2026-10-24 to 2026-10-25",
+        "地区：中国｜平台：PC、Console｜准入：未说明",
+        "国内节点：核聚变试玩会｜海外节点：未公布",
+        "证据：已验证（双来源）｜来源类型：多家独立媒体与官方展会信息",
+        "营销成熟度：低｜机会：尚未触发出海窗口"
       ],
       "why_this_matters": "",
       "trend": "Trend",
-      "link": "https://www.gematsu.com/2026/10/azur-promilia-launches-november-26-in-japan-south-korea-taiwan-and-china"
+      "link": "https://www.ali213.net/news/html/2026-10/1049721.html",
+      "candidate_id": "1",
+      "official_event_name": "核聚变试玩会",
+      "normalized_stage": "试玩展会活动",
+      "sequence_label": "测试轮次未确认",
+      "access_type": "unknown",
+      "test_goal": "unknown",
+      "event_date": "2026-10-24 to 2026-10-25",
+      "regions": [
+        "中国"
+      ],
+      "platforms": [
+        "PC",
+        "Console"
+      ],
+      "verification_status": "verified（双来源）",
+      "source_urls": [],
+      "marketing_readiness": "低",
+      "marketing_opportunity": "海外计划未公布，尚无发行信息"
     },
     {
-      "name": "[腾讯游戏 光子工作室群（COSMICPUP STUDIO）-人间异想计划-Ordinary Oddness]",
+      "name": "[腾讯游戏-人间异想计划-English name not found]",
       "news": "",
       "summary_points": [
-        "状态：本周新增/更新或持续关注｜国内厂商：腾讯游戏 光子工作室群（COSMICPUP STUDIO）｜平台：PC、Console（Steam/Epic/PS5/Xbox Series）",
-        "国内节点：2026-10-21首曝及22分钟实机演示，Steam愿望单/预注册同时开启",
-        "海外计划：已现官方海外社媒、商店页，平台覆盖与预约与国服同步，仅待进一步区域化和定档",
-        "潜在目标区域：全球（多平台）",
-        "客户机会：全球预约买量及社群营销窗口已开启，媒介内容宣传需求高"
+        "节点：首曝（官方名称：22分钟实机演示公布）｜时间：2026-10-21",
+        "地区：中国｜平台：PC、Console｜准入：未说明",
+        "国内节点：首曝&愿望单开放｜海外节点：未公布",
+        "证据：已验证（双来源）｜来源类型：多家权威媒体",
+        "营销成熟度：中｜机会：待海外计划具体化"
       ],
       "why_this_matters": "",
       "trend": "Trend",
-      "link": "https://automaton-china.com/all/platform/pc/20261021-31297-kai-fang-shi-jie-rpg-ren-jian-yi-xiang-ji-hua/"
+      "link": "https://www.sohu.com/a/1090630402_121124868",
+      "candidate_id": "2",
+      "official_event_name": "首曝 22分钟实机演示公布",
+      "normalized_stage": "首曝",
+      "sequence_label": "测试轮次未确认",
+      "access_type": "unknown",
+      "test_goal": "unknown",
+      "event_date": "2026-10-21",
+      "regions": [
+        "China"
+      ],
+      "platforms": [
+        "PC",
+        "Console"
+      ],
+      "verification_status": "verified（双来源）",
+      "source_urls": [],
+      "marketing_readiness": "中",
+      "marketing_opportunity": "尚未公布海外计划，建议跟踪前期海外信号"
     },
     {
       "name": "[米哈游-源初之结-Nodusfall]",
       "news": "",
       "summary_points": [
-        "状态：本周新增/更新或持续关注｜国内厂商：米哈游｜平台：PC（首发）、Console后续待定",
-        "国内节点：2026-08-25全球同步首曝，国内外商标及社媒账号同日注册",
-        "海外计划：中英文官网、全球社群账号均已上线，海外发行铺设中但无定档",
-        "潜在目标区域：全球",
-        "客户机会：新IP全球造势/预约期，适合品牌/社区前置宣传与预热"
+        "节点：全球首曝（官方名称：Official debut at Gamescom Opening Night Live）｜时间：2026-08-25",
+        "地区：全球｜平台：未公布｜准入：未说明",
+        "国内节点：未公布｜海外节点：Gamescom 全球首曝",
+        "证据：已验证（双来源）｜来源类型：官方官网+维基百科",
+        "营销成熟度：中｜机会：后续测试/预约节点预期广告机会"
       ],
       "why_this_matters": "",
       "trend": "Trend",
-      "link": "https://zh.wikipedia.org/zh-cn/%E6%BA%90%E5%88%9D%E4%B9%8B%E7%BB%93"
+      "link": "https://nodusfall.mihoyo.com/en-us/home",
+      "candidate_id": "8",
+      "official_event_name": "Official debut at Gamescom Opening Night Live",
+      "normalized_stage": "全球首曝",
+      "sequence_label": "测试轮次未确认",
+      "access_type": "unknown",
+      "test_goal": "unknown",
+      "event_date": "2026-08-25",
+      "regions": [
+        "Global"
+      ],
+      "platforms": [
+        "Unknown"
+      ],
+      "verification_status": "verified（双来源）",
+      "source_urls": [],
+      "marketing_readiness": "中",
+      "marketing_opportunity": "全球首曝已完成，后续聚焦区域化预约及测试安排"
     },
     {
-      "name": "[莉莉丝游戏-未找到中文名-Project Party]",
+      "name": "[蛮啾网络-蓝色星原：旅谣-Azur Promilia]",
       "news": "",
       "summary_points": [
-        "状态：本周新增/更新或持续关注｜国内厂商：莉莉丝游戏｜平台：PC、Mobile",
-        "国内节点：2026-07-28全球首次官宣，多平台已开启预约及制作人访谈内容",
-        "海外计划：暂无明确日期，全球预约及产品预热中，有TapTap全球页面同步",
-        "潜在目标区域：全球",
-        "客户机会：早期创作激励、内容发酵、预约积累（buy-in型营销建议）"
+        "节点：定档公测（官方名称：公测正式定档11月26日）｜时间：2026-11-26",
+        "地区：中国、日本、韩国、台湾｜平台：PC、Mobile｜准入：公开",
+        "国内节点：11月26日定档公测｜海外节点：日本、韩国、台湾 11月26日同步",
+        "证据：已验证（双来源）｜来源类型：官网公告+权威行业媒体",
+        "营销成熟度：高｜机会：强烈建议即刻介入预约和预热买量，重点东亚市场"
       ],
       "why_this_matters": "",
       "trend": "Trend",
-      "link": "https://mobi.gg/en/news/announcement-project-party-lilith-games/"
+      "link": "https://www.gematsu.com/2026/10/azur-promilia-launches-november-26-in-japan-south-korea-taiwan-and-china",
+      "candidate_id": "13",
+      "official_event_name": "公测正式定档11月26日",
+      "normalized_stage": "定档公测",
+      "sequence_label": "测试轮次未确认",
+      "access_type": "unknown",
+      "test_goal": "unknown",
+      "event_date": "2026-11-26",
+      "regions": [
+        "中国",
+        "日本",
+        "韩国",
+        "台湾"
+      ],
+      "platforms": [
+        "PC",
+        "Mobile"
+      ],
+      "verification_status": "verified（双来源）",
+      "source_urls": [],
+      "marketing_readiness": "高",
+      "marketing_opportunity": "港澳台、日、韩明确公测节点，广告转化窗口已打开"
+    },
+    {
+      "name": "[蛮啾网络-蓝色星原：旅谣-Azur Promilia]",
+      "news": "",
+      "summary_points": [
+        "节点：全球预约（官方名称：Global pre-registration milestone）｜时间：2026-10-17",
+        "地区：全球｜平台：Mobile｜准入：未说明",
+        "国内节点：未公布｜海外节点：全球预约数据达2500万",
+        "证据：已验证（双来源）｜来源类型：日区X官宣/预告 & 独立行业媒体",
+        "营销成熟度：高｜机会：可承接全球预约、流量聚合及东南亚等新兴市场买量"
+      ],
+      "why_this_matters": "",
+      "trend": "Trend",
+      "link": "https://gamewith.ai/azurpromilia/en/news",
+      "candidate_id": "4",
+      "official_event_name": "Global pre-registration milestone",
+      "normalized_stage": "全球预约",
+      "sequence_label": "测试轮次未确认",
+      "access_type": "unknown",
+      "test_goal": "unknown",
+      "event_date": "2026-10-17",
+      "regions": [
+        "全球"
+      ],
+      "platforms": [
+        "Mobile"
+      ],
+      "verification_status": "verified（双来源）",
+      "source_urls": [],
+      "marketing_readiness": "高",
+      "marketing_opportunity": "全球预约里程碑，适合开展预注册营销与数据分析"
     }
   ],
   "ai_technology": [
+    {
+      "name": "[鹰角网络-Arknights: Endfield-Arknights: Endfield]",
+      "title": "[鹰角网络-Arknights: Endfield-Arknights: Endfield]",
+      "capability": "",
+      "summary_points": [
+        "节点：全球公测（官方名称：全球上线（Global open beta / Launch））｜时间：2026-01-22",
+        "地区：全球｜平台：PC、Mobile、Console｜准入：公开",
+        "国内节点：未说明｜海外节点：2026-01-22全球正式上线，多平台齐发",
+        "证据：已验证（双来源）｜来源类型：官方新闻稿+权威行业媒体",
+        "营销成熟度：高｜机会：针对上线后拉新、媒体曝光和泛圈社媒扩散"
+      ],
+      "industry_impact": "",
+      "trend": "AI 能力",
+      "link": "https://www.animenewsnetwork.com/press-release/2026-01-22/arknights-endfield-is-out-now-on-pc-playstation-5-and-mobile/.233347",
+      "candidate_id": "12",
+      "official_event_name": "全球上线（Global open beta / Launch）",
+      "normalized_stage": "正式上线/全球公测",
+      "sequence_label": "终测",
+      "access_type": "unknown",
+      "test_goal": "unknown",
+      "event_date": "2026-01-22",
+      "regions": [
+        "Global"
+      ],
+      "platforms": [
+        "PC",
+        "Mobile",
+        "Console"
+      ],
+      "verification_status": "verified（双来源）",
+      "source_urls": [],
+      "marketing_readiness": "高",
+      "marketing_opportunity": "全球公测节点已实现、国际买量与社区激活时机临近尾声"
+    },
     {
       "name": "[蛮啾网络-蓝色星原：旅谣-Azur Promilia]",
       "title": "[蛮啾网络-蓝色星原：旅谣-Azur Promilia]",
       "capability": "",
       "summary_points": [
-        "状态：本周新增/更新或持续关注｜国内厂商：蛮啾网络｜平台：PC、Mobile｜已验证（双来源）",
-        "海外节点：2026-11-26日本、韩国、台湾同步上线；2027年夏季英文OBT 预定。重点区域：中国、日本、韩国、台湾（近期）；全球（后续英文服）",
-        "国内节点：2026-11-26中国大陆上线，9-17“旅迹测试”、10-07测试结束",
-        "需求判断：高（依据：亚洲四区同步新品+后续全球）",
-        "建议介入时间：2026年10月下旬至12月上线档口｜距离节点：约30天"
+        "节点：海外英文区OBT（官方名称：English-version Open Beta Test set for Summer 2027）｜时间：Summer 2027",
+        "地区：全球（英语区）｜平台：PC、Mobile｜准入：未说明",
+        "国内节点：未公布｜海外节点：2027夏季英文区OBT",
+        "证据：已验证（双来源）｜来源类型：开发者声明+权威英文行业媒体",
+        "营销成熟度：中｜机会：营销策划和广告签约提前准备"
       ],
       "industry_impact": "",
       "trend": "AI 能力",
-      "link": "https://www.gematsu.com/2026/10/azur-promilia-launches-november-26-in-japan-south-korea-taiwan-and-china"
+      "link": "https://www.gematsu.com/2026/10/azur-promilia-english-open-beta-test-set-for-summer-2027",
+      "candidate_id": "5",
+      "official_event_name": "English-version Open Beta Test set for Summer 2027",
+      "normalized_stage": "全球英文区OBT预告",
+      "sequence_label": "测试轮次未确认",
+      "access_type": "unknown",
+      "test_goal": "unknown",
+      "event_date": "Summer 2027",
+      "regions": [
+        "Global English-speaking audience"
+      ],
+      "platforms": [
+        "PC",
+        "Mobile"
+      ],
+      "verification_status": "verified（双来源）",
+      "source_urls": [],
+      "marketing_readiness": "中",
+      "marketing_opportunity": "英文版OBT季度窗口已明确，后续细化节点和北美/欧洲精确买量计划预期出现"
+    },
+    {
+      "name": "[三七互娱-Last Asylum: Plague-Last Asylum: Plague]",
+      "title": "[三七互娱-Last Asylum: Plague-Last Asylum: Plague]",
+      "capability": "",
+      "summary_points": [
+        "节点：全球上线（官方名称：Last Asylum: Plague 上线）｜时间：2026-02-26",
+        "地区：全球｜平台：Mobile｜准入：公开",
+        "国内节点：未公布｜海外节点：2月26日欧洲/2月28日全球全平台上线",
+        "证据：已验证（双来源）｜来源类型：Google Play店铺、行业统计与媒体引用",
+        "营销成熟度：高｜机会：后期提升LTV和区域突破型广告方案"
+      ],
+      "industry_impact": "",
+      "trend": "AI 能力",
+      "link": "https://indietower.com/apps/android/com.phs.global",
+      "candidate_id": "24",
+      "official_event_name": "Last Asylum: Plague 上线",
+      "normalized_stage": "全球上线",
+      "sequence_label": "测试轮次未确认",
+      "access_type": "unknown",
+      "test_goal": "unknown",
+      "event_date": "2026-02-26",
+      "regions": [
+        "global"
+      ],
+      "platforms": [
+        "Mobile"
+      ],
+      "verification_status": "verified（双来源）",
+      "source_urls": [],
+      "marketing_readiness": "高",
+      "marketing_opportunity": "累计月活与收入表现优异，后续可承接ASO投放及区域市场创意买量方案"
     }
   ],
   "sports_outdoor": [
     {
-      "name": "[蛮啾网络-蓝色星原：旅谣-Azur Promilia]",
+      "name": "[完美世界-异环-English name not found]",
       "news": "",
       "summary_points": [
-        "状态：本周新增/更新或持续关注｜国内厂商：蛮啾网络",
-        "海外证据：2026-10-20东南亚官方公告，PlayPark代理开启SEA英文/泰文/越印/中文等语种预约，媒体独立验证",
-        "可能区域：东南亚多国（SEA）、特别关切英语与本地语市场",
-        "当前确定性：中（直接区域代理为强信号，但日期未明）",
-        "建议跟进动作：建立东南亚广告分地区/语种部署&评估SEA本地社媒资源"
+        "节点：全球公测&财务披露（官方名称：全球公测及运营表现披露）｜时间：2026-04，6月30日，8月18日",
+        "地区：全球｜平台：Mobile｜准入：公开",
+        "国内节点：2026-04公测｜海外节点：全球上线、14/20亿元里程碑",
+        "证据：据报道/尚未获官方确认｜来源类型：公司半年报+财经媒体",
+        "营销成熟度：高｜机会：数据驱动再营销与高价值渠道投放"
       ],
       "why_this_matters": "",
       "trend": "Trend",
-      "link": "https://azurpromilia.playpark.com/en/news/sea-official-announcement/"
-    },
-    {
-      "name": "[腾讯游戏 光子工作室群（COSMICPUP STUDIO）-人间异想计划-Ordinary Oddness]",
-      "news": "",
-      "summary_points": [
-        "状态：本周新增/更新或持续关注｜国内厂商：腾讯游戏 光子工作室群（COSMICPUP STUDIO）",
-        "海外证据：Noisy Pixel、Gematsu和官方页面同步披露英文名、主机/PC/多语言版本均已公开，全球预约/愿望单已开放",
-        "可能区域：全球（尤其欧美主机端）",
-        "当前确定性：高（多媒体与海外社媒铺设完成，差定档或区域测试）",
-        "建议跟进动作：策划多平台预约买量、CG&内容素材海外分发预研"
+      "link": "https://www.pwrd.com/cn/news/press/p2026/20260716/89007.shtml",
+      "candidate_id": "42",
+      "official_event_name": "全球公测及运营表现披露",
+      "normalized_stage": "全球公测&财务指标",
+      "sequence_label": "测试轮次未确认",
+      "access_type": "unknown",
+      "test_goal": "unknown",
+      "event_date": "2026-04 (global open beta launch), 2026-06-30 (14B milestone), 2026-08-18 (20B milestone)",
+      "regions": [
+        "全球"
       ],
-      "why_this_matters": "",
-      "trend": "Trend",
-      "link": "https://noisypixel.net/ordinary-oddness-announced-ps5-xbox-series-pc/"
-    }
-  ],
-  "retail_innovation": [],
-  "pending_confirmation": [
-    {
-      "name": "[蛮啾网络-蓝色星原：旅谣-Azur Promilia]",
-      "news": "",
-      "summary_points": [
-        "核验状态：待确认",
-        "候选事件：2026-11-26亚洲四地上线（日本/韩国/台湾/中国），多区Publisher确认为Yostar/Nexon/JIMI/蛮啾，国内公测及测试节点匹配；预注册已开启",
-        "冲突/缺失证据：未见官方/负责开发者独立新闻稿，仅trade-media GameHaunt/FinalWeapon消息为主，需官方公告核实区域及发行商真实性",
-        "当前来源：https://gamehaunt.com/azur-promilia-launches-november-26-across-four-asian-regions/",
-        "后续核验动作：持续跟进官方平台、区域分销商（Yostar/TapTap/Manjuu）公告以核定渠道权属及上市计划"
+      "platforms": [
+        "Mobile"
       ],
-      "why_this_matters": "",
-      "trend": "Trend",
-      "link": "https://gamehaunt.com/azur-promilia-launches-november-26-across-four-asian-regions/"
-    },
-    {
-      "name": "[腾讯游戏-洛克王国：世界-Roco Kingdom]",
-      "news": "",
-      "summary_points": [
-        "核验状态：待确认",
-        "候选事件：2026-10-27起国际服开启全球封闭测试，PC/Console/Mobile多端，预注册已开放",
-        "冲突/缺失证据：部分新闻为IT之家/GamePlusDaily报道，腾讯官网/海外社媒未直接公布，需官方渠道补证",
-        "当前来源：https://www.ithome.com/0/994/547.htm",
-        "后续核验动作：重点补充腾讯海外/Roco Kingdom全球页面公告"
-      ],
-      "why_this_matters": "",
-      "trend": "Trend",
-      "link": "https://www.ithome.com/0/994/547.htm"
-    },
-    {
-      "name": "[完美世界游戏-Neverness to Everness-NTE]",
-      "news": "",
-      "summary_points": [
-        "核验状态：待确认",
-        "候选事件：2026-04-29官方公告全球上线，所有主流平台铺开，后续有内容更新节点；30M预约达成及多场景预下载、FAQ发布",
-        "冲突/缺失证据：虽有官宣和媒体支撑，但部分消息以预热宣传、FAQ及下载而非正式媒体独立报导为主，需海外主要分销/社区公告补证",
-        "当前来源：https://nte.perfectworld.com/en/article/news/gamenews/20260226/261061.html",
-        "后续核验动作：继续跟踪官方全球社区、平台及GamePress等主站口径"
-      ],
-      "why_this_matters": "",
-      "trend": "Trend",
-      "link": "https://nte.perfectworld.com/en/article/news/gamenews/20260226/261061.html"
+      "verification_status": "reported_unconfirmed",
+      "source_urls": [],
+      "marketing_readiness": "高",
+      "marketing_opportunity": "阶段性流水与全球用户规模对买量及区域广告策略调整有参考价值"
     },
     {
       "name": "[米哈游-源初之结-Nodusfall]",
       "news": "",
       "summary_points": [
-        "核验状态：待确认",
-        "候选事件：2026-08-25全球首曝及科隆游戏展开幕宣传、主要FAQ答疑上线、官网预约/二次内容联动同步执行",
-        "冲突/缺失证据：未见主流独立权威游戏媒体直接引用，仅限官方页面/粉丝wiki/微博Q&A，需IGN、Gematsu、Gamespot等权威确认",
-        "当前来源：https://nodusfall.mihoyo.com/",
-        "后续核验动作：重点追踪全球权威媒体与国际社媒渠道的年度新品播报"
+        "节点：全球预约（官方名称：Pre-registration opens）｜时间：2026-08-25",
+        "地区：全球｜平台：未公布｜准入：未说明",
+        "国内节点：未公布｜海外节点：官网启动全球预约",
+        "证据：据报道/尚未获官方确认｜来源类型：游戏官网+电竞媒体",
+        "营销成熟度：中｜机会：预注册页面已开，社交媒体和预约导量方案可提前准备"
       ],
       "why_this_matters": "",
       "trend": "Trend",
-      "link": "https://nodusfall.mihoyo.com/"
+      "link": "https://nodusfall.hoyoverse.com/en-us/home",
+      "candidate_id": "29",
+      "official_event_name": "Pre-registration opens",
+      "normalized_stage": "全球预约",
+      "sequence_label": "测试轮次未确认",
+      "access_type": "unknown",
+      "test_goal": "unknown",
+      "event_date": "2026-08-25",
+      "regions": [
+        "global"
+      ],
+      "platforms": [
+        "Unknown"
+      ],
+      "verification_status": "reported_unconfirmed",
+      "source_urls": [],
+      "marketing_readiness": "中",
+      "marketing_opportunity": "官网已开启全球预约，适合布局后续预注册广告及国际社媒内容运营"
     }
   ],
-  "one_thing_worth_watching": "蛮啾网络《蓝色星原：旅谣》2026年11月26日亚洲多区上线，四地同步联动投放窗口，可重点争取日本/韩/台/港澳台出海营销项目"
+  "retail_innovation": [
+    {
+      "name": "[灵犀互娱-代号咘咘-English name not found]",
+      "news": "",
+      "summary_points": [
+        "节点：首次曝光及测试招募（官方名称：测试招募开启）｜时间：2026-08-17",
+        "地区：中国｜平台：Mobile｜准入：未说明",
+        "国内节点：招募与预下载｜海外节点：未公布",
+        "证据：已验证（双来源）｜来源类型：腾讯新闻+TapTap官方社区",
+        "营销成熟度：中｜机会：关注后续东南亚/国际预约与广告窗口"
+      ],
+      "why_this_matters": "",
+      "trend": "Trend",
+      "link": "https://news.qq.com/rain/a/20260820A0CMDI00",
+      "candidate_id": "25",
+      "official_event_name": "测试招募开启",
+      "normalized_stage": "测试招募/曝光",
+      "sequence_label": "测试轮次未确认",
+      "access_type": "unknown",
+      "test_goal": "unknown",
+      "event_date": "2026-08-17",
+      "regions": [
+        "中国"
+      ],
+      "platforms": [
+        "Mobile"
+      ],
+      "verification_status": "verified（双来源）",
+      "source_urls": [],
+      "marketing_readiness": "中",
+      "marketing_opportunity": "产品初次曝光，后续如开放海外预约/预热可介入海外广告与社区运营方案"
+    }
+  ],
+  "pending_confirmation": [
+    {
+      "name": "[蛮啾网络-蓝色星原：旅谣-Azur Promilia]",
+      "news": "",
+      "summary_points": [
+        "节点：多轮测试和首曝记录（官方名称：测试历程汇总）｜时间：2024–2026 多次",
+        "冲突/缺失证据：仅见 Bilibili Wiki 梳理，无正式官方或权威媒体公告",
+        "当前来源：https://wiki.biligame.com/ap/%E8%93%9D%E8%89%B2%E6%98%9F%E5%8E%9F%EF%BC%9A%E6%97%85%E8%B0%A3",
+        "后续核验动作：需查找官方历史公告或行业主流媒体完整复核"
+      ],
+      "why_this_matters": "",
+      "trend": "Trend",
+      "link": "https://wiki.biligame.com/ap/%E8%93%9D%E8%89%B2%E6%98%9F%E5%8E%9F%EF%BC%9A%E6%97%85%E8%B0%A3",
+      "candidate_id": "55",
+      "official_event_name": "测试历程汇总",
+      "normalized_stage": "测试阶段待证实",
+      "sequence_label": "测试轮次未确认",
+      "access_type": "unknown",
+      "test_goal": "unknown",
+      "event_date": "2024–2026 多次",
+      "regions": [
+        "中国"
+      ],
+      "platforms": [
+        "Unknown"
+      ],
+      "verification_status": "pending_confirmation",
+      "source_urls": [],
+      "marketing_readiness": "",
+      "marketing_opportunity": ""
+    },
+    {
+      "name": "[世纪华通-龙之谷世界-English name not found]",
+      "news": "",
+      "summary_points": [
+        "节点：全球公测（官方名称：《龙之谷世界》全球公测）｜时间：2026-07-29",
+        "冲突/缺失证据：仅百科页面自动汇总，暂无独立行业或官方公告双核验",
+        "当前来源：https://baike.baidu.com/item/%E9%BE%99%E4%B9%8B%E8%B0%B7%E4%B8%96%E7%95%8C/65241733",
+        "后续核验动作：需官方或行业主流门户正式定档确认"
+      ],
+      "why_this_matters": "",
+      "trend": "Trend",
+      "link": "https://baike.baidu.com/item/%E9%BE%99%E4%B9%8B%E8%B0%B7%E4%B8%96%E7%95%8C/65241733",
+      "candidate_id": "56",
+      "official_event_name": "《龙之谷世界》全球公测",
+      "normalized_stage": "海外公测待证实",
+      "sequence_label": "测试轮次未确认",
+      "access_type": "unknown",
+      "test_goal": "unknown",
+      "event_date": "2026-07-29",
+      "regions": [
+        "China",
+        "Southeast Asia",
+        "South Korea"
+      ],
+      "platforms": [
+        "Unknown"
+      ],
+      "verification_status": "pending_confirmation",
+      "source_urls": [],
+      "marketing_readiness": "",
+      "marketing_opportunity": ""
+    },
+    {
+      "name": "[沐瞳科技-未找到中文名-English name not found]",
+      "news": "",
+      "summary_points": [
+        "节点：FILMART IP孵化首秀（官方名称：Debut at Hong Kong FILMART – unveiling three original film-game IPs）｜时间：2026-10",
+        "冲突/缺失证据：仅阿拉伯小站一处曝光，确认未最终核验全球发行细节",
+        "当前来源：https://thearabianpost.com/moonton-games-shines-at-hong-kong-filmart-unveiling-three-original-film-game-ips-and-forging-a-new-film-game-integration-ecosystem-for-the-future/",
+        "后续核验动作：补充英文官方或亚洲主流权威媒体及发行计划证据"
+      ],
+      "why_this_matters": "",
+      "trend": "Trend",
+      "link": "https://thearabianpost.com/moonton-games-shines-at-hong-kong-filmart-unveiling-three-original-film-game-ips-and-forging-a-new-film-game-integration-ecosystem-for-the-future/",
+      "candidate_id": "58",
+      "official_event_name": "Debut at Hong Kong FILMART – unveiling three original film-game IPs",
+      "normalized_stage": "国际IP孵化曝光",
+      "sequence_label": "测试轮次未确认",
+      "access_type": "unknown",
+      "test_goal": "unknown",
+      "event_date": "2026-10",
+      "regions": [
+        "global"
+      ],
+      "platforms": [
+        "Unknown"
+      ],
+      "verification_status": "pending_confirmation",
+      "source_urls": [],
+      "marketing_readiness": "",
+      "marketing_opportunity": ""
+    },
+    {
+      "name": "[蛮啾网络-蓝色星原：旅谣-English name not found]",
+      "news": "",
+      "summary_points": [
+        "节点：全球预约里程碑活动（官方名称：全球预约里程碑活动开启）｜时间：2026-10-前",
+        "冲突/缺失证据：仅TapTap社区出现、缺乏官方或权威行业公告",
+        "当前来源：https://www.taptap.cn/moment/824299108784145606",
+        "后续核验动作：需补查官方活动页面和多区域营销渠道曝光"
+      ],
+      "why_this_matters": "",
+      "trend": "Trend",
+      "link": "https://www.taptap.cn/moment/824299108784145606",
+      "candidate_id": "57",
+      "official_event_name": "全球预约里程碑活动开启",
+      "normalized_stage": "预约奖励活动待确认",
+      "sequence_label": "测试轮次未确认",
+      "access_type": "unknown",
+      "test_goal": "unknown",
+      "event_date": "2026-10-前",
+      "regions": [
+        "中国",
+        "可能海外"
+      ],
+      "platforms": [
+        "Unknown"
+      ],
+      "verification_status": "pending_confirmation",
+      "source_urls": [],
+      "marketing_readiness": "",
+      "marketing_opportunity": ""
+    },
+    {
+      "name": "[雷霆游戏-问剑长生（欧美版）-Sword Quest for Immortality (Western Edition)]",
+      "news": "",
+      "summary_points": [
+        "节点：欧美版发行披露（官方名称：Western version planned for H2 2026）｜时间：2026年下半年",
+        "冲突/缺失证据：仅来源于百科页面、缺正式开发/发行商公告",
+        "当前来源：https://baike.baidu.com/en/item/Sword%20Quest%20for%20Immortality%20%28Western%20Edition%29/4759370",
+        "后续核验动作：需欧美区注册、评级、预约、测试等信号"
+      ],
+      "why_this_matters": "",
+      "trend": "Trend",
+      "link": "https://baike.baidu.com/en/item/Sword%20Quest%20for%20Immortality%20%28Western%20Edition%29/4759370",
+      "candidate_id": "83",
+      "official_event_name": "Western version planned for H2 2026",
+      "normalized_stage": "欧美版规划待定档",
+      "sequence_label": "测试轮次未确认",
+      "access_type": "unknown",
+      "test_goal": "unknown",
+      "event_date": "2026-H2",
+      "regions": [
+        "Europe",
+        "North America"
+      ],
+      "platforms": [
+        "Unknown"
+      ],
+      "verification_status": "pending_confirmation",
+      "source_urls": [],
+      "marketing_readiness": "",
+      "marketing_opportunity": ""
+    }
+  ],
+  "one_thing_worth_watching": "《蓝色星原：旅谣》2026年11月26日日本、韩国、台湾公测定档，东亚市场广告与品牌合作窗口最热，建议销售团队针对该节点重点跟进相关买量、渠道商务与本地化支持。"
 }

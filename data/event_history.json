@@ -1,1 +1,1988 @@
-{"version": 1, "description": "Only externally sourced events belong here. User reference examples and the game catalog are not evidence.", "events": []}
+{
+  "version": 1,
+  "description": "Only externally sourced events belong here. User reference examples and the game catalog are not evidence.",
+  "events": [
+    {
+      "candidate_id": "azur_promilia_test1",
+      "company_cn": "蛮啾网络",
+      "company_en": "",
+      "game_cn": "蓝色星原：旅谣",
+      "game_en": "",
+      "official_event_name": "旅迹测试 招募",
+      "normalized_stage": "cbt",
+      "test_sequence": "测试轮次未确认",
+      "access_type": "limited",
+      "test_goal": "unknown",
+      "regions": [
+        "国内"
+      ],
+      "platforms": [
+        "PC",
+        "Android",
+        "iOS"
+      ],
+      "published_date": "2026-07-10",
+      "event_date": "2026-07-10",
+      "verification_status": "verified",
+      "source_urls": [
+        "https://www.taptap.cn/moment/822523359752357518",
+        "https://news.17173.com/content/07102026/160101459.shtml"
+      ],
+      "last_seen_at": "2026-10-29"
+    },
+    {
+      "candidate_id": "azur_promilia_prelaunch",
+      "company_cn": "蛮啾网络",
+      "company_en": "",
+      "game_cn": "蓝色星原：旅谣",
+      "game_en": "",
+      "official_event_name": "公测正式定档 11 月 26 日",
+      "normalized_stage": "open_beta_or_launch",
+      "test_sequence": "final",
+      "access_type": "open",
+      "test_goal": "unknown",
+      "regions": [
+        "大陆",
+        "日本",
+        "韩国",
+        "港澳台"
+      ],
+      "platforms": [
+        "PC",
+        "移动端",
+        "PS5"
+      ],
+      "published_date": "2026-10-22",
+      "event_date": "2026-11-26",
+      "verification_status": "verified",
+      "source_urls": [
+        "https://azurpromilia.manjuu.com/home/",
+        "https://finance.sina.com.cn/roll/2026-10-28/doc-iniwttse3369129.shtml",
+        "https://www.gamersky.com/news/202610/2233809.shtml"
+      ],
+      "last_seen_at": "2026-10-29"
+    },
+    {
+      "candidate_id": "manjuu_azurpromilia_openbeta_announce",
+      "company_cn": "蛮啾网络",
+      "company_en": "Manjuu Network",
+      "game_cn": "蓝色星原：旅谣",
+      "game_en": null,
+      "official_event_name": "蓝色星原：旅谣公测正式定档 11 月 26 日",
+      "normalized_stage": "open_beta_or_launch",
+      "test_sequence": "final",
+      "access_type": "open",
+      "test_goal": "unknown",
+      "regions": [
+        "国内"
+      ],
+      "platforms": [
+        "PC",
+        "移动端",
+        "PS5"
+      ],
+      "published_date": "2026‑10‑22",
+      "event_date": "2026‑11‑26",
+      "verification_status": "reported_unconfirmed",
+      "source_urls": [
+        "https://azurpromilia.manjuu.com/home/",
+        "https://finance.sina.com.cn/roll/2026-10-28/doc-iniwttse3369129.shtml"
+      ],
+      "last_seen_at": "2026-10-29"
+    },
+    {
+      "candidate_id": "papergames_competition",
+      "company_cn": "叠纸游戏",
+      "company_en": "Papergames",
+      "game_cn": "",
+      "game_en": "",
+      "official_event_name": "叠纸游戏 2026 创作大赛 启动",
+      "normalized_stage": "collaboration",
+      "test_sequence": "测试轮次未确认",
+      "access_type": "open",
+      "test_goal": "unknown",
+      "regions": [
+        "全球"
+      ],
+      "platforms": [],
+      "published_date": "2026‑04‑27",
+      "event_date": "2026‑04‑27 to 2026‑07‑31 (投稿)，评审结果预计 2026‑10",
+      "verification_status": "verified",
+      "source_urls": [
+        "https://m.huanqiu.com/article/4RN7zeo0UYU",
+        "https://www.taptap.cn/moment/798204660031684725"
+      ],
+      "last_seen_at": "2026-10-29"
+    },
+    {
+      "candidate_id": "kurogames_award_mingchao",
+      "company_cn": "库洛游戏",
+      "company_en": "Kuro Games",
+      "game_cn": "鸣潮",
+      "game_en": null,
+      "official_event_name": "鸣潮获台北电玩展“GAME STAR游戏之星”三大奖",
+      "normalized_stage": "collaboration",
+      "test_sequence": "unknown",
+      "access_type": "open",
+      "test_goal": "unknown",
+      "regions": [
+        "台湾"
+      ],
+      "platforms": [
+        "Console",
+        "Mobile",
+        "PC"
+      ],
+      "published_date": "2026‑01‑29",
+      "event_date": "2026‑01‑29 to 2026‑02‑01, award announced 2026‑01‑29",
+      "verification_status": "verified",
+      "source_urls": [
+        "https://tgs.tca.org.tw/news.php?a=1&b=c&n=b4681a619cf018eed690452faeb0e94f",
+        "https://gnn.gamer.com.tw/detail.php?sn=299271"
+      ],
+      "last_seen_at": "2026-10-29"
+    },
+    {
+      "candidate_id": "manjuu_bluesphere",
+      "company_cn": "叠纸游戏",
+      "company_en": "Papergames",
+      "game_cn": "蓝色星原：旅谣",
+      "game_en": "",
+      "official_event_name": "旅迹测试（第一期）",
+      "normalized_stage": "cbt",
+      "test_sequence": "1",
+      "access_type": "limited",
+      "test_goal": "unknown",
+      "regions": [
+        "国内"
+      ],
+      "platforms": [
+        "PC",
+        "Android"
+      ],
+      "published_date": "2026‑08‑28",
+      "event_date": "2026‑09‑17 11:00 (UTC+8)",
+      "verification_status": "verified",
+      "source_urls": [
+        "https://a.4399.cn/gl/53781190_300028.html",
+        "https://www.vgtime.com/news/bSMMBrTQVW04ZSK5oSWkCQ%3D%3D"
+      ],
+      "last_seen_at": "2026-10-29"
+    },
+    {
+      "candidate_id": "manjuu_bluesphere_endtest",
+      "company_cn": "叠纸游戏",
+      "company_en": "Papergames",
+      "game_cn": "蓝色星原：旅谣",
+      "game_en": "",
+      "official_event_name": "旅迹测试结束",
+      "normalized_stage": "cbt",
+      "test_sequence": "1",
+      "access_type": "limited",
+      "test_goal": "unknown",
+      "regions": [
+        "国内"
+      ],
+      "platforms": [
+        "PC",
+        "Android"
+      ],
+      "published_date": "2026‑10‑07",
+      "event_date": "2026‑10‑07 16:00 (UTC+8)",
+      "verification_status": "reported_unconfirmed",
+      "source_urls": [
+        "https://azurpromilia.manjuu.com/home/"
+      ],
+      "last_seen_at": "2026-10-29"
+    },
+    {
+      "candidate_id": "manjuu_bluesphere_launch",
+      "company_cn": "叠纸游戏",
+      "company_en": "Papergames",
+      "game_cn": "蓝色星原：旅谣",
+      "game_en": "",
+      "official_event_name": "公测正式定档",
+      "normalized_stage": "open_beta_or_launch",
+      "test_sequence": "unknown",
+      "access_type": "open",
+      "test_goal": "unknown",
+      "regions": [
+        "国内"
+      ],
+      "platforms": [
+        "PC",
+        "Android"
+      ],
+      "published_date": "2026‑10‑22",
+      "event_date": "2026‑11‑26",
+      "verification_status": "reported_unconfirmed",
+      "source_urls": [
+        "https://azurpromilia.manjuu.com/home/"
+      ],
+      "last_seen_at": "2026-10-29"
+    },
+    {
+      "candidate_id": "hoyoverse_nodusfall",
+      "company_cn": "米哈游",
+      "company_en": "HoYoverse",
+      "game_cn": "源初之结",
+      "game_en": "",
+      "official_event_name": "全球亮相于科隆游戏展开幕之夜",
+      "normalized_stage": "first_reveal",
+      "test_sequence": "unknown",
+      "access_type": "open",
+      "test_goal": "unknown",
+      "regions": [
+        "全球"
+      ],
+      "platforms": [
+        "unknown"
+      ],
+      "published_date": "2026‑08‑26",
+      "event_date": "2026‑08‑25/26 (Gamescom Opening Night Live)",
+      "verification_status": "verified",
+      "source_urls": [
+        "https://nodusfall.mihoyo.com/home",
+        "https://www.sohu.com/a/1067659594_116000"
+      ],
+      "last_seen_at": "2026-10-29"
+    },
+    {
+      "candidate_id": "nid-hoyoverse-nodusfall-001",
+      "company_cn": "米哈游",
+      "company_en": "HoYoverse",
+      "game_cn": "源初之结",
+      "game_en": "Nodusfall",
+      "official_event_name": "Official debut at Gamescom Opening Night Live",
+      "normalized_stage": "first_reveal",
+      "test_sequence": "unknown",
+      "access_type": "open",
+      "test_goal": "unknown",
+      "regions": [
+        "global"
+      ],
+      "platforms": [
+        "unknown"
+      ],
+      "published_date": "2026‑08‑26",
+      "event_date": "2026‑08‑25",
+      "verification_status": "verified",
+      "source_urls": [
+        "https://nodusfall.mihoyo.com/en-us/home",
+        "https://zh.wikipedia.org/zh-cn/%E6%BA%90%E5%88%9D%E4%B9%8B%E7%B5%90"
+      ],
+      "last_seen_at": "2026-10-29"
+    },
+    {
+      "candidate_id": "nid-hoyoverse-nodusfall-002",
+      "company_cn": "米哈游",
+      "company_en": "HoYoverse",
+      "game_cn": "源初之结",
+      "game_en": "Nodusfall",
+      "official_event_name": "Pre‑registration opens",
+      "normalized_stage": "preregistration",
+      "test_sequence": "unknown",
+      "access_type": "open",
+      "test_goal": "unknown",
+      "regions": [
+        "global"
+      ],
+      "platforms": [],
+      "published_date": "2026‑08‑26",
+      "event_date": "2026‑08‑25",
+      "verification_status": "reported_unconfirmed",
+      "source_urls": [
+        "https://nodusfall.hoyoverse.com/en-us/home",
+        "https://saiganak.com/news/hoyoverse-nodusfall-announcement/"
+      ],
+      "last_seen_at": "2026-10-29"
+    },
+    {
+      "candidate_id": "nid-manjuu-azurpromilia-001",
+      "company_cn": "蛮啾网络",
+      "company_en": "Manjuu Network Entertainment",
+      "game_cn": "蓝色星原：旅谣",
+      "game_en": "Azur Promilia",
+      "official_event_name": "“旅迹测试”开启",
+      "normalized_stage": "technical_test",
+      "test_sequence": "unknown",
+      "access_type": "limited",
+      "test_goal": "unknown",
+      "regions": [
+        "China",
+        "domestic"
+      ],
+      "platforms": [
+        "PC",
+        "iOS",
+        "Android",
+        "HarmonyOS"
+      ],
+      "published_date": "2026‑09‑16",
+      "event_date": "2026‑09‑16",
+      "verification_status": "reported_unconfirmed",
+      "source_urls": [
+        "https://azurpromilia.manjuu.com/home/",
+        "https://www.vgtime.com/news/bSMMBrTQVW04ZSK5oSWkCQ%3D%3D"
+      ],
+      "last_seen_at": "2026-10-29"
+    },
+    {
+      "candidate_id": "nid-manjuu-azurpromilia-003",
+      "company_cn": "蛮啾网络",
+      "company_en": "Manjuu Network Entertainment",
+      "game_cn": "蓝色星原：旅谣",
+      "game_en": "Azur Promilia",
+      "official_event_name": "正式公测定档",
+      "normalized_stage": "open_beta_or_launch",
+      "test_sequence": "unknown",
+      "access_type": "open",
+      "test_goal": "unknown",
+      "regions": [
+        "China",
+        "Japan",
+        "South Korea",
+        "Taiwan"
+      ],
+      "platforms": [
+        "PC",
+        "iOS",
+        "Android"
+      ],
+      "published_date": "2026‑10‑22",
+      "event_date": "2026‑11‑26",
+      "verification_status": "reported_unconfirmed",
+      "source_urls": [
+        "https://azurpromilia.manjuu.com/home/",
+        "https://www.gameforcemobile.com/news/5667-azur-promilia-confirms-november-26-launch-as-global-pre-registrations-pass-25-million"
+      ],
+      "last_seen_at": "2026-10-29"
+    },
+    {
+      "candidate_id": "nid-manjuu-azurpromilia-004",
+      "company_cn": "蛮啾网络",
+      "company_en": "Manjuu Network Entertainment",
+      "game_cn": "蓝色星原：旅谣",
+      "game_en": "Azur Promilia",
+      "official_event_name": "English version open beta targeting",
+      "normalized_stage": "regional_expansion",
+      "test_sequence": "unknown",
+      "access_type": "open",
+      "test_goal": "localization",
+      "regions": [
+        "English‑speaking regions"
+      ],
+      "platforms": [
+        "PC",
+        "iOS",
+        "Android",
+        "PlayStation 5"
+      ],
+      "published_date": "2026‑10‑13",
+      "event_date": "Summer 2027",
+      "verification_status": "reported_unconfirmed",
+      "source_urls": [
+        "https://thegameswiki.com/azur-promilia/wiki/pre-registration-and-milestone-rewards",
+        "https://gachago.com/en/features/other-games/nodusfall-hoyoverse-reveal-gamescom-2026"
+      ],
+      "last_seen_at": "2026-10-29"
+    },
+    {
+      "candidate_id": "nid-manjuu-azurpromilia-005",
+      "company_cn": "蛮啾网络",
+      "company_en": "Manjuu Network Entertainment",
+      "game_cn": "蓝色星原：旅谣",
+      "game_en": "Azur Promilia",
+      "official_event_name": "Global pre‑registration milestone",
+      "normalized_stage": "preregistration",
+      "test_sequence": "unknown",
+      "access_type": "open",
+      "test_goal": "unknown",
+      "regions": [
+        "global"
+      ],
+      "platforms": [],
+      "published_date": "2026‑10‑17",
+      "event_date": "2026‑10‑17",
+      "verification_status": "verified",
+      "source_urls": [
+        "https://gamewith.ai/azurpromilia/en/news",
+        "https://www.gameforcemobile.com/news/5667-azur-promilia-confirms-november-26-launch-as-global-pre-registrations-pass-25-million"
+      ],
+      "last_seen_at": "2026-10-29"
+    },
+    {
+      "candidate_id": "azur_promilia_sea_prereg",
+      "company_cn": "蛮啾网络",
+      "company_en": "Manjuu Network",
+      "game_cn": "蓝色星原：旅谣",
+      "game_en": "Azur Promilia",
+      "official_event_name": "Southeast Asia server pre‑registration opening",
+      "normalized_stage": "preregistration",
+      "test_sequence": "unknown",
+      "access_type": "open",
+      "test_goal": "unknown",
+      "regions": [
+        "Southeast Asia"
+      ],
+      "platforms": [
+        "PC",
+        "iOS",
+        "Android"
+      ],
+      "published_date": "2026‑10‑22",
+      "event_date": "2026‑10‑22",
+      "verification_status": "reported_unconfirmed",
+      "source_urls": [
+        "https://azurpromilia.playpark.com/zh/",
+        "https://azurpromilia.playpark.com/en/"
+      ],
+      "last_seen_at": "2026-10-29"
+    },
+    {
+      "candidate_id": "azur_promilia_global_ob_2027",
+      "company_cn": "蛮啾网络",
+      "company_en": "Manjuu Network / Manjuu Games",
+      "game_cn": "蓝色星原：旅谣",
+      "game_en": "Azur Promilia",
+      "official_event_name": "English‑version Open Beta Test set for Summer 2027",
+      "normalized_stage": "open_beta_or_launch",
+      "test_sequence": "unknown",
+      "access_type": "open",
+      "test_goal": "unknown",
+      "regions": [
+        "Global English‑speaking audience"
+      ],
+      "platforms": [
+        "PC",
+        "PlayStation 5",
+        "Mobile (iOS/Android)"
+      ],
+      "published_date": "2026‑10‑13",
+      "event_date": "Summer 2027",
+      "verification_status": "verified",
+      "source_urls": [
+        "https://www.gematsu.com/2026/10/azur-promilia-english-open-beta-test-set-for-summer-2027",
+        "https://www.gamespress.com/Azur-Promilia-Marks-20-Million-Global-Pre-Registration-Milestone-With-"
+      ],
+      "last_seen_at": "2026-10-29"
+    },
+    {
+      "candidate_id": "nodusfall_first_reveal",
+      "company_cn": "米哈游",
+      "company_en": "HoYoverse",
+      "game_cn": "源初之结",
+      "game_en": "Nodusfall",
+      "official_event_name": "Global reveal at Gamescom Opening Night Live",
+      "normalized_stage": "first_reveal",
+      "test_sequence": "unknown",
+      "access_type": "open",
+      "test_goal": "unknown",
+      "regions": [
+        "Global"
+      ],
+      "platforms": [
+        "TBD (not confirmed)"
+      ],
+      "published_date": "2026‑08‑25",
+      "event_date": "2026‑08‑25",
+      "verification_status": "reported_unconfirmed",
+      "source_urls": [
+        "https://nodusfall.hoyoverse.com/en-us/home",
+        "https://finalweapon.net/2026/08/25/nodus-fall-announced-at-gamescom-2026/"
+      ],
+      "last_seen_at": "2026-10-29"
+    },
+    {
+      "candidate_id": "slashzero_cj_demo_wishlist",
+      "company_cn": "朝夕光年",
+      "company_en": "Nuverse",
+      "game_cn": "零境·入侵",
+      "game_en": "SlashZero",
+      "official_event_name": "ChinaJoy playable demo & wishlist open",
+      "normalized_stage": "first_reveal",
+      "test_sequence": "unknown",
+      "access_type": "open",
+      "test_goal": "gameplay",
+      "regions": [
+        "China; global platforms via wishlist"
+      ],
+      "platforms": [
+        "PC (Steam, Epic)",
+        "PlayStation"
+      ],
+      "published_date": "2026‑07‑31",
+      "event_date": "2026‑07 (ChinaJoy 2026)",
+      "verification_status": "reported_unconfirmed",
+      "source_urls": [
+        "https://www.sohu.com/a/1057113060_122598898"
+      ],
+      "last_seen_at": "2026-10-29"
+    },
+    {
+      "candidate_id": "lingxi_basketball_girls",
+      "company_cn": "灵犀互娱",
+      "company_en": "Lingxi Games",
+      "game_cn": "篮球少女：飞跃巅峰",
+      "game_en": "",
+      "official_event_name": "正式上线（国内）",
+      "normalized_stage": "open_beta_or_launch",
+      "test_sequence": "unknown",
+      "access_type": "open",
+      "test_goal": "unknown",
+      "regions": [
+        "China"
+      ],
+      "platforms": [
+        "iOS",
+        "Android",
+        "PC"
+      ],
+      "published_date": "2026‑10‑28",
+      "event_date": "2026‑10‑23",
+      "verification_status": "reported_unconfirmed",
+      "source_urls": [
+        "https://news.qq.com/rain/a/20261028A05YRU00",
+        "https://baike.baidu.com/item/%E7%AF%AE%E7%90%83%E5%B0%91%E5%A5%B3%EF%BC%9A%E9%A3%9E%E8%B7%83%E5%B7%85%E5%B3%B0/66790110"
+      ],
+      "last_seen_at": "2026-10-29"
+    },
+    {
+      "candidate_id": "lingxi_codename_bubu",
+      "company_cn": "灵犀互娱",
+      "company_en": "Lingxi Games",
+      "game_cn": "代号咘咘",
+      "game_en": "",
+      "official_event_name": "测试招募开启",
+      "normalized_stage": "technical_test",
+      "test_sequence": "unknown",
+      "access_type": "limited",
+      "test_goal": "unknown",
+      "regions": [
+        "中国"
+      ],
+      "platforms": [
+        "移动"
+      ],
+      "published_date": "2026‑08‑20",
+      "event_date": "2026‑08‑17",
+      "verification_status": "verified",
+      "source_urls": [
+        "https://news.qq.com/rain/a/20260820A0CMDI00",
+        "https://www.taptap.cn/app/911649/topic"
+      ],
+      "last_seen_at": "2026-10-29"
+    },
+    {
+      "candidate_id": "sword_x_staff_cn",
+      "company_cn": "雷霆游戏",
+      "company_en": "",
+      "game_cn": "杖剑传说",
+      "game_en": "",
+      "official_event_name": "公测／正式上线",
+      "normalized_stage": "open_beta_or_launch",
+      "test_sequence": "unknown",
+      "access_type": "open",
+      "test_goal": "unknown",
+      "regions": [
+        "中国大陆"
+      ],
+      "platforms": [
+        "Android",
+        "iOS",
+        "mobile"
+      ],
+      "published_date": "2025-05-29",
+      "event_date": "2025-05-29",
+      "verification_status": "reported_unconfirmed",
+      "source_urls": [
+        "https://game.leiting.com/list/zjcs/news/17300",
+        "https://www.leiting.com/terrace/news/news_detail_ff80808196800b2601971a4b1bd5001a.html",
+        "https://baike.baidu.com/item/%E6%9D%96%E5%89%91%E4%BC%A0%E8%AF%B4/64684061",
+        "https://www.qieyou.com/content/122459"
+      ],
+      "last_seen_at": "2026-10-29"
+    },
+    {
+      "candidate_id": "azur_promilia_001",
+      "company_cn": "蛮啾网络",
+      "company_en": "Manjuu Network",
+      "game_cn": "蓝色星原：旅谣",
+      "game_en": "Azur Promilia",
+      "official_event_name": "旅迹测试",
+      "normalized_stage": "cbt",
+      "test_sequence": "unknown",
+      "access_type": "limited",
+      "test_goal": "unknown",
+      "regions": [
+        "中国大陆"
+      ],
+      "platforms": [
+        "PC",
+        "Android",
+        "iOS"
+      ],
+      "published_date": "2026-09-15",
+      "event_date": "2026-09-17",
+      "verification_status": "reported_unconfirmed",
+      "source_urls": [
+        "https://gnn.gamer.com.tw/detail.php?sn=311721",
+        "https://baike.baidu.com/item/%E8%93%9D%E8%89%B2%E6%98%9F%E5%8E%9F%EF%BC%9A%E6%97%85%E8%B0%A3/64056000"
+      ],
+      "last_seen_at": "2026-10-29"
+    },
+    {
+      "candidate_id": "azur_promilia_002",
+      "company_cn": "蛮啾网络",
+      "company_en": "Manjuu Network",
+      "game_cn": "蓝色星原：旅谣",
+      "game_en": "Azur Promilia",
+      "official_event_name": "公测正式定档",
+      "normalized_stage": "open_beta_or_launch",
+      "test_sequence": "final",
+      "access_type": "open",
+      "test_goal": "unknown",
+      "regions": [
+        "中国大陆"
+      ],
+      "platforms": [
+        "PC",
+        "iOS",
+        "Android",
+        "HarmonyOS",
+        "PS5"
+      ],
+      "published_date": "2026-10-22",
+      "event_date": "2026-11-26",
+      "verification_status": "reported_unconfirmed",
+      "source_urls": [
+        "https://azurpromilia.jimi-global.com/home/",
+        "https://www.gamersky.com/news/202610/2233809.shtml"
+      ],
+      "last_seen_at": "2026-10-29"
+    },
+    {
+      "candidate_id": "roco_kingdom_001",
+      "company_cn": "腾讯游戏",
+      "company_en": "Tencent Games",
+      "game_cn": "洛克王国：世界",
+      "game_en": "Roco Kingdom",
+      "official_event_name": "国际服全球封闭测试",
+      "normalized_stage": "regional_expansion",
+      "test_sequence": "unknown",
+      "access_type": "closed",
+      "test_goal": "localization",
+      "regions": [
+        "全球（国际）"
+      ],
+      "platforms": [
+        "iOS",
+        "Google Play (Android)",
+        "PS5",
+        "Xbox Series X|S",
+        "Windows (Steam, Epic)"
+      ],
+      "published_date": "2026-08-26",
+      "event_date": "2026-10-27",
+      "verification_status": "reported_unconfirmed",
+      "source_urls": [
+        "https://www.ithome.com/0/994/547.htm",
+        "https://baike.baidu.com/item/%E6%B4%9B%E5%85%8B%E7%8E%8B%E5%9B%BD%EF%BC%9A%E4%B8%96%E7%95%8C"
+      ],
+      "last_seen_at": "2026-10-29"
+    },
+    {
+      "candidate_id": "roco_kingdom_002",
+      "company_cn": "腾讯游戏",
+      "company_en": "Tencent Games",
+      "game_cn": "洛克王国：世界",
+      "game_en": "Roco Kingdom",
+      "official_event_name": "全球首测官方网站开放报名",
+      "normalized_stage": "preregistration",
+      "test_sequence": "unknown",
+      "access_type": "closed",
+      "test_goal": "localization",
+      "regions": [
+        "全球（国际）"
+      ],
+      "platforms": [
+        "PlayStation Store",
+        "Xbox Store",
+        "Steam locked region"
+      ],
+      "published_date": "2026-08-26",
+      "event_date": "2026-08-26",
+      "verification_status": "reported_unconfirmed",
+      "source_urls": [
+        "https://www.ithome.com/0/994/547.htm",
+        "https://rocokingdom.com/"
+      ],
+      "last_seen_at": "2026-10-29"
+    },
+    {
+      "candidate_id": "roco_kingdom_003",
+      "company_cn": "腾讯游戏",
+      "company_en": "Tencent Games",
+      "game_cn": "洛克王国：世界",
+      "game_en": "Roco Kingdom",
+      "official_event_name": "全球封闭测试（CBT）",
+      "normalized_stage": "regional_expansion",
+      "test_sequence": "unknown",
+      "access_type": "closed",
+      "test_goal": "localization",
+      "regions": [
+        "国际（全球）"
+      ],
+      "platforms": [
+        "iOS",
+        "Android",
+        "PS5",
+        "Xbox Series X|S",
+        "Windows",
+        "Steam",
+        "Epic"
+      ],
+      "published_date": "2026-08-26",
+      "event_date": "2026-10-27",
+      "verification_status": "verified",
+      "source_urls": [
+        "https://www.ithome.com/0/994/547.htm",
+        "https://news.qq.com/rain/a/20260827A031IL00"
+      ],
+      "last_seen_at": "2026-10-29"
+    },
+    {
+      "candidate_id": "roco_kingdom_004",
+      "company_cn": "腾讯游戏",
+      "company_en": "Tencent Games",
+      "game_cn": "洛克王国：世界",
+      "game_en": "Roco Kingdom",
+      "official_event_name": "中国大陆全平台正式上线",
+      "normalized_stage": "open_beta_or_launch",
+      "test_sequence": "final",
+      "access_type": "open",
+      "test_goal": "unknown",
+      "regions": [
+        "中国大陆"
+      ],
+      "platforms": [
+        "PC",
+        "Android",
+        "iOS",
+        "HarmonyOS"
+      ],
+      "published_date": "2026-03-26",
+      "event_date": "2026-03-26",
+      "verification_status": "verified",
+      "source_urls": [
+        "https://www.ithome.com/0/994/547.htm",
+        "https://news.qq.com/rain/a/20260827A031IL00"
+      ],
+      "last_seen_at": "2026-10-29"
+    },
+    {
+      "candidate_id": "wenjian_changsheng_002",
+      "company_cn": "雷霆游戏",
+      "company_en": "Leiting Games",
+      "game_cn": "问剑长生",
+      "game_en": "Sword of Immortality",
+      "official_event_name": "PC版上线",
+      "normalized_stage": "major_update",
+      "test_sequence": "final",
+      "access_type": "open",
+      "test_goal": "platform_expansion",
+      "regions": [
+        "中国大陆"
+      ],
+      "platforms": [
+        "PC"
+      ],
+      "published_date": "2026-10-15",
+      "event_date": "2026-10-16",
+      "verification_status": "reported_unconfirmed",
+      "source_urls": [
+        "https://news.17173.com/content/10162026/170348610.shtml",
+        "https://www.taptap.cn/app/713640/topic?type=official"
+      ],
+      "last_seen_at": "2026-10-29"
+    },
+    {
+      "candidate_id": "pwg-yihuan",
+      "company_cn": "完美世界",
+      "company_en": "Perfect World Games",
+      "game_cn": "异环",
+      "game_en": "",
+      "official_event_name": "全球预约突破3000万",
+      "normalized_stage": "preregistration",
+      "test_sequence": "unknown",
+      "access_type": "open",
+      "test_goal": "unknown",
+      "regions": [],
+      "platforms": [],
+      "published_date": "2026-03-25",
+      "event_date": "2026-03-25",
+      "verification_status": "reported_unconfirmed",
+      "source_urls": [
+        "https://nte.perfectworld.com/cn/article/news/gamenews/20260324/261407.html",
+        "https://news.17173.com/content/03252026/140258957.shtml"
+      ],
+      "last_seen_at": "2026-10-29"
+    },
+    {
+      "candidate_id": "pwg-yihuan-download",
+      "company_cn": "完美世界",
+      "company_en": "Perfect World Games",
+      "game_cn": "异环",
+      "game_en": "",
+      "official_event_name": "开启预下载",
+      "normalized_stage": "preregistration",
+      "test_sequence": "unknown",
+      "access_type": "open",
+      "test_goal": "unknown",
+      "regions": [
+        "中国大陆"
+      ],
+      "platforms": [
+        "PC",
+        "Android",
+        "iOS",
+        "Mac",
+        "HarmonyOS",
+        "PS5"
+      ],
+      "published_date": "2026-04-16",
+      "event_date": "2026-04-21",
+      "verification_status": "verified",
+      "source_urls": [
+        "https://www.ithome.com/0/939/918.htm",
+        "https://www.toutiao.com/article/7634966495411339814/"
+      ],
+      "last_seen_at": "2026-10-29"
+    },
+    {
+      "candidate_id": "pwg-yihuan-cn-launch",
+      "company_cn": "完美世界",
+      "company_en": "Perfect World Games",
+      "game_cn": "异环",
+      "game_en": "",
+      "official_event_name": "国服全平台公测",
+      "normalized_stage": "open_beta_or_launch",
+      "test_sequence": "final",
+      "access_type": "open",
+      "test_goal": "unknown",
+      "regions": [
+        "中国大陆"
+      ],
+      "platforms": [
+        "PC",
+        "Android",
+        "iOS",
+        "Mac",
+        "HarmonyOS",
+        "PS5"
+      ],
+      "published_date": "2026-04-16",
+      "event_date": "2026-04-23",
+      "verification_status": "verified",
+      "source_urls": [
+        "https://www.ithome.com/0/939/918.htm",
+        "https://www.toutiao.com/article/7634966495411339814/"
+      ],
+      "last_seen_at": "2026-10-29"
+    },
+    {
+      "candidate_id": "pwg-yihuan-global-launch",
+      "company_cn": "完美世界",
+      "company_en": "Perfect World Games",
+      "game_cn": "异环",
+      "game_en": "",
+      "official_event_name": "正式开服",
+      "normalized_stage": "open_beta_or_launch",
+      "test_sequence": "final",
+      "access_type": "open",
+      "test_goal": "unknown",
+      "regions": [
+        "海外"
+      ],
+      "platforms": [
+        "PC",
+        "Android",
+        "iOS",
+        "Mac",
+        "HarmonyOS",
+        "PS5"
+      ],
+      "published_date": "2026-04-29",
+      "event_date": "2026-04-29",
+      "verification_status": "reported_unconfirmed",
+      "source_urls": [
+        "https://nte.perfectworld.com/cn/article/news/gamenews/20260428/261948.html",
+        "https://zh.wikipedia.org/zh-tw/%E5%BC%82%E7%8E%AF"
+      ],
+      "last_seen_at": "2026-10-29"
+    },
+    {
+      "candidate_id": "pwg-yihuan-performance",
+      "company_cn": "完美世界",
+      "company_en": "Perfect World Games",
+      "game_cn": "异环",
+      "game_en": "",
+      "official_event_name": "全球公测及运营表现披露",
+      "normalized_stage": "major_update",
+      "test_sequence": "unknown",
+      "access_type": "unknown",
+      "test_goal": "unknown",
+      "regions": [
+        "全球"
+      ],
+      "platforms": [
+        "PC",
+        "Android",
+        "iOS",
+        "Mac",
+        "鸿蒙",
+        "PlayStation 5"
+      ],
+      "published_date": "2026-07-16",
+      "event_date": "2026-04 (global open beta launch), 2026‑06‑30 (14B milestone), 2026‑08‑18 (20B milestone)",
+      "verification_status": "reported_unconfirmed",
+      "source_urls": [
+        "https://www.pwrd.com/cn/news/press/p2026/20260716/89007.shtml",
+        "https://finance.sina.com.cn/roll/2026-08-19/doc-ininwawq2579675.shtml"
+      ],
+      "last_seen_at": "2026-10-29"
+    },
+    {
+      "candidate_id": "sanqi_last_asylum_plague",
+      "company_cn": "三七互娱",
+      "company_en": "37GAMES",
+      "game_cn": "Last Asylum: Plague",
+      "game_en": "Last Asylum: Plague",
+      "official_event_name": "Last Asylum: Plague 上线",
+      "normalized_stage": "open_beta_or_launch",
+      "test_sequence": "unknown",
+      "access_type": "open",
+      "test_goal": "unknown",
+      "regions": [
+        "global"
+      ],
+      "platforms": [
+        "mobile"
+      ],
+      "published_date": "",
+      "event_date": "2026-02-26 (Google Play launch date)",
+      "verification_status": "verified",
+      "source_urls": [
+        "https://indietower.com/apps/android/com.phs.global",
+        "https://gamefaqs.gamespot.com/android/628457-last-asylum-plague/data",
+        "https://www.sohu.com/a/1077385815_122001004",
+        "https://www.toutiao.com/article/7686651039797297673/"
+      ],
+      "last_seen_at": "2026-10-29"
+    },
+    {
+      "candidate_id": "sanqi_ro_travel",
+      "company_cn": "三七互娱",
+      "company_en": "37GAMES / Gravity Game Vision",
+      "game_cn": "RO仙境传说：世界之旅",
+      "game_en": "RO: The World Journey (RO World Journey)",
+      "official_event_name": "全平台公测",
+      "normalized_stage": "open_beta_or_launch",
+      "test_sequence": "unknown",
+      "access_type": "open",
+      "test_goal": "unknown",
+      "regions": [
+        "global",
+        "Hong Kong",
+        "Taiwan",
+        "Macau"
+      ],
+      "platforms": [
+        "mobile"
+      ],
+      "published_date": "",
+      "event_date": "2026-01-15",
+      "verification_status": "reported_unconfirmed",
+      "source_urls": [
+        "https://www.gameapps.hk/news/67641/ro-world/",
+        "https://forum.gamer.com.tw/C.php?bsn=83054&snA=235"
+      ],
+      "last_seen_at": "2026-10-29"
+    },
+    {
+      "candidate_id": "nitz_slashzero_reveal",
+      "company_cn": "朝夕光年",
+      "company_en": "Nuverse",
+      "game_cn": "零境·入侵",
+      "game_en": "SlashZero",
+      "official_event_name": "SlashZero 在 PC Gaming Show 首次亮相",
+      "normalized_stage": "first_reveal",
+      "test_sequence": "unknown",
+      "access_type": "open",
+      "test_goal": "unknown",
+      "regions": [
+        "全球"
+      ],
+      "platforms": [
+        "PC",
+        "PlayStation 5",
+        "Epic Games Store"
+      ],
+      "published_date": "2026-06-07",
+      "event_date": "2026-06-07",
+      "verification_status": "verified",
+      "source_urls": [
+        "https://www.gamespress.com/SLASHZERO-DEBUTS-NEW-TRAILER-AT-THE-PC-GAMING-SHOW-2026",
+        "https://www.gematsu.com/2026/06/slashzero-pc-gaming-show-2026-trailer-screenshots"
+      ],
+      "last_seen_at": "2026-10-29"
+    },
+    {
+      "candidate_id": "nitz_slashzero_demo_launch",
+      "company_cn": "朝夕光年",
+      "company_en": "Nuverse",
+      "game_cn": "零境·入侵",
+      "game_en": "SlashZero",
+      "official_event_name": "SlashZero 限时试玩公开",
+      "normalized_stage": "technical_test",
+      "test_sequence": "unknown",
+      "access_type": "open",
+      "test_goal": "unknown",
+      "regions": [
+        "全球"
+      ],
+      "platforms": [
+        "PC",
+        "PlayStation 5"
+      ],
+      "published_date": "2026-09-03",
+      "event_date": "2026-09-03",
+      "verification_status": "verified",
+      "source_urls": [
+        "https://www.gematsu.com/2026/09/slashzero-launches-in-spring-2027-limited-time-demo-now-available",
+        "https://store.steampowered.com/app/4061170/SlashZero/",
+        "https://www.youtube.com/watch?v=421craw3u6M"
+      ],
+      "last_seen_at": "2026-10-29"
+    },
+    {
+      "candidate_id": "gbits_sword_of_immortality_plan",
+      "company_cn": "吉比特",
+      "company_en": "G‑Bits / Leiting Games",
+      "game_cn": "问剑长生（欧美版）",
+      "game_en": "Sword of Immortality (Europe/America)",
+      "official_event_name": "《问剑长生（欧美版）》发行筹备及上线计划披露",
+      "normalized_stage": "regional_expansion",
+      "test_sequence": "unknown",
+      "access_type": "unknown",
+      "test_goal": "unknown",
+      "regions": [
+        "欧美"
+      ],
+      "platforms": [
+        "mobile"
+      ],
+      "published_date": "2026-06-24",
+      "event_date": "2026 下半年",
+      "verification_status": "reported_unconfirmed",
+      "source_urls": [
+        "https://stock.stockstar.com/RB2026062400026495.shtml",
+        "https://www.sohu.com/a/1051580380_122598898"
+      ],
+      "last_seen_at": "2026-10-29"
+    },
+    {
+      "candidate_id": "azur_promilia_2026_open_beta",
+      "company_cn": "蛮啾网络",
+      "company_en": "Manjuu Network",
+      "game_cn": "蓝色星原：旅谣",
+      "game_en": "Azur Promilia",
+      "official_event_name": "公测正式定档11月26日",
+      "normalized_stage": "open_beta_or_launch",
+      "test_sequence": "unknown",
+      "access_type": "open",
+      "test_goal": "unknown",
+      "regions": [
+        "中国",
+        "日本",
+        "韩国",
+        "台湾"
+      ],
+      "platforms": [
+        "PC",
+        "iOS",
+        "Android"
+      ],
+      "published_date": "2026-10-23",
+      "event_date": "2026-11-26",
+      "verification_status": "verified",
+      "source_urls": [
+        "https://www.gematsu.com/2026/10/azur-promilia-launches-november-26-in-japan-south-korea-taiwan-and-china",
+        "https://azurpromilia.manjuu.com/home/"
+      ],
+      "last_seen_at": "2026-10-29"
+    },
+    {
+      "candidate_id": "azur_promilia_southeast_asia_prereg",
+      "company_cn": "蛮啾网络",
+      "company_en": "Manjuu Network",
+      "game_cn": "蓝色星原：旅谣",
+      "game_en": "Azur Promilia",
+      "official_event_name": "东南亚服 预约开启",
+      "normalized_stage": "preregistration",
+      "test_sequence": "unknown",
+      "access_type": "open",
+      "test_goal": "unknown",
+      "regions": [
+        "东南亚"
+      ],
+      "platforms": [
+        "移动"
+      ],
+      "published_date": "recent",
+      "event_date": "undated",
+      "verification_status": "reported_unconfirmed",
+      "source_urls": [
+        "https://azurpromilia.playpark.com/en/"
+      ],
+      "last_seen_at": "2026-10-29"
+    },
+    {
+      "candidate_id": "roco_kingdom_overseas_signal",
+      "company_cn": "腾讯魔方工作室群",
+      "company_en": "Tencent Mofang Studio Group",
+      "game_cn": "洛克王国：世界",
+      "game_en": "Roco Kingdom: World",
+      "official_event_name": "将面向海外市场推出（国际服宣布）",
+      "normalized_stage": "regional_expansion",
+      "test_sequence": "unknown",
+      "access_type": "limited",
+      "test_goal": "localization",
+      "regions": [
+        "International"
+      ],
+      "platforms": [
+        "PC",
+        "PS5",
+        "Xbox Series X|S",
+        "iOS",
+        "Android"
+      ],
+      "published_date": "2026-08-26",
+      "event_date": "2026-08-26",
+      "verification_status": "verified",
+      "source_urls": [
+        "https://www.ithome.com/0/994/547.htm",
+        "https://gamesbeat.com/tencent-and-morefun-are-bringing-creature-collector-roco-kingdom-to-the-world/"
+      ],
+      "last_seen_at": "2026-10-29"
+    },
+    {
+      "candidate_id": "roco_kingdom_launch",
+      "company_cn": "腾讯魔方工作室群",
+      "company_en": "Tencent Mofang Studio Group",
+      "game_cn": "洛克王国：世界",
+      "game_en": "Roco Kingdom: World",
+      "official_event_name": "正式上线（中国区）",
+      "normalized_stage": "open_beta_or_launch",
+      "test_sequence": "final",
+      "access_type": "open",
+      "test_goal": "unknown",
+      "regions": [
+        "China"
+      ],
+      "platforms": [
+        "PC",
+        "iOS",
+        "Android",
+        "HarmonyOS"
+      ],
+      "published_date": "2026-03-26",
+      "event_date": "2026-03-26",
+      "verification_status": "verified",
+      "source_urls": [
+        "https://baike.baidu.com/item/Roco%20Kingdom%3A%20World/14904",
+        "https://daikama.com/news/roco-kingdom-world-china-release-confirmed-global-launch-still-pending/"
+      ],
+      "last_seen_at": "2026-10-29"
+    },
+    {
+      "candidate_id": "ordinary_oddness_001",
+      "company_cn": "腾讯游戏／CosmicPup（宇宙小狗工作室）",
+      "company_en": "Tencent Games / CosmicPup Studio",
+      "game_cn": "人间异想计划",
+      "game_en": null,
+      "official_event_name": "22分钟实机首曝",
+      "normalized_stage": "first_reveal",
+      "test_sequence": "unknown",
+      "access_type": "open",
+      "test_goal": "technical",
+      "regions": [
+        "China"
+      ],
+      "platforms": [
+        "PC",
+        "PS5",
+        "Xbox Series X|S"
+      ],
+      "published_date": "2026-10-21",
+      "event_date": "2026-10-21",
+      "verification_status": "reported_unconfirmed",
+      "source_urls": [
+        "https://taptap.cn/moment/861929062069700214",
+        "https://4gamers.com.tw/news/detail/82773/ordinary-oddness-tencent-ue5-open-world-rpg-22-minute-gameplay"
+      ],
+      "last_seen_at": "2026-10-29"
+    },
+    {
+      "candidate_id": "ordinary_oddness_002",
+      "company_cn": "腾讯游戏／CosmicPup Studio",
+      "company_en": "Tencent Games / CosmicPup Studio",
+      "game_cn": "人间异想计划",
+      "game_en": null,
+      "official_event_name": "预约开启",
+      "normalized_stage": "preregistration",
+      "test_sequence": "unknown",
+      "access_type": "open",
+      "test_goal": "unknown",
+      "regions": [
+        "China"
+      ],
+      "platforms": [
+        "PC",
+        "PS5",
+        "Xbox Series X|S"
+      ],
+      "published_date": "2026-10",
+      "event_date": "2026-10",
+      "verification_status": "reported_unconfirmed",
+      "source_urls": [
+        "https://taptap.cn/app/968556"
+      ],
+      "last_seen_at": "2026-10-29"
+    },
+    {
+      "candidate_id": "nodusfall_001",
+      "company_cn": "米哈游",
+      "company_en": "miHoYo (HoYoverse)",
+      "game_cn": "源初之结",
+      "game_en": "Nodusfall",
+      "official_event_name": "Gamescom 全球亮相",
+      "normalized_stage": "first_reveal",
+      "test_sequence": "unknown",
+      "access_type": "open",
+      "test_goal": "unknown",
+      "regions": [
+        "Global"
+      ],
+      "platforms": [
+        "Unknown"
+      ],
+      "published_date": "2026-08-26",
+      "event_date": "2026-08-26",
+      "verification_status": "verified",
+      "source_urls": [
+        "https://news.qq.com/rain/a/20260827A031IL00",
+        "https://news.ifeng.com/c/8vvG4qOcKbf"
+      ],
+      "last_seen_at": "2026-10-29"
+    },
+    {
+      "candidate_id": "slashzero_002",
+      "company_cn": "朝夕光年 / 绿洲工作室",
+      "company_en": "Nuverse / Oasis (Streetlamp Studio)",
+      "game_cn": "零境·入侵",
+      "game_en": null,
+      "official_event_name": "愿望单开放",
+      "normalized_stage": "preregistration",
+      "test_sequence": "unknown",
+      "access_type": "open",
+      "test_goal": "unknown",
+      "regions": [
+        "中国/海外预览"
+      ],
+      "platforms": [
+        "PC",
+        "PS5"
+      ],
+      "published_date": null,
+      "event_date": "2026-07 (ChinaJoy期间)",
+      "verification_status": "reported_unconfirmed",
+      "source_urls": [
+        "https://www.ali213.net/news/html/2026-7/1027399.html"
+      ],
+      "last_seen_at": "2026-10-29"
+    },
+    {
+      "candidate_id": "dontstarve_newhome_001",
+      "company_cn": "腾讯 公司",
+      "company_en": "Tencent",
+      "game_cn": "饥困荒野",
+      "game_en": "Don't Starve: Newhome",
+      "official_event_name": "全平台预约开启",
+      "normalized_stage": "preregistration",
+      "test_sequence": "unknown",
+      "access_type": "open",
+      "test_goal": "unknown",
+      "regions": [
+        "中国"
+      ],
+      "platforms": [
+        "iOS",
+        "Android"
+      ],
+      "published_date": "2026-10-21",
+      "event_date": "2026-10-21",
+      "verification_status": "reported_unconfirmed",
+      "source_urls": [
+        "https://www.taptap.cn/app/194039",
+        "https://www.sohu.com/a/1090842693_121885030"
+      ],
+      "last_seen_at": "2026-10-29"
+    },
+    {
+      "candidate_id": "dontstarve_newhome_002",
+      "company_cn": "腾讯 公司",
+      "company_en": "Tencent",
+      "game_cn": "饥困荒野",
+      "game_en": "Don't Starve: Newhome",
+      "official_event_name": "iOS 占位 11 月 24 日上线",
+      "normalized_stage": "open_beta_or_launch",
+      "test_sequence": "unknown",
+      "access_type": "unknown",
+      "test_goal": "unknown",
+      "regions": [
+        "中国"
+      ],
+      "platforms": [
+        "iOS",
+        "Android"
+      ],
+      "published_date": "2026-09-28",
+      "event_date": "2026-11-24 (store placeholder)",
+      "verification_status": "reported_unconfirmed",
+      "source_urls": [
+        "https://news.17173.com/content/09282026/131824145.shtml",
+        "https://www.taptap.cn/app/194039"
+      ],
+      "last_seen_at": "2026-10-29"
+    },
+    {
+      "candidate_id": "sword_x_staff_002",
+      "company_cn": "吉比特",
+      "company_en": "G‑Bits (Leiting Games)",
+      "game_cn": "杖剑传说",
+      "game_en": "Sword x Staff",
+      "official_event_name": "Pre‑registration 开启",
+      "normalized_stage": "preregistration",
+      "test_sequence": "unknown",
+      "access_type": "open",
+      "test_goal": "unknown",
+      "regions": [
+        "欧美"
+      ],
+      "platforms": [
+        "iOS",
+        "Android"
+      ],
+      "published_date": "2026-03-26",
+      "event_date": "2026-03-26",
+      "verification_status": "reported_unconfirmed",
+      "source_urls": [
+        "https://swordxstaff.boltray.com/news/186",
+        "https://www.gamespress.com/zh-CN/Sword-x-StaffMobile-Idle-RPG-Launches-Pre-Registration-on-iOS-Android"
+      ],
+      "last_seen_at": "2026-10-29"
+    },
+    {
+      "candidate_id": "sword_x_staff_001",
+      "company_cn": "吉比特",
+      "company_en": "G‑Bits (Leiting Games)",
+      "game_cn": "杖剑传说",
+      "game_en": "Sword x Staff",
+      "official_event_name": "海外版上线欧美地区",
+      "normalized_stage": "open_beta_or_launch",
+      "test_sequence": "unknown",
+      "access_type": "open",
+      "test_goal": "unknown",
+      "regions": [
+        "欧美"
+      ],
+      "platforms": [
+        "iOS",
+        "Android"
+      ],
+      "published_date": "2026-05-19",
+      "event_date": "2026-05-19",
+      "verification_status": "reported_unconfirmed",
+      "source_urls": [
+        "https://swordxstaff.boltray.com/news/190?lang=en",
+        "https://www.gamespress.com/Sword-x-Staff-Officially-Launches-Today-Begin-your-fantasy-adventure-i"
+      ],
+      "last_seen_at": "2026-10-29"
+    },
+    {
+      "candidate_id": "tides_of_annihilation_003",
+      "company_cn": "成都日蚀边缘工作室",
+      "company_en": "Eclipse Glow Games",
+      "game_cn": "湮灭之潮",
+      "game_en": "Tides of Annihilation",
+      "official_event_name": "德国科隆游戏展直播宣传片《旧日之纱》发布",
+      "normalized_stage": "major_update",
+      "test_sequence": "unknown",
+      "access_type": "open",
+      "test_goal": "unknown",
+      "regions": [
+        "全球"
+      ],
+      "platforms": [
+        "PS5",
+        "PC",
+        "Xbox Series X|S"
+      ],
+      "published_date": "2026-08-25",
+      "event_date": "2026-08-25",
+      "verification_status": "reported_unconfirmed",
+      "source_urls": [
+        "https://www.gamespress.com/en-US/TIDES-OF-ANNIHILATION-PREMIERES-BENEATH-THE-VEIL-TRAILER-AT-GAMESCOM-O",
+        "https://www.youtube.com/watch?v=8TMET3dsY0E"
+      ],
+      "last_seen_at": "2026-10-29"
+    },
+    {
+      "candidate_id": "tides_of_annihilation_004",
+      "company_cn": "成都日蚀边缘工作室",
+      "company_en": "Eclipse Glow Games",
+      "game_cn": "湮灭之潮",
+      "game_en": "Tides of Annihilation",
+      "official_event_name": "核聚变试玩会",
+      "normalized_stage": "major_update",
+      "test_sequence": "unknown",
+      "access_type": "open",
+      "test_goal": "unknown",
+      "regions": [
+        "中国"
+      ],
+      "platforms": [
+        "PC",
+        "PlayStation 5",
+        "Xbox Series X|S"
+      ],
+      "published_date": "2026‑10‑24/25",
+      "event_date": "2026‑10‑24 to 2026‑10‑25",
+      "verification_status": "verified",
+      "source_urls": [
+        "https://www.ali213.net/news/html/2026-10/1049721.html",
+        "https://www.gamersky.com/news/202610/2234648.shtml",
+        "https://www.ggamen.com/a95241"
+      ],
+      "last_seen_at": "2026-10-29"
+    },
+    {
+      "candidate_id": "jiandan-001",
+      "company_cn": "腾讯游戏",
+      "company_en": "Tencent Games",
+      "game_cn": "人间异想计划",
+      "game_en": "",
+      "official_event_name": "首曝 22分钟实机演示公布",
+      "normalized_stage": "first_reveal",
+      "test_sequence": "unknown",
+      "access_type": "open",
+      "test_goal": "unknown",
+      "regions": [
+        "China",
+        "overseas potential"
+      ],
+      "platforms": [
+        "PlayStation 5",
+        "Xbox Series",
+        "PC"
+      ],
+      "published_date": "2026‑10‑21",
+      "event_date": "2026‑10‑21",
+      "verification_status": "verified",
+      "source_urls": [
+        "https://www.sohu.com/a/1090630402_121124868",
+        "https://news.18183.com/yxxw/202610/9065018.html",
+        "https://automaton-china.com/all/platform/pc/20261021-31297-kai-fang-shi-jie-rpg-ren-jian-yi-xiang-ji-hua/"
+      ],
+      "last_seen_at": "2026-10-29"
+    },
+    {
+      "candidate_id": "jiandan-002",
+      "company_cn": "腾讯游戏",
+      "company_en": "Tencent Games",
+      "game_cn": "人间异想计划",
+      "game_en": "",
+      "official_event_name": "Steam愿望清单开放",
+      "normalized_stage": "preregistration",
+      "test_sequence": "unknown",
+      "access_type": "open",
+      "test_goal": "unknown",
+      "regions": [
+        "China",
+        "overseas potential"
+      ],
+      "platforms": [
+        "Steam",
+        "WeGame",
+        "Epic Games Store"
+      ],
+      "published_date": "2026‑10‑21",
+      "event_date": "by 2026‑10‑21",
+      "verification_status": "verified",
+      "source_urls": [
+        "https://news.18183.com/yxxw/202610/9065018.html",
+        "https://automaton-china.com/all/platform/pc/20261021-31297-kai-fang-shi-jie-rpg-ren-jian-yi-xiang-ji-hua/"
+      ],
+      "last_seen_at": "2026-10-29"
+    },
+    {
+      "candidate_id": "manjuu-azurpromilia-2026-launch-date",
+      "company_cn": "蛮啾网络",
+      "company_en": "Manjuu Network",
+      "game_cn": "蓝色星原：旅谣",
+      "game_en": null,
+      "official_event_name": "定档 11 月 26 日正式公测",
+      "normalized_stage": "open_beta_or_launch",
+      "test_sequence": "unknown",
+      "access_type": "open",
+      "test_goal": "unknown",
+      "regions": [
+        "中国大陆",
+        "日本",
+        "韩国",
+        "港澳台"
+      ],
+      "platforms": [
+        "PC",
+        "iOS",
+        "Android",
+        "鸿蒙",
+        "PS5"
+      ],
+      "published_date": "2026‑10‑22",
+      "event_date": "2026‑11‑26",
+      "verification_status": "verified",
+      "source_urls": [
+        "https://azurpromilia.manjuu.com/home/",
+        "https://news.qq.com/rain/a/20261023A0BT7V00",
+        "https://www.gamersky.com/news/202610/2233664.shtml"
+      ],
+      "last_seen_at": "2026-10-29"
+    },
+    {
+      "candidate_id": "hypergryph-arknights-endfield-global-launch",
+      "company_cn": "鹰角网络",
+      "company_en": "Hypergryph",
+      "game_cn": "Arknights: Endfield",
+      "game_en": "Arknights: Endfield",
+      "official_event_name": "全球上线（Global open beta / Launch）",
+      "normalized_stage": "open_beta_or_launch",
+      "test_sequence": "final",
+      "access_type": "open",
+      "test_goal": "unknown",
+      "regions": [
+        "全球"
+      ],
+      "platforms": [
+        "PlayStation 5",
+        "PC",
+        "iOS",
+        "Android"
+      ],
+      "published_date": "2026‑01‑22",
+      "event_date": "2026‑01‑22",
+      "verification_status": "verified",
+      "source_urls": [
+        "https://www.animenewsnetwork.com/press-release/2026-01-22/arknights-endfield-is-out-now-on-pc-playstation-5-and-mobile/.233347",
+        "https://www.gamespress.com/en-US/Arknights-Endfield-Sets-Jan-22-2026-Global-Launch-Date-Revealed-at-The"
+      ],
+      "last_seen_at": "2026-10-29"
+    },
+    {
+      "candidate_id": "hypergryph-arknights-endfield-adyen-partnership",
+      "company_cn": "鹰角网络",
+      "company_en": "Hypergryph",
+      "game_cn": "Arknights: Endfield",
+      "game_en": "Arknights: Endfield",
+      "official_event_name": "与 Adyen 合作全球发行",
+      "normalized_stage": "regional_expansion",
+      "test_sequence": "unknown",
+      "access_type": "unknown",
+      "test_goal": "unknown",
+      "regions": [
+        "全球"
+      ],
+      "platforms": [
+        "unknown"
+      ],
+      "published_date": "2026‑07‑28",
+      "event_date": "2026‑07‑28",
+      "verification_status": "reported_unconfirmed",
+      "source_urls": [
+        "https://www.adyen.com/press-and-media/gryphline-levels-up-with-adyen",
+        "https://thefinrate.com/adyen-partners-with-gryphline-to-power-global-payments-for-arknights-endfield-launch/"
+      ],
+      "last_seen_at": "2026-10-29"
+    },
+    {
+      "candidate_id": "hypergryph-arknights-endfield-convention-exhibitions",
+      "company_cn": "鹰角网络",
+      "company_en": "Hypergryph",
+      "game_cn": "Arknights: Endfield",
+      "game_en": "Arknights: Endfield",
+      "official_event_name": "展会展出 Booth at Anime Expo / Japan Expo Paris",
+      "normalized_stage": "regional_expansion",
+      "test_sequence": "unknown",
+      "access_type": "open",
+      "test_goal": "unknown",
+      "regions": [
+        "北美",
+        "欧洲"
+      ],
+      "platforms": [
+        "unknown"
+      ],
+      "published_date": "2025‑12‑12",
+      "event_date": "2025‑07‑02 to 2025‑07‑12",
+      "verification_status": "reported_unconfirmed",
+      "source_urls": [
+        "https://www.animenewsnetwork.com/press-release/2025-12-12/arknights-endfield-sets-jan-22-2026-global-launch-date-revealed-at-the-game-awards/.232001",
+        "https://www.gamespress.com/en-US/Arknights-Endfield-Sets-Jan-22-2026-Global-Launch-Date-Revealed-at-The"
+      ],
+      "last_seen_at": "2026-10-29"
+    },
+    {
+      "candidate_id": "kurogames-wutheringwaves-edgerunners-collab",
+      "company_cn": "库洛游戏",
+      "company_en": "Kuro Games",
+      "game_cn": "鸣潮",
+      "game_en": "Wuthering Waves",
+      "official_event_name": "联动《边缘行者》活动",
+      "normalized_stage": "collaboration",
+      "test_sequence": "unknown",
+      "access_type": "open",
+      "test_goal": "unknown",
+      "regions": [
+        "全球"
+      ],
+      "platforms": [
+        "未知"
+      ],
+      "published_date": "2026‑06‑…",
+      "event_date": "2026‑06‑08",
+      "verification_status": "verified",
+      "source_urls": [
+        "https://game8.co/games/Wuthering-Waves/archives/514612",
+        "https://www.rpgsite.net/news/20311-wuthering-waves-cyberpunk-edgerunners-collaboration-release-date-june-2026"
+      ],
+      "last_seen_at": "2026-10-29"
+    },
+    {
+      "candidate_id": "kurogames-animation-studio-announcement",
+      "company_cn": "库洛游戏",
+      "company_en": "Kuro Games",
+      "game_cn": "鸣潮",
+      "game_en": "Wuthering Waves",
+      "official_event_name": "成立动画工作室 Kuro Onroad 并宣布动画系列 Wuthering Waves: Elysium",
+      "normalized_stage": "platform_expansion",
+      "test_sequence": "unknown",
+      "access_type": "unknown",
+      "test_goal": "unknown",
+      "regions": [
+        "全球"
+      ],
+      "platforms": [
+        "animation"
+      ],
+      "published_date": "2026-07-19",
+      "event_date": "2026-07-19",
+      "verification_status": "verified",
+      "source_urls": [
+        "https://www.comicshoplocator.com/2026/07/19/wuthering-waves-elysium-animated-series-announced-kuro-onroad-2026/",
+        "https://game8.co/articles/latest/wuthering-waves-anime-announced-under-kuro-games-new-animation-brand"
+      ],
+      "last_seen_at": "2026-10-29"
+    },
+    {
+      "candidate_id": "papergames-creator-contest-2026",
+      "company_cn": "叠纸游戏",
+      "company_en": "Papergames",
+      "game_cn": "",
+      "game_en": "",
+      "official_event_name": "Papergames 2026 Creator Contest 启动",
+      "normalized_stage": "collaboration",
+      "test_sequence": "unknown",
+      "access_type": "open",
+      "test_goal": "unknown",
+      "regions": [
+        "全球"
+      ],
+      "platforms": [
+        "unknown"
+      ],
+      "published_date": "2026-04-27",
+      "event_date": "2026-04-27",
+      "verification_status": "reported_unconfirmed",
+      "source_urls": [
+        "https://gamegeeker.com/news/papergames-2026-creator-contest-launch"
+      ],
+      "last_seen_at": "2026-10-29"
+    },
+    {
+      "candidate_id": "papergames-infinity-nikki-macos-release",
+      "company_cn": "叠纸游戏",
+      "company_en": "Papergames",
+      "game_cn": "Infinity Nikki",
+      "game_en": "Infinity Nikki",
+      "official_event_name": "MacOS 版发布",
+      "normalized_stage": "platform_expansion",
+      "test_sequence": "unknown",
+      "access_type": "open",
+      "test_goal": "unknown",
+      "regions": [
+        "全球"
+      ],
+      "platforms": [
+        "macOS"
+      ],
+      "published_date": "2026-04-21",
+      "event_date": "2026-04-23",
+      "verification_status": "verified",
+      "source_urls": [
+        "https://en.wikipedia.org/wiki/Infinity_Nikki",
+        "https://infinitynikki.infoldgames.com/en/news/490"
+      ],
+      "last_seen_at": "2026-10-29"
+    },
+    {
+      "candidate_id": "azur-promilia-001",
+      "company_cn": "蛮啾网络",
+      "company_en": "",
+      "game_cn": "蓝色星原：旅谣",
+      "game_en": "",
+      "official_event_name": "首曝 PV & 实机演示",
+      "normalized_stage": "first_reveal",
+      "test_sequence": "unknown",
+      "access_type": "public",
+      "test_goal": "unknown",
+      "regions": [
+        "国内"
+      ],
+      "platforms": [],
+      "published_date": "2024-06-13",
+      "event_date": "2024-06-13",
+      "verification_status": "verified",
+      "source_urls": [
+        "https://www.acfun.cn/v/ac44821540",
+        "https://www.youtube.com/watch?v=otUlv7Mk2lE"
+      ],
+      "last_seen_at": "2026-10-29"
+    },
+    {
+      "candidate_id": "azur-promilia-002",
+      "company_cn": "蛮啾网络",
+      "company_en": "",
+      "game_cn": "蓝色星原：旅谣",
+      "game_en": "",
+      "official_event_name": "恒序测试资格发放预告",
+      "normalized_stage": "technical_test",
+      "test_sequence": "unknown",
+      "access_type": "limited",
+      "test_goal": "unknown",
+      "regions": [
+        "国内"
+      ],
+      "platforms": [
+        "移动端",
+        "PC"
+      ],
+      "published_date": "2026-03-31",
+      "event_date": "2026-03-31 15:00",
+      "verification_status": "verified",
+      "source_urls": [
+        "https://www.taptap.cn/moment/787738824082982876",
+        "https://www.gamersky.com/handbook/202602/2096706.shtml"
+      ],
+      "last_seen_at": "2026-10-29"
+    },
+    {
+      "candidate_id": "azur-promilia-003",
+      "company_cn": "蛮啾网络",
+      "company_en": "",
+      "game_cn": "蓝色星原：旅谣",
+      "game_en": "",
+      "official_event_name": "“旅迹测试”资格及预下载开启预告",
+      "normalized_stage": "technical_test",
+      "test_sequence": "unknown",
+      "access_type": "limited",
+      "test_goal": "unknown",
+      "regions": [
+        "国内"
+      ],
+      "platforms": [
+        "PC",
+        "安卓",
+        "iOS"
+      ],
+      "published_date": "2026-08-28",
+      "event_date": "2026-09-15",
+      "verification_status": "reported_unconfirmed",
+      "source_urls": [
+        "https://www.weibo.com/7832445927/RftPw2Aan"
+      ],
+      "last_seen_at": "2026-10-29"
+    },
+    {
+      "candidate_id": "azur-promilia-004",
+      "company_cn": "蛮啾网络",
+      "company_en": "",
+      "game_cn": "蓝色星原：旅谣",
+      "game_en": "",
+      "official_event_name": "“旅迹测试”结束及数据清除公告",
+      "normalized_stage": "technical_test",
+      "test_sequence": "unknown",
+      "access_type": "limited",
+      "test_goal": "unknown",
+      "regions": [
+        "国内"
+      ],
+      "platforms": [
+        "PC",
+        "安卓",
+        "iOS",
+        "多端"
+      ],
+      "published_date": "2026-10-??",
+      "event_date": "2026-10-07 16:00",
+      "verification_status": "verified",
+      "source_urls": [
+        "https://azurpromilia.manjuu.com/home/news/detail/892769825091358720/",
+        "https://www.taptap.cn/moment/859424390947801787"
+      ],
+      "last_seen_at": "2026-10-29"
+    },
+    {
+      "candidate_id": "azur-promilia-006",
+      "company_cn": "蛮啾网络",
+      "company_en": "Manjuu Network Entertainment",
+      "game_cn": "蓝色星原：旅谣",
+      "game_en": "Azur Promilia",
+      "official_event_name": "公测正式定档11月26日",
+      "normalized_stage": "open_beta_or_launch",
+      "test_sequence": "final",
+      "access_type": "open",
+      "test_goal": "unknown",
+      "regions": [
+        "China",
+        "Japan",
+        "South Korea",
+        "Taiwan"
+      ],
+      "platforms": [
+        "PC",
+        "iOS",
+        "Android",
+        "PS5"
+      ],
+      "published_date": "2026‑10‑22",
+      "event_date": "2026‑11‑26",
+      "verification_status": "verified",
+      "source_urls": [
+        "https://azurpromilia.manjuu.com/home/",
+        "https://www.gamersky.com/news/202610/2233664.shtml",
+        "https://www.gematsu.com/2026/10/azur-promilia-launches-november-26-in-japan-south-korea-taiwan-and-china",
+        "https://www.digitaltoday.co.kr/cn/view/118877/nexon-to-launch-manjugames-fantasy-rpg-azur-promilia-in-south-korea-on-nov‑26"
+      ],
+      "last_seen_at": "2026-10-29"
+    },
+    {
+      "candidate_id": "manjuu-azurpromilia-003",
+      "company_cn": "蛮啾网络",
+      "company_en": "Manjuu Network Entertainment",
+      "game_cn": "蓝色星原：旅谣",
+      "game_en": "Azur Promilia",
+      "official_event_name": "正式公测定档11月26日",
+      "normalized_stage": "open_beta_or_launch",
+      "test_sequence": "final",
+      "access_type": "open",
+      "test_goal": "unknown",
+      "regions": [
+        "China",
+        "Japan",
+        "South Korea",
+        "Taiwan"
+      ],
+      "platforms": [
+        "PC",
+        "iOS",
+        "Android",
+        "PS5"
+      ],
+      "published_date": "2026‑10‑22",
+      "event_date": "2026‑11‑26",
+      "verification_status": "reported_unconfirmed",
+      "source_urls": [
+        "https://azurpromilia.manjuu.com/home/",
+        "https://www.gematsu.com/2026/10/azur-promilia-launches-november-26-in-japan-south-korea-taiwan-and-china"
+      ],
+      "last_seen_at": "2026-10-29"
+    },
+    {
+      "candidate_id": "manjuu-azurpromilia-005",
+      "company_cn": "蛮啾网络",
+      "company_en": "Manjuu Network Entertainment",
+      "game_cn": "蓝色星原：旅谣",
+      "game_en": "Azur Promilia",
+      "official_event_name": "英文版夏季开放测试窗口公布",
+      "normalized_stage": "open_beta_or_launch",
+      "test_sequence": "final",
+      "access_type": "unknown",
+      "test_goal": "unknown",
+      "regions": [
+        "English‑speaking regions"
+      ],
+      "platforms": [
+        "PC",
+        "iOS",
+        "Android",
+        "PS5"
+      ],
+      "published_date": "2026‑10‑23",
+      "event_date": "2027‑Summer",
+      "verification_status": "reported_unconfirmed",
+      "source_urls": [
+        "https://www.gematsu.com/2026/10/azur-promilia-launches-november-26-in-japan-south-korea-taiwan-and-china"
+      ],
+      "last_seen_at": "2026-10-29"
+    },
+    {
+      "candidate_id": "manjuu-azurpromilia-006",
+      "company_cn": "蛮啾网络",
+      "company_en": "Manjuu Network Entertainment",
+      "game_cn": "蓝色星原：旅谣",
+      "game_en": "Azur Promilia",
+      "official_event_name": "AGF 2026 展会亮相",
+      "normalized_stage": "regional_expansion",
+      "test_sequence": "not_applicable",
+      "access_type": "open",
+      "test_goal": "unknown",
+      "regions": [
+        "South Korea"
+      ],
+      "platforms": [
+        "PC",
+        "iOS",
+        "Android"
+      ],
+      "published_date": "2026‑10‑23",
+      "event_date": "2026‑12‑04 to 2026‑12‑06",
+      "verification_status": "reported_unconfirmed",
+      "source_urls": [
+        "https://www.digitaltoday.co.kr/cn/view/118877/nexon-to-launch-manjugames-fantasy-rpg-azur-promilia-in-south-korea-on-nov‑26"
+      ],
+      "last_seen_at": "2026-10-29"
+    }
+  ]
+}
