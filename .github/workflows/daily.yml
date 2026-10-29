@@ -48,7 +48,6 @@ jobs:
           echo "Deploying the current checked-in preview without running AI, email, or archive publish."
 
       - name: Run script
-        if: ${{ inputs.report_mode != 'deploy_only' }}
         env:
           BLUEAI_API_KEY: ${{ secrets.BLUEAI_API_KEY }}
           BLUEAI_BASE_URL: https://bmc-llm-relay.bluemediagroup.cn/v1

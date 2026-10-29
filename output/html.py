@@ -80,21 +80,15 @@ def build_dashboard_html(data, archive_href="./archive/", review_mode=True):
   <title>Weekly Industry Intelligence</title>
   <style>
     :root {{
-      --bg: #f7f8fb;
+      --bg: #f7f7f8;
       --card: #ffffff;
-      --ink: #172033;
-      --muted: #687386;
-      --line: #e6e9ef;
-      --soft-line: #f0f2f6;
-      --blue: #2357d9;
-      --blue-soft: #edf3ff;
-      --green: #078365;
-      --green-soft: #eaf8f2;
-      --orange: #b25a00;
-      --orange-soft: #fff3e6;
-      --violet: #6f52d4;
-      --violet-soft: #f2effc;
-      --dark: #111827;
+      --ink: #111111;
+      --muted: #656565;
+      --line: #d9d9dc;
+      --soft-line: #ececef;
+      --blue: #002fa7;
+      --blue-soft: #eef2ff;
+      --dark: #111111;
     }}
 
     * {{
@@ -111,7 +105,7 @@ def build_dashboard_html(data, archive_href="./archive/", review_mode=True):
     }}
 
     .page {{
-      width: min(1120px, calc(100% - 32px));
+      width: min(1180px, calc(100% - 40px));
       margin: 0 auto;
       padding: 44px 0 44px;
     }}
@@ -121,7 +115,9 @@ def build_dashboard_html(data, archive_href="./archive/", review_mode=True):
       justify-content: space-between;
       gap: 24px;
       align-items: flex-start;
-      margin-bottom: 28px;
+      margin-bottom: 22px;
+      padding-bottom: 22px;
+      border-bottom: 1px solid var(--ink);
     }}
 
     .eyebrow {{
@@ -135,9 +131,9 @@ def build_dashboard_html(data, archive_href="./archive/", review_mode=True):
 
     h1 {{
       margin: 0;
-      font-size: clamp(30px, 4.4vw, 48px);
-      line-height: 1;
-      letter-spacing: 0;
+      font-size: clamp(31px, 4.2vw, 52px);
+      line-height: .96;
+      letter-spacing: -.045em;
     }}
 
     .header-actions {{
@@ -160,7 +156,7 @@ def build_dashboard_html(data, archive_href="./archive/", review_mode=True):
       min-height: 36px;
       padding: 7px 12px;
       border: 1px solid var(--line);
-      border-radius: 8px;
+      border-radius: 0;
       background: var(--card);
       color: var(--ink);
       text-decoration: none;
@@ -174,11 +170,11 @@ def build_dashboard_html(data, archive_href="./archive/", review_mode=True):
     }}
 
     .section {{
-      margin-top: 22px;
+      margin-top: 18px;
       background: var(--card);
       border: 1px solid var(--line);
-      border-radius: 8px;
-      padding: 22px;
+      border-radius: 0;
+      padding: 26px;
     }}
 
     .section-head {{
@@ -205,41 +201,38 @@ def build_dashboard_html(data, archive_href="./archive/", review_mode=True):
     }}
 
     .section-badge {{
-      border-radius: 999px;
+      border-radius: 0;
       padding: 6px 11px;
       font-size: 12px;
       font-weight: 760;
       white-space: nowrap;
     }}
 
-    .blue {{ color: var(--blue); background: var(--blue-soft); }}
-    .violet {{ color: var(--violet); background: var(--violet-soft); }}
-    .green {{ color: var(--green); background: var(--green-soft); }}
-    .orange {{ color: var(--orange); background: var(--orange-soft); }}
+    .blue, .violet, .green, .orange {{ color: var(--blue); background: var(--blue-soft); }}
 
     .cards {{
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 16px;
+      grid-template-columns: 1fr;
+      gap: 14px;
       align-items: start;
     }}
 
     .card {{
       display: flex;
       flex-direction: column;
-      gap: 14px;
+      gap: 0;
       border: 1px solid var(--line);
-      border-radius: 8px;
-      padding: 18px;
+      border-radius: 0;
+      padding: 0;
       background: #fff;
       min-height: 0;
     }}
 
     .card-title {{
       margin: 0;
-      font-size: 20px;
-      line-height: 1.25;
-      letter-spacing: 0;
+      font-size: clamp(20px, 2.2vw, 27px);
+      line-height: 1.18;
+      letter-spacing: -.025em;
     }}
 
     .field {{
@@ -280,7 +273,7 @@ def build_dashboard_html(data, archive_href="./archive/", review_mode=True):
     .trend {{
       display: inline-flex;
       width: fit-content;
-      border-radius: 999px;
+      border-radius: 0;
       padding: 6px 10px;
       background: #f3f5f8;
       color: #344054;
@@ -291,19 +284,47 @@ def build_dashboard_html(data, archive_href="./archive/", review_mode=True):
     .stage-chip {{
       display: inline-flex;
       width: fit-content;
-      border-radius: 999px;
+      border-radius: 0;
       padding: 6px 10px;
       font-size: 12px;
       font-weight: 780;
-      background: var(--blue-soft);
+      border: 1px solid var(--blue);
+      background: #fff;
       color: var(--blue);
     }}
-    .stage-chip.stage-cbt, .stage-chip.stage-preregistration, .stage-chip.stage-technical_test {{ background: var(--orange-soft); color: var(--orange); }}
-    .stage-chip.stage-open_beta_or_launch {{ background: #fff0f1; color: #b42336; }}
-    .stage-chip.stage-major_update, .stage-chip.stage-anniversary, .stage-chip.stage-collaboration {{ background: var(--green-soft); color: var(--green); }}
-    .stage-chip.stage-regional_expansion, .stage-chip.stage-platform_expansion {{ background: var(--violet-soft); color: var(--violet); }}
+    .stage-chip[class*="stage-"] {{ color: var(--blue); background: #fff; }}
 
     .mode-note {{ margin: -12px 0 18px; color: var(--muted); font-size: 14px; }}
+
+    .brief-lead {{
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      gap: 28px;
+      padding: 20px 0 28px;
+      border-bottom: 1px solid var(--line);
+      margin-bottom: 20px;
+    }}
+    .brief-label {{ color: var(--blue); font-size: 12px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }}
+    .brief-copy {{ margin: 0; max-width: 820px; font-size: clamp(20px, 2.5vw, 30px); line-height: 1.28; letter-spacing: -.025em; }}
+
+    .card-head {{ display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 20px; padding: 22px 24px 18px; }}
+    .card-kicker {{ display: flex; gap: 8px; align-items: center; margin-bottom: 10px; }}
+    .evidence-label {{ color: var(--muted); font-size: 12px; font-weight: 720; }}
+    .stage-rail {{ display: grid; grid-template-columns: repeat(6, 1fr); gap: 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }}
+    .stage-step {{ position: relative; padding: 10px 8px; color: #969696; font-size: 11px; text-align: center; border-right: 1px solid var(--soft-line); }}
+    .stage-step:last-child {{ border-right: 0; }}
+    .stage-step.is-current {{ color: #fff; background: var(--blue); font-weight: 780; }}
+    .facts {{ display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-bottom: 1px solid var(--line); }}
+    .fact {{ min-height: 86px; padding: 16px 18px; border-right: 1px solid var(--soft-line); }}
+    .fact:last-child {{ border-right: 0; }}
+    .fact-label {{ margin-bottom: 7px; color: var(--muted); font-size: 11px; font-weight: 780; letter-spacing: .06em; text-transform: uppercase; }}
+    .fact-value {{ margin: 0; font-size: 15px; line-height: 1.42; }}
+    .opportunity {{ display: grid; grid-template-columns: 140px 1fr; gap: 20px; padding: 17px 20px; background: var(--blue-soft); color: var(--ink); }}
+    .opportunity strong {{ color: var(--blue); font-size: 12px; letter-spacing: .04em; }}
+    .opportunity p {{ margin: 0; font-size: 15px; line-height: 1.5; }}
+    .review-details {{ border-top: 1px solid var(--line); }}
+    .review-details summary {{ padding: 13px 20px; color: var(--blue); font-size: 13px; font-weight: 760; cursor: pointer; list-style-position: inside; }}
+    .review-details .details-body {{ padding: 0 20px 18px; }}
 
     .read-button {{
       margin-top: auto;
@@ -313,7 +334,7 @@ def build_dashboard_html(data, archive_href="./archive/", review_mode=True):
       width: fit-content;
       min-height: 38px;
       padding: 8px 13px;
-      border-radius: 8px;
+      border-radius: 0;
       background: var(--dark);
       color: #fff;
       text-decoration: none;
@@ -337,7 +358,7 @@ def build_dashboard_html(data, archive_href="./archive/", review_mode=True):
       min-height: 38px;
       padding: 8px 13px;
       border: 1px solid var(--blue);
-      border-radius: 8px;
+      border-radius: 0;
       background: var(--blue);
       color: #fff;
       font: inherit;
@@ -364,8 +385,8 @@ def build_dashboard_html(data, archive_href="./archive/", review_mode=True):
       width: fit-content;
       padding: 5px 9px;
       border-radius: 999px;
-      background: var(--green-soft);
-      color: var(--green);
+      background: var(--blue-soft);
+      color: var(--blue);
       font-size: 12px;
       font-weight: 760;
     }}
@@ -406,7 +427,7 @@ def build_dashboard_html(data, archive_href="./archive/", review_mode=True):
 
     @media (max-width: 760px) {{
       .page {{
-        width: min(100% - 24px, 1120px);
+        width: min(100% - 24px, 1180px);
         padding-top: 28px;
       }}
 
@@ -437,6 +458,13 @@ def build_dashboard_html(data, archive_href="./archive/", review_mode=True):
         grid-template-columns: 1fr;
       }}
 
+      .brief-lead, .opportunity {{ grid-template-columns: 1fr; gap: 8px; }}
+      .card-head {{ grid-template-columns: 1fr; }}
+      .facts {{ grid-template-columns: repeat(2, minmax(0, 1fr)); }}
+      .fact:nth-child(2) {{ border-right: 0; }}
+      .fact:nth-child(-n+2) {{ border-bottom: 1px solid var(--soft-line); }}
+      .stage-step {{ font-size: 9px; padding-inline: 3px; }}
+
       .card {{
         min-height: auto;
       }}
@@ -456,7 +484,11 @@ def build_dashboard_html(data, archive_href="./archive/", review_mode=True):
       </div>
     </section>
 
-    <p class="mode-note">{safe_escape('审核版：保留核验、节点和来源细节' if review_mode else '团队分享版：只保留已整理的关键发行与营销信息')}</p>
+    <div class="brief-lead">
+      <div class="brief-label">本期判断</div>
+      <p class="brief-copy">{safe_escape(data.get('headline') or data.get('one_thing_worth_watching') or '本期游戏出海机会已更新')}</p>
+    </div>
+    <p class="mode-note">{safe_escape('审核版：先看节点与市场机会，展开后核验来源' if review_mode else '团队分享版：只保留关键发行与营销信息')}</p>
     {_render_sections(data, review_mode=review_mode)}
 
     {_render_warning(data)}
@@ -546,25 +578,100 @@ def _render_card(card, section_key, pending=False, review_mode=True):
         '<button class="confirm-button" data-confirm-source type="button" disabled>确认这条情报</button>'
         if pending and link else ""
     )
-    stage = safe_text(card.get("normalized_stage") or "unknown")
-    stage_label = safe_text(card.get("sequence_label") or card.get("official_event_name") or _stage_label(stage))
+    stage = _canonical_stage(card.get("normalized_stage"), card.get("official_event_name"))
+    stage_label = _display_stage_label(card, stage)
     stage_chip = f'<span class="stage-chip stage-{safe_escape(stage, quote=True)}">{safe_escape(stage_label)}</span>' if stage_label else ""
+    points = _summary_points(card, section_key)
+    date_value = safe_text(card.get("event_date") or _point_value(points, "时间：") or "未公布")
+    region_value = safe_text(_field_from_points(points, "地区：", "｜") or card.get("regions") or "未公布")
+    platform_value = safe_text(_field_from_points(points, "平台：", "｜") or card.get("platforms") or "未公布")
+    evidence_value = safe_text(_point_value(points, "证据：") or card.get("verification_status") or "待核验")
+    opportunity_value = safe_text(card.get("marketing_opportunity") or _opportunity_from_points(points) or "暂无明确海外营销窗口")
+    readiness_value = safe_text(card.get("marketing_readiness") or _field_from_points(points, "营销成熟度：", "｜") or "未判断")
+    detail_block = _render_review_details(card, section_key, read_button, confirmation_button) if review_mode else _render_compact_actions(read_button)
 
     return f"""
     <article class="card" data-source-id="{safe_escape(link, quote=True)}" data-review-card="{'true' if pending else 'false'}">
-      <span class="confirmation-status">已人工确认</span>
-      {stage_chip}
-      <h3 class="card-title">{safe_escape(_card_title(card, section_key))}</h3>
-      <div class="field">
-        <div class="field-label">摘要要点</div>
-        {_render_summary_points(card, section_key, compact=not review_mode)}
+      <div class="card-head">
+        <div>
+          <div class="card-kicker">{stage_chip}<span class="evidence-label">{safe_escape(evidence_value)}</span><span class="confirmation-status">已人工确认</span></div>
+          <h3 class="card-title">{safe_escape(_card_title(card, section_key))}</h3>
+        </div>
+        <div class="date">{safe_escape(date_value)}</div>
       </div>
-      <div class="card-actions">
-        {read_button}
-        {confirmation_button}
+      {_render_stage_rail(stage)}
+      <div class="facts">
+        {_render_fact("节点", stage_label or "未分类")}
+        {_render_fact("地区", region_value)}
+        {_render_fact("平台", platform_value)}
+        {_render_fact("营销成熟度", readiness_value)}
       </div>
+      <div class="opportunity"><strong>海外营销机会</strong><p>{safe_escape(opportunity_value)}</p></div>
+      {detail_block}
     </article>
     """
+
+
+def _display_stage_label(card, stage):
+    if stage == "cbt":
+        return safe_text(card.get("sequence_label") or "测试轮次未确认")
+    return safe_text(_stage_label(stage) or card.get("official_event_name") or "")
+
+
+def _render_stage_rail(stage):
+    steps = [
+        ("first_reveal", "首曝"), ("technical_test", "技术测试"), ("cbt", "封闭测试"),
+        ("preregistration", "预约"), ("open_beta_or_launch", "公测/上线"), ("live_ops", "长线运营"),
+    ]
+    current = stage if stage in {item[0] for item in steps} else "live_ops" if stage in {"major_update", "anniversary", "collaboration", "regional_expansion", "platform_expansion"} else ""
+    rendered = "".join(
+        f'<div class="stage-step{" is-current" if step_id == current else ""}">{safe_escape(label)}</div>'
+        for step_id, label in steps
+    )
+    return f'<div class="stage-rail" aria-label="游戏发行阶段">{rendered}</div>'
+
+
+def _render_fact(label, value):
+    return f'<div class="fact"><div class="fact-label">{safe_escape(label)}</div><p class="fact-value">{safe_escape(value)}</p></div>'
+
+
+def _render_review_details(card, section_key, read_button, confirmation_button):
+    return f"""
+      <details class="review-details">
+        <summary>查看核验详情与来源</summary>
+        <div class="details-body">
+          {_render_summary_points(card, section_key)}
+          <div class="card-actions">{read_button}{confirmation_button}</div>
+        </div>
+      </details>
+    """
+
+
+def _render_compact_actions(read_button):
+    return f'<div class="card-actions" style="padding:16px 20px">{read_button}</div>'
+
+
+def _point_value(points, prefix):
+    for point in points:
+        text = safe_text(point)
+        if prefix in text:
+            return text.split(prefix, 1)[1].strip()
+    return ""
+
+
+def _field_from_points(points, prefix, delimiter):
+    value = _point_value(points, prefix)
+    return value.split(delimiter, 1)[0].strip() if value else ""
+
+
+def _opportunity_from_points(points):
+    for point in points:
+        text = safe_text(point)
+        if "｜机会：" in text:
+            return text.split("｜机会：", 1)[1].strip()
+        if text.startswith("机会："):
+            return text.split("机会：", 1)[1].strip()
+    return ""
 
 
 def _render_confirmation_script():
@@ -703,6 +810,33 @@ def _stage_label(stage):
         "major_update": "大版本更新", "anniversary": "周年", "collaboration": "联名/联动",
         "regional_expansion": "新地区发行", "platform_expansion": "新平台上线",
     }.get(stage, "")
+
+
+def _canonical_stage(value, official_name=""):
+    text = f"{safe_text(value)} {safe_text(official_name)}".lower()
+    canonical = {
+        "first_reveal", "technical_test", "cbt", "preregistration", "open_beta_or_launch",
+        "soft_launch", "major_update", "anniversary", "collaboration", "regional_expansion",
+        "platform_expansion",
+    }
+    if safe_text(value) in canonical:
+        return safe_text(value)
+    rules = (
+        (("公测", "上线", "launch", "open beta", "obt", "release"), "open_beta_or_launch"),
+        (("预约", "pre-registration", "pre-register", "wishlist"), "preregistration"),
+        (("首曝", "曝光", "first reveal", "gameplay reveal", "实机演示"), "first_reveal"),
+        (("封测", "closed beta", "cbt", "测试招募", "终测", "一测", "二测", "三测"), "cbt"),
+        (("技术测试", "压力测试", "试玩", "playtest", "technical test"), "technical_test"),
+        (("大版本", "资料片", "赛季", "major update", "expansion"), "major_update"),
+        (("周年", "anniversary"), "anniversary"),
+        (("联名", "联动", "collaboration", "crossover"), "collaboration"),
+        (("海外发行", "地区发行", "regional"), "regional_expansion"),
+        (("新平台", "platform"), "platform_expansion"),
+    )
+    for terms, stage in rules:
+        if any(term in text for term in terms):
+            return stage
+    return "unknown"
 
 
 def _split_points(value):

@@ -1,5 +1,5 @@
 from collections import Counter
-from datetime import datetime
+from datetime import date, datetime, timedelta
 import json
 import os
 
@@ -14,7 +14,7 @@ from config import (
 )
 
 
-REPORT_MODES = {"preview", "publish"}
+REPORT_MODES = {"preview", "publish", "deploy_only"}
 
 
 def collect_information_pool():
@@ -41,6 +41,8 @@ def prepare_information_pool(items, limit=MAX_ITEMS_FOR_ANALYSIS):
     seen = set()
 
     for item in items:
+        if _is_stale_completed_event(item):
+            continue
         title = item.get("title", "").strip()
         summary = item.get("summary", "").strip()
 
@@ -87,6 +89,28 @@ def prepare_information_pool(items, limit=MAX_ITEMS_FOR_ANALYSIS):
         selected_items.append(item)
 
     return selected_items[:limit]
+
+
+def _is_stale_completed_event(item):
+    """Drop clearly completed old milestones before the writing model sees them.
+
+    Approximate quarters/seasons and multi-date timelines remain eligible. A
+    past exact date is retained only when the supporting page is a recent
+    update, so an old launch cannot reappear as a current opportunity.
+    """
+    event_date = str(item.get("event_date") or "").strip()
+    published_date = str(item.get("published_date") or "").strip()
+    try:
+        event_day = datetime.strptime(event_date, "%Y-%m-%d").date()
+    except ValueError:
+        return False
+    if event_day >= date.today():
+        return False
+    try:
+        published_day = datetime.strptime(published_date, "%Y-%m-%d").date()
+    except ValueError:
+        return True
+    return published_day < date.today() - timedelta(days=30)
 
 
 def build_empty_message():
@@ -208,10 +232,23 @@ def run_publish_mode():
     print(f"Published dashboard generated: {HTML_OUTPUT_PATH}")
 
 
+def run_deploy_only_mode():
+    from output.html import render_dashboard
+
+    dashboard_data = load_preview_data()
+    if dashboard_data is None:
+        raise RuntimeError("No preview data found for deploy_only rendering.")
+    render_dashboard(dashboard_data, PREVIEW_OUTPUT_PATH, archive_href="../archive/")
+    print(f"Existing preview data re-rendered without AI calls: {PREVIEW_OUTPUT_PATH}")
+
+
 def main():
     mode = get_report_mode()
     if mode == "preview":
         run_preview_mode()
+        return
+    if mode == "deploy_only":
+        run_deploy_only_mode()
         return
     run_publish_mode()
 

@@ -100,7 +100,7 @@ The `Game Intelligence Weekly` GitHub Actions workflow supports:
 
 - `preview`: collect news, generate a draft, email it, commit `output/preview`, and deploy Pages.
 - `publish`: promote a reviewed report to the official archive and deploy Pages.
-- `deploy_only`: deploy the current checked-in preview without calling BlueAI or sending email.
+- `deploy_only`: re-render the current checked-in preview data with the latest UI code and deploy it without calling BlueAI or sending email.
 
 Preview URL:
 

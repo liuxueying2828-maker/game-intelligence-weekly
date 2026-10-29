@@ -174,11 +174,12 @@ def _normalize_ai_cards(items):
 
 
 def _event_fields(item):
+    normalized_stage = _canonical_stage(item.get("normalized_stage"), item.get("official_event_name"))
     return {
         "candidate_id": item.get("candidate_id") or "",
         "official_event_name": item.get("official_event_name") or "",
-        "normalized_stage": item.get("normalized_stage") or "unknown",
-        "sequence_label": item.get("sequence_label") or "",
+        "normalized_stage": normalized_stage,
+        "sequence_label": item.get("sequence_label") if normalized_stage == "cbt" else "不适用",
         "access_type": item.get("access_type") or "unknown",
         "test_goal": item.get("test_goal") or "unknown",
         "event_date": item.get("event_date") or "",
@@ -189,6 +190,29 @@ def _event_fields(item):
         "marketing_readiness": item.get("marketing_readiness") or "",
         "marketing_opportunity": item.get("marketing_opportunity") or "",
     }
+
+
+def _canonical_stage(value, official_name=""):
+    text = f"{value or ''} {official_name or ''}".lower()
+    canonical = {"first_reveal", "technical_test", "cbt", "preregistration", "open_beta_or_launch", "soft_launch", "major_update", "anniversary", "collaboration", "regional_expansion", "platform_expansion"}
+    if value in canonical:
+        return value
+    rules = (
+        (("公测", "上线", "launch", "open beta", "obt", "release"), "open_beta_or_launch"),
+        (("预约", "pre-registration", "pre-register", "wishlist"), "preregistration"),
+        (("首曝", "曝光", "first reveal", "gameplay reveal", "实机演示"), "first_reveal"),
+        (("封测", "closed beta", "cbt", "测试招募", "终测", "一测", "二测", "三测"), "cbt"),
+        (("技术测试", "压力测试", "试玩", "playtest", "technical test"), "technical_test"),
+        (("大版本", "资料片", "赛季", "major update", "expansion"), "major_update"),
+        (("周年", "anniversary"), "anniversary"),
+        (("联名", "联动", "collaboration", "crossover"), "collaboration"),
+        (("海外发行", "地区发行", "regional"), "regional_expansion"),
+        (("新平台", "platform"), "platform_expansion"),
+    )
+    for terms, stage in rules:
+        if any(term in text for term in terms):
+            return stage
+    return "unknown"
 
 
 def build_dashboard_fallback(raw_text):
