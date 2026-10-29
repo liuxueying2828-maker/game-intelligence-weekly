@@ -48,6 +48,11 @@ PRIORITY_COMPANIES = [
 
 GAME_CATALOG_PATH = BASE_DIR / "data" / "game_catalog.json"
 KEYWORD_LIBRARY_PATH = BASE_DIR / "data" / "keyword_library.json"
+EVENT_TAXONOMY_PATH = BASE_DIR / "data" / "event_taxonomy.json"
+SOURCE_REGISTRY_PATH = BASE_DIR / "data" / "source_registry.json"
+MARKETING_RULES_PATH = BASE_DIR / "data" / "marketing_rules.json"
+EVENT_HISTORY_PATH = BASE_DIR / "data" / "event_history.json"
+REVIEW_STATE_PATH = BASE_DIR / "data" / "review_state.json"
 BLUEAI_BASE_URL = "https://bmc-llm-relay.bluemediagroup.cn/v1"
 BLUEAI_MODEL = "gpt-4.1"
 BLUEAI_SEARCH_MAX_ITEMS_PER_TASK = 12

@@ -51,6 +51,11 @@ pending / 待确认情报 / Needs Confirmation
 - 聚合转载不算独立来源；优先展示公司/工作室官方原文链接。若有多个核验来源，在摘要中写明来源数量和类型。
 - 国内外上线日期必须分开写，不得合并成一个“上线日期”。
 - 区分首曝、预约、获批版号、展会参展、技术测试、封测、公测和正式上线，不得互相替代。
+- 保留官方测试/活动名称，同时输出 normalized_stage。测试卡片显示为“二测（官方名称：旅迹测试）”这类格式。
+- 一测/二测/三测必须根据同一地区、相关平台的玩家测试历史顺序判断；国内与海外分开计数。历史不完整时必须写“测试轮次未确认”，禁止猜测。
+- 技术测试、内部测试不自动计入玩家测试轮次。测试目标只有官方来源明确说明时才能填写，否则写“官方未说明”。
+- 公测/OB 与 Launch 属于同一营销介入阶段，但 official_event_name 必须保留来源中的原始叫法，不得把两者篡改成同一个词。
+- SteamDB 只能作为辅助发现来源，不能单独证明测试、上线、版本更新或日期。
 - 季度、年份、“即将上线”等模糊时间必须保持原表述，不得自行生成日期。
 - 中文名和英文名分别保存。英文名必须来自候选信息中的官方名称；未公布时写“English name not announced”，禁止自行翻译。
 - 每条卡片标题必须严格使用“[游戏厂商-游戏中文名-English Name]”。
@@ -67,22 +72,22 @@ pending / 待确认情报 / Needs Confirmation
 - 未来 180 天内的明确日期优先；只公布季度、季节或年份且仍未发生的计划也可保留。已经发生且没有后续海外机会的旧节点排除。
 - Game Name Reference Catalog 仅用于名称消歧和中英文名匹配。它不是新闻来源，不能为卡片提供事件、日期、发行状态或海外计划；所有这些事实必须来自候选网页。
 
-每条 summary_points 使用固定顺序，缺少的字段写“未公布”：
-1. “厂商：...｜平台：...｜事件：...”
-2. “国内节点：...”
-3. “海外节点：...｜重点区域：...”
-4. “海外信号：...｜需求判断：高/中/低/暂无/证据不足（依据：...）”
-5. “营销/合作：...”或“情报意义：...”
+审核版每条 summary_points 使用固定顺序，缺少的字段写“未公布”：
+1. “节点：标准节点（官方名称：...）｜时间：...”
+2. “地区：...｜平台：...｜准入：封闭/限量/公开/未说明”
+3. “国内节点：...｜海外节点：...”
+4. “证据：已验证/据报道/待确认｜来源类型：...”
+5. “营销成熟度：高/中/低｜机会：...”
 
 JSON schema：
 {{
   "date": "{datetime.now().strftime("%Y-%m-%d")}",
   "headline": "本周最值得跟进的国产游戏出海机会，不超过 38 个中文字符",
-  "platform": [{{"name": "[游戏厂商-游戏中文名-English Name]", "summary_points": ["厂商：...｜平台：...｜事件：...", "国内节点：...", "海外计划：...", "潜在目标区域：...", "客户机会：..."], "link": "原文链接或空字符串"}}],
-  "ai": [{{"title": "[游戏厂商-游戏中文名-English Name]", "summary_points": ["厂商：...｜平台：...｜事件：...", "海外节点：...｜重点区域：...", "国内节点：...", "需求判断：高/中/低（依据：...）", "建议介入时间：...｜距离节点：约...天"], "link": "原文链接或空字符串"}}],
-  "sports": [{{"name": "[游戏厂商-游戏中文名-English Name]", "summary_points": ["厂商：...｜事件：...", "海外证据：...", "可能区域：...", "当前确定性：高/中/低", "建议跟进动作：..."], "link": "原文链接或空字符串"}}],
-  "retail": [{{"name": "[游戏厂商-游戏中文名-English Name]", "summary_points": ["厂商：...｜事件：...", "目标区域：...｜关键日期：...", "渠道/触点：...", "可承接机会：...", "建议介入时间：..."], "link": "原文链接或空字符串"}}],
-  "pending": [{{"name": "[游戏厂商-游戏中文名-English Name]", "summary_points": ["核验状态：待确认", "候选事件：...", "冲突/缺失证据：...", "当前来源：...", "后续核验动作：..."], "link": "现有来源链接或空字符串"}}],
+  "platform": [{{"name": "[游戏厂商-游戏中文名-English Name]", "candidate_id":"", "official_event_name":"", "normalized_stage":"", "sequence_label":"", "event_date":"", "regions":[], "platforms":[], "verification_status":"", "marketing_readiness":"", "marketing_opportunity":"", "summary_points": ["节点：...", "地区：...", "国内节点：...｜海外节点：...", "证据：...", "营销成熟度：...｜机会：..."], "link": "原文链接"}}],
+  "ai": [{{"title": "[游戏厂商-游戏中文名-English Name]", "candidate_id":"", "official_event_name":"", "normalized_stage":"", "sequence_label":"", "event_date":"", "regions":[], "platforms":[], "verification_status":"", "marketing_readiness":"", "marketing_opportunity":"", "summary_points": ["节点：...", "地区：...", "国内节点：...｜海外节点：...", "证据：...", "营销成熟度：...｜机会：..."], "link": "原文链接"}}],
+  "sports": [{{"name": "[游戏厂商-游戏中文名-English Name]", "candidate_id":"", "official_event_name":"", "normalized_stage":"", "sequence_label":"", "event_date":"", "regions":[], "platforms":[], "verification_status":"", "marketing_readiness":"", "marketing_opportunity":"", "summary_points": ["节点：...", "地区：...", "国内节点：...｜海外节点：...", "证据：...", "营销成熟度：...｜机会：..."], "link": "原文链接"}}],
+  "retail": [{{"name": "[游戏厂商-游戏中文名-English Name]", "candidate_id":"", "official_event_name":"", "normalized_stage":"", "sequence_label":"", "event_date":"", "regions":[], "platforms":[], "verification_status":"", "marketing_readiness":"", "marketing_opportunity":"", "summary_points": ["节点：...", "地区：...", "国内节点：...｜海外节点：...", "证据：...", "营销成熟度：...｜机会：..."], "link": "原文链接"}}],
+  "pending": [{{"name": "[游戏厂商-游戏中文名-English Name]", "candidate_id":"", "official_event_name":"", "normalized_stage":"", "sequence_label":"", "event_date":"", "regions":[], "platforms":[], "verification_status":"pending_confirmation", "summary_points": ["节点：...", "冲突/缺失证据：...", "当前来源：...", "后续核验动作：..."], "link": "现有来源链接"}}],
   "one_thing_worth_watching": "未来 180 天最值得销售团队跟进的一个国产游戏出海节点"
 }}
 

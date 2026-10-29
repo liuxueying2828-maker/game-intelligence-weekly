@@ -60,13 +60,14 @@ OPPORTUNITY_SECTION_ORDER = (
 
 def render_dashboard(data, output_path, archive_href="./archive/"):
     output_path.parent.mkdir(parents=True, exist_ok=True)
-    html = build_dashboard_html(data, archive_href=archive_href)
+    review_mode = "preview" in output_path.parts
+    html = build_dashboard_html(data, archive_href=archive_href, review_mode=review_mode)
     html = "\n".join(line.rstrip() for line in html.splitlines()) + "\n"
     output_path.write_text(html, encoding="utf-8")
     return output_path
 
 
-def build_dashboard_html(data, archive_href="./archive/"):
+def build_dashboard_html(data, archive_href="./archive/", review_mode=True):
     date = data.get("date") or datetime.now().strftime("%Y-%m-%d")
     date_parts = report_date_parts(date)
     report_date_label = f"{date_parts['iso_week']} · {date_parts['formatted_date']}"
@@ -287,6 +288,23 @@ def build_dashboard_html(data, archive_href="./archive/"):
       font-weight: 720;
     }}
 
+    .stage-chip {{
+      display: inline-flex;
+      width: fit-content;
+      border-radius: 999px;
+      padding: 6px 10px;
+      font-size: 12px;
+      font-weight: 780;
+      background: var(--blue-soft);
+      color: var(--blue);
+    }}
+    .stage-chip.stage-cbt, .stage-chip.stage-preregistration, .stage-chip.stage-technical_test {{ background: var(--orange-soft); color: var(--orange); }}
+    .stage-chip.stage-open_beta_or_launch {{ background: #fff0f1; color: #b42336; }}
+    .stage-chip.stage-major_update, .stage-chip.stage-anniversary, .stage-chip.stage-collaboration {{ background: var(--green-soft); color: var(--green); }}
+    .stage-chip.stage-regional_expansion, .stage-chip.stage-platform_expansion {{ background: var(--violet-soft); color: var(--violet); }}
+
+    .mode-note {{ margin: -12px 0 18px; color: var(--muted); font-size: 14px; }}
+
     .read-button {{
       margin-top: auto;
       display: inline-flex;
@@ -438,22 +456,23 @@ def build_dashboard_html(data, archive_href="./archive/"):
       </div>
     </section>
 
-    {_render_sections(data)}
+    <p class="mode-note">{safe_escape('审核版：保留核验、节点和来源细节' if review_mode else '团队分享版：只保留已整理的关键发行与营销信息')}</p>
+    {_render_sections(data, review_mode=review_mode)}
 
     {_render_warning(data)}
   </main>
-  {_render_confirmation_script()}
+  {_render_confirmation_script() if review_mode else ''}
 </body>
 </html>
 """
 
 
-def _render_sections(data):
+def _render_sections(data, review_mode=True):
     opportunity_cards = _collect_opportunity_cards(data)
     pending_cards = safe_cards(data.get("pending_confirmation", []))
     return "\n".join([
-        _render_opportunity_section(opportunity_cards),
-        _render_pending_section(pending_cards),
+        _render_opportunity_section(opportunity_cards, review_mode=review_mode),
+        _render_pending_section(pending_cards, review_mode=review_mode) if review_mode else "",
     ])
 
 
@@ -470,8 +489,8 @@ def _collect_opportunity_cards(data):
     return cards
 
 
-def _render_opportunity_section(cards):
-    rendered_cards = "\n".join(_render_card(card, section_key) for card, section_key in cards)
+def _render_opportunity_section(cards, review_mode=True):
+    rendered_cards = "\n".join(_render_card(card, section_key, review_mode=review_mode) for card, section_key in cards)
     if not rendered_cards:
         rendered_cards = '<div class="empty" data-empty-state>本期尚未抓取到有原文链接的游戏出海机会。</div>'
 
@@ -491,8 +510,8 @@ def _render_opportunity_section(cards):
     """
 
 
-def _render_pending_section(cards):
-    rendered_cards = "\n".join(_render_card(card, "pending_confirmation", pending=True) for card in cards)
+def _render_pending_section(cards, review_mode=True):
+    rendered_cards = "\n".join(_render_card(card, "pending_confirmation", pending=True, review_mode=review_mode) for card in cards)
     if not rendered_cards:
         rendered_cards = '<div class="empty" data-empty-state>当前没有待人工确认的情报。</div>'
 
@@ -513,7 +532,7 @@ def _render_pending_section(cards):
     """
 
 
-def _render_card(card, section_key, pending=False):
+def _render_card(card, section_key, pending=False, review_mode=True):
     if isinstance(card, str):
         card = {"name": "Signal", "news": card, "summary_points": [card], "link": ""}
 
@@ -527,14 +546,18 @@ def _render_card(card, section_key, pending=False):
         '<button class="confirm-button" data-confirm-source type="button" disabled>确认这条情报</button>'
         if pending and link else ""
     )
+    stage = safe_text(card.get("normalized_stage") or "unknown")
+    stage_label = safe_text(card.get("sequence_label") or card.get("official_event_name") or _stage_label(stage))
+    stage_chip = f'<span class="stage-chip stage-{safe_escape(stage, quote=True)}">{safe_escape(stage_label)}</span>' if stage_label else ""
 
     return f"""
     <article class="card" data-source-id="{safe_escape(link, quote=True)}" data-review-card="{'true' if pending else 'false'}">
       <span class="confirmation-status">已人工确认</span>
+      {stage_chip}
       <h3 class="card-title">{safe_escape(_card_title(card, section_key))}</h3>
       <div class="field">
         <div class="field-label">摘要要点</div>
-        {_render_summary_points(card, section_key)}
+        {_render_summary_points(card, section_key, compact=not review_mode)}
       </div>
       <div class="card-actions">
         {read_button}
@@ -625,8 +648,11 @@ def _card_title(card, section_key):
     return card.get("name") or card.get("title") or "Signal"
 
 
-def _render_summary_points(card, section_key):
+def _render_summary_points(card, section_key, compact=False):
     points = _summary_points(card, section_key)
+    if compact:
+        preferred = [point for point in points if any(prefix in point for prefix in ("节点：", "地区：", "海外节点：", "营销成熟度：", "机会："))]
+        points = (preferred or points)[:4]
     if not points:
         return "<p></p>"
     if len(points) == 1:
@@ -668,6 +694,15 @@ def _is_unsupported_status_line(value):
         phrase in text
         for phrase in ("本周新增", "本周更新", "持续关注", "新增/更新或持续关注")
     )
+
+
+def _stage_label(stage):
+    return {
+        "first_reveal": "首曝", "technical_test": "技术测试", "cbt": "封闭测试",
+        "preregistration": "预约", "open_beta_or_launch": "公测/上线", "soft_launch": "区域试发行",
+        "major_update": "大版本更新", "anniversary": "周年", "collaboration": "联名/联动",
+        "regional_expansion": "新地区发行", "platform_expansion": "新平台上线",
+    }.get(stage, "")
 
 
 def _split_points(value):

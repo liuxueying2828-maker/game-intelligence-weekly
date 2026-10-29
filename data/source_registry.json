@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "policy": "Official primary evidence first. SteamDB is secondary evidence and never independently verifies a release claim.",
+  "sources": [
+    {"id": "official_site", "label": "游戏/厂商官网", "tier": 1, "access_mode": "public_web", "direct": true},
+    {"id": "official_social", "label": "官方社媒", "tier": 1, "access_mode": "indexed_public_pages", "direct": false},
+    {"id": "steam", "label": "Steam 官方商店与公告", "tier": 1, "access_mode": "public_web_api", "direct": true},
+    {"id": "youtube", "label": "YouTube 官方频道", "tier": 1, "access_mode": "public_web_or_api", "direct": true},
+    {"id": "app_store", "label": "Apple App Store", "tier": 1, "access_mode": "public_web_or_search_api", "direct": true},
+    {"id": "google_play", "label": "Google Play", "tier": 1, "access_mode": "public_web", "direct": false},
+    {"id": "bilibili", "label": "Bilibili 游戏/官方账号", "tier": 1, "access_mode": "indexed_public_pages", "direct": false},
+    {"id": "taptap", "label": "TapTap", "tier": 1, "access_mode": "indexed_public_pages", "direct": false},
+    {"id": "steamdb", "label": "SteamDB", "tier": 3, "access_mode": "third_party_public_web", "direct": false, "rule": "辅助发现应用、版本和商店变化；不可单独确认新闻"},
+    {"id": "wechat", "label": "微信公众号", "tier": 2, "access_mode": "known_public_url_or_index", "direct": false},
+    {"id": "weibo", "label": "微博", "tier": 2, "access_mode": "indexed_public_pages", "direct": false},
+    {"id": "trade_media", "label": "游戏行业媒体", "tier": 2, "access_mode": "public_web", "direct": true}
+  ]
+}

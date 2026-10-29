@@ -2,13 +2,13 @@
 
 An automated release, globalization, and marketing intelligence radar for BluefocusAI_Madhouse_Game Brand.
 
-GitHub Actions → Bilingual Keyword Library → BlueAI Web Search → Independent Verification → GPT-4.1 Analysis → HTML Dashboard → GitHub Pages and Email
+GitHub Actions → Industry Knowledge Base → BlueAI Web Search → Independent Verification → Event History → Editorial Preview → Compact Team Edition
 
 The discovery layer runs a bilingual query matrix through the company BlueAI Relay and the Responses API `web_search` tool. It combines broad industry searches with batched priority-company searches, tracked-game searches, and dedicated public-social searches. A second web-search pass verifies direct sources, dates, numbers, title matching, regions, and later corrections before the report is written. Search vocabulary, priority companies, tracked games, trade events, and source families are maintained in `data/keyword_library.json`.
 
 ## Intelligence Scope
 
-The dashboard is a rolling six-month China-game overseas opportunity radar. Purely overseas titles and general global-industry news are excluded. Confirmed future milestones remain visible until they happen, even when the original announcement is older than the current week. It contains five sections:
+The dashboard is a rolling six-month China-game overseas opportunity radar. Purely overseas titles and general global-industry news are excluded. Confirmed future milestones remain visible until they happen, even when the original announcement is older than the current week. The preview is a detailed editorial review surface; the published page is a compact team-sharing edition.
 
 1. **国内游戏产品动态 / China Game Pipeline**
    - Chinese-developed titles at reveal, license, reservation, testing, launch, or domestic release stages.
@@ -29,6 +29,8 @@ Platforms are tags rather than top-level sections: `PC`, `Mobile`, `Console`, `M
 - Missing identities are shown explicitly as `未找到厂商`, `未找到中文名`, or `English name not found`; English names are never invented or translated.
 - China and overseas milestones must be recorded separately.
 - First reveal, license approval, exhibition appearance, test, open beta, and official launch are different event types.
+- Branded test names are preserved, but tests are normalized to technical test / CBT / open beta / launch. A numbered test is emitted only when same-region player-facing history supports it; otherwise it is labeled `测试轮次未确认`.
+- Domestic and overseas test sequences are counted separately. SteamDB is secondary discovery evidence and cannot independently verify an event.
 - A quarter, year, or approximate window must remain approximate; the system must not invent a precise date.
 - Search expands from recent updates to announcements published in the last 180 days and tracks relevant events in the coming 180 days.
 - Only candidates actually found by BlueAI Web Search may appear as news; every published card must include a source URL.
@@ -56,7 +58,12 @@ See [`manual_sources/examples.md`](manual_sources/examples.md) for the editorial
 │   └── examples.md
 ├── data/
 │   ├── keyword_library.json
-│   └── game_catalog.json
+│   ├── game_catalog.json
+│   ├── event_taxonomy.json
+│   ├── source_registry.json
+│   ├── marketing_rules.json
+│   ├── event_history.json
+│   └── review_state.json
 └── output/
     ├── preview/
     ├── archive/
@@ -77,6 +84,8 @@ Real keys must only be stored as GitHub Secrets or in a local ignored `.env` fil
 ## Maintaining Coverage
 
 - Maintain bilingual event terms (`OB`, first reveal, tests, launches, major updates, collaborations), priority companies, tracked games, event names, and source families in `data/keyword_library.json`.
+- `data/event_taxonomy.json` defines normalized marketing nodes and sequence policy. `event_history.json` contains externally sourced event history; catalog notes and user examples never enter it as evidence.
+- `source_registry.json` records access and evidence rules for official sites, social pages, Bilibili, TapTap, stores, Steam, and SteamDB.
 - `sources/keyword_library.py` converts that library into four Chinese/English search tasks; `sources/blueai_research.py` runs candidate discovery and independent verification through the Relay.
 - Official sites, stores, social accounts, event sites, Chinese game media, global trade media, and reliable wire services are searched directly; Google News is not the sole pool.
 - Public social discovery targets Weibo, WeChat articles, Bilibili, TapTap, YouTube, X, Facebook, public Discord invite pages, and Reddit. Private groups and login-only content are outside the web-search boundary.

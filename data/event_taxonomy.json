@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "sequence_policy": {"count_player_facing_tests_only": true, "separate_by_region": true, "separate_by_platform_when_materially_different": true, "never_guess_missing_sequence": true, "unknown_label": "测试轮次未确认", "display_rule": "标准节点（官方名称：官方测试名）"},
+  "stages": [
+    {"id": "first_reveal", "label_zh": "首曝", "label_en": "First Reveal", "color": "blue", "terms_zh": ["首曝", "首次曝光", "首次公开", "正式公布", "首支PV", "首次实机", "首爆"], "terms_en": ["first reveal", "world premiere", "officially announced", "debut trailer", "first gameplay", "gameplay reveal"]},
+    {"id": "technical_test", "label_zh": "技术测试", "label_en": "Technical Test", "color": "yellow", "terms_zh": ["技术测试", "小规模测试", "先锋测试", "限号测试", "压力测试", "开发者测试"], "terms_en": ["technical test", "pre-alpha test", "prototype test", "stress test", "limited playtest"]},
+    {"id": "cbt", "label_zh": "封闭测试", "label_en": "Closed Beta", "color": "orange", "terms_zh": ["封闭测试", "封测", "删档测试", "不删档测试", "付费测试", "一测", "二测", "三测", "终测"], "terms_en": ["closed beta", "CBT", "CBT1", "CBT2", "CBT3", "final closed beta", "closed playtest"]},
+    {"id": "preregistration", "label_zh": "预约", "label_en": "Pre-registration", "color": "orange", "terms_zh": ["预约开启", "全球预约", "海外预约", "预注册", "愿望单开放"], "terms_en": ["pre-registration", "pre-register", "global pre-registration", "wishlist now", "pre-order"]},
+    {"id": "open_beta_or_launch", "label_zh": "公测/上线", "label_en": "Open Beta / Launch", "color": "red", "terms_zh": ["公开测试", "公测", "不删档公测", "正式上线", "全平台上线", "发售", "开服", "上线"], "terms_en": ["open beta", "OB", "OBT", "public beta", "official launch", "global launch", "release", "available now"]},
+    {"id": "soft_launch", "label_zh": "区域试发行", "label_en": "Soft Launch", "color": "orange", "terms_zh": ["区域试发行", "限区上线", "试运营"], "terms_en": ["soft launch", "regional launch", "limited release"]},
+    {"id": "major_update", "label_zh": "大版本更新", "label_en": "Major Update", "color": "green", "terms_zh": ["大版本", "重大更新", "资料片", "新赛季", "版本前瞻", "全新篇章"], "terms_en": ["major update", "version update", "expansion", "new season", "content update", "new chapter"]},
+    {"id": "anniversary", "label_zh": "周年", "label_en": "Anniversary", "color": "green", "terms_zh": ["周年庆", "周年版本", "半周年"], "terms_en": ["anniversary", "anniversary update", "half anniversary"]},
+    {"id": "collaboration", "label_zh": "联名/联动", "label_en": "Collaboration", "color": "green", "terms_zh": ["品牌联名", "IP联动", "跨界合作", "游戏联动", "合作活动"], "terms_en": ["brand collaboration", "brand partnership", "IP collaboration", "crossover", "collab event"]},
+    {"id": "regional_expansion", "label_zh": "新地区发行", "label_en": "Regional Expansion", "color": "violet", "terms_zh": ["海外发行", "国际服", "欧美服", "日服", "韩服", "东南亚服", "港澳台服"], "terms_en": ["overseas release", "international release", "regional release", "North America launch", "Europe launch", "Japan launch", "Korea launch", "Southeast Asia launch"]},
+    {"id": "platform_expansion", "label_zh": "新平台上线", "label_en": "Platform Expansion", "color": "violet", "terms_zh": ["登陆主机", "登陆Steam", "移动版上线", "全平台版本"], "terms_en": ["console launch", "Steam launch", "mobile launch", "new platform release"]}
+  ],
+  "test_goals": [
+    {"id": "technical", "label": "技术性能/服务器压力"}, {"id": "gameplay", "label": "核心玩法与内容"}, {"id": "monetization", "label": "商业化与经济系统"}, {"id": "retention", "label": "留存与长线运营"}, {"id": "localization", "label": "本地化与区域适配"}, {"id": "unknown", "label": "官方未说明"}
+  ]
+}

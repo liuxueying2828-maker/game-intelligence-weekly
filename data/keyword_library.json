@@ -1,14 +1,14 @@
 {
-  "version": 1,
+  "version": 2,
   "description": "Game Intelligence Weekly bilingual discovery library. Maintain this file before changing search prompts.",
   "event_keywords": {
     "release_and_testing": {
-      "zh": ["首曝", "首次曝光", "官宣", "预约", "预注册", "首测", "技术测试", "封测", "删档测试", "不删档测试", "公开测试", "公测", "OB", "定档", "正式上线", "全平台上线", "发售", "抢先体验", "试玩", "Demo"],
-      "en": ["first reveal", "world premiere", "announcement", "pre-registration", "pre-register", "first test", "technical test", "closed beta", "CBT", "open beta", "OBT", "public beta", "release date", "official launch", "global launch", "early access", "playtest", "demo"]
+      "zh": ["首曝", "首爆", "首次曝光", "首次公开", "正式公布", "首支PV", "首次实机", "官宣", "预约开启", "预注册", "愿望单开放", "首测", "一测", "二测", "三测", "终测", "技术测试", "先锋测试", "限号测试", "压力测试", "封闭测试", "封测", "删档测试", "不删档测试", "付费测试", "公开测试", "公测", "OB", "定档", "正式上线", "全平台上线", "开服", "发售", "区域试发行", "试运营", "抢先体验", "试玩", "Demo"],
+      "en": ["first reveal", "world premiere", "officially announced", "debut trailer", "first gameplay", "gameplay reveal", "pre-registration", "pre-register", "wishlist now", "first test", "technical test", "pre-alpha test", "stress test", "closed beta", "CBT", "CBT1", "CBT2", "CBT3", "final closed beta", "open beta", "OBT", "public beta", "soft launch", "regional launch", "release date", "official launch", "global launch", "available now", "early access", "playtest", "demo"]
     },
     "major_updates": {
-      "zh": ["大版本更新", "重大更新", "周年版本", "周年庆", "资料片", "新赛季", "版本前瞻", "内容更新", "全球同步版本", "联动版本"],
-      "en": ["major update", "version update", "anniversary update", "expansion", "new season", "version preview", "content update", "global simultaneous update", "collaboration update"]
+      "zh": ["大版本更新", "重大更新", "周年版本", "周年庆", "半周年", "资料片", "新赛季", "版本前瞻", "内容更新", "全新篇章", "全球同步版本", "联动版本"],
+      "en": ["major update", "version update", "anniversary update", "half anniversary", "expansion", "new season", "version preview", "content update", "new chapter", "global simultaneous update", "collaboration update"]
     },
     "overseas_launch": {
       "zh": ["海外上线", "全球上线", "国际服", "全球预约", "海外预约", "海外测试", "海外封测", "海外公测", "欧美服", "北美服", "欧洲服", "日服", "韩服", "东南亚服", "港澳台服", "海外发行"],
@@ -53,7 +53,8 @@
     {"company": "朝夕光年 / Nuverse", "title_cn": "零境·入侵", "title_en": "SlashZero", "aliases": ["零境入侵", "SlashZero"]}
   ],
   "source_priorities": {
-    "official": ["游戏官方网站与新闻页", "厂商官方网站与新闻页", "Steam", "Epic Games Store", "PlayStation Blog/Store", "Xbox Wire/Store", "Nintendo", "App Store", "Google Play", "官方微博、微信公众号、Bilibili、TapTap、好游快爆", "官方 YouTube、X、Facebook、Discord"],
+    "official": ["游戏官方网站与新闻页", "厂商官方网站与新闻页", "Steam 官方商店与公告", "Epic Games Store", "PlayStation Blog/Store", "Xbox Wire/Store", "Nintendo", "App Store", "Google Play", "官方微博、微信公众号、Bilibili游戏、TapTap、好游快爆", "官方 YouTube、X、Facebook、Discord"],
+    "secondary_discovery": ["SteamDB（只作辅助发现，不可单独确认新闻）"],
     "china_industry": ["国家新闻出版署", "游戏工委", "GameLook", "游戏葡萄", "竞核", "触乐", "手游那点事", "17173", "游民星空", "机核", "新浪游戏", "腾讯游戏频道", "网易游戏频道"],
     "global_industry": ["GamesIndustry.biz", "Game Developer", "PocketGamer.biz", "MobileGamer.biz", "Gematsu", "IGN", "GamesBeat", "VentureBeat", "Eurogamer", "VGC"],
     "trade_events": ["ChinaJoy", "核聚变", "WePlay", "TapTap 游戏发布会", "腾讯游戏发布会", "网易游戏 520", "Bilibili 高能电玩节", "gamescom", "GDC", "Tokyo Game Show", "G-STAR", "The Game Awards"]

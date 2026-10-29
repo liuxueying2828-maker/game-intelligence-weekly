@@ -12,7 +12,12 @@ from config import (
     BLUEAI_SEARCH_WORKERS,
     BLUEAI_VERIFICATION_BATCH_SIZE,
     BLUEAI_VERIFICATION_WORKERS,
+    EVENT_HISTORY_PATH,
+    EVENT_TAXONOMY_PATH,
+    MARKETING_RULES_PATH,
+    SOURCE_REGISTRY_PATH,
 )
+from intelligence.event_knowledge import format_event_knowledge, update_event_history
 from sources.keyword_library import (
     build_search_tasks,
     format_companies,
@@ -34,6 +39,12 @@ def fetch_blueai_research_items(keyword_library_path):
     if not candidates:
         return []
     verified = _run_verification_batches(api_key, candidates)
+    for record in verified:
+        record["verification_status"] = _enforce_verification_status(
+            record.get("verification_status"),
+            [source for source in (record.get("sources") or []) if isinstance(source, dict)],
+        )
+    update_event_history(EVENT_HISTORY_PATH, verified)
     return _deduplicate(_to_source_item(item) for item in verified)
 
 
@@ -140,6 +151,9 @@ def _verify_batch(api_key, batch, index):
 
 def _build_discovery_prompt(library, task):
     rules = library["search_rules"]
+    event_knowledge = format_event_knowledge(
+        EVENT_TAXONOMY_PATH, SOURCE_REGISTRY_PATH, MARKETING_RULES_PATH, EVENT_HISTORY_PATH
+    )
     return f"""
 You are the candidate-discovery stage for Game Intelligence Weekly. Today is {datetime.now():%Y-%m-%d}.
 Search the public web in {task['language']} using multiple queries. Do not limit yourself to Google News.
@@ -151,6 +165,10 @@ Discovery rules:
 - Search official publisher/studio/game sites, official social accounts and store pages first; then reputable Chinese and international trade media and event sites.
 - Keep domestic and overseas launch dates separate. Search Chinese and English names and regional releases independently.
 - Include first reveal, first gameplay, license approval, pre-registration, technical test, CBT, OB/open beta, launch, major version, overseas store/social/localization/rating/publishing deal, exhibition, brand/IP collaboration and overseas campaign.
+- Preserve the publisher's official event/test name, but also normalize it to the supplied taxonomy.
+- Determine 一测/二测/三测 only from chronological player-facing test history for the same region and relevant platform. Domestic and overseas tracks are separate. If prior tests cannot be established, use test_sequence=unknown and sequence_label=测试轮次未确认.
+- OB/public beta and launch belong to the same marketing intervention tier, but preserve the literal official wording in official_event_name and normalized_stage.
+- Infer a test goal only when an official source describes it; otherwise use unknown.
 - Never invent or translate an English title. Mark it missing if no official match is found.
 - This is candidate discovery, not publication approval. Preserve source URLs for later verification.
 - A static store page, wishlist, long-existing website/social account, localization support page or undated pre-registration page is not a new event. Keep it only when a source establishes that it was newly opened/updated in the last {rules['lookback_days']} days or it supports a specific event in the next {rules['forward_days']} days.
@@ -160,7 +178,7 @@ Discovery rules:
 - For public_social_web tasks, use site-specific searches. Public official posts, video descriptions, channel announcements, store pages and Discord invite pages are valid early signals; never claim access to private groups or login-only content.
 
 Return only JSON:
-{{"items":[{{"candidate_id":"stable short id","company_cn":"","company_en":"","game_cn":"","game_en":"","event_type":"","section":"platform|ai|sports|retail","title":"","summary":"","published_date":"YYYY-MM-DD or original wording","event_date":"YYYY-MM-DD/quarter/window/original wording","regions":[],"name_match_status":"matched|english_name_missing|chinese_name_missing|company_missing|unmatched","source_urls":[{{"url":"https://direct-page","source_name":"","source_type":"official|wire|reliable_media|trade_media|store|event|aggregator|social"}}]}}]}}
+{{"items":[{{"candidate_id":"stable short id","company_cn":"","company_en":"","game_cn":"","game_en":"","official_event_name":"","normalized_stage":"first_reveal|technical_test|cbt|preregistration|open_beta_or_launch|soft_launch|major_update|anniversary|collaboration|regional_expansion|platform_expansion|unknown","test_sequence":"1|2|3|final|unknown","sequence_label":"一测|二测|三测|终测|测试轮次未确认|不适用","access_type":"closed|limited|open|unknown","wipe_policy":"wipe|no_wipe|unknown","test_goal":"technical|gameplay|monetization|retention|localization|unknown","section":"platform|ai|sports|retail","title":"","summary":"","published_date":"YYYY-MM-DD or original wording","event_date":"YYYY-MM-DD/quarter/window/original wording","regions":[],"platforms":[],"name_match_status":"matched|english_name_missing|chinese_name_missing|company_missing|unmatched","source_urls":[{{"url":"https://direct-page","source_name":"","source_type":"official|wire|reliable_media|trade_media|store|event|aggregator|social|steamdb"}}]}}]}}
 
 Goal: {task['goal']}
 
@@ -180,11 +198,17 @@ Tracked games:
 
 Priority source families:
 {format_sources(library)}
+
+Structured industry knowledge and prior evidence:
+{event_knowledge}
 """.strip()
 
 
 def _build_verification_prompt(batch, retry=False):
     payload = json.dumps(batch, ensure_ascii=False, indent=2)
+    event_knowledge = format_event_knowledge(
+        EVENT_TAXONOMY_PATH, SOURCE_REGISTRY_PATH, MARKETING_RULES_PATH, EVENT_HISTORY_PATH
+    )
     return f"""
 You are the independent fact-checking stage for Game Intelligence Weekly. Today is {datetime.now():%Y-%m-%d}.
 For every candidate below, use web search again. Open or locate direct sources, verify the event date, publication date, regions, numbers, Chinese/English title match, and any later correction.
@@ -196,6 +220,8 @@ Evidence policy:
 - A record is verified only when two genuinely independent sources support the material claim. An official primary announcement plus an independent reliable report qualifies; copied/aggregated reports do not count as independent.
 - A credible claim with only one non-official source is reported_unconfirmed and must say 据报道/尚未获官方确认.
 - A single official social post, official channel/video description, official store page or official game site may be retained as reported_unconfirmed early evidence. Do not discard it merely because a second report does not exist.
+- SteamDB is third-party discovery evidence. It may reveal a possible store or build change, but it never independently verifies a release, test, update or date. Locate Steam or publisher evidence before promotion.
+- Verify the official event name and normalized stage separately. Never convert a branded test name to 一测/二测/三测 unless the chronological region/platform history supports the number.
 - Social evidence must be public and directly accessible. Never claim to have read private Discord channels, closed groups or login-only posts.
 - Verification must establish the actual change and its date. Existing store/social presence without a dated opening, update or future milestone must be pending_confirmation or excluded from the publishable result.
 - A leak, conflicting dates/numbers/names, an inaccessible claim, or otherwise insufficient evidence is pending_confirmation and must not enter a main section.
@@ -203,10 +229,13 @@ Evidence policy:
 - Return direct article/announcement URLs, not search-result URLs, whenever available.
 
 Return only JSON, one output for every input candidate:
-{{"items":[{{"candidate_id":"","company_cn":"","company_en":"","game_cn":"","game_en":"","event_type":"","section":"platform|ai|sports|retail","title":"","summary":"","published_date":"","event_date":"","regions":[],"name_match_status":"matched|english_name_missing|chinese_name_missing|company_missing|unmatched","verification_status":"verified|reported_unconfirmed|pending_confirmation","verification_notes":"brief evidence decision and conflicts/corrections","sources":[{{"url":"https://direct-page","source_name":"","source_type":"official|wire|reliable_media|trade_media|store|event|social","independent":true}}]}}]}}
+{{"items":[{{"candidate_id":"","company_cn":"","company_en":"","game_cn":"","game_en":"","official_event_name":"","normalized_stage":"first_reveal|technical_test|cbt|preregistration|open_beta_or_launch|soft_launch|major_update|anniversary|collaboration|regional_expansion|platform_expansion|unknown","test_sequence":"1|2|3|final|unknown","sequence_label":"一测|二测|三测|终测|测试轮次未确认|不适用","access_type":"closed|limited|open|unknown","wipe_policy":"wipe|no_wipe|unknown","test_goal":"technical|gameplay|monetization|retention|localization|unknown","section":"platform|ai|sports|retail","title":"","summary":"","published_date":"","event_date":"","regions":[],"platforms":[],"name_match_status":"matched|english_name_missing|chinese_name_missing|company_missing|unmatched","verification_status":"verified|reported_unconfirmed|pending_confirmation","verification_notes":"brief evidence decision and conflicts/corrections","sources":[{{"url":"https://direct-page","source_name":"","source_type":"official|wire|reliable_media|trade_media|store|event|social|steamdb","independent":true}}]}}]}}
 
 Candidates:
 {payload}
+
+Structured industry knowledge and prior evidence:
+{event_knowledge}
 """.strip()
 
 
@@ -217,6 +246,7 @@ def _pending_from_candidate(candidate, error):
             continue
         sources.append({**source, "independent": False})
     return {
+        "candidate_id": candidate.get("candidate_id") or "",
         **candidate,
         "verification_status": "pending_confirmation",
         "verification_notes": f"二次网页核验未完成：{error or 'unknown verification error'}",
@@ -275,6 +305,7 @@ def _to_source_item(item):
     if status == "reported_unconfirmed":
         notes = f"据报道/尚未获官方确认。{notes}"
     return {
+        "candidate_id": item.get("candidate_id") or "",
         "source": "BlueAI verified web search: " + "; ".join(source.get("source_name", "Unknown") for source in sources),
         "domain": "pending" if status == "pending_confirmation" else (item.get("section") if item.get("section") in {"platform", "ai", "sports", "retail"} else "platform"),
         "origin_type": f"blueai_{status}",
@@ -284,7 +315,8 @@ def _to_source_item(item):
             item.get("summary", "").strip(),
             f"核验状态：{status}。",
             f"核验说明：{notes}" if notes else "",
-            f"事件：{item.get('event_type') or '未分类'}。",
+            f"标准节点：{item.get('sequence_label') or item.get('normalized_stage') or '未分类'}。",
+            f"官方名称：{item.get('official_event_name') or '未公布'}。",
             f"事件日期：{item.get('event_date') or '未公布'}。",
             f"地区：{', '.join(item.get('regions') or []) or '未公布'}。",
             "来源：" + "；".join(direct_urls) if direct_urls else "来源链接待确认。",
@@ -300,6 +332,16 @@ def _to_source_item(item):
         "game_cn": item.get("game_cn") or "",
         "game_en": item.get("game_en") or "",
         "name_match_status": item.get("name_match_status") or "unmatched",
+        "official_event_name": item.get("official_event_name") or "",
+        "normalized_stage": item.get("normalized_stage") or "unknown",
+        "test_sequence": item.get("test_sequence") or "unknown",
+        "sequence_label": item.get("sequence_label") or "测试轮次未确认",
+        "access_type": item.get("access_type") or "unknown",
+        "wipe_policy": item.get("wipe_policy") or "unknown",
+        "test_goal": item.get("test_goal") or "unknown",
+        "event_date": item.get("event_date") or "",
+        "regions": item.get("regions") or [],
+        "platforms": item.get("platforms") or [],
     }
 
 
@@ -307,10 +349,14 @@ def _enforce_verification_status(requested_status, sources):
     """Do not trust the model label unless the returned evidence supports it."""
     independent_sources = set()
     for source in sources:
+        if source.get("source_type") == "steamdb":
+            continue
         if source.get("independent") is not True:
             continue
         url = str(source.get("url") or "").strip()
-        host = urlparse(url).netloc.lower().removeprefix("www.") if url else ""
+        host = urlparse(url).netloc.lower() if url else ""
+        if host.startswith("www."):
+            host = host[4:]
         identity = host or str(source.get("source_name") or "").strip().lower()
         if identity:
             independent_sources.add(identity)
@@ -332,7 +378,7 @@ def _identity(item):
 def _deduplicate(items):
     result, seen = [], set()
     for item in items:
-        key = item.get("link") or (item.get("candidate_id"), item.get("event_type")) or item.get("title", "").lower()
+        key = item.get("link") or (item.get("candidate_id"), item.get("normalized_stage")) or item.get("title", "").lower()
         if not key or str(key) in seen:
             continue
         seen.add(str(key))

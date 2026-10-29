@@ -128,6 +128,7 @@ def _normalize_cards(items):
                 "why_this_matters": _clean_text(item.get("why_this_matters") or item.get("why") or ""),
                 "trend": item.get("trend") or "Trend",
                 "link": item.get("link") or "",
+                **_event_fields(item),
             }
         )
     return cards
@@ -166,9 +167,28 @@ def _normalize_ai_cards(items):
                 "industry_impact": _clean_text(industry_impact),
                 "trend": item.get("trend") or "AI 能力",
                 "link": item.get("link") or "",
+                **_event_fields(item),
             }
         )
     return cards
+
+
+def _event_fields(item):
+    return {
+        "candidate_id": item.get("candidate_id") or "",
+        "official_event_name": item.get("official_event_name") or "",
+        "normalized_stage": item.get("normalized_stage") or "unknown",
+        "sequence_label": item.get("sequence_label") or "",
+        "access_type": item.get("access_type") or "unknown",
+        "test_goal": item.get("test_goal") or "unknown",
+        "event_date": item.get("event_date") or "",
+        "regions": item.get("regions") or [],
+        "platforms": item.get("platforms") or [],
+        "verification_status": item.get("verification_status") or "",
+        "source_urls": item.get("source_urls") or [],
+        "marketing_readiness": item.get("marketing_readiness") or "",
+        "marketing_opportunity": item.get("marketing_opportunity") or "",
+    }
 
 
 def build_dashboard_fallback(raw_text):

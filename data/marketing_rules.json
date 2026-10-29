@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "rules": [
+    {"stage": "first_reveal", "readiness": "低", "opportunity": "品牌认知、竞品与受众研究；通常不建议立即进行大规模买量"},
+    {"stage": "technical_test", "readiness": "低", "opportunity": "观察产品成熟度和目标区域，不将技术测试直接视为发行窗口"},
+    {"stage": "cbt_1", "readiness": "中低", "opportunity": "关注定位、内容反馈和早期社区"},
+    {"stage": "cbt_2", "readiness": "中", "opportunity": "本地化、社区搭建、KOL种草和素材储备"},
+    {"stage": "cbt_3_or_final", "readiness": "高", "opportunity": "媒体计划、创意测试、预注册和用户获取准备"},
+    {"stage": "preregistration", "readiness": "高", "opportunity": "预注册投放、达人与创作者、社区增长"},
+    {"stage": "open_beta_or_launch", "readiness": "很高", "opportunity": "发行整合营销、效果广告、商店优化和区域投放"},
+    {"stage": "major_update", "readiness": "高", "opportunity": "版本投放、召回和内容营销"},
+    {"stage": "anniversary", "readiness": "高", "opportunity": "周年庆传播、回流和品牌合作"},
+    {"stage": "collaboration", "readiness": "高", "opportunity": "IP/品牌联名、社媒内容和跨圈层触达"},
+    {"stage": "regional_expansion", "readiness": "很高", "opportunity": "区域发行、本地化创意和市场广告"}
+  ]
+}
