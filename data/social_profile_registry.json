@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "description": "Persistent social-account discoveries. Weekly events remain in the separate event pipeline.",
+  "profiles": [
+    {
+      "company": "腾讯游戏 / 光子工作室群 / Eclipse Glow Games",
+      "title_cn": "湮灭之潮",
+      "title_en": "Tides of Annihilation",
+      "checked_at": "2026-10-29",
+      "notes": "SteamDB is used only for discovery. The broader account matrix is corroborated by the game directory and public account URLs.",
+      "accounts": [
+        {"platform": "official_website", "url": "https://global.playtoa.com/", "status": "official_confirmed", "evidence_url": "https://global.playtoa.com/", "discovery_source": "official_site"},
+        {"platform": "steam", "url": "https://store.steampowered.com/app/3292470/", "status": "official_confirmed", "evidence_url": "https://store.steampowered.com/app/3292470/", "discovery_source": "steam"},
+        {"platform": "steamdb", "url": "https://steamdb.info/app/3292470/", "status": "discovered", "evidence_url": "https://steamdb.info/app/3292470/", "discovery_source": "steamdb"},
+        {"platform": "x", "url": "https://x.com/play_toa", "status": "discovered", "evidence_url": "https://steamdb.info/app/3292470/", "discovery_source": "steamdb"},
+        {"platform": "facebook", "url": "https://www.facebook.com/TidesOfAnnihilation/", "status": "access_limited", "evidence_url": "https://www.gematsu.com/games/tides-of-annihilation", "discovery_source": "reliable_directory"},
+        {"platform": "youtube", "url": "https://www.youtube.com/@tidesofannihilation", "status": "official_confirmed", "evidence_url": "https://www.gematsu.com/games/tides-of-annihilation", "discovery_source": "public_account"},
+        {"platform": "instagram", "url": "https://www.instagram.com/play_toa", "status": "access_limited", "evidence_url": "https://www.gematsu.com/games/tides-of-annihilation", "discovery_source": "reliable_directory"},
+        {"platform": "tiktok", "url": "https://www.tiktok.com/@play_toa", "status": "access_limited", "evidence_url": "https://www.gematsu.com/games/tides-of-annihilation", "discovery_source": "reliable_directory"},
+        {"platform": "bilibili", "url": "https://space.bilibili.com/3546744281368908", "status": "discovered", "evidence_url": "https://steamdb.info/app/3292470/", "discovery_source": "steamdb"}
+      ]
+    }
+  ]
+}

@@ -20,8 +20,12 @@ REPORT_MODES = {"preview", "publish", "deploy_only"}
 def collect_information_pool():
     from config import KEYWORD_LIBRARY_PATH
     from sources.blueai_research import fetch_blueai_research_items
+    from sources.keyword_library import load_keyword_library
+    from sources.social_profiles import fetch_social_profiles
 
+    library = load_keyword_library(KEYWORD_LIBRARY_PATH)
     blueai_research_items = fetch_blueai_research_items(KEYWORD_LIBRARY_PATH)
+    social_profiles = fetch_social_profiles(library)
     # Only externally discovered BlueAI Web Search results may become report
     # candidates. Manual notes and the name catalog are never news sources.
     items = blueai_research_items
@@ -33,7 +37,8 @@ def collect_information_pool():
     print(f"  selected for BlueAI analysis: {len(selected_items)}/{MAX_ITEMS_FOR_ANALYSIS}")
     print(f"  selected by section: {dict(Counter(item.get('domain', 'unknown') for item in selected_items))}")
     print(f"  selected by language: {dict(Counter(item.get('search_language', 'direct') for item in selected_items))}")
-    return selected_items
+    print(f"  tracked social profiles: {len(social_profiles)}")
+    return selected_items, social_profiles
 
 
 def prepare_information_pool(items, limit=MAX_ITEMS_FOR_ANALYSIS):
@@ -132,6 +137,7 @@ def build_empty_dashboard_data():
         "sports_outdoor": [],
         "retail_innovation": [],
         "pending_confirmation": [],
+        "social_profiles": [],
         "one_thing_worth_watching": "本期信息源未返回高置信度外部情报，页面已正常更新。",
     }
 
@@ -180,10 +186,13 @@ def get_dashboard_url(mode):
 def generate_dashboard_data():
     from intelligence.blueai_intelligence import generate_dashboard_data as generate_with_blueai
 
-    information_pool = collect_information_pool()
+    information_pool, social_profiles = collect_information_pool()
     if not information_pool:
-        return build_empty_dashboard_data()
-    return generate_with_blueai(information_pool)
+        data = build_empty_dashboard_data()
+    else:
+        data = generate_with_blueai(information_pool)
+    data["social_profiles"] = social_profiles
+    return data
 
 
 def save_preview_data(data):

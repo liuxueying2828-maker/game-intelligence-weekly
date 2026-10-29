@@ -89,6 +89,7 @@ Real keys must only be stored as GitHub Secrets or in a local ignored `.env` fil
 - `sources/keyword_library.py` converts that library into four Chinese/English search tasks; `sources/blueai_research.py` runs candidate discovery and independent verification through the Relay.
 - Official sites, stores, social accounts, event sites, Chinese game media, global trade media, and reliable wire services are searched directly; Google News is not the sole pool.
 - Public social discovery targets Weibo, WeChat articles, Bilibili, TapTap, YouTube, X, Facebook, public Discord invite pages, and Reddit. Private groups and login-only content are outside the web-search boundary.
+- Social-account presence is maintained separately from weekly events. Every tracked game receives a persistent storefront/social profile, so an existing X, Facebook or YouTube account remains visible even when it has no new post that week. SteamDB may discover links but is never labeled as official confirmation by itself.
 - Search and verification requests ask the Responses API for `web_search_call.action.sources`, allowing each run to audit how many source URLs the search tool actually consulted.
 - Maintain official Chinese/English names and aliases in `data/game_catalog.json`; it is used only for name matching, never as a news source.
 - `manual_sources/daily_input.md` may retain working notes, but its contents are not included in generated reports.

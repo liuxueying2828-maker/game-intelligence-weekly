@@ -53,12 +53,14 @@ SOURCE_REGISTRY_PATH = BASE_DIR / "data" / "source_registry.json"
 MARKETING_RULES_PATH = BASE_DIR / "data" / "marketing_rules.json"
 EVENT_HISTORY_PATH = BASE_DIR / "data" / "event_history.json"
 REVIEW_STATE_PATH = BASE_DIR / "data" / "review_state.json"
+SOCIAL_PROFILE_REGISTRY_PATH = BASE_DIR / "data" / "social_profile_registry.json"
 BLUEAI_BASE_URL = "https://bmc-llm-relay.bluemediagroup.cn/v1"
 BLUEAI_MODEL = "gpt-4.1"
 BLUEAI_SEARCH_MAX_ITEMS_PER_TASK = 12
 BLUEAI_VERIFICATION_BATCH_SIZE = 8
 BLUEAI_SEARCH_WORKERS = 6
 BLUEAI_VERIFICATION_WORKERS = 4
+SOCIAL_PROFILE_BATCH_SIZE = 3
 
 CHINA_RELEVANCE_KEYWORDS = [
     "china", "chinese game", "china-developed", "中国", "国产游戏", "中国游戏", "国服",

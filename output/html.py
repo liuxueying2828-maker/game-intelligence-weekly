@@ -296,6 +296,18 @@ def build_dashboard_html(data, archive_href="./archive/", review_mode=True):
 
     .mode-note {{ margin: -12px 0 18px; color: var(--muted); font-size: 14px; }}
 
+    .social-grid {{ display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }}
+    .social-profile {{ border: 1px solid var(--line); padding: 17px 18px; background: #fff; }}
+    .social-title {{ margin: 0 0 5px; font-size: 18px; line-height: 1.25; }}
+    .social-meta {{ color: var(--muted); font-size: 12px; margin-bottom: 12px; }}
+    .social-links {{ display: flex; flex-wrap: wrap; gap: 7px; }}
+    .social-link {{ display: inline-flex; align-items: center; gap: 5px; padding: 5px 8px; border: 1px solid var(--line); color: var(--ink); text-decoration: none; font-size: 12px; font-weight: 720; }}
+    .social-link:hover {{ border-color: var(--blue); color: var(--blue); }}
+    .social-link.is-confirmed {{ border-color: #9dc3b0; background: #f1faf5; }}
+    .social-link.is-limited {{ border-style: dashed; color: var(--muted); }}
+    .social-note {{ margin: 10px 0 0; color: var(--muted); font-size: 12px; }}
+    .social-legend {{ margin: 0 0 14px; color: var(--muted); font-size: 13px; }}
+
     .brief-lead {{
       display: grid;
       grid-template-columns: 140px 1fr;
@@ -459,6 +471,7 @@ def build_dashboard_html(data, archive_href="./archive/", review_mode=True):
       }}
 
       .brief-lead, .opportunity {{ grid-template-columns: 1fr; gap: 8px; }}
+      .social-grid {{ grid-template-columns: 1fr; }}
       .card-head {{ grid-template-columns: 1fr; }}
       .facts {{ grid-template-columns: repeat(2, minmax(0, 1fr)); }}
       .fact:nth-child(2) {{ border-right: 0; }}
@@ -503,9 +516,67 @@ def _render_sections(data, review_mode=True):
     opportunity_cards = _collect_opportunity_cards(data)
     pending_cards = safe_cards(data.get("pending_confirmation", []))
     return "\n".join([
+        _render_social_profiles(safe_cards(data.get("social_profiles", []))),
         _render_opportunity_section(opportunity_cards, review_mode=review_mode),
         _render_pending_section(pending_cards, review_mode=review_mode) if review_mode else "",
     ])
+
+
+SOCIAL_LABELS = {
+    "official_website": "官网", "steam": "Steam", "steamdb": "SteamDB", "x": "X",
+    "facebook": "Facebook", "youtube": "YouTube", "instagram": "Instagram",
+    "tiktok": "TikTok", "discord": "Discord", "bilibili": "Bilibili",
+    "weibo": "微博", "taptap": "TapTap",
+}
+
+
+def _render_social_profiles(profiles):
+    rendered = "\n".join(_render_social_profile(profile) for profile in profiles if isinstance(profile, dict))
+    if not rendered:
+        rendered = '<div class="empty">尚未建立重点游戏的海外社媒档案。</div>'
+    return f"""
+    <section class="section">
+      <div class="section-head">
+        <div>
+          <h2>重点游戏海外阵地</h2>
+          <div class="subtitle">Persistent Social and Storefront Profiles</div>
+        </div>
+        <span class="section-badge blue">{len(profiles)} 款</span>
+      </div>
+      <p class="social-legend">这里记录长期存在的官网、商店和社媒账号，不要求本周发生更新。实线绿色表示已由直接页面确认；普通边框表示已发现；虚线表示页面访问受限，建议人工复核。</p>
+      <div class="social-grid">{rendered}</div>
+    </section>
+    """
+
+
+def _render_social_profile(profile):
+    accounts = [account for account in safe_cards(profile.get("accounts", [])) if account.get("url")]
+    links = "".join(_render_social_link(account) for account in accounts)
+    if not links:
+        links = '<span class="social-note">尚未发现公开海外账号</span>'
+    checked = safe_text(profile.get("checked_at") or "尚未自动检查")
+    company = safe_text(profile.get("company") or "未找到厂商")
+    title_cn = safe_text(profile.get("title_cn") or "未找到中文名")
+    title_en = safe_text(profile.get("title_en") or "English name not found")
+    note = safe_text(profile.get("notes") or "")
+    note_html = f'<p class="social-note">{safe_escape(note)}</p>' if note else ""
+    return f"""
+      <article class="social-profile">
+        <h3 class="social-title">{safe_escape(title_cn)} · {safe_escape(title_en)}</h3>
+        <div class="social-meta">{safe_escape(company)} · 检查于 {safe_escape(checked)}</div>
+        <div class="social-links">{links}</div>
+        {note_html}
+      </article>
+    """
+
+
+def _render_social_link(account):
+    platform = safe_text(account.get("platform") or "")
+    label = SOCIAL_LABELS.get(platform, platform or "链接")
+    status = safe_text(account.get("status") or "discovered")
+    css_class = " is-confirmed" if status == "official_confirmed" else " is-limited" if status == "access_limited" else ""
+    status_label = "已确认" if status == "official_confirmed" else "访问受限" if status == "access_limited" else "已发现"
+    return f'<a class="social-link{css_class}" href="{safe_escape(account.get("url"), quote=True)}" target="_blank" rel="noopener noreferrer">{safe_escape(label)} · {safe_escape(status_label)}</a>'
 
 
 def _collect_opportunity_cards(data):
