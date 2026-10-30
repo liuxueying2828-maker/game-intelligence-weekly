@@ -1,7 +1,8 @@
 import unittest
+from datetime import date
 
 from output.html import build_dashboard_html
-from intelligence.normalization import normalize_dashboard_data
+from intelligence.normalization import normalize_dashboard_data, refresh_time_sensitive_recommendations
 from sources.social_profiles import _merge_profiles
 
 
@@ -86,6 +87,50 @@ class SocialProfileTests(unittest.TestCase):
         })
         self.assertIn("海外准备", html)
         self.assertIn('aria-label="海外发行阶段"', html)
+
+    def test_past_quarter_is_not_presented_as_current_intervention_window(self):
+        data = {
+            "retail_innovation": [{
+                "marketing_opportunity": "创作者合作与社区投放建议 Q2-Q3 时间段重点介入",
+                "summary_points": ["营销成熟度：中｜机会：创作者合作与社区投放建议 Q2-Q3 时间段重点介入"],
+                "event_date": "Q3 2026",
+            }]
+        }
+        refreshed = refresh_time_sensitive_recommendations(data, date(2026, 10, 30))
+        card = refreshed["retail_innovation"][0]
+        self.assertEqual(
+            card["marketing_opportunity"],
+            "当前需依据最新官方节点重新评估：创作者合作与社区投放。",
+        )
+        self.assertNotIn("Q2-Q3", card["marketing_opportunity"])
+        self.assertNotIn("Q2-Q3 时间段重点介入", card["summary_points"][0])
+        self.assertEqual(card["event_date"], "Q3 2026")
+
+    def test_current_quarter_is_shown_as_remaining_window(self):
+        data = {"retail_innovation": [{"marketing_opportunity": "建议 Q4 重点介入"}]}
+        refreshed = refresh_time_sensitive_recommendations(data, date(2026, 10, 30))
+        self.assertEqual(
+            refreshed["retail_innovation"][0]["marketing_opportunity"],
+            "建议 本季度剩余窗口 重点介入",
+        )
+
+    def test_future_quarter_remains_unchanged(self):
+        data = {"retail_innovation": [{"marketing_opportunity": "建议 Q1 2027 介入"}]}
+        refreshed = refresh_time_sensitive_recommendations(data, date(2026, 10, 30))
+        self.assertEqual(refreshed["retail_innovation"][0]["marketing_opportunity"], "建议 Q1 2027 介入")
+
+    def test_quarter_refresh_is_idempotent_for_existing_preview(self):
+        data = {"retail_innovation": [{
+            "marketing_opportunity": (
+                "当前需依据最新官方节点重新评估：创作者合作；"
+                "原建议窗口已结束，当前需依据最新官方节点重新评估。"
+            )
+        }]}
+        refreshed = refresh_time_sensitive_recommendations(data, date(2026, 10, 30))
+        self.assertEqual(
+            refreshed["retail_innovation"][0]["marketing_opportunity"],
+            "当前需依据最新官方节点重新评估：创作者合作。",
+        )
 
 
 if __name__ == "__main__":

@@ -201,9 +201,12 @@ def save_preview_data(data):
 
 
 def load_preview_data():
+    from intelligence.normalization import refresh_time_sensitive_recommendations
+
     if not PREVIEW_DATA_PATH.exists():
         return None
-    return json.loads(PREVIEW_DATA_PATH.read_text(encoding="utf-8"))
+    data = json.loads(PREVIEW_DATA_PATH.read_text(encoding="utf-8"))
+    return refresh_time_sensitive_recommendations(data)
 
 
 def run_preview_mode():
@@ -247,6 +250,7 @@ def run_deploy_only_mode():
     dashboard_data = load_preview_data()
     if dashboard_data is None:
         raise RuntimeError("No preview data found for deploy_only rendering.")
+    save_preview_data(dashboard_data)
     render_dashboard(dashboard_data, PREVIEW_OUTPUT_PATH, archive_href="../archive/")
     print(f"Existing preview data re-rendered without AI calls: {PREVIEW_OUTPUT_PATH}")
 

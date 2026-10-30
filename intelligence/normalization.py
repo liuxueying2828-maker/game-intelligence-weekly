@@ -1,5 +1,6 @@
 import json
 import re
+from datetime import date
 from urllib.parse import urlparse
 
 from config import MIN_SECTION_CANDIDATES, SECTION_ORDER
@@ -57,7 +58,110 @@ def normalize_dashboard_data(data):
     }
     if data.get("parse_warning"):
         normalized["parse_warning"] = data["parse_warning"]
-    return _ensure_identity_format(_sanitize_dashboard_terms(normalized))
+    normalized = _ensure_identity_format(_sanitize_dashboard_terms(normalized))
+    return refresh_time_sensitive_recommendations(normalized)
+
+
+_QUARTER_RANGE_RE = re.compile(
+    r"Q([1-4])\s*[-–—~至]\s*Q([1-4])(?:\s*(20\d{2}))?",
+    re.IGNORECASE,
+)
+_QUARTER_SINGLE_RE = re.compile(
+    r"(?<![A-Za-z0-9])Q([1-4])(?![A-Za-z0-9])(?:\s*(20\d{2}))?",
+    re.IGNORECASE,
+)
+
+
+def refresh_time_sensitive_recommendations(data, today=None):
+    """Refresh quarter-based advice without changing factual event dates.
+
+    Source dates such as ``Q4 2026`` remain untouched. Only recommendation
+    fields are rewritten, so an old planning window cannot be presented as a
+    current call to action in a previously generated preview.
+    """
+    today = today or date.today()
+    for section_key in SECTION_ALIASES:
+        for card in data.get(section_key, []):
+            if not isinstance(card, dict):
+                continue
+            opportunity = str(card.get("marketing_opportunity") or "").strip()
+            if opportunity:
+                opportunity = _clean_legacy_stale_suffix(opportunity)
+                refreshed = _refresh_quarter_advice(opportunity, today)
+                card["marketing_opportunity"] = refreshed
+                points = card.get("summary_points") or []
+                card["summary_points"] = [
+                    _refresh_marketing_summary_point(point, opportunity, refreshed)
+                    for point in points
+                ]
+    return data
+
+
+def _clean_legacy_stale_suffix(text):
+    return re.sub(
+        r"[；;]\s*原(?:\s*Q[1-4](?:\s*[-–—~至]\s*Q[1-4])?)?\s*建议窗口已结束，"
+        r"当前需依据最新官方节点重新评估。?$",
+        "。",
+        text,
+        flags=re.IGNORECASE,
+    )
+
+
+def _refresh_quarter_advice(text, today):
+    current_quarter = (today.month - 1) // 3 + 1
+    current_key = (today.year, current_quarter)
+    range_match = _QUARTER_RANGE_RE.search(text)
+    if range_match:
+        start_quarter = int(range_match.group(1))
+        end_quarter = int(range_match.group(2))
+        year = int(range_match.group(3) or today.year)
+        if (year, end_quarter) < current_key:
+            action = _remove_quarter_intervention_phrase(text, range_match.span())
+            return _stale_window_recommendation(action)
+        if year == today.year and start_quarter <= current_quarter <= end_quarter:
+            return _replace_current_quarter_phrase(text, range_match.span())
+
+    single_match = _QUARTER_SINGLE_RE.search(text)
+    if single_match:
+        quarter = int(single_match.group(1))
+        year = int(single_match.group(2) or today.year)
+        if (year, quarter) < current_key:
+            action = _remove_quarter_intervention_phrase(text, single_match.span())
+            return _stale_window_recommendation(action)
+        if (year, quarter) == current_key:
+            return _replace_current_quarter_phrase(text, single_match.span())
+    return text
+
+
+def _stale_window_recommendation(action):
+    if action:
+        return f"当前需依据最新官方节点重新评估：{action}。"
+    return "当前需依据最新官方节点重新评估营销机会。"
+
+
+def _remove_quarter_intervention_phrase(text, span):
+    start, end = span
+    before = text[:start].rstrip(" ，、；;：:")
+    after = text[end:]
+    after = re.sub(r"^\s*(?:时间段|期间|窗口)?\s*(?:重点)?\s*(?:介入|跟进|投放)?", "", after)
+    result = f"{before}{after}".strip(" ，、；;：:。")
+    result = re.sub(r"(?:建议|计划)\s*$", "", result).strip(" ，、；;：:。")
+    return result
+
+
+def _replace_current_quarter_phrase(text, span):
+    start, end = span
+    before = text[:start]
+    after = text[end:]
+    after = re.sub(r"^\s*(?:时间段|期间|窗口)?", "", after)
+    separator = "" if not after or after.startswith(("，", "。", "；", ";", "：", ":")) else " "
+    return f"{before}本季度剩余窗口{separator}{after}"
+
+
+def _refresh_marketing_summary_point(point, old, new):
+    if not isinstance(point, str) or old not in point:
+        return point
+    return point.replace(old, new)
 
 
 def _ensure_identity_format(data):
