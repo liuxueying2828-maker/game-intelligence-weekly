@@ -531,9 +531,13 @@ SOCIAL_LABELS = {
 
 
 def _render_social_profiles(profiles):
-    rendered = "\n".join(_render_social_profile(profile) for profile in profiles if isinstance(profile, dict))
+    visible_profiles = [
+        profile for profile in profiles
+        if isinstance(profile, dict) and _has_visible_social_account(profile)
+    ]
+    rendered = "\n".join(_render_social_profile(profile) for profile in visible_profiles)
     if not rendered:
-        rendered = '<div class="empty">尚未建立重点游戏的海外社媒档案。</div>'
+        rendered = '<div class="empty">尚未发现可展示的海外官网、商店或社媒账号。</div>'
     return f"""
     <section class="section">
       <div class="section-head">
@@ -541,12 +545,19 @@ def _render_social_profiles(profiles):
           <h2>重点游戏海外阵地</h2>
           <div class="subtitle">Persistent Social and Storefront Profiles</div>
         </div>
-        <span class="section-badge blue">{len(profiles)} 款</span>
+        <span class="section-badge blue">{len(visible_profiles)} 款</span>
       </div>
       <p class="social-legend">这里记录长期存在的官网、商店和社媒账号，不要求本周发生更新。实线绿色表示已由直接页面确认；普通边框表示已发现；虚线表示页面访问受限，建议人工复核。</p>
       <div class="social-grid">{rendered}</div>
     </section>
     """
+
+
+def _has_visible_social_account(profile):
+    return any(
+        isinstance(account, dict) and str(account.get("url") or "").startswith(("http://", "https://"))
+        for account in safe_cards(profile.get("accounts", []))
+    )
 
 
 def _render_social_profile(profile):

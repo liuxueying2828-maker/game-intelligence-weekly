@@ -66,6 +66,33 @@ class SocialProfileTests(unittest.TestCase):
         })
         self.assertEqual(html.count("Steam · 已确认"), 1)
 
+    def test_dashboard_hides_social_profiles_without_any_discovery(self):
+        html = build_dashboard_html({
+            "date": "2026-10-30",
+            "headline": "测试",
+            "social_profiles": [
+                {
+                    "title_cn": "杖剑传说",
+                    "title_en": "Sword x Staff",
+                    "accounts": [],
+                    "notes": "尚未发现公开海外账号",
+                },
+                {
+                    "title_cn": "湮灭之潮",
+                    "title_en": "Tides of Annihilation",
+                    "accounts": [{
+                        "platform": "official_website",
+                        "url": "https://global.playtoa.com/",
+                        "status": "official_confirmed",
+                    }],
+                },
+            ],
+        })
+        self.assertNotIn("杖剑传说", html)
+        self.assertNotIn("Sword x Staff", html)
+        self.assertIn("湮灭之潮", html)
+        self.assertIn("1 款", html)
+
     def test_domestic_only_card_is_removed_from_main_timeline(self):
         data = normalize_dashboard_data({
             "platform": [{
