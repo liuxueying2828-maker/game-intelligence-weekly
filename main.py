@@ -201,11 +201,15 @@ def save_preview_data(data):
 
 
 def load_preview_data():
-    from intelligence.normalization import refresh_time_sensitive_recommendations
+    from intelligence.normalization import (
+        refresh_time_sensitive_recommendations,
+        remove_unidentified_game_cards,
+    )
 
     if not PREVIEW_DATA_PATH.exists():
         return None
     data = json.loads(PREVIEW_DATA_PATH.read_text(encoding="utf-8"))
+    data = remove_unidentified_game_cards(data)
     return refresh_time_sensitive_recommendations(data)
 
 

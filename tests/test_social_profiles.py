@@ -2,7 +2,11 @@ import unittest
 from datetime import date
 
 from output.html import build_dashboard_html
-from intelligence.normalization import normalize_dashboard_data, refresh_time_sensitive_recommendations
+from intelligence.normalization import (
+    normalize_dashboard_data,
+    refresh_time_sensitive_recommendations,
+    remove_unidentified_game_cards,
+)
 from sources.social_profiles import _merge_profiles
 
 
@@ -131,6 +135,25 @@ class SocialProfileTests(unittest.TestCase):
             refreshed["retail_innovation"][0]["marketing_opportunity"],
             "当前需依据最新官方节点重新评估：创作者合作。",
         )
+
+    def test_company_event_without_game_name_is_removed(self):
+        data = {
+            "retail_innovation": [{
+                "name": "[叠纸游戏-未找到中文名-English name not found]",
+                "official_event_name": "叠纸游戏创作大赛",
+            }]
+        }
+        cleaned = remove_unidentified_game_cards(data)
+        self.assertEqual(cleaned["retail_innovation"], [])
+
+    def test_chinese_game_name_is_enough_to_keep_card(self):
+        data = {
+            "sports_outdoor": [{
+                "name": "[米哈游-源初之结-English name not found]",
+            }]
+        }
+        cleaned = remove_unidentified_game_cards(data)
+        self.assertEqual(len(cleaned["sports_outdoor"]), 1)
 
 
 if __name__ == "__main__":

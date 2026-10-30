@@ -59,6 +59,7 @@ def normalize_dashboard_data(data):
     if data.get("parse_warning"):
         normalized["parse_warning"] = data["parse_warning"]
     normalized = _ensure_identity_format(_sanitize_dashboard_terms(normalized))
+    normalized = remove_unidentified_game_cards(normalized)
     return refresh_time_sensitive_recommendations(normalized)
 
 
@@ -191,6 +192,34 @@ def _ensure_identity_format(data):
             valid_cards.append(card)
         data[section_key] = valid_cards
     return data
+
+
+def remove_unidentified_game_cards(data):
+    """Drop records that cannot be tied to a concrete game product."""
+    for section_key in SECTION_ALIASES:
+        retained = []
+        for card in data.get(section_key, []):
+            if not isinstance(card, dict):
+                continue
+            identity = str(card.get("title") or card.get("name") or "")
+            if _has_identifiable_game_name(identity):
+                retained.append(card)
+        data[section_key] = retained
+    return data
+
+
+def _has_identifiable_game_name(identity):
+    match = re.match(r"^\[([^\]]+)\]", identity.strip())
+    if not match:
+        return False
+    parts = [part.strip().lower() for part in match.group(1).split("-", 2)]
+    if len(parts) < 3:
+        return False
+    chinese_missing = parts[1] in {"", "未找到中文名", "中文名未公布", "unknown"}
+    english_missing = parts[2] in {
+        "", "english name not found", "english name not announced", "unknown"
+    }
+    return not (chinese_missing and english_missing)
 
 
 def _first_section(data, canonical_key):

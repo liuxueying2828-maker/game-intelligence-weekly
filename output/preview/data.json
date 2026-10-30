@@ -106,41 +106,7 @@
       "marketing_opportunity": "头部手游海外持续买量窗口，建议跟进月度投放、品牌合作与达人推广机会"
     }
   ],
-  "retail_innovation": [
-    {
-      "name": "[叠纸游戏-未找到中文名-English name not found]",
-      "news": "",
-      "summary_points": [
-        "海外节点：创作者内容征集（官方名称：叠纸游戏 2026 创作大赛 启动）｜海外时间：2026-04-27 to 2026-07-31",
-        "海外地区：Global｜海外平台：Unknown",
-        "国内参考：国内同步开放、全球招聘渠道",
-        "证据：已验证（双来源）｜来源类型：企业官网+独立媒体",
-        "营销成熟度：中｜机会：全球内容征集、品牌达人合作"
-      ],
-      "why_this_matters": "",
-      "trend": "Trend",
-      "link": "https://www.oga.org.cn/newsinfo/9068326.html",
-      "candidate_id": "7",
-      "official_event_name": "叠纸游戏 2026 创作大赛 启动",
-      "normalized_stage": "unknown",
-      "overseas_stage": "overseas_preparation",
-      "domestic_reference": "国内同步开放、全球招聘渠道",
-      "sequence_label": "不适用",
-      "access_type": "unknown",
-      "test_goal": "unknown",
-      "event_date": "2026-04-27 to 2026-07-31",
-      "regions": [
-        "Global"
-      ],
-      "platforms": [
-        "Unknown"
-      ],
-      "verification_status": "verified（双来源）",
-      "source_urls": [],
-      "marketing_readiness": "中",
-      "marketing_opportunity": "当前需依据最新官方节点重新评估：游戏内容外部创作者合作、UGC/达人生态搭建、全球品牌与社区投放。"
-    }
-  ],
+  "retail_innovation": [],
   "pending_confirmation": [
     {
       "name": "[蛮啾网络-蓝色星原：旅谣-Azur Promilia]",
