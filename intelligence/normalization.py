@@ -48,10 +48,10 @@ def normalize_dashboard_data(data):
     normalized = {
         "date": data.get("date", ""),
         "headline": data.get("headline") or data.get("one_thing_worth_watching") or "今日信号已更新",
-        "platform_intelligence": _filter_reliable_cards(_normalize_cards(_first_section(data, "platform_intelligence"))),
-        "ai_technology": _filter_reliable_cards(_normalize_ai_cards(_first_section(data, "ai_technology"))),
-        "sports_outdoor": _filter_reliable_cards(_normalize_cards(_first_section(data, "sports_outdoor"))),
-        "retail_innovation": _filter_reliable_cards(_normalize_cards(_first_section(data, "retail_innovation"))),
+        "platform_intelligence": _filter_overseas_cards(_filter_reliable_cards(_normalize_cards(_first_section(data, "platform_intelligence")))),
+        "ai_technology": _filter_overseas_cards(_filter_reliable_cards(_normalize_ai_cards(_first_section(data, "ai_technology")))),
+        "sports_outdoor": _filter_overseas_cards(_filter_reliable_cards(_normalize_cards(_first_section(data, "sports_outdoor")))),
+        "retail_innovation": _filter_overseas_cards(_filter_reliable_cards(_normalize_cards(_first_section(data, "retail_innovation")))),
         "pending_confirmation": _filter_reliable_cards(_normalize_cards(_first_section(data, "pending_confirmation"))),
         "one_thing_worth_watching": data.get("one_thing_worth_watching") or data.get("headline") or "今日信号已更新",
     }
@@ -179,6 +179,8 @@ def _event_fields(item):
         "candidate_id": item.get("candidate_id") or "",
         "official_event_name": item.get("official_event_name") or "",
         "normalized_stage": normalized_stage,
+        "overseas_stage": _normalize_overseas_stage(item.get("overseas_stage"), normalized_stage),
+        "domestic_reference": item.get("domestic_reference") or "",
         "sequence_label": item.get("sequence_label") if normalized_stage == "cbt" else "不适用",
         "access_type": item.get("access_type") or "unknown",
         "test_goal": item.get("test_goal") or "unknown",
@@ -190,6 +192,16 @@ def _event_fields(item):
         "marketing_readiness": item.get("marketing_readiness") or "",
         "marketing_opportunity": item.get("marketing_opportunity") or "",
     }
+
+
+def _normalize_overseas_stage(value, normalized_stage):
+    allowed = {
+        "overseas_preparation", "overseas_reveal", "overseas_test",
+        "overseas_preregistration", "overseas_launch", "overseas_live_ops",
+    }
+    if value in allowed:
+        return value
+    return ""
 
 
 def _canonical_stage(value, official_name=""):
@@ -281,6 +293,26 @@ def _filter_reliable_cards(cards):
     # This also prevents manual notes or name-catalog facts from leaking into
     # the report if the analysis model emits them without source evidence.
     return [card for card in cards if str(card.get("link") or "").strip()]
+
+
+def _filter_overseas_cards(cards):
+    """Keep domestic milestones out of the primary overseas timeline."""
+    accepted = []
+    for card in cards:
+        if card.get("overseas_stage"):
+            accepted.append(card)
+            continue
+        text = " ".join([
+            str(card.get("news") or ""), str(card.get("capability") or ""),
+            str(card.get("marketing_opportunity") or ""),
+            " ".join(str(point) for point in (card.get("summary_points") or [])),
+        ]).lower()
+        if "海外节点：未公布" in text or "海外节点: 未公布" in text:
+            continue
+        signals = ("海外", "全球", "英文区", "欧美", "北美", "欧洲", "日本", "韩国", "东南亚", "global", "overseas")
+        if any(signal in text for signal in signals):
+            accepted.append(card)
+    return accepted
 
 
 def _is_google_news_redirect(link):

@@ -14,13 +14,13 @@ def build_dashboard_prompt(items):
 
 核心目标：服务中国游戏客户的海外发行与市场广告业务。只关注中国研发商、中国发行商或国产游戏产品，识别其海外上线计划、海外发行前置信号和可能产生广告投放需求的窗口。纯海外厂商、纯海外游戏和泛行业新闻不得进入结果。
 
-本周报覆盖最近 180 天内发生的新事件和未来 180 天内的确定节点。它不是静态游戏名录：没有新公告、新日期、新地区、新测试阶段、新版本、新合作或其他可验证变化的既有信息不得重复出现。
+本周报覆盖最近 180 天内发生的新事件和未来 180 天内的确定节点。主报告只呈现海外发行周期；国内节点只能作为判断海外准备度的参考，不得占用主时间轴。它不是静态游戏名录：没有新公告、新日期、新地区、新测试阶段、新版本、新合作或其他可验证变化的既有信息不得重复出现。
 
 JSON 使用 platform、ai、sports、retail、pending 五个键，它们的业务含义如下：
 
-platform / 国内游戏产品动态 / China Game Pipeline
-- 中国厂商产品的首曝、版号、预约、测试、公测、定档、国服上线和新平台版本。
-- 作用是提前建立潜在出海客户产品池；没有海外信息也可保留，但必须明确写“海外计划未公布”。
+platform / 海外发行准备期 / Overseas Preparation
+- 只收录已经出现海外官网、海外商店、海外官方社媒、地区评级、本地化、海外代理或海外参展等可靠信号的国产游戏。
+- 尚未公布海外上线日期时，overseas_stage 使用 overseas_preparation；只有国内信息而没有海外证据的游戏不得进入主栏目。
 
 ai / 海外发行确定节点 / Confirmed Overseas Launches
 - 只收录已有明确海外预约、测试、公测、发行区域、季度或上线日期的国产游戏。
@@ -48,8 +48,9 @@ pending / 待确认情报 / Needs Confirmation
 - Verification Status 为 verified 的内容可以进入主栏目，并标注“已验证（双来源）”。
 - Verification Status 为 reported_unconfirmed 的内容可以进入主栏目，但必须明确标注“据报道/尚未获官方确认”，不得写成确定事实。
 - Verification Status 为 pending_confirmation 的内容只能进入 pending，禁止进入前四个栏目。
+- 前四个主栏目必须存在可核验的海外证据。只有国内首曝、版号、国服测试、国服公测或国内展会信息的候选一律排除；可以保留在候选池，但不得展示给评委或团队。
 - 聚合转载不算独立来源；优先展示公司/工作室官方原文链接。若有多个核验来源，在摘要中写明来源数量和类型。
-- 国内外上线日期必须分开写，不得合并成一个“上线日期”。
+- 主时间轴只使用海外地区的事件和日期。国内节点不得改变 overseas_stage，只能写入 domestic_reference 作为一行背景参考。
 - 区分首曝、预约、获批版号、展会参展、技术测试、封测、公测和正式上线，不得互相替代。
 - 保留官方测试/活动名称，同时输出 normalized_stage。测试卡片显示为“二测（官方名称：旅迹测试）”这类格式。
 - 一测/二测/三测必须根据同一地区、相关平台的玩家测试历史顺序判断；国内与海外分开计数。历史不完整时必须写“测试轮次未确认”，禁止猜测。
@@ -68,15 +69,17 @@ pending / 待确认情报 / Needs Confirmation
 - 同一游戏的多个日期节点在同一张卡片中并列；同一事件的多家媒体报道去重。
 - 某栏目没有可靠信息时返回 []，不凑数。
 - 第一准入条件：必须能确认中国厂商、中国发行商或国产游戏产品参与。只出现 Steam、PlayStation、Xbox、海外厂商或海外游戏，不满足准入条件。
-- 同一产品优先级：海外上线日期明确 > 海外预约/测试开启 > 已有海外官网或社媒但未定档 > 国内进入上线周期 > 只有早期产品信号。
+- 同一产品优先级：海外上线日期明确 > 海外预约/测试开启 > 已有海外官网、商店或社媒但未定档。只有国内节点的产品不进入主列表。
 - 广告机会判断必须面向海外发行市场，不讨论泛游戏行业价值。
 - 未来 180 天内的明确日期优先；只公布季度、季节或年份且仍未发生的计划也可保留。已经发生且没有后续海外机会的旧节点排除。
 - Game Name Reference Catalog 仅用于名称消歧和中英文名匹配。它不是新闻来源，不能为卡片提供事件、日期、发行状态或海外计划；所有这些事实必须来自候选网页。
 
+overseas_stage 只能使用 overseas_preparation、overseas_reveal、overseas_test、overseas_preregistration、overseas_launch、overseas_live_ops。它描述海外周期，不得根据国内测试或国服上线推进。
+
 审核版每条 summary_points 使用固定顺序，缺少的字段写“未公布”：
-1. “节点：标准节点（官方名称：...）｜时间：...”
-2. “地区：...｜平台：...｜准入：封闭/限量/公开/未说明”
-3. “国内节点：...｜海外节点：...”
+1. “海外节点：标准节点（官方名称：...）｜海外时间：...”
+2. “海外地区：...｜海外平台：...｜准入：封闭/限量/公开/未说明”
+3. “国内参考：...”
 4. “证据：已验证/据报道/待确认｜来源类型：...”
 5. “营销成熟度：高/中/低｜机会：...”
 
@@ -84,10 +87,10 @@ JSON schema：
 {{
   "date": "{datetime.now().strftime("%Y-%m-%d")}",
   "headline": "本周最值得跟进的国产游戏出海机会，不超过 38 个中文字符",
-  "platform": [{{"name": "[游戏厂商-游戏中文名-English Name]", "candidate_id":"", "official_event_name":"", "normalized_stage":"", "sequence_label":"", "event_date":"", "regions":[], "platforms":[], "verification_status":"", "marketing_readiness":"", "marketing_opportunity":"", "summary_points": ["节点：...", "地区：...", "国内节点：...｜海外节点：...", "证据：...", "营销成熟度：...｜机会：..."], "link": "原文链接"}}],
-  "ai": [{{"title": "[游戏厂商-游戏中文名-English Name]", "candidate_id":"", "official_event_name":"", "normalized_stage":"", "sequence_label":"", "event_date":"", "regions":[], "platforms":[], "verification_status":"", "marketing_readiness":"", "marketing_opportunity":"", "summary_points": ["节点：...", "地区：...", "国内节点：...｜海外节点：...", "证据：...", "营销成熟度：...｜机会：..."], "link": "原文链接"}}],
-  "sports": [{{"name": "[游戏厂商-游戏中文名-English Name]", "candidate_id":"", "official_event_name":"", "normalized_stage":"", "sequence_label":"", "event_date":"", "regions":[], "platforms":[], "verification_status":"", "marketing_readiness":"", "marketing_opportunity":"", "summary_points": ["节点：...", "地区：...", "国内节点：...｜海外节点：...", "证据：...", "营销成熟度：...｜机会：..."], "link": "原文链接"}}],
-  "retail": [{{"name": "[游戏厂商-游戏中文名-English Name]", "candidate_id":"", "official_event_name":"", "normalized_stage":"", "sequence_label":"", "event_date":"", "regions":[], "platforms":[], "verification_status":"", "marketing_readiness":"", "marketing_opportunity":"", "summary_points": ["节点：...", "地区：...", "国内节点：...｜海外节点：...", "证据：...", "营销成熟度：...｜机会：..."], "link": "原文链接"}}],
+  "platform": [{{"name": "[游戏厂商-游戏中文名-English Name]", "candidate_id":"", "official_event_name":"", "normalized_stage":"", "overseas_stage":"overseas_preparation|overseas_reveal|overseas_test|overseas_preregistration|overseas_launch|overseas_live_ops", "domestic_reference":"", "sequence_label":"", "event_date":"", "regions":[], "platforms":[], "verification_status":"", "marketing_readiness":"", "marketing_opportunity":"", "summary_points": ["海外节点：...｜海外时间：...", "海外地区：...｜海外平台：...", "国内参考：...", "证据：...", "营销成熟度：...｜机会：..."], "link": "原文链接"}}],
+  "ai": [{{"title": "[游戏厂商-游戏中文名-English Name]", "candidate_id":"", "official_event_name":"", "normalized_stage":"", "overseas_stage":"overseas_preparation|overseas_reveal|overseas_test|overseas_preregistration|overseas_launch|overseas_live_ops", "domestic_reference":"", "sequence_label":"", "event_date":"", "regions":[], "platforms":[], "verification_status":"", "marketing_readiness":"", "marketing_opportunity":"", "summary_points": ["海外节点：...｜海外时间：...", "海外地区：...｜海外平台：...", "国内参考：...", "证据：...", "营销成熟度：...｜机会：..."], "link": "原文链接"}}],
+  "sports": [{{"name": "[游戏厂商-游戏中文名-English Name]", "candidate_id":"", "official_event_name":"", "normalized_stage":"", "overseas_stage":"overseas_preparation|overseas_reveal|overseas_test|overseas_preregistration|overseas_launch|overseas_live_ops", "domestic_reference":"", "sequence_label":"", "event_date":"", "regions":[], "platforms":[], "verification_status":"", "marketing_readiness":"", "marketing_opportunity":"", "summary_points": ["海外节点：...｜海外时间：...", "海外地区：...｜海外平台：...", "国内参考：...", "证据：...", "营销成熟度：...｜机会：..."], "link": "原文链接"}}],
+  "retail": [{{"name": "[游戏厂商-游戏中文名-English Name]", "candidate_id":"", "official_event_name":"", "normalized_stage":"", "overseas_stage":"overseas_preparation|overseas_reveal|overseas_test|overseas_preregistration|overseas_launch|overseas_live_ops", "domestic_reference":"", "sequence_label":"", "event_date":"", "regions":[], "platforms":[], "verification_status":"", "marketing_readiness":"", "marketing_opportunity":"", "summary_points": ["海外节点：...｜海外时间：...", "海外地区：...｜海外平台：...", "国内参考：...", "证据：...", "营销成熟度：...｜机会：..."], "link": "原文链接"}}],
   "pending": [{{"name": "[游戏厂商-游戏中文名-English Name]", "candidate_id":"", "official_event_name":"", "normalized_stage":"", "sequence_label":"", "event_date":"", "regions":[], "platforms":[], "verification_status":"pending_confirmation", "summary_points": ["节点：...", "冲突/缺失证据：...", "当前来源：...", "后续核验动作：..."], "link": "现有来源链接"}}],
   "one_thing_worth_watching": "未来 180 天最值得销售团队跟进的一个国产游戏出海节点"
 }}

@@ -650,12 +650,13 @@ def _render_card(card, section_key, pending=False, review_mode=True):
         if pending and link else ""
     )
     stage = _canonical_stage(card.get("normalized_stage"), card.get("official_event_name"))
-    stage_label = _display_stage_label(card, stage)
-    stage_chip = f'<span class="stage-chip stage-{safe_escape(stage, quote=True)}">{safe_escape(stage_label)}</span>' if stage_label else ""
+    overseas_stage = _overseas_stage(card.get("overseas_stage"), stage)
+    stage_label = _overseas_stage_label(overseas_stage)
+    stage_chip = f'<span class="stage-chip stage-{safe_escape(overseas_stage, quote=True)}">{safe_escape(stage_label)}</span>' if stage_label else ""
     points = _summary_points(card, section_key)
-    date_value = safe_text(card.get("event_date") or _point_value(points, "时间：") or "未公布")
-    region_value = safe_text(_field_from_points(points, "地区：", "｜") or card.get("regions") or "未公布")
-    platform_value = safe_text(_field_from_points(points, "平台：", "｜") or card.get("platforms") or "未公布")
+    date_value = safe_text(card.get("event_date") or _point_value(points, "海外时间：") or _point_value(points, "时间：") or "未公布")
+    region_value = safe_text(_field_from_points(points, "海外地区：", "｜") or _field_from_points(points, "地区：", "｜") or card.get("regions") or "未公布")
+    platform_value = safe_text(_field_from_points(points, "海外平台：", "｜") or _field_from_points(points, "平台：", "｜") or card.get("platforms") or "未公布")
     evidence_value = safe_text(_point_value(points, "证据：") or card.get("verification_status") or "待核验")
     opportunity_value = safe_text(card.get("marketing_opportunity") or _opportunity_from_points(points) or "暂无明确海外营销窗口")
     readiness_value = safe_text(card.get("marketing_readiness") or _field_from_points(points, "营销成熟度：", "｜") or "未判断")
@@ -670,11 +671,11 @@ def _render_card(card, section_key, pending=False, review_mode=True):
         </div>
         <div class="date">{safe_escape(date_value)}</div>
       </div>
-      {_render_stage_rail(stage)}
+      {_render_stage_rail(overseas_stage)}
       <div class="facts">
-        {_render_fact("节点", stage_label or "未分类")}
-        {_render_fact("地区", region_value)}
-        {_render_fact("平台", platform_value)}
+        {_render_fact("海外阶段", stage_label or "未分类")}
+        {_render_fact("目标地区", region_value)}
+        {_render_fact("海外平台", platform_value)}
         {_render_fact("营销成熟度", readiness_value)}
       </div>
       <div class="opportunity"><strong>海外营销机会</strong><p>{safe_escape(opportunity_value)}</p></div>
@@ -689,17 +690,45 @@ def _display_stage_label(card, stage):
     return safe_text(_stage_label(stage) or card.get("official_event_name") or "")
 
 
+def _overseas_stage(value, normalized_stage):
+    allowed = {
+        "overseas_preparation", "overseas_reveal", "overseas_test",
+        "overseas_preregistration", "overseas_launch", "overseas_live_ops",
+    }
+    if value in allowed:
+        return value
+    return {
+        "first_reveal": "overseas_reveal", "technical_test": "overseas_test", "cbt": "overseas_test",
+        "preregistration": "overseas_preregistration", "open_beta_or_launch": "overseas_launch",
+        "soft_launch": "overseas_launch", "major_update": "overseas_live_ops",
+        "anniversary": "overseas_live_ops", "collaboration": "overseas_live_ops",
+        "regional_expansion": "overseas_preparation", "platform_expansion": "overseas_preparation",
+    }.get(normalized_stage, "overseas_preparation")
+
+
+def _overseas_stage_label(stage):
+    return {
+        "overseas_preparation": "海外准备",
+        "overseas_reveal": "海外首曝",
+        "overseas_test": "海外测试",
+        "overseas_preregistration": "海外预约",
+        "overseas_launch": "海外公测/上线",
+        "overseas_live_ops": "海外运营",
+    }.get(stage, "")
+
+
 def _render_stage_rail(stage):
     steps = [
-        ("first_reveal", "首曝"), ("technical_test", "技术测试"), ("cbt", "封闭测试"),
-        ("preregistration", "预约"), ("open_beta_or_launch", "公测/上线"), ("live_ops", "长线运营"),
+        ("overseas_preparation", "海外准备"), ("overseas_reveal", "海外首曝"),
+        ("overseas_test", "海外测试"), ("overseas_preregistration", "海外预约"),
+        ("overseas_launch", "海外公测/上线"), ("overseas_live_ops", "海外运营"),
     ]
-    current = stage if stage in {item[0] for item in steps} else "live_ops" if stage in {"major_update", "anniversary", "collaboration", "regional_expansion", "platform_expansion"} else ""
+    current = stage if stage in {item[0] for item in steps} else ""
     rendered = "".join(
         f'<div class="stage-step{" is-current" if step_id == current else ""}">{safe_escape(label)}</div>'
         for step_id, label in steps
     )
-    return f'<div class="stage-rail" aria-label="游戏发行阶段">{rendered}</div>'
+    return f'<div class="stage-rail" aria-label="海外发行阶段">{rendered}</div>'
 
 
 def _render_fact(label, value):
@@ -829,7 +858,7 @@ def _card_title(card, section_key):
 def _render_summary_points(card, section_key, compact=False):
     points = _summary_points(card, section_key)
     if compact:
-        preferred = [point for point in points if any(prefix in point for prefix in ("节点：", "地区：", "海外节点：", "营销成熟度：", "机会："))]
+        preferred = [point for point in points if any(prefix in point for prefix in ("海外节点：", "海外地区：", "国内参考：", "营销成熟度：", "机会："))]
         points = (preferred or points)[:4]
     if not points:
         return "<p></p>"

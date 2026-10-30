@@ -1,6 +1,7 @@
 import unittest
 
 from output.html import build_dashboard_html
+from intelligence.normalization import normalize_dashboard_data
 from sources.social_profiles import _merge_profiles
 
 
@@ -44,6 +45,32 @@ class SocialProfileTests(unittest.TestCase):
         self.assertIn("重点游戏海外阵地", html)
         self.assertIn("https://x.com/play_toa", html)
         self.assertIn("Tides of Annihilation", html)
+
+    def test_domestic_only_card_is_removed_from_main_timeline(self):
+        data = normalize_dashboard_data({
+            "platform": [{
+                "name": "[腾讯游戏-示例游戏-Example Game]",
+                "normalized_stage": "open_beta_or_launch",
+                "overseas_stage": "",
+                "summary_points": ["国内参考：国服公测", "海外节点：未公布"],
+                "link": "https://example.com/domestic",
+            }]
+        })
+        self.assertEqual(data["platform_intelligence"], [])
+
+    def test_overseas_timeline_starts_with_preparation(self):
+        html = build_dashboard_html({
+            "date": "2026-10-30",
+            "headline": "测试",
+            "platform_intelligence": [{
+                "name": "[腾讯游戏-湮灭之潮-Tides of Annihilation]",
+                "overseas_stage": "overseas_preparation",
+                "summary_points": ["海外节点：海外官网与社媒已建立"],
+                "link": "https://global.playtoa.com/",
+            }],
+        })
+        self.assertIn("海外准备", html)
+        self.assertIn('aria-label="海外发行阶段"', html)
 
 
 if __name__ == "__main__":
