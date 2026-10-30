@@ -550,7 +550,14 @@ def _render_social_profiles(profiles):
 
 
 def _render_social_profile(profile):
-    accounts = [account for account in safe_cards(profile.get("accounts", [])) if account.get("url")]
+    accounts = []
+    seen_platforms = set()
+    for account in safe_cards(profile.get("accounts", [])):
+        platform = safe_text(account.get("platform") or "")
+        if not account.get("url") or platform in seen_platforms:
+            continue
+        seen_platforms.add(platform)
+        accounts.append(account)
     links = "".join(_render_social_link(account) for account in accounts)
     if not links:
         links = '<span class="social-note">尚未发现公开海外账号</span>'

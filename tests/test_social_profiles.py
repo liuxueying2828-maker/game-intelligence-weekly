@@ -46,6 +46,21 @@ class SocialProfileTests(unittest.TestCase):
         self.assertIn("https://x.com/play_toa", html)
         self.assertIn("Tides of Annihilation", html)
 
+    def test_dashboard_shows_only_one_link_per_social_platform(self):
+        html = build_dashboard_html({
+            "date": "2026-10-30",
+            "headline": "测试",
+            "social_profiles": [{
+                "title_cn": "湮灭之潮",
+                "title_en": "Tides of Annihilation",
+                "accounts": [
+                    {"platform": "steam", "url": "https://store.steampowered.com/app/3292470/", "status": "official_confirmed"},
+                    {"platform": "steam", "url": "https://store.steampowered.com/app/3292470/Tides_of_Annihilation/", "status": "official_confirmed"},
+                ],
+            }],
+        })
+        self.assertEqual(html.count("Steam · 已确认"), 1)
+
     def test_domestic_only_card_is_removed_from_main_timeline(self):
         data = normalize_dashboard_data({
             "platform": [{
