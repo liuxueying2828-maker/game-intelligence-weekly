@@ -1,365 +1,144 @@
 {
-  "date": "2026-10-29",
-  "headline": "《蓝色星原：旅谣》多区定档、全球预约与广告窗口密集",
+  "date": "2026-10-30",
+  "headline": "国产新游全球试玩与营销窗口持续释放，海外平台与预约节点值得持续捕捉",
   "platform_intelligence": [
+    {
+      "name": "[朝夕光年-零境·入侵-English name not found]",
+      "news": "",
+      "summary_points": [
+        "海外节点：试玩（官方名称：限时试玩 Demo 发布）｜海外时间：2026-09-03 to 2026-09-23",
+        "海外地区：Global｜海外平台：Steam, PlayStation 5",
+        "国内参考：中国名确认/平台同步开放心愿单",
+        "证据：已验证（双来源）｜来源类型：官方公告+独立媒体",
+        "营销成熟度：中｜机会：海外试玩活动，渠道联动与内容预热"
+      ],
+      "why_this_matters": "",
+      "trend": "Trend",
+      "link": "https://diershoubing.com/news/139718/lingjing-ruqin-shiwan-gongkai/",
+      "candidate_id": "3",
+      "official_event_name": "限时试玩 Demo 发布",
+      "normalized_stage": "technical_test",
+      "overseas_stage": "overseas_test",
+      "domestic_reference": "中国名确认/平台同步开放心愿单",
+      "sequence_label": "不适用",
+      "access_type": "unknown",
+      "test_goal": "unknown",
+      "event_date": "2026-09-03 to 2026-09-23",
+      "regions": [
+        "Global"
+      ],
+      "platforms": [
+        "PC",
+        "Console"
+      ],
+      "verification_status": "verified（双来源）",
+      "source_urls": [],
+      "marketing_readiness": "中",
+      "marketing_opportunity": "海外试玩活动，Steam/Epic/PlayStation渠道联动；建议关注试玩期后的公测预约及内容营销窗口"
+    },
     {
       "name": "[成都日蚀边缘工作室-湮灭之潮-Tides of Annihilation]",
       "news": "",
       "summary_points": [
-        "节点：试玩展会活动（官方名称：核聚变试玩会）｜时间：2026-10-24 to 2026-10-25",
-        "地区：中国｜平台：PC、Console｜准入：未说明",
-        "国内节点：核聚变试玩会｜海外节点：未公布",
-        "证据：已验证（双来源）｜来源类型：多家独立媒体与官方展会信息",
-        "营销成熟度：低｜机会：尚未触发出海窗口"
+        "海外节点：首曝（官方名称：Gamescom teaser trailer “Beneath the Veil”）｜海外时间：2026-08-25",
+        "海外地区：Global｜海外平台：Multi-platform",
+        "国内参考：已参展ChinaJoy/核聚变",
+        "证据：已验证（双来源）｜来源类型：公司官方+Gematsu",
+        "营销成熟度：低｜机会：首曝与海外展会媒体宣传"
       ],
       "why_this_matters": "",
       "trend": "Trend",
-      "link": "https://www.ali213.net/news/html/2026-10/1049721.html",
-      "candidate_id": "1",
-      "official_event_name": "核聚变试玩会",
-      "normalized_stage": "试玩展会活动",
-      "sequence_label": "测试轮次未确认",
+      "link": "https://www.gamespress.com/en-US/TIDES-OF-ANNIHILATION-PREMIERES-BENEATH-THE-VEIL-TRAILER-AT-GAMESCOM-O",
+      "candidate_id": "2",
+      "official_event_name": "Gamescom teaser trailer “Beneath the Veil”",
+      "normalized_stage": "first_reveal",
+      "overseas_stage": "overseas_reveal",
+      "domestic_reference": "已参展ChinaJoy/核聚变",
+      "sequence_label": "不适用",
       "access_type": "unknown",
       "test_goal": "unknown",
-      "event_date": "2026-10-24 to 2026-10-25",
+      "event_date": "2026-08-25",
       "regions": [
-        "中国"
+        "Global"
       ],
       "platforms": [
-        "PC",
-        "Console"
+        "Multi-platform"
       ],
       "verification_status": "verified（双来源）",
       "source_urls": [],
       "marketing_readiness": "低",
-      "marketing_opportunity": "海外计划未公布，尚无发行信息"
-    },
-    {
-      "name": "[腾讯游戏-人间异想计划-English name not found]",
-      "news": "",
-      "summary_points": [
-        "节点：首曝（官方名称：22分钟实机演示公布）｜时间：2026-10-21",
-        "地区：中国｜平台：PC、Console｜准入：未说明",
-        "国内节点：首曝&愿望单开放｜海外节点：未公布",
-        "证据：已验证（双来源）｜来源类型：多家权威媒体",
-        "营销成熟度：中｜机会：待海外计划具体化"
-      ],
-      "why_this_matters": "",
-      "trend": "Trend",
-      "link": "https://www.sohu.com/a/1090630402_121124868",
-      "candidate_id": "2",
-      "official_event_name": "首曝 22分钟实机演示公布",
-      "normalized_stage": "首曝",
-      "sequence_label": "测试轮次未确认",
-      "access_type": "unknown",
-      "test_goal": "unknown",
-      "event_date": "2026-10-21",
-      "regions": [
-        "China"
-      ],
-      "platforms": [
-        "PC",
-        "Console"
-      ],
-      "verification_status": "verified（双来源）",
-      "source_urls": [],
-      "marketing_readiness": "中",
-      "marketing_opportunity": "尚未公布海外计划，建议跟踪前期海外信号"
-    },
-    {
-      "name": "[米哈游-源初之结-Nodusfall]",
-      "news": "",
-      "summary_points": [
-        "节点：全球首曝（官方名称：Official debut at Gamescom Opening Night Live）｜时间：2026-08-25",
-        "地区：全球｜平台：未公布｜准入：未说明",
-        "国内节点：未公布｜海外节点：Gamescom 全球首曝",
-        "证据：已验证（双来源）｜来源类型：官方官网+维基百科",
-        "营销成熟度：中｜机会：后续测试/预约节点预期广告机会"
-      ],
-      "why_this_matters": "",
-      "trend": "Trend",
-      "link": "https://nodusfall.mihoyo.com/en-us/home",
-      "candidate_id": "8",
-      "official_event_name": "Official debut at Gamescom Opening Night Live",
-      "normalized_stage": "全球首曝",
-      "sequence_label": "测试轮次未确认",
-      "access_type": "unknown",
-      "test_goal": "unknown",
-      "event_date": "2026-08-25",
-      "regions": [
-        "Global"
-      ],
-      "platforms": [
-        "Unknown"
-      ],
-      "verification_status": "verified（双来源）",
-      "source_urls": [],
-      "marketing_readiness": "中",
-      "marketing_opportunity": "全球首曝已完成，后续聚焦区域化预约及测试安排"
-    },
-    {
-      "name": "[蛮啾网络-蓝色星原：旅谣-Azur Promilia]",
-      "news": "",
-      "summary_points": [
-        "节点：定档公测（官方名称：公测正式定档11月26日）｜时间：2026-11-26",
-        "地区：中国、日本、韩国、台湾｜平台：PC、Mobile｜准入：公开",
-        "国内节点：11月26日定档公测｜海外节点：日本、韩国、台湾 11月26日同步",
-        "证据：已验证（双来源）｜来源类型：官网公告+权威行业媒体",
-        "营销成熟度：高｜机会：强烈建议即刻介入预约和预热买量，重点东亚市场"
-      ],
-      "why_this_matters": "",
-      "trend": "Trend",
-      "link": "https://www.gematsu.com/2026/10/azur-promilia-launches-november-26-in-japan-south-korea-taiwan-and-china",
-      "candidate_id": "13",
-      "official_event_name": "公测正式定档11月26日",
-      "normalized_stage": "定档公测",
-      "sequence_label": "测试轮次未确认",
-      "access_type": "unknown",
-      "test_goal": "unknown",
-      "event_date": "2026-11-26",
-      "regions": [
-        "中国",
-        "日本",
-        "韩国",
-        "台湾"
-      ],
-      "platforms": [
-        "PC",
-        "Mobile"
-      ],
-      "verification_status": "verified（双来源）",
-      "source_urls": [],
-      "marketing_readiness": "高",
-      "marketing_opportunity": "港澳台、日、韩明确公测节点，广告转化窗口已打开"
-    },
-    {
-      "name": "[蛮啾网络-蓝色星原：旅谣-Azur Promilia]",
-      "news": "",
-      "summary_points": [
-        "节点：全球预约（官方名称：Global pre-registration milestone）｜时间：2026-10-17",
-        "地区：全球｜平台：Mobile｜准入：未说明",
-        "国内节点：未公布｜海外节点：全球预约数据达2500万",
-        "证据：已验证（双来源）｜来源类型：日区X官宣/预告 & 独立行业媒体",
-        "营销成熟度：高｜机会：可承接全球预约、流量聚合及东南亚等新兴市场买量"
-      ],
-      "why_this_matters": "",
-      "trend": "Trend",
-      "link": "https://gamewith.ai/azurpromilia/en/news",
-      "candidate_id": "4",
-      "official_event_name": "Global pre-registration milestone",
-      "normalized_stage": "全球预约",
-      "sequence_label": "测试轮次未确认",
-      "access_type": "unknown",
-      "test_goal": "unknown",
-      "event_date": "2026-10-17",
-      "regions": [
-        "全球"
-      ],
-      "platforms": [
-        "Mobile"
-      ],
-      "verification_status": "verified（双来源）",
-      "source_urls": [],
-      "marketing_readiness": "高",
-      "marketing_opportunity": "全球预约里程碑，适合开展预注册营销与数据分析"
+      "marketing_opportunity": "海外首曝与媒体宣传，建议重点关注下步预约与实机测试窗口；参展可作为B2B与媒体公关切入点"
     }
   ],
-  "ai_technology": [
-    {
-      "name": "[鹰角网络-Arknights: Endfield-Arknights: Endfield]",
-      "title": "[鹰角网络-Arknights: Endfield-Arknights: Endfield]",
-      "capability": "",
-      "summary_points": [
-        "节点：全球公测（官方名称：全球上线（Global open beta / Launch））｜时间：2026-01-22",
-        "地区：全球｜平台：PC、Mobile、Console｜准入：公开",
-        "国内节点：未说明｜海外节点：2026-01-22全球正式上线，多平台齐发",
-        "证据：已验证（双来源）｜来源类型：官方新闻稿+权威行业媒体",
-        "营销成熟度：高｜机会：针对上线后拉新、媒体曝光和泛圈社媒扩散"
-      ],
-      "industry_impact": "",
-      "trend": "AI 能力",
-      "link": "https://www.animenewsnetwork.com/press-release/2026-01-22/arknights-endfield-is-out-now-on-pc-playstation-5-and-mobile/.233347",
-      "candidate_id": "12",
-      "official_event_name": "全球上线（Global open beta / Launch）",
-      "normalized_stage": "正式上线/全球公测",
-      "sequence_label": "终测",
-      "access_type": "unknown",
-      "test_goal": "unknown",
-      "event_date": "2026-01-22",
-      "regions": [
-        "Global"
-      ],
-      "platforms": [
-        "PC",
-        "Mobile",
-        "Console"
-      ],
-      "verification_status": "verified（双来源）",
-      "source_urls": [],
-      "marketing_readiness": "高",
-      "marketing_opportunity": "全球公测节点已实现、国际买量与社区激活时机临近尾声"
-    },
-    {
-      "name": "[蛮啾网络-蓝色星原：旅谣-Azur Promilia]",
-      "title": "[蛮啾网络-蓝色星原：旅谣-Azur Promilia]",
-      "capability": "",
-      "summary_points": [
-        "节点：海外英文区OBT（官方名称：English-version Open Beta Test set for Summer 2027）｜时间：Summer 2027",
-        "地区：全球（英语区）｜平台：PC、Mobile｜准入：未说明",
-        "国内节点：未公布｜海外节点：2027夏季英文区OBT",
-        "证据：已验证（双来源）｜来源类型：开发者声明+权威英文行业媒体",
-        "营销成熟度：中｜机会：营销策划和广告签约提前准备"
-      ],
-      "industry_impact": "",
-      "trend": "AI 能力",
-      "link": "https://www.gematsu.com/2026/10/azur-promilia-english-open-beta-test-set-for-summer-2027",
-      "candidate_id": "5",
-      "official_event_name": "English-version Open Beta Test set for Summer 2027",
-      "normalized_stage": "全球英文区OBT预告",
-      "sequence_label": "测试轮次未确认",
-      "access_type": "unknown",
-      "test_goal": "unknown",
-      "event_date": "Summer 2027",
-      "regions": [
-        "Global English-speaking audience"
-      ],
-      "platforms": [
-        "PC",
-        "Mobile"
-      ],
-      "verification_status": "verified（双来源）",
-      "source_urls": [],
-      "marketing_readiness": "中",
-      "marketing_opportunity": "英文版OBT季度窗口已明确，后续细化节点和北美/欧洲精确买量计划预期出现"
-    },
-    {
-      "name": "[三七互娱-Last Asylum: Plague-Last Asylum: Plague]",
-      "title": "[三七互娱-Last Asylum: Plague-Last Asylum: Plague]",
-      "capability": "",
-      "summary_points": [
-        "节点：全球上线（官方名称：Last Asylum: Plague 上线）｜时间：2026-02-26",
-        "地区：全球｜平台：Mobile｜准入：公开",
-        "国内节点：未公布｜海外节点：2月26日欧洲/2月28日全球全平台上线",
-        "证据：已验证（双来源）｜来源类型：Google Play店铺、行业统计与媒体引用",
-        "营销成熟度：高｜机会：后期提升LTV和区域突破型广告方案"
-      ],
-      "industry_impact": "",
-      "trend": "AI 能力",
-      "link": "https://indietower.com/apps/android/com.phs.global",
-      "candidate_id": "24",
-      "official_event_name": "Last Asylum: Plague 上线",
-      "normalized_stage": "全球上线",
-      "sequence_label": "测试轮次未确认",
-      "access_type": "unknown",
-      "test_goal": "unknown",
-      "event_date": "2026-02-26",
-      "regions": [
-        "global"
-      ],
-      "platforms": [
-        "Mobile"
-      ],
-      "verification_status": "verified（双来源）",
-      "source_urls": [],
-      "marketing_readiness": "高",
-      "marketing_opportunity": "累计月活与收入表现优异，后续可承接ASO投放及区域市场创意买量方案"
-    }
-  ],
+  "ai_technology": [],
   "sports_outdoor": [
     {
-      "name": "[完美世界-异环-English name not found]",
+      "name": "[三七互娱-Last Asylum: Plague-Last Asylum: Plague]",
       "news": "",
       "summary_points": [
-        "节点：全球公测&财务披露（官方名称：全球公测及运营表现披露）｜时间：2026-04，6月30日，8月18日",
-        "地区：全球｜平台：Mobile｜准入：公开",
-        "国内节点：2026-04公测｜海外节点：全球上线、14/20亿元里程碑",
-        "证据：据报道/尚未获官方确认｜来源类型：公司半年报+财经媒体",
-        "营销成熟度：高｜机会：数据驱动再营销与高价值渠道投放"
+        "海外节点：海外月流水突破（官方名称：8月海外月流水2500万美元）｜海外时间：2026-08",
+        "海外地区：全球分布｜海外平台：Mobile",
+        "国内参考：Sensor Tower数据与官方同步披露",
+        "证据：已验证（双来源）｜来源类型：Sensor Tower数据+独立媒体",
+        "营销成熟度：高｜机会：持续买量窗口、品牌/IP合作"
       ],
       "why_this_matters": "",
       "trend": "Trend",
-      "link": "https://www.pwrd.com/cn/news/press/p2026/20260716/89007.shtml",
-      "candidate_id": "42",
-      "official_event_name": "全球公测及运营表现披露",
-      "normalized_stage": "全球公测&财务指标",
-      "sequence_label": "测试轮次未确认",
+      "link": "https://www.sohu.com/a/1077590990_121826140",
+      "candidate_id": "5",
+      "official_event_name": "《Last Asylum: Plague》8月海外月流水突破2500万美元",
+      "normalized_stage": "unknown",
+      "overseas_stage": "overseas_live_ops",
+      "domestic_reference": "Sensor Tower数据与官方同步披露",
+      "sequence_label": "不适用",
       "access_type": "unknown",
       "test_goal": "unknown",
-      "event_date": "2026-04 (global open beta launch), 2026-06-30 (14B milestone), 2026-08-18 (20B milestone)",
+      "event_date": "2026-08",
       "regions": [
-        "全球"
+        "海外"
       ],
       "platforms": [
         "Mobile"
       ],
-      "verification_status": "reported_unconfirmed",
+      "verification_status": "verified（双来源）",
       "source_urls": [],
       "marketing_readiness": "高",
-      "marketing_opportunity": "阶段性流水与全球用户规模对买量及区域广告策略调整有参考价值"
-    },
-    {
-      "name": "[米哈游-源初之结-Nodusfall]",
-      "news": "",
-      "summary_points": [
-        "节点：全球预约（官方名称：Pre-registration opens）｜时间：2026-08-25",
-        "地区：全球｜平台：未公布｜准入：未说明",
-        "国内节点：未公布｜海外节点：官网启动全球预约",
-        "证据：据报道/尚未获官方确认｜来源类型：游戏官网+电竞媒体",
-        "营销成熟度：中｜机会：预注册页面已开，社交媒体和预约导量方案可提前准备"
-      ],
-      "why_this_matters": "",
-      "trend": "Trend",
-      "link": "https://nodusfall.hoyoverse.com/en-us/home",
-      "candidate_id": "29",
-      "official_event_name": "Pre-registration opens",
-      "normalized_stage": "全球预约",
-      "sequence_label": "测试轮次未确认",
-      "access_type": "unknown",
-      "test_goal": "unknown",
-      "event_date": "2026-08-25",
-      "regions": [
-        "global"
-      ],
-      "platforms": [
-        "Unknown"
-      ],
-      "verification_status": "reported_unconfirmed",
-      "source_urls": [],
-      "marketing_readiness": "中",
-      "marketing_opportunity": "官网已开启全球预约，适合布局后续预注册广告及国际社媒内容运营"
+      "marketing_opportunity": "头部手游海外持续买量窗口，建议跟进月度投放、品牌合作与达人推广机会"
     }
   ],
   "retail_innovation": [
     {
-      "name": "[灵犀互娱-代号咘咘-English name not found]",
+      "name": "[叠纸游戏-未找到中文名-English name not found]",
       "news": "",
       "summary_points": [
-        "节点：首次曝光及测试招募（官方名称：测试招募开启）｜时间：2026-08-17",
-        "地区：中国｜平台：Mobile｜准入：未说明",
-        "国内节点：招募与预下载｜海外节点：未公布",
-        "证据：已验证（双来源）｜来源类型：腾讯新闻+TapTap官方社区",
-        "营销成熟度：中｜机会：关注后续东南亚/国际预约与广告窗口"
+        "海外节点：创作者内容征集（官方名称：叠纸游戏 2026 创作大赛 启动）｜海外时间：2026-04-27 to 2026-07-31",
+        "海外地区：Global｜海外平台：Unknown",
+        "国内参考：国内同步开放、全球招聘渠道",
+        "证据：已验证（双来源）｜来源类型：企业官网+独立媒体",
+        "营销成熟度：中｜机会：全球内容征集、品牌达人合作"
       ],
       "why_this_matters": "",
       "trend": "Trend",
-      "link": "https://news.qq.com/rain/a/20260820A0CMDI00",
-      "candidate_id": "25",
-      "official_event_name": "测试招募开启",
-      "normalized_stage": "测试招募/曝光",
-      "sequence_label": "测试轮次未确认",
+      "link": "https://www.oga.org.cn/newsinfo/9068326.html",
+      "candidate_id": "7",
+      "official_event_name": "叠纸游戏 2026 创作大赛 启动",
+      "normalized_stage": "unknown",
+      "overseas_stage": "overseas_preparation",
+      "domestic_reference": "国内同步开放、全球招聘渠道",
+      "sequence_label": "不适用",
       "access_type": "unknown",
       "test_goal": "unknown",
-      "event_date": "2026-08-17",
+      "event_date": "2026-04-27 to 2026-07-31",
       "regions": [
-        "中国"
+        "Global"
       ],
       "platforms": [
-        "Mobile"
+        "Unknown"
       ],
       "verification_status": "verified（双来源）",
       "source_urls": [],
       "marketing_readiness": "中",
-      "marketing_opportunity": "产品初次曝光，后续如开放海外预约/预热可介入海外广告与社区运营方案"
+      "marketing_opportunity": "游戏内容外部创作者合作、UGC/达人生态搭建、全球品牌与社区投放建议 Q2-Q3 时间段重点介入"
     }
   ],
   "pending_confirmation": [
@@ -367,26 +146,28 @@
       "name": "[蛮啾网络-蓝色星原：旅谣-Azur Promilia]",
       "news": "",
       "summary_points": [
-        "节点：多轮测试和首曝记录（官方名称：测试历程汇总）｜时间：2024–2026 多次",
-        "冲突/缺失证据：仅见 Bilibili Wiki 梳理，无正式官方或权威媒体公告",
-        "当前来源：https://wiki.biligame.com/ap/%E8%93%9D%E8%89%B2%E6%98%9F%E5%8E%9F%EF%BC%9A%E6%97%85%E8%B0%A3",
-        "后续核验动作：需查找官方历史公告或行业主流媒体完整复核"
+        "节点：公测预约与定档｜官方公告未经二次网页核验",
+        "冲突/缺失证据：微博官方信息但缺独立媒体确认，后续需验证预约里程碑活动本身是否面向全球",
+        "当前来源：https://www.weibo.com/7832445927/RnYo5c0gM",
+        "后续核验动作：需查找官网、海外社媒或预约页英文本地化公告"
       ],
       "why_this_matters": "",
       "trend": "Trend",
-      "link": "https://wiki.biligame.com/ap/%E8%93%9D%E8%89%B2%E6%98%9F%E5%8E%9F%EF%BC%9A%E6%97%85%E8%B0%A3",
-      "candidate_id": "55",
-      "official_event_name": "测试历程汇总",
-      "normalized_stage": "测试阶段待证实",
-      "sequence_label": "测试轮次未确认",
+      "link": "https://www.weibo.com/7832445927/RnYo5c0gM",
+      "candidate_id": "13",
+      "official_event_name": "公测正式定档 11月26日",
+      "normalized_stage": "open_beta_or_launch",
+      "overseas_stage": "",
+      "domestic_reference": "",
+      "sequence_label": "不适用",
       "access_type": "unknown",
       "test_goal": "unknown",
-      "event_date": "2024–2026 多次",
+      "event_date": "2026-11-26",
       "regions": [
-        "中国"
+        "China"
       ],
       "platforms": [
-        "Unknown"
+        "Mobile"
       ],
       "verification_status": "pending_confirmation",
       "source_urls": [],
@@ -394,31 +175,31 @@
       "marketing_opportunity": ""
     },
     {
-      "name": "[世纪华通-龙之谷世界-English name not found]",
+      "name": "[米哈游-源初之结-English name not found]",
       "news": "",
       "summary_points": [
-        "节点：全球公测（官方名称：《龙之谷世界》全球公测）｜时间：2026-07-29",
-        "冲突/缺失证据：仅百科页面自动汇总，暂无独立行业或官方公告双核验",
-        "当前来源：https://baike.baidu.com/item/%E9%BE%99%E4%B9%8B%E8%B0%B7%E4%B8%96%E7%95%8C/65241733",
-        "后续核验动作：需官方或行业主流门户正式定档确认"
+        "节点：首曝（PV发布）｜有官方微博与游戏官网同步首曝",
+        "冲突/缺失证据：仅微博与官网链接，缺独立媒体核验；海外后续节点未披露",
+        "当前来源：https://weibo.com/u/4029919753",
+        "后续核验动作：需查找英文官网、海外社媒及后续区域预约/测试证据"
       ],
       "why_this_matters": "",
       "trend": "Trend",
-      "link": "https://baike.baidu.com/item/%E9%BE%99%E4%B9%8B%E8%B0%B7%E4%B8%96%E7%95%8C/65241733",
-      "candidate_id": "56",
-      "official_event_name": "《龙之谷世界》全球公测",
-      "normalized_stage": "海外公测待证实",
-      "sequence_label": "测试轮次未确认",
+      "link": "https://weibo.com/u/4029919753",
+      "candidate_id": "17",
+      "official_event_name": "全球首曝 PV at Gamescom Opening Night Live",
+      "normalized_stage": "first_reveal",
+      "overseas_stage": "",
+      "domestic_reference": "",
+      "sequence_label": "不适用",
       "access_type": "unknown",
       "test_goal": "unknown",
-      "event_date": "2026-07-29",
+      "event_date": "2026-08-26",
       "regions": [
-        "China",
-        "Southeast Asia",
-        "South Korea"
+        "Global"
       ],
       "platforms": [
-        "Unknown"
+        "Multi-platform"
       ],
       "verification_status": "pending_confirmation",
       "source_urls": [],
@@ -426,29 +207,31 @@
       "marketing_opportunity": ""
     },
     {
-      "name": "[沐瞳科技-未找到中文名-English name not found]",
+      "name": "[腾讯游戏／CosmicPup Studio-人间异想计划-English name not found]",
       "news": "",
       "summary_points": [
-        "节点：FILMART IP孵化首秀（官方名称：Debut at Hong Kong FILMART – unveiling three original film-game IPs）｜时间：2026-10",
-        "冲突/缺失证据：仅阿拉伯小站一处曝光，确认未最终核验全球发行细节",
-        "当前来源：https://thearabianpost.com/moonton-games-shines-at-hong-kong-filmart-unveiling-three-original-film-game-ips-and-forging-a-new-film-game-integration-ecosystem-for-the-future/",
-        "后续核验动作：补充英文官方或亚洲主流权威媒体及发行计划证据"
+        "节点：平台支持声明｜Xbox中国官方微博",
+        "冲突/缺失证据：暂无独立海外媒体验证，仅官方微博信息",
+        "当前来源：https://www.weibo.com/5203472552/RnH6wvaHW",
+        "后续核验动作：查证海外英文官网或Xbox官方公告、预约页截图"
       ],
       "why_this_matters": "",
       "trend": "Trend",
-      "link": "https://thearabianpost.com/moonton-games-shines-at-hong-kong-filmart-unveiling-three-original-film-game-ips-and-forging-a-new-film-game-integration-ecosystem-for-the-future/",
-      "candidate_id": "58",
-      "official_event_name": "Debut at Hong Kong FILMART – unveiling three original film-game IPs",
-      "normalized_stage": "国际IP孵化曝光",
-      "sequence_label": "测试轮次未确认",
+      "link": "https://www.weibo.com/5203472552/RnH6wvaHW",
+      "candidate_id": "14",
+      "official_event_name": "即将登陆 XBOX Series X|S 主机平台，支持中文",
+      "normalized_stage": "unknown",
+      "overseas_stage": "",
+      "domestic_reference": "",
+      "sequence_label": "不适用",
       "access_type": "unknown",
       "test_goal": "unknown",
-      "event_date": "2026-10",
+      "event_date": "2026-10-21",
       "regions": [
-        "global"
+        "International"
       ],
       "platforms": [
-        "Unknown"
+        "Console"
       ],
       "verification_status": "pending_confirmation",
       "source_urls": [],
@@ -456,30 +239,31 @@
       "marketing_opportunity": ""
     },
     {
-      "name": "[蛮啾网络-蓝色星原：旅谣-English name not found]",
+      "name": "[沐瞳科技-Mobile Legends: Bang Bang-Mobile Legends: Bang Bang]",
       "news": "",
       "summary_points": [
-        "节点：全球预约里程碑活动（官方名称：全球预约里程碑活动开启）｜时间：2026-10-前",
-        "冲突/缺失证据：仅TapTap社区出现、缺乏官方或权威行业公告",
-        "当前来源：https://www.taptap.cn/moment/824299108784145606",
-        "后续核验动作：需补查官方活动页面和多区域营销渠道曝光"
+        "节点：东南亚电竞赛区扩展｜官方新闻稿",
+        "冲突/缺失证据：目前为赛区预告、暂无已确切落地媒体验证",
+        "当前来源：https://en.moonton.com/news/362.html",
+        "后续核验动作：需查找东南亚赛区实际开赛与官网英文公告"
       ],
       "why_this_matters": "",
       "trend": "Trend",
-      "link": "https://www.taptap.cn/moment/824299108784145606",
-      "candidate_id": "57",
-      "official_event_name": "全球预约里程碑活动开启",
-      "normalized_stage": "预约奖励活动待确认",
-      "sequence_label": "测试轮次未确认",
+      "link": "https://en.moonton.com/news/362.html",
+      "candidate_id": "25",
+      "official_event_name": "MLBB Championship Tour 扩展至东南亚赛区（Q4 2026）",
+      "normalized_stage": "unknown",
+      "overseas_stage": "",
+      "domestic_reference": "",
+      "sequence_label": "不适用",
       "access_type": "unknown",
       "test_goal": "unknown",
-      "event_date": "2026-10-前",
+      "event_date": "Q4 2026",
       "regions": [
-        "中国",
-        "可能海外"
+        "东南亚"
       ],
       "platforms": [
-        "Unknown"
+        "Mobile"
       ],
       "verification_status": "pending_confirmation",
       "source_urls": [],
@@ -487,30 +271,31 @@
       "marketing_opportunity": ""
     },
     {
-      "name": "[雷霆游戏-问剑长生（欧美版）-Sword Quest for Immortality (Western Edition)]",
+      "name": "[三七互娱-Last Asylum: Plague-Last Asylum: Plague]",
       "news": "",
       "summary_points": [
-        "节点：欧美版发行披露（官方名称：Western version planned for H2 2026）｜时间：2026年下半年",
-        "冲突/缺失证据：仅来源于百科页面、缺正式开发/发行商公告",
-        "当前来源：https://baike.baidu.com/en/item/Sword%20Quest%20for%20Immortality%20%28Western%20Edition%29/4759370",
-        "后续核验动作：需欧美区注册、评级、预约、测试等信号"
+        "节点：全球覆盖与用户营收展示｜新闻聚合数据",
+        "冲突/缺失证据：仅一家聚合来源，缺主流数据机构与官方英文公告",
+        "当前来源：https://min.news/en/economy/a08261634ca119751f57b8d538b2381d.html",
+        "后续核验动作：需查找 Sensor Tower 英文报告、官方海外合作声明"
       ],
       "why_this_matters": "",
       "trend": "Trend",
-      "link": "https://baike.baidu.com/en/item/Sword%20Quest%20for%20Immortality%20%28Western%20Edition%29/4759370",
-      "candidate_id": "83",
-      "official_event_name": "Western version planned for H2 2026",
-      "normalized_stage": "欧美版规划待定档",
-      "sequence_label": "测试轮次未确认",
+      "link": "https://min.news/en/economy/a08261634ca119751f57b8d538b2381d.html",
+      "candidate_id": "24",
+      "official_event_name": "覆盖137国，用户1500万，成为海外营收增长最快的中国手游之一",
+      "normalized_stage": "unknown",
+      "overseas_stage": "",
+      "domestic_reference": "",
+      "sequence_label": "不适用",
       "access_type": "unknown",
       "test_goal": "unknown",
-      "event_date": "2026-H2",
+      "event_date": "2026-09",
       "regions": [
-        "Europe",
-        "North America"
+        "全球"
       ],
       "platforms": [
-        "Unknown"
+        "Mobile"
       ],
       "verification_status": "pending_confirmation",
       "source_urls": [],
@@ -518,5 +303,245 @@
       "marketing_opportunity": ""
     }
   ],
-  "one_thing_worth_watching": "《蓝色星原：旅谣》2026年11月26日日本、韩国、台湾公测定档，东亚市场广告与品牌合作窗口最热，建议销售团队针对该节点重点跟进相关买量、渠道商务与本地化支持。"
+  "one_thing_worth_watching": "《零境·入侵》全球试玩与海外平台渠道初步联动（2026年9月3日-9月23日），建议重点跟进试玩后公测预约营销窗口",
+  "social_profiles": [
+    {
+      "company": "蛮啾网络 / Manjuu Network",
+      "title_cn": "蓝色星原：旅谣",
+      "title_en": "Azur Promilia",
+      "checked_at": "2026-10-30",
+      "accounts": [
+        {
+          "platform": "official_website",
+          "url": "https://azurpromilia.manjuu.com/home/",
+          "status": "official_confirmed",
+          "evidence_url": "https://azurpromilia.manjuu.com/home/",
+          "discovery_source": "official_site"
+        },
+        {
+          "platform": "discord",
+          "url": "https://discord.com/invite/2XSau7EuG",
+          "status": "discovered",
+          "evidence_url": "https://discord.com/invite/2XSau7EuG",
+          "discovery_source": "web_search"
+        },
+        {
+          "platform": "weibo",
+          "url": "https://space.bilibili.com/3546569016085336/dynamic",
+          "status": "discovered",
+          "evidence_url": "https://apps.apple.com/cn/app/%E8%93%9D%E8%89%B2%E6%98%9F%E5%8E%9F-%E6%97%85%E8%B0%A3/id6754017631",
+          "discovery_source": "web_search"
+        },
+        {
+          "platform": "taptap",
+          "url": "https://www.taptap.cn/app/593829",
+          "status": "discovered",
+          "evidence_url": "https://www.taptap.cn/app/593829",
+          "discovery_source": "web_search"
+        }
+      ],
+      "notes": "Official website confirmed. Discord found as unofficial community. TapTap entry confirms presence. Weibo/Bilibili dynamic referenced via App Store metadata; no explicit X, Facebook, YouTube, Instagram, TikTok or Steam social links found."
+    },
+    {
+      "company": "雷霆游戏 / Leiting Games",
+      "title_cn": "问剑长生",
+      "title_en": "Sword of Immortality",
+      "checked_at": "2026-10-30",
+      "accounts": [
+        {
+          "platform": "official_website",
+          "url": "https://jian.leiting.com/",
+          "status": "official_confirmed",
+          "evidence_url": "https://jian.leiting.com/",
+          "discovery_source": "official_site"
+        },
+        {
+          "platform": "bilibili",
+          "url": "https://space.bilibili.com/[official]",
+          "status": "access_limited",
+          "evidence_url": "https://www.taptap.cn/app/713640",
+          "discovery_source": "web_search"
+        },
+        {
+          "platform": "taptap",
+          "url": "https://www.taptap.cn/app/713640",
+          "status": "discovered",
+          "evidence_url": "https://www.taptap.cn/app/713640",
+          "discovery_source": "web_search"
+        }
+      ],
+      "notes": "Official site confirmed. TapTap and App Store listings found. WeChat public account referenced. No explicit X/Twitter, Facebook, Instagram, TikTok, Discord, Steam or SteamDB entries found."
+    },
+    {
+      "company": "腾讯游戏 / Tencent Games",
+      "title_cn": "洛克王国：世界",
+      "title_en": "Roco Kingdom",
+      "checked_at": "2026-10-30",
+      "accounts": [
+        {
+          "platform": "official_website",
+          "url": "https://rocom.qq.com/",
+          "status": "official_confirmed",
+          "evidence_url": "https://rocom.qq.com/",
+          "discovery_source": "official_site"
+        },
+        {
+          "platform": "taptap",
+          "url": "https://www.taptap.cn/app/188212?os=android",
+          "status": "discovered",
+          "evidence_url": "https://www.taptap.cn/app/188212?os=android",
+          "discovery_source": "web_search"
+        }
+      ],
+      "notes": "Official Chinese website confirmed, international domain found. TapTap and App Store listings exist. Overseas launch on multiple platforms (Steam, Epic, PS5, Xbox) noted via community discussion. No explicit social media accounts found such as Facebook, X, Instagram, TikTok, Discord."
+    },
+    {
+      "company": "腾讯游戏 / Tencent Games",
+      "title_cn": "饥困荒野",
+      "title_en": "Don't Starve: Newhome",
+      "checked_at": "2026-10-30",
+      "accounts": [
+        {
+          "platform": "official_website",
+          "url": "https://jihuang.qq.com/cp/a20230420xjy/pc/index_p.html",
+          "status": "official_confirmed",
+          "evidence_url": "https://jihuang.qq.com/cp/a20230420xjy/pc/index_p.html",
+          "discovery_source": "official_site"
+        },
+        {
+          "platform": "taptap",
+          "url": "https://www.taptap.cn/app/194039",
+          "status": "official_confirmed",
+          "evidence_url": "https://www.taptap.cn/app/194039",
+          "discovery_source": "public_account"
+        },
+        {
+          "platform": "taptap",
+          "url": "https://www.taptap.cn/app/236131/topic?type=official",
+          "status": "official_confirmed",
+          "evidence_url": "https://www.taptap.cn/app/236131/topic?type=official",
+          "discovery_source": "public_account"
+        }
+      ],
+      "notes": "Official website and TapTap presence confirmed. No Steam listing currently; game is a mobile survival title pending release."
+    },
+    {
+      "company": "雷霆游戏 / Leiting Games",
+      "title_cn": "杖剑传说",
+      "title_en": "Sword x Staff",
+      "checked_at": "2026-10-30",
+      "accounts": [],
+      "notes": "No accounts or official listing discovered via searches using Chinese or English title. Further discovery may require more localized platforms or internal data."
+    },
+    {
+      "company": "腾讯游戏 / Tencent Games",
+      "title_cn": "湮灭之潮",
+      "title_en": "Tides of Annihilation",
+      "checked_at": "2026-10-30",
+      "accounts": [
+        {
+          "platform": "official_website",
+          "url": "https://global.playtoa.com/",
+          "status": "official_confirmed",
+          "evidence_url": "https://global.playtoa.com/",
+          "discovery_source": "official_site"
+        },
+        {
+          "platform": "official_website",
+          "url": "https://playtoa.com/",
+          "status": "official_confirmed",
+          "evidence_url": "https://playtoa.com/",
+          "discovery_source": "official_site"
+        },
+        {
+          "platform": "steam",
+          "url": "https://store.steampowered.com/app/3292470/",
+          "status": "official_confirmed",
+          "evidence_url": "https://store.steampowered.com/app/3292470/",
+          "discovery_source": "steam"
+        },
+        {
+          "platform": "steam",
+          "url": "https://store.steampowered.com/app/3292470/Tides_of_Annihilation/",
+          "status": "official_confirmed",
+          "evidence_url": "https://store.steampowered.com/app/3292470/Tides_of_Annihilation/",
+          "discovery_source": "steam"
+        },
+        {
+          "platform": "steamdb",
+          "url": "https://steamdb.info/app/3292470/",
+          "status": "discovered",
+          "evidence_url": "https://steamdb.info/app/3292470/",
+          "discovery_source": "steamdb"
+        },
+        {
+          "platform": "x",
+          "url": "https://x.com/play_toa",
+          "status": "discovered",
+          "evidence_url": "https://steamdb.info/app/3292470/",
+          "discovery_source": "steamdb"
+        },
+        {
+          "platform": "facebook",
+          "url": "https://www.facebook.com/TidesOfAnnihilation/",
+          "status": "access_limited",
+          "evidence_url": "https://www.gematsu.com/games/tides-of-annihilation",
+          "discovery_source": "reliable_directory"
+        },
+        {
+          "platform": "youtube",
+          "url": "https://www.youtube.com/@tidesofannihilation",
+          "status": "official_confirmed",
+          "evidence_url": "https://www.gematsu.com/games/tides-of-annihilation",
+          "discovery_source": "public_account"
+        },
+        {
+          "platform": "instagram",
+          "url": "https://www.instagram.com/play_toa",
+          "status": "access_limited",
+          "evidence_url": "https://www.gematsu.com/games/tides-of-annihilation",
+          "discovery_source": "reliable_directory"
+        },
+        {
+          "platform": "tiktok",
+          "url": "https://www.tiktok.com/@play_toa",
+          "status": "access_limited",
+          "evidence_url": "https://www.gematsu.com/games/tides-of-annihilation",
+          "discovery_source": "reliable_directory"
+        },
+        {
+          "platform": "bilibili",
+          "url": "https://space.bilibili.com/3546744281368908",
+          "status": "discovered",
+          "evidence_url": "https://steamdb.info/app/3292470/",
+          "discovery_source": "steamdb"
+        }
+      ],
+      "notes": "Official site and Steam store page confirmed. No social media accounts (X/Twitter, Facebook, etc.) found via available sources."
+    },
+    {
+      "company": "腾讯游戏 / Tencent Games",
+      "title_cn": "人间异想计划",
+      "title_en": "Ordinary Oddness",
+      "checked_at": "尚未自动检查",
+      "accounts": [],
+      "notes": "尚未发现公开海外账号"
+    },
+    {
+      "company": "米哈游 / HoYoverse",
+      "title_cn": "源初之结",
+      "title_en": "Nodusfall",
+      "checked_at": "尚未自动检查",
+      "accounts": [],
+      "notes": "尚未发现公开海外账号"
+    },
+    {
+      "company": "朝夕光年 / Nuverse",
+      "title_cn": "零境·入侵",
+      "title_en": "SlashZero",
+      "checked_at": "尚未自动检查",
+      "accounts": [],
+      "notes": "尚未发现公开海外账号"
+    }
+  ]
 }

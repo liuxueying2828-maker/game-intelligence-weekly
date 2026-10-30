@@ -1208,7 +1208,7 @@
     },
     {
       "candidate_id": "ordinary_oddness_001",
-      "company_cn": "腾讯游戏／CosmicPup（宇宙小狗工作室）",
+      "company_cn": "腾讯游戏／CosmicPup Studio",
       "company_en": "Tencent Games / CosmicPup Studio",
       "game_cn": "人间异想计划",
       "game_en": null,
@@ -1218,10 +1218,10 @@
       "access_type": "open",
       "test_goal": "technical",
       "regions": [
-        "China"
+        "中国（面向全球）"
       ],
       "platforms": [
-        "PC",
+        "PC (Steam, Epic, WeGame)",
         "PS5",
         "Xbox Series X|S"
       ],
@@ -1229,10 +1229,10 @@
       "event_date": "2026-10-21",
       "verification_status": "reported_unconfirmed",
       "source_urls": [
-        "https://taptap.cn/moment/861929062069700214",
-        "https://4gamers.com.tw/news/detail/82773/ordinary-oddness-tencent-ue5-open-world-rpg-22-minute-gameplay"
+        "https://news.qq.com/rain/a/20261021A09V1C00",
+        "https://automaton-china.com/all/platform/pc/20261021-31297-kai-fang-shi-jie-rpg-ren-jian-yi-xiang-ji-hua/"
       ],
-      "last_seen_at": "2026-10-29"
+      "last_seen_at": "2026-10-30"
     },
     {
       "candidate_id": "ordinary_oddness_002",
@@ -1240,26 +1240,27 @@
       "company_en": "Tencent Games / CosmicPup Studio",
       "game_cn": "人间异想计划",
       "game_en": null,
-      "official_event_name": "预约开启",
+      "official_event_name": "预约开启 / Steam 愿望单开放",
       "normalized_stage": "preregistration",
       "test_sequence": "unknown",
       "access_type": "open",
       "test_goal": "unknown",
       "regions": [
-        "China"
+        "中国（潜在覆盖全球平台）"
       ],
       "platforms": [
-        "PC",
+        "PC (Steam, Epic, WeGame)",
         "PS5",
         "Xbox Series X|S"
       ],
-      "published_date": "2026-10",
-      "event_date": "2026-10",
+      "published_date": "2026-10-21",
+      "event_date": "by 2026-10-21",
       "verification_status": "reported_unconfirmed",
       "source_urls": [
-        "https://taptap.cn/app/968556"
+        "https://news.qq.com/rain/a/20261021A09V1C00",
+        "https://automaton-china.com/all/platform/pc/20261021-31297-kai-fang-shi-jie-rpg-ren-jian-yi-xiang-ji-hua/"
       ],
-      "last_seen_at": "2026-10-29"
+      "last_seen_at": "2026-10-30"
     },
     {
       "candidate_id": "nodusfall_001",
@@ -1289,29 +1290,30 @@
     },
     {
       "candidate_id": "slashzero_002",
-      "company_cn": "朝夕光年 / 绿洲工作室",
-      "company_en": "Nuverse / Oasis (Streetlamp Studio)",
+      "company_cn": "朝夕光年",
+      "company_en": "Nuverse",
       "game_cn": "零境·入侵",
       "game_en": null,
-      "official_event_name": "愿望单开放",
-      "normalized_stage": "preregistration",
+      "official_event_name": "限时试玩 Demo 发布",
+      "normalized_stage": "technical_test",
       "test_sequence": "unknown",
       "access_type": "open",
-      "test_goal": "unknown",
+      "test_goal": "gameplay",
       "regions": [
-        "中国/海外预览"
+        "Global"
       ],
       "platforms": [
-        "PC",
-        "PS5"
+        "PC (Steam)",
+        "PlayStation 5"
       ],
-      "published_date": null,
-      "event_date": "2026-07 (ChinaJoy期间)",
-      "verification_status": "reported_unconfirmed",
+      "published_date": "2026-09-03",
+      "event_date": "2026-09-03 to 2026-09-23",
+      "verification_status": "verified",
       "source_urls": [
-        "https://www.ali213.net/news/html/2026-7/1027399.html"
+        "https://diershoubing.com/news/139718/lingjing-ruqin-shiwan-gongkai/",
+        "https://www.gematsu.com/2026/09/slashzero-launches-in-spring-2027-limited-time-demo-now-available"
       ],
-      "last_seen_at": "2026-10-29"
+      "last_seen_at": "2026-10-30"
     },
     {
       "candidate_id": "dontstarve_newhome_001",
@@ -1480,33 +1482,32 @@
     },
     {
       "candidate_id": "jiandan-001",
-      "company_cn": "腾讯游戏",
-      "company_en": "Tencent Games",
+      "company_cn": "腾讯游戏／CosmicPup（宇宙小狗工作室）",
+      "company_en": "Tencent Games / CosmicPup Studio",
       "game_cn": "人间异想计划",
-      "game_en": "",
-      "official_event_name": "首曝 22分钟实机演示公布",
+      "game_en": null,
+      "official_event_name": "《人间异想计划》公开首支22分钟实机演示",
       "normalized_stage": "first_reveal",
       "test_sequence": "unknown",
       "access_type": "open",
-      "test_goal": "unknown",
+      "test_goal": "technical",
       "regions": [
-        "China",
-        "overseas potential"
+        "中国",
+        "海外 potential"
       ],
       "platforms": [
+        "PC",
         "PlayStation 5",
-        "Xbox Series",
-        "PC"
+        "Xbox Series X|S"
       ],
-      "published_date": "2026‑10‑21",
-      "event_date": "2026‑10‑21",
+      "published_date": "2026-10-21",
+      "event_date": "2026-10-21",
       "verification_status": "verified",
       "source_urls": [
-        "https://www.sohu.com/a/1090630402_121124868",
-        "https://news.18183.com/yxxw/202610/9065018.html",
-        "https://automaton-china.com/all/platform/pc/20261021-31297-kai-fang-shi-jie-rpg-ren-jian-yi-xiang-ji-hua/"
+        "https://news.qq.com/rain/a/20261021A09V1C00",
+        "https://www.sohu.com/a/1090706473_122004016"
       ],
-      "last_seen_at": "2026-10-29"
+      "last_seen_at": "2026-10-30"
     },
     {
       "candidate_id": "jiandan-002",
@@ -1983,6 +1984,413 @@
         "https://www.digitaltoday.co.kr/cn/view/118877/nexon-to-launch-manjugames-fantasy-rpg-azur-promilia-in-south-korea-on-nov‑26"
       ],
       "last_seen_at": "2026-10-29"
+    },
+    {
+      "candidate_id": "papergames_creator_contest_2026",
+      "company_cn": "叠纸游戏",
+      "company_en": "Papergames",
+      "game_cn": "",
+      "game_en": "",
+      "official_event_name": "叠纸游戏 2026 创作大赛 启动",
+      "normalized_stage": "collaboration",
+      "test_sequence": "unknown",
+      "access_type": "open",
+      "test_goal": "unknown",
+      "regions": [
+        "全球"
+      ],
+      "platforms": [],
+      "published_date": "2026-04-27",
+      "event_date": "2026-04-27 to 2026-07-31 (投稿)，评审结果预计 2026-10",
+      "verification_status": "verified",
+      "source_urls": [
+        "https://www.oga.org.cn/newsinfo/9068326.html",
+        "https://gamegeeker.com/news/papergames-2026-creator-contest-launch"
+      ],
+      "last_seen_at": "2026-10-30"
+    },
+    {
+      "candidate_id": "kurogames_wutheringwaves_edgerunners_collab",
+      "company_cn": "库洛游戏",
+      "company_en": "Kuro Games",
+      "game_cn": "鸣潮",
+      "game_en": "Wuthering Waves",
+      "official_event_name": "《鸣潮》×《赛博朋克：边缘行者》联动",
+      "normalized_stage": "collaboration",
+      "test_sequence": "unknown",
+      "access_type": "open",
+      "test_goal": "unknown",
+      "regions": [
+        "国内"
+      ],
+      "platforms": [
+        "PC",
+        "Android",
+        "iOS"
+      ],
+      "published_date": "2026-05 (报道)",
+      "event_date": "2026-06",
+      "verification_status": "verified",
+      "source_urls": [
+        "https://gl.ali213.net/html/2026-5/1770509.html",
+        "https://news.qq.com/rain/a/20260610A0010B00"
+      ],
+      "last_seen_at": "2026-10-30"
+    },
+    {
+      "candidate_id": "ordinary_oddness_003",
+      "company_cn": "腾讯游戏／CosmicPup Studio",
+      "company_en": "Tencent Games / CosmicPup Studio",
+      "game_cn": "人间异想计划",
+      "game_en": null,
+      "official_event_name": "平台阵容公布",
+      "normalized_stage": "platform_expansion",
+      "test_sequence": "unknown",
+      "access_type": "unknown",
+      "test_goal": "unknown",
+      "regions": [
+        "全球"
+      ],
+      "platforms": [
+        "PC (Steam, Epic, WeGame)",
+        "PS5",
+        "Xbox Series X|S"
+      ],
+      "published_date": "2026-10-21",
+      "event_date": "2026-10-21",
+      "verification_status": "reported_unconfirmed",
+      "source_urls": [
+        "https://news.qq.com/rain/a/20261021A09V1C00",
+        "https://automaton-china.com/all/platform/pc/20261021-31297-kai-fang-shi-jie-rpg-ren-jian-yi-xiang-ji-hua/"
+      ],
+      "last_seen_at": "2026-10-30"
+    },
+    {
+      "candidate_id": "hoyoverse_nodusfall_first_reveal",
+      "company_cn": "米哈游",
+      "company_en": "HoYoverse",
+      "game_cn": "源初之结",
+      "game_en": null,
+      "official_event_name": "科隆游戏展开幕之夜全球亮相（Gamescom Opening Night Live）",
+      "normalized_stage": "first_reveal",
+      "test_sequence": "unknown",
+      "access_type": "open",
+      "test_goal": "unknown",
+      "regions": [
+        "全球"
+      ],
+      "platforms": [],
+      "published_date": "2026-08-26",
+      "event_date": "2026-08-25/26",
+      "verification_status": "reported_unconfirmed",
+      "source_urls": [
+        "https://nodusfall.mihoyo.com/home",
+        "https://www.sohu.com/a/1067659594_116000"
+      ],
+      "last_seen_at": "2026-10-30"
+    },
+    {
+      "candidate_id": "slashzero_reveal",
+      "company_cn": "朝夕光年",
+      "company_en": "Nuverse",
+      "game_cn": "零境·入侵",
+      "game_en": "SlashZero",
+      "official_event_name": "PC Gaming Show 首次亮相",
+      "normalized_stage": "first_reveal",
+      "test_sequence": "unknown",
+      "access_type": "open",
+      "test_goal": "unknown",
+      "regions": [
+        "全球"
+      ],
+      "platforms": [
+        "PC",
+        "PS5"
+      ],
+      "published_date": "2026-06-07",
+      "event_date": "2026-06-07",
+      "verification_status": "verified",
+      "source_urls": [
+        "https://www.gematsu.com/2026/06/slashzero-pc-gaming-show-2026-trailer-screenshots",
+        "https://www.gamespress.com/SLASHZERO-DEBUTS-NEW-TRAILER-AT-THE-PC-GAMING-SHOW-2026"
+      ],
+      "last_seen_at": "2026-10-30"
+    },
+    {
+      "candidate_id": "slashzero_demo_launch",
+      "company_cn": "朝夕光年",
+      "company_en": "Nuverse",
+      "game_cn": "零境·入侵",
+      "game_en": "SlashZero",
+      "official_event_name": "限时试玩公开",
+      "normalized_stage": "technical_test",
+      "test_sequence": "unknown",
+      "access_type": "open",
+      "test_goal": "unknown",
+      "regions": [
+        "全球"
+      ],
+      "platforms": [
+        "PC",
+        "PS5"
+      ],
+      "published_date": "2026-09-03",
+      "event_date": "2026-09-03",
+      "verification_status": "reported_unconfirmed",
+      "source_urls": [
+        "https://www.gematsu.com/2026/09/slashzero-launches-in-spring-2027-limited-time-demo-now-available",
+        "https://store.steampowered.com/app/4061170/SlashZero/"
+      ],
+      "last_seen_at": "2026-10-30"
+    },
+    {
+      "candidate_id": "slashzero_001",
+      "company_cn": "朝夕光年",
+      "company_en": "Nuverse",
+      "game_cn": "零境·入侵",
+      "game_en": null,
+      "official_event_name": "ChinaJoy试玩暨中文名正式公布",
+      "normalized_stage": "first_reveal",
+      "test_sequence": "unknown",
+      "access_type": "open",
+      "test_goal": "gameplay",
+      "regions": [
+        "China"
+      ],
+      "platforms": [
+        "PC (Steam, Epic)",
+        "PlayStation 5"
+      ],
+      "published_date": "2026-07-31",
+      "event_date": "2026-07-31 to 2026-08-03",
+      "verification_status": "verified",
+      "source_urls": [
+        "https://www.sohu.com/a/1057113060_122598898",
+        "https://www.ali213.net/news/html/2026-7/1027399.html"
+      ],
+      "last_seen_at": "2026-10-30"
+    },
+    {
+      "candidate_id": "pwg-yihuan-prereg",
+      "company_cn": "完美世界",
+      "company_en": "Perfect World Games",
+      "game_cn": "异环",
+      "game_en": "",
+      "official_event_name": "全球预约突破 3000 万",
+      "normalized_stage": "preregistration",
+      "test_sequence": "unknown",
+      "access_type": "open",
+      "test_goal": "unknown",
+      "regions": [
+        "Global"
+      ],
+      "platforms": [],
+      "published_date": "2026-03-25",
+      "event_date": "2026-03-25",
+      "verification_status": "reported_unconfirmed",
+      "source_urls": [
+        "https://nte.perfectworld.com/cn/article/news/gamenews/20260324/261407.html",
+        "https://stock.finance.sina.com.cn/stock/go.php/vReport_Show/kind/company/rptid/828142268364/index.phtml"
+      ],
+      "last_seen_at": "2026-10-30"
+    },
+    {
+      "candidate_id": "sanqi_lastasylum_perf",
+      "company_cn": "三七互娱",
+      "company_en": "37GAMES",
+      "game_cn": "Last Asylum: Plague",
+      "game_en": "Last Asylum: Plague",
+      "official_event_name": "《Last Asylum: Plague》8月海外月流水突破2500万美元",
+      "normalized_stage": "major_update",
+      "test_sequence": "unknown",
+      "access_type": "unknown",
+      "test_goal": "unknown",
+      "regions": [
+        "海外"
+      ],
+      "platforms": [
+        "Mobile"
+      ],
+      "published_date": "2026-09-18",
+      "event_date": "2026-08",
+      "verification_status": "verified",
+      "source_urls": [
+        "https://www.sohu.com/a/1077590990_121826140",
+        "https://www.toutiao.com/article/7686651039797297673/"
+      ],
+      "last_seen_at": "2026-10-30"
+    },
+    {
+      "candidate_id": "sanqi_ro_travel_launch",
+      "company_cn": "三七互娱",
+      "company_en": "37GAMES",
+      "game_cn": "RO仙境传说：世界之旅",
+      "game_en": "RO: The World Journey",
+      "official_event_name": "《RO仙境传说：世界之旅》1月15日在港澳台全平台公测",
+      "normalized_stage": "open_beta_or_launch",
+      "test_sequence": "final",
+      "access_type": "open",
+      "test_goal": "unknown",
+      "regions": [
+        "香港",
+        "澳门",
+        "台湾"
+      ],
+      "platforms": [
+        "PC",
+        "iOS",
+        "Android"
+      ],
+      "published_date": "2025-11-20",
+      "event_date": "2026-01-15",
+      "verification_status": "verified",
+      "source_urls": [
+        "https://gnn.gamer.com.tw/detail.php?sn=295869",
+        "https://baike.baidu.com/item/RO%E4%BB%99%E5%A2%83%E4%BC%A0%E8%AF%B4%EF%BC%9A%E4%B8%96%E7%95%8C%E4%B9%8B%E6%97%85/67469023"
+      ],
+      "last_seen_at": "2026-10-30"
+    },
+    {
+      "candidate_id": "ordinary_oddness_steam_wishlist",
+      "company_cn": "腾讯游戏／CosmicPup Studio",
+      "company_en": "Tencent Games / CosmicPup Studio",
+      "game_cn": "人间异想计划",
+      "game_en": null,
+      "official_event_name": "Steam愿望清单开放",
+      "normalized_stage": "preregistration",
+      "test_sequence": "unknown",
+      "access_type": "open",
+      "test_goal": "unknown",
+      "regions": [
+        "China",
+        "overseas potential"
+      ],
+      "platforms": [
+        "Steam",
+        "WeGame",
+        "Epic Games Store"
+      ],
+      "published_date": "2026‑10‑20",
+      "event_date": "by 2026‑10‑20",
+      "verification_status": "reported_unconfirmed",
+      "source_urls": [
+        "https://store.steampowered.com/app/3988530/Ordinary_Oddness/",
+        "https://www.gematsu.com/2026/10/nothing-stays-oddinary-open-world-rpg-ordinary-oddness-announced-for-ps5-xbox-series-and-pc"
+      ],
+      "last_seen_at": "2026-10-30"
+    },
+    {
+      "candidate_id": "ordinary_oddness_first_reveal",
+      "company_cn": "腾讯游戏／CosmicPup Studio",
+      "company_en": "Tencent Games / CosmicPup Studio",
+      "game_cn": "人间异想计划",
+      "game_en": null,
+      "official_event_name": "22分钟实机首曝",
+      "normalized_stage": "first_reveal",
+      "test_sequence": "unknown",
+      "access_type": "open",
+      "test_goal": "technical",
+      "regions": [
+        "China",
+        "overseas potential"
+      ],
+      "platforms": [
+        "PC",
+        "PS5",
+        "Xbox Series X|S"
+      ],
+      "published_date": "2026‑10‑21",
+      "event_date": "2026‑10‑21",
+      "verification_status": "reported_unconfirmed",
+      "source_urls": [
+        "https://www.gematsu.com/2026/10/nothing-stays-oddinary-open-world-rpg-ordinary-oddness-announced-for-ps5-xbox-series-and-pc",
+        "https://store.steampowered.com/app/3988530/Ordinary_Oddness/"
+      ],
+      "last_seen_at": "2026-10-30"
+    },
+    {
+      "candidate_id": "tides_of_annihilation_demo_gamerscom",
+      "company_cn": "成都日蚀边缘工作室",
+      "company_en": "Eclipse Glow Games",
+      "game_cn": "湮灭之潮",
+      "game_en": "Tides of Annihilation",
+      "official_event_name": "Gamescom teaser trailer “Beneath the Veil”",
+      "normalized_stage": "major_update",
+      "test_sequence": "unknown",
+      "access_type": "open",
+      "test_goal": "unknown",
+      "regions": [
+        "Global"
+      ],
+      "platforms": [
+        "PS5",
+        "PC",
+        "Xbox Series X|S"
+      ],
+      "published_date": "2026‑08‑25",
+      "event_date": "2026‑08‑25",
+      "verification_status": "verified",
+      "source_urls": [
+        "https://www.gamespress.com/en-US/TIDES-OF-ANNIHILATION-PREMIERES-BENEATH-THE-VEIL-TRAILER-AT-GAMESCOM-O",
+        "https://www.gematsu.com/2026/08/tides-of-annihilation-beneath-the-veil-story-trailer-screenshots"
+      ],
+      "last_seen_at": "2026-10-30"
+    },
+    {
+      "candidate_id": "tides_of_annihilation_demo_showcase",
+      "company_cn": "成都日蚀边缘工作室",
+      "company_en": "Eclipse Glow Games",
+      "game_cn": "湮灭之潮",
+      "game_en": "Tides of Annihilation",
+      "official_event_name": "核聚变试玩会",
+      "normalized_stage": "major_update",
+      "test_sequence": "unknown",
+      "access_type": "open",
+      "test_goal": "unknown",
+      "regions": [
+        "China"
+      ],
+      "platforms": [
+        "PC",
+        "PS5",
+        "Xbox Series X|S"
+      ],
+      "published_date": "2026‑10‑24",
+      "event_date": "2026‑10‑24 to 2026‑10‑25",
+      "verification_status": "verified",
+      "source_urls": [
+        "https://www.ali213.net/news/html/2026-10/1049721.html",
+        "https://www.gamersky.com/news/202610/2234648.shtml"
+      ],
+      "last_seen_at": "2026-10-30"
+    },
+    {
+      "candidate_id": "azur_promilia_test_end",
+      "company_cn": "蛮啾网络",
+      "company_en": "Manjuu Network",
+      "game_cn": "蓝色星原：旅谣",
+      "game_en": "Azur Promilia",
+      "official_event_name": "“旅迹测试”正式结束",
+      "normalized_stage": "cbt",
+      "test_sequence": "unknown",
+      "access_type": "limited",
+      "test_goal": "unknown",
+      "regions": [
+        "China"
+      ],
+      "platforms": [
+        "PC",
+        "Android",
+        "iOS"
+      ],
+      "published_date": "2026‑10‑07",
+      "event_date": "2026‑10‑07",
+      "verification_status": "reported_unconfirmed",
+      "source_urls": [
+        "https://azurpromilia.manjuu.com/home/news/detail/892769825091358720/",
+        "https://azurpromiliaguide.com/beta/"
+      ],
+      "last_seen_at": "2026-10-30"
     }
   ]
 }
